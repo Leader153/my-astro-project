@@ -1,0 +1,216 @@
+/* Global styles for html and body */
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex-grow: 1; /* Allows the content area to expand and push the footer down */
+}
+
+
+/* Header styles from Navigation.astro */
+header {
+  position: relative;
+  width: 100%;
+  height: 3em; /* Ваша высота хедера */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+header .header-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.header-content {
+  position: relative;
+  z-index: 0;
+  color: black;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: rgb(26, 13, 100);
+  text-decoration: none;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Mobile toggle button */
+  .menu-toggle {
+    display: none; /* Explicitly hide on desktop */
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0.5em;
+    color: black; /* Changed to black */
+    z-index: 1001;
+  }
+.menu-toggle .icon-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black; /* Changed to black */
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Main navigation */
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-navigation li a {
+  display: block;
+  padding: 0.5em 1em;
+  color: rgb(15, 13, 13);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.main-navigation li a:hover {
+  background-color: rgba(247, 246, 246, 0.807); /* Darker hover effect for black text */
+  border-radius: 5px;
+}
+
+/* Mobile styles (media query - retained and adapted) */
+@media (max-width: 768px) {
+  .header-content {
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .site-title {
+      font-size: 2em;
+  }
+
+  .menu-toggle {
+      display: block;
+  }
+
+  .main-navigation {
+      width: 100%;
+      display: none;
+      flex-direction: column;
+      background-color: rgba(0,0,0,0.8);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      z-index: 1000;
+      padding-top: 70px;
+      box-sizing: border-box;
+  }
+
+  .main-navigation.nav-open {
+      display: flex;
+  }
+
+  .main-navigation ul {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .main-navigation li {
+      width: 100%;
+      text-align: center;
+  }
+
+  .main-navigation li a {
+      padding: 1em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .main-navigation li:last-child a {
+      border-bottom: none;
+  }
+}
+
+/* Footer styles */
+.main-footer {
+    background-color: #08047e;
+    color: #ffffff;
+    padding: 2.5rem 1rem;
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    text-align: center;
+}
+
+.main-footer p {
+    margin: 0 0 1rem 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+.main-footer .social-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-footer .social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.main-footer .social-links a:hover {
+    background-color: rgba(143, 125, 125, 0.575);
+    color: #fffafa;
+}
+
+.main-footer .divider {
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+@media (max-width: 480px) {
+    .main-footer .divider {
+        display: none;
+    }
+    .main-footer .social-links {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+}

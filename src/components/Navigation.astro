@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import headerBg from '../assets/sky.webp';
+---
+
+<header class="main-header">
+  <Image 
+    src={headerBg} 
+    widths={[768, 1280, 1920, 2560]}
+    sizes="(max-width: 800px) 100vw, 1920px"
+    format="webp"
+    alt="שמיים כחולים עם עננים לבנים גדולים" 
+    class="header-background-image"
+  />
+  <div class="header-content">
+    <a href="/" class="site-title" rel="home">LEADER</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <nav id="main-navigation" class="main-navigation">
+        <ul>
+            <li><a href="/">דף הבית</a></li>
+            <li><a href="/hertzliya">שייט בהרצליה</a></li>
+            <li><a href="/haifa">שייט בחיפה</a></li>
+        </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNavigation = document.getElementById('main-navigation');
+
+        if (menuToggle && mainNavigation) {
+            menuToggle.addEventListener('click', () => {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+                menuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
+                mainNavigation.classList.toggle('nav-open');
+            });
+
+            // Close menu when a link is clicked (for single-page navigation or convenience)
+            mainNavigation.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) { // Only close on mobile
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        mainNavigation.classList.remove('nav-open');
+                    }
+                });
+            });
+
+            // Close menu if window is resized to desktop from mobile
+            let isMobile = window.innerWidth <= 768;
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && isMobile) {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    mainNavigation.classList.remove('nav-open');
+                    isMobile = false;
+                } else if (window.innerWidth <= 768 && !isMobile) {
+                    isMobile = true;
+                }
+            });
+        }
+    });
+</script>
