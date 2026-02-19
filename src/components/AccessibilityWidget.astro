@@ -1,0 +1,492 @@
+---
+// Accessibility Widget — floating button + control panel
+---
+
+<!-- Floating accessibility button -->
+<div class="a11y-widget" id="a11y-widget" dir="rtl" aria-label="כלי נגישות">
+
+  <!-- Toggle button -->
+  <button
+    class="a11y-toggle"
+    id="a11y-toggle"
+    aria-expanded="false"
+    aria-controls="a11y-panel"
+    aria-label="פתח תפריט נגישות"
+  >
+    <svg class="a11y-icon-person" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true">
+      <circle cx="12" cy="4" r="2.5"/>
+      <path d="M12 7.5c-1.1 0-2 .4-2.7 1l-3 2.7c-.4.4-.3 1 .1 1.4.4.4 1 .3 1.4-.1L10 10.6V14l-2.8 5.6c-.3.5 0 1.1.6 1.4.5.2 1.1 0 1.4-.6L12 15l2.8 5.4c.2.6.8.8 1.4.6.5-.3.8-.9.6-1.4L14 14v-3.4l2.2 1.9c.4.4 1 .3 1.4-.1.4-.4.4-1-.1-1.4l-3-2.7C13.8 7.9 12.9 7.5 12 7.5z"/>
+    </svg>
+    <span class="a11y-label">נגישות</span>
+  </button>
+
+  <!-- Panel -->
+  <div class="a11y-panel" id="a11y-panel" role="dialog" aria-label="כלי נגישות" aria-hidden="true">
+    <div class="panel-header">
+      <span class="panel-title">כלי נגישות</span>
+      <button class="panel-close" id="a11y-close" aria-label="סגור">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="panel-body">
+
+      <!-- Font size -->
+      <div class="tool-group">
+        <div class="tool-group-label">גודל טקסט</div>
+        <div class="tool-row">
+          <button class="tool-btn" id="font-decrease" aria-label="הקטן טקסט">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span>הקטן</span>
+          </button>
+          <button class="tool-btn reset-font" id="font-reset" aria-label="אפס גודל טקסט">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            <span>אפס</span>
+          </button>
+          <button class="tool-btn" id="font-increase" aria-label="הגדל טקסט">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span>הגדל</span>
+          </button>
+        </div>
+        <div class="font-size-indicator" id="font-indicator">100%</div>
+      </div>
+
+      <!-- Contrast / Color -->
+      <div class="tool-group">
+        <div class="tool-group-label">ניגודיות וצבעים</div>
+        <div class="tools-2x2">
+          <button class="tool-toggle" id="high-contrast" aria-pressed="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3.6 6.4l16.8 11.2M3.6 17.6L20.4 6.4" stroke-width="1.5"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg>
+            ניגודיות גבוהה
+          </button>
+          <button class="tool-toggle" id="invert-colors" aria-pressed="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 2v20M2 12h20"/><path d="M12 2a10 10 0 0 1 0 20z" fill="currentColor"/></svg>
+            הפוך צבעים
+          </button>
+          <button class="tool-toggle" id="grayscale" aria-pressed="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="9.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke-width="1.5"/></svg>
+            גווני אפור
+          </button>
+          <button class="tool-toggle" id="links-highlight" aria-pressed="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            הדגש קישורים
+          </button>
+        </div>
+      </div>
+
+      <!-- Reading aids -->
+      <div class="tool-group">
+        <div class="tool-group-label">עזרי קריאה</div>
+        <div class="tools-2x2">
+          <button class="tool-toggle" id="readable-font" aria-pressed="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+            גופן קריא
+          </button>
+          <button class="tool-toggle" id="line-height" aria-pressed="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/><polyline points="8 5 5 8 8 11"/><polyline points="16 13 19 16 16 19"/></svg>
+            ריווח שורות
+          </button>
+          <button class="tool-toggle" id="pause-animations" aria-pressed="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            עצור אנימציות
+          </button>
+          <button class="tool-toggle" id="focus-outline" aria-pressed="false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="3" y="3" width="18" height="18" rx="2" stroke-dasharray="4 2"/><circle cx="12" cy="12" r="3"/></svg>
+            הדגש פוקוס
+          </button>
+        </div>
+      </div>
+
+    </div><!-- /panel-body -->
+
+    <div class="panel-footer">
+      <button class="reset-all-btn" id="reset-all">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        אפס הכל
+      </button>
+      <a href="/הצהרת-הנגישות" class="a11y-statement-link">הצהרת נגישות ←</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  /* ══════════════════════════════════════════
+     STATE
+  ══════════════════════════════════════════ */
+  const state = {
+    fontScale: 100,           // %
+    highContrast: false,
+    invertColors: false,
+    grayscale: false,
+    linksHighlight: false,
+    readableFont: false,
+    lineHeight: false,
+    pauseAnimations: false,
+    focusOutline: false,
+  };
+
+  /* ══════════════════════════════════════════
+     DOM
+  ══════════════════════════════════════════ */
+  const widget    = document.getElementById('a11y-widget')!;
+  const toggle    = document.getElementById('a11y-toggle')!;
+  const panel     = document.getElementById('a11y-panel')!;
+  const closeBtn  = document.getElementById('a11y-close')!;
+  const indicator = document.getElementById('font-indicator')!;
+  const root      = document.documentElement;
+
+  /* ── open / close ── */
+  const openPanel = () => {
+    panel.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    panel.setAttribute('aria-hidden', 'false');
+    closeBtn.focus();
+  };
+  const closePanel = () => {
+    panel.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('aria-hidden', 'true');
+    toggle.focus();
+  };
+
+  toggle.addEventListener('click', () =>
+    panel.classList.contains('open') ? closePanel() : openPanel()
+  );
+  closeBtn.addEventListener('click', closePanel);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+
+  /* ══════════════════════════════════════════
+     FONT SIZE
+  ══════════════════════════════════════════ */
+  const updateFont = () => {
+    root.style.fontSize = `${state.fontScale}%`;
+    indicator.textContent = `${state.fontScale}%`;
+  };
+
+  document.getElementById('font-increase')!.addEventListener('click', () => {
+    if (state.fontScale < 150) { state.fontScale += 10; updateFont(); }
+  });
+  document.getElementById('font-decrease')!.addEventListener('click', () => {
+    if (state.fontScale > 70) { state.fontScale -= 10; updateFont(); }
+  });
+  document.getElementById('font-reset')!.addEventListener('click', () => {
+    state.fontScale = 100; updateFont();
+  });
+
+  /* ══════════════════════════════════════════
+     TOGGLE HELPER
+  ══════════════════════════════════════════ */
+  const bindToggle = (
+    id: string,
+    key: keyof typeof state,
+    cssClass: string
+  ) => {
+    const btn = document.getElementById(id)!;
+    btn.addEventListener('click', () => {
+      (state as any)[key] = !(state as any)[key];
+      const on = (state as any)[key];
+      btn.setAttribute('aria-pressed', String(on));
+      btn.classList.toggle('active', on);
+      root.classList.toggle(cssClass, on);
+    });
+  };
+
+  bindToggle('high-contrast',    'highContrast',    'a11y-high-contrast');
+  bindToggle('invert-colors',    'invertColors',    'a11y-invert');
+  bindToggle('grayscale',        'grayscale',       'a11y-grayscale');
+  bindToggle('links-highlight',  'linksHighlight',  'a11y-links');
+  bindToggle('readable-font',    'readableFont',    'a11y-readable-font');
+  bindToggle('line-height',      'lineHeight',      'a11y-line-height');
+  bindToggle('pause-animations', 'pauseAnimations', 'a11y-no-motion');
+  bindToggle('focus-outline',    'focusOutline',    'a11y-focus');
+
+  /* ══════════════════════════════════════════
+     RESET ALL
+  ══════════════════════════════════════════ */
+  document.getElementById('reset-all')!.addEventListener('click', () => {
+    state.fontScale = 100; updateFont();
+
+    const pairs: [string, string][] = [
+      ['high-contrast',    'a11y-high-contrast'],
+      ['invert-colors',    'a11y-invert'],
+      ['grayscale',        'a11y-grayscale'],
+      ['links-highlight',  'a11y-links'],
+      ['readable-font',    'a11y-readable-font'],
+      ['line-height',      'a11y-line-height'],
+      ['pause-animations', 'a11y-no-motion'],
+      ['focus-outline',    'a11y-focus'],
+    ];
+    pairs.forEach(([id, cls]) => {
+      const btn = document.getElementById(id)!;
+      btn.classList.remove('active');
+      btn.setAttribute('aria-pressed', 'false');
+      root.classList.remove(cls);
+    });
+    Object.assign(state, {
+      highContrast: false, invertColors: false, grayscale: false,
+      linksHighlight: false, readableFont: false, lineHeight: false,
+      pauseAnimations: false, focusOutline: false,
+    });
+  });
+</script>
+
+<!-- ════════════════ GLOBAL A11Y CSS ════════════════ -->
+<style is:global>
+  /* High contrast */
+  html.a11y-high-contrast { filter: contrast(1.6) brightness(1.05); }
+  /* Invert */
+  html.a11y-invert { filter: invert(1) hue-rotate(180deg); }
+  /* Grayscale */
+  html.a11y-grayscale { filter: grayscale(1); }
+  /* Highlight links */
+  html.a11y-links a {
+    outline: 2px solid #f0c040 !important;
+    outline-offset: 2px !important;
+    background: rgba(240,192,64,0.15) !important;
+    border-radius: 3px !important;
+  }
+  /* Readable font */
+  html.a11y-readable-font,
+  html.a11y-readable-font * {
+    font-family: Arial, sans-serif !important;
+    letter-spacing: 0.05em !important;
+  }
+  /* Line height */
+  html.a11y-line-height,
+  html.a11y-line-height p,
+  html.a11y-line-height li,
+  html.a11y-line-height span {
+    line-height: 2 !important;
+  }
+  /* Pause animations */
+  html.a11y-no-motion *,
+  html.a11y-no-motion *::before,
+  html.a11y-no-motion *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  /* Focus outline */
+  html.a11y-focus *:focus {
+    outline: 3px solid #f0c040 !important;
+    outline-offset: 3px !important;
+  }
+</style>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+
+  /* ════════════════ WIDGET SHELL ════════════════ */
+  .a11y-widget {
+    position: fixed;
+    bottom: 1.75rem;
+    left: 1.25rem;       /* left side for RTL sites */
+    z-index: 9990;
+    font-family: 'Rubik', 'Segoe UI', Arial, sans-serif;
+    direction: rtl;
+  }
+
+  /* ════════════════ TOGGLE BUTTON ════════════════ */
+  .a11y-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    width: 58px;
+    padding: 0.65rem 0.5rem;
+    background: linear-gradient(145deg, #08047e, #0f7ab0);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow:
+      0 6px 24px rgba(8,4,126,0.45),
+      0 0 0 2px rgba(255,255,255,0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    user-select: none;
+  }
+
+  .a11y-toggle:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 12px 32px rgba(8,4,126,0.55), 0 0 0 2px rgba(255,255,255,0.3);
+  }
+  .a11y-toggle:focus-visible {
+    outline: 3px solid #f0c040;
+    outline-offset: 3px;
+  }
+
+  .a11y-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+
+  /* Pulse ring */
+  .a11y-toggle::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 20px;
+    border: 2px solid rgba(15,122,176,0.5);
+    animation: ring-pulse 3s ease-in-out infinite;
+  }
+  @keyframes ring-pulse {
+    0%,100% { transform: scale(1); opacity: 0.6; }
+    50%      { transform: scale(1.12); opacity: 0; }
+  }
+
+  /* ════════════════ PANEL ════════════════ */
+  .a11y-panel {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 0;
+    width: 290px;
+    background: white;
+    border-radius: 18px;
+    box-shadow:
+      0 20px 60px rgba(8,4,126,0.22),
+      0 4px 16px rgba(0,0,0,0.12),
+      0 0 0 1px rgba(8,4,126,0.08);
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+    transform-origin: bottom left;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    overflow: hidden;
+  }
+  .a11y-panel.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  /* Panel header */
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.1rem 0.75rem;
+    background: linear-gradient(135deg, #08047e, #0f7ab0);
+    color: white;
+  }
+  .panel-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .panel-close {
+    width: 30px; height: 30px;
+    background: rgba(255,255,255,0.15);
+    border: none; border-radius: 8px;
+    cursor: pointer; color: white;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .panel-close:hover { background: rgba(255,255,255,0.28); }
+  .panel-close:focus-visible { outline: 2px solid #f0c040; outline-offset: 2px; }
+
+  /* Panel body */
+  .panel-body {
+    padding: 1rem 1.1rem;
+    display: flex; flex-direction: column; gap: 1.1rem;
+    max-height: 430px;
+    overflow-y: auto;
+  }
+
+  /* Tool group */
+  .tool-group { display: flex; flex-direction: column; gap: 0.55rem; }
+  .tool-group-label {
+    font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: #6b7280;
+  }
+
+  /* Font size row */
+  .tool-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.45rem;
+  }
+
+  .tool-btn {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.3rem; padding: 0.55rem 0.4rem;
+    background: #f2f5fb;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.7rem; font-weight: 600;
+    color: #3a3a5c; cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .tool-btn:hover { background: #e8eeff; border-color: #08047e; color: #08047e; }
+  .tool-btn:focus-visible { outline: 2px solid #0f7ab0; outline-offset: 2px; }
+
+  .font-size-indicator {
+    text-align: center;
+    font-size: 0.75rem; font-weight: 700;
+    color: #08047e;
+    background: #f2f5fb;
+    border-radius: 8px;
+    padding: 0.3rem;
+  }
+
+  /* 2x2 toggle grid */
+  .tools-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
+  }
+
+  .tool-toggle {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.4rem; padding: 0.6rem 0.4rem;
+    background: #f2f5fb;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 0.68rem; font-weight: 600; text-align: center;
+    color: #3a3a5c; cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .tool-toggle:hover { background: #e8eeff; border-color: #08047e; color: #08047e; }
+  .tool-toggle.active {
+    background: #08047e; color: white;
+    border-color: #08047e;
+    box-shadow: 0 4px 12px rgba(8,4,126,0.3);
+  }
+  .tool-toggle:focus-visible { outline: 2px solid #0f7ab0; outline-offset: 2px; }
+
+  /* Panel footer */
+  .panel-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.75rem 1.1rem;
+    border-top: 1px solid #f2f5fb;
+    background: #fafbff;
+  }
+
+  .reset-all-btn {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    font-size: 0.78rem; font-weight: 600;
+    color: #dc2626; background: #fef2f2;
+    border: 1px solid #fecaca; border-radius: 8px;
+    padding: 0.4rem 0.75rem; cursor: pointer;
+    transition: all 0.2s; font-family: inherit;
+  }
+  .reset-all-btn:hover { background: #fee2e2; }
+  .reset-all-btn:focus-visible { outline: 2px solid #dc2626; outline-offset: 2px; }
+
+  .a11y-statement-link {
+    font-size: 0.75rem; font-weight: 600;
+    color: #0f7ab0; text-decoration: none;
+    transition: color 0.2s;
+  }
+  .a11y-statement-link:hover { color: #08047e; text-decoration: underline; }
+
+  /* ════════════════ MOBILE ════════════════ */
+  @media (max-width: 480px) {
+    .a11y-widget { bottom: 1rem; left: 0.75rem; }
+    .a11y-panel { width: min(290px, calc(100vw - 1.5rem)); left: 0; }
+  }
+</style>

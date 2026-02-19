@@ -1,0 +1,443 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  {
+    id: 'general',
+    icon: '📋',
+    color: '#08047e',
+    title: 'כללי',
+    content: `
+      <p>תקנון זה מסדיר את תנאי השימוש בשירותי <strong>לידר הפלגות חיפה</strong> (להלן: "החברה") ואת מדיניות ההזמנה, התשלום והביטול.</p>
+      <p>השימוש בשירותינו מהווה הסכמה מלאה לתנאים המפורטים להלן. אנא קראו אותם בעיון לפני ביצוע הזמנה.</p>
+      <p>החברה שומרת לעצמה את הזכות לעדכן תקנון זה בכל עת. השינויים ייכנסו לתוקף עם פרסומם.</p>
+    `,
+  },
+  {
+    id: 'booking',
+    icon: '🗓️',
+    color: '#0f7ab0',
+    title: 'תהליך ההזמנה',
+    content: `
+      <p>הזמנת הפלגה מתבצעת בשלבים הבאים:</p>
+      <ol>
+        <li>יצירת קשר טלפוני או בווטסאפ לתיאום פרטי ההפלגה</li>
+        <li>קביעת תאריך, שעה, מספר משתתפים וסוג ההפלגה</li>
+        <li>קבלת אישור הזמנה מפורט בווטסאפ הכולל את כל הפרטים</li>
+        <li>אישור לקוח על פרטי ההזמנה (בהודעה בווטסאפ)</li>
+        <li>תשלום מקדמה לשריון המועד</li>
+      </ol>
+      <p><strong>ההזמנה נכנסת לתוקף רק לאחר תשלום מקדמה ואישור החברה.</strong></p>
+      <p>אישור ההזמנה יכלול: תאריך, שעות, יאכטה, מספר מפליגים, מחיר כולל, מקדמה ששולמה ויתרה לתשלום.</p>
+    `,
+  },
+  {
+    id: 'payment',
+    icon: '💳',
+    color: '#059669',
+    title: 'תשלום ומקדמה',
+    content: `
+      <p>לשריון מועד ההפלגה נדרשת <strong>מקדמה בסך 300–600 ₪</strong> בהתאם לסכום ההזמנה הכולל.</p>
+      <p><strong>אמצעי תשלום מקובלים למקדמה:</strong></p>
+      <ul>
+        <li>פאי פלוס (PayBox)</li>
+        <li>ביט (Bit)</li>
+        <li>כרטיס ויזה</li>
+        <li>העברה בנקאית</li>
+      </ul>
+      <p>לאחר העברת המקדמה, יש לשלוח לנו צילום מסך של אישור התשלום. <strong>קבלה דיגיטלית תישלח אליכם בווטסאפ מיד עם קבלת האישור.</strong></p>
+      <p>יתרת הסכום (מעבר למקדמה) תשולם <strong>במזומן במקום, לפני תחילת ההפלגה</strong>.</p>
+      <p>לא תתבצע הפלגה ללא סיום מלוא התשלום.</p>
+    `,
+  },
+  {
+    id: 'cancellation',
+    icon: '❌',
+    color: '#dc2626',
+    title: 'מדיניות ביטול ושינוי',
+    content: `
+      <h4>א. ביטול על ידי הלקוח</h4>
+      <ul>
+        <li><strong>ביטול בכל עת</strong> — ייגבו דמי ניהול בסך <strong>150 ₪</strong></li>
+        <li><strong>ביטול עד 14 ימים לפני מועד ההפלגה</strong> — ייגבו דמי ביטול בשיעור 40% מערך העסקה, או 250 ₪ — לפי הנמוך מביניהם</li>
+        <li><strong>ביטול בתוך 48 שעות לפני ההפלגה</strong> — לא יינתן החזר כספי כלל</li>
+      </ul>
+      <h4>ב. ביטול בשל מצב הים</h4>
+      <p>החברה תפעיל את שיקול דעתה לגבי יציאת הפלגה במידה ומצב הים לא יאפשר זאת. במצב כזה:</p>
+      <ul>
+        <li>תינתן ללקוח אפשרות לדחיית ההפלגה למועד חלופי</li>
+        <li>במקרה של ביטול מצד החברה — יינתן החזר מקדמה מלא</li>
+      </ul>
+      <h4>ג. שינוי מועד</h4>
+      <p>שינוי מועד כפוף לאישור החברה ולזמינות. ניתן לשינוי עד 72 שעות לפני ההפלגה, בכפוף לדמי טיפול של 100 ₪.</p>
+    `,
+  },
+  {
+    id: 'conduct',
+    icon: '⚓',
+    color: '#7c3aed',
+    title: 'כללי הפלגה ובטיחות',
+    content: `
+      <ul>
+        <li><strong>הגעה בזמן:</strong> יש להגיע בזמן שנקבע לתדריך בטיחות ולסיום מנהלות. כל איחור של הלקוח ייגרע מזמן השייט הכולל שנקבע מראש.</li>
+        <li><strong>תדריך בטיחות:</strong> השתתפות בתדריך הבטיחות לפני ההפלגה היא חובה לכל המשתתפים.</li>
+        <li><strong>רחצה בים:</strong> ירידה למים מותנית במצב הים ובהסכמת הסקיפר. רחצה בים היא באחריות המתרחצים בלבד.</li>
+        <li><strong>הנחיות הסקיפר:</strong> יש לציית להוראות הסקיפר בכל עת. סקיפר הוא בעל הסמכה הגבוהה ביותר על הסיפון.</li>
+        <li><strong>כדורים נגד בחילה:</strong> ממליצים להשתמש בכדורים נגד בחילה ללא מרשם, שעה לפני תחילת השייט.</li>
+        <li><strong>אלכוהול:</strong> צריכת אלכוהול מתונה בלבד, ובאחריות אישית.</li>
+        <li><strong>ילדים:</strong> ילדים חייבים ללבוש אפודי הצלה בכל עת בסיפון.</li>
+      </ul>
+    `,
+  },
+  {
+    id: 'insurance',
+    icon: '🛡️',
+    color: '#0369a1',
+    title: 'ביטוח',
+    content: `
+      <p>היאכטות <strong>מבוטחות בביטוח צד ג'</strong> בהתאם לדרישות חוק.</p>
+      <p>הביטוח מכסה נזקים שגרמה היאכטה לצד שלישי.</p>
+      <p><strong>הביטוח אינו מכסה:</strong></p>
+      <ul>
+        <li>נזקים אישיים למשתתפים כתוצאה מרשלנות</li>
+        <li>אובדן חפצים אישיים</li>
+        <li>נזקים כתוצאה מאי-ציות להנחיות הסקיפר</li>
+      </ul>
+      <p>מומלץ לרכוש ביטוח נסיעות פרטי הכולל כיסוי לפעילויות ימיות.</p>
+    `,
+  },
+  {
+    id: 'liability',
+    icon: '⚖️',
+    color: '#92400e',
+    title: 'אחריות',
+    content: `
+      <p>החברה אינה אחראית לנזקים הנגרמים כתוצאה מ:</p>
+      <ul>
+        <li>תנאי מזג אוויר ו/או מצב הים</li>
+        <li>אי-ציות להוראות הסקיפר והצוות</li>
+        <li>שימוש לא נכון ו/או רשלני בציוד הספינה</li>
+        <li>נזקים לחפצים אישיים של המשתתפים</li>
+      </ul>
+      <p>המשתתפים מסכימים להשתתף בהפלגה על אחריותם האישית ובכפוף להנחיות הסקיפר.</p>
+      <p>החברה שומרת לעצמה את הזכות לסרב לכניסה ו/או להוריד מהסיפון כל משתתף המסכן את בטיחות שאר הנוסעים.</p>
+    `,
+  },
+  {
+    id: 'privacy',
+    icon: '🔒',
+    color: '#4f46e5',
+    title: 'פרטיות',
+    content: `
+      <p>החברה מתחייבת לשמור על פרטיות לקוחותיה בהתאם לחוק הגנת הפרטיות.</p>
+      <p>פרטים אישיים הנמסרים לצורך ביצוע הזמנה ישמשו <strong>לצורך ההזמנה בלבד</strong>.</p>
+      <p>לא יועברו פרטים לצד שלישי ללא הסכמת הלקוח, למעט כנדרש בחוק.</p>
+      <p>לפרטים נוספים, ראו את <a href="/מדיניות-פרטיות">מדיניות הפרטיות המלאה</a> שלנו.</p>
+    `,
+  },
+  {
+    id: 'contact',
+    icon: '📞',
+    color: '#0f7ab0',
+    title: 'יצירת קשר',
+    content: `
+      <p>לכל שאלה או הבהרה בנוגע לתקנון זה, ניתן לפנות אלינו:</p>
+      <ul>
+        <li><strong>טלפון / WhatsApp:</strong> <a href="tel:0533403449">053-340-3449</a></li>
+        <li><strong>דוא"ל:</strong> <a href="mailto:danielflider78@gmail.com">danielflider78@gmail.com</a></li>
+        <li><strong>שעות פעילות:</strong> 24/7, כל ימי השבוע</li>
+      </ul>
+    `,
+  },
+];
+---
+
+<Layout title="תקנון - Leader הפלגות חיפה">
+<div class="takanon-page" dir="rtl">
+
+  <!-- ══════════ HERO ══════════ -->
+  <div class="page-hero">
+    <div class="hero-shapes" aria-hidden="true">
+      <div class="shape s1"></div>
+      <div class="shape s2"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-icon-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="38" height="38">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+      </div>
+      <h1>תקנון ותנאי שימוש</h1>
+      <p class="hero-sub">לידר הפלגות חיפה — תנאי שימוש, מדיניות ביטולים ותשלומים</p>
+      <div class="hero-meta">
+        <span>📅 עודכן לאחרונה: פברואר 2025</span>
+        <span class="dot-sep">·</span>
+        <span>⏱️ זמן קריאה: ~5 דקות</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- TOC -->
+    <nav class="toc-card" aria-label="תוכן עניינים">
+      <div class="toc-title">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        תוכן עניינים
+      </div>
+      <ol class="toc-list">
+        {sections.map((s, i) => (
+          <li>
+            <a href={`#${s.id}`} class="toc-link">
+              <span class="toc-num">{i + 1}</span>
+              <span class="toc-icon">{s.icon}</span>
+              {s.title}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+
+    <!-- SECTIONS -->
+    <div class="sections-list">
+      {sections.map((s, i) => (
+        <section id={s.id} class="section-card" style={`--accent:${s.color}`}>
+          <div class="section-num">{i + 1}</div>
+          <div class="section-icon-wrap" style={`background:${s.color}18; color:${s.color}`}>
+            {s.icon}
+          </div>
+          <div class="section-body">
+            <h2>{s.title}</h2>
+            <div class="section-content" set:html={s.content} />
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="bottom-cta">
+      <p>יש לכם שאלות על התקנון?</p>
+      <div class="cta-row">
+        <a href="/צור-קשר" class="cta-btn primary">צרו קשר</a>
+        <a href="https://wa.me/972533403449" target="_blank" rel="noopener" class="cta-btn wa">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /content-wrapper -->
+</div>
+</Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
+
+  .takanon-page {
+    --navy:   #08047e;
+    --sea:    #0f7ab0;
+    --gold:   #d4a017;
+    --gold-l: #f0c040;
+    --bg:     #f2f5fb;
+    --white:  #ffffff;
+    --text:   #1a1a2e;
+    --text-m: #3a3a5c;
+    --text-l: #6b7280;
+    --radius: 16px;
+    --shadow: 0 6px 28px rgba(8,4,126,0.09);
+
+    background: var(--bg);
+    font-family: 'Rubik', 'Segoe UI', Arial, sans-serif;
+    color: var(--text);
+  }
+
+  /* ── HERO ── */
+  .page-hero {
+    position: relative;
+    background: linear-gradient(145deg, #05036a 0%, #08047e 45%, #0f7ab0 100%);
+    padding: 5rem 2rem 5rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0; height: 64px;
+    background: var(--bg);
+    clip-path: ellipse(55% 64px at 50% 64px);
+  }
+
+  .hero-shapes { position: absolute; inset: 0; pointer-events: none; }
+  .shape {
+    position: absolute; border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .s1 { width: 380px; height: 380px; top: -120px; right: -80px; }
+  .s2 { width: 220px; height: 220px; bottom: -40px; left: 5%; border: 1px solid rgba(255,255,255,0.07); background: transparent; }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-icon-wrap {
+    width: 76px; height: 76px; border-radius: 22px;
+    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.22);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    backdrop-filter: blur(8px);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800; color: white;
+    margin: 0 0 0.75rem;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.3);
+  }
+  .hero-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,0.78);
+    margin: 0 0 1.5rem; line-height: 1.6;
+  }
+  .hero-meta {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    font-size: 0.82rem; color: rgba(255,255,255,0.55);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 0.45rem 1.1rem; border-radius: 20px;
+    backdrop-filter: blur(6px);
+  }
+  .dot-sep { opacity: 0.4; }
+
+  /* ── LAYOUT ── */
+  .content-wrapper {
+    max-width: 860px; margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+    display: flex; flex-direction: column; gap: 1.75rem;
+  }
+
+  /* ── TOC ── */
+  .toc-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.75rem 2rem;
+    box-shadow: var(--shadow);
+    border-right: 4px solid var(--gold);
+  }
+  .toc-title {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--text-l);
+    margin-bottom: 1.1rem;
+  }
+  .toc-list {
+    margin: 0; padding: 0;
+    list-style: none;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem;
+  }
+  .toc-link {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.45rem 0.6rem; border-radius: 8px;
+    font-size: 0.9rem; color: var(--text-m);
+    text-decoration: none; font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+  }
+  .toc-link:hover { background: var(--bg); color: var(--navy); }
+  .toc-num {
+    min-width: 22px; height: 22px; border-radius: 50%;
+    background: var(--bg); color: var(--text-l);
+    font-size: 0.72rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .toc-icon { font-size: 1rem; }
+
+  /* ── SECTIONS ── */
+  .sections-list { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .section-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem 2rem 2rem 2rem;
+    box-shadow: var(--shadow);
+    border-right: 4px solid var(--accent, var(--navy));
+    display: grid;
+    grid-template-columns: 28px 48px 1fr;
+    gap: 0 1rem;
+    align-items: start;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .section-card:hover {
+    transform: translateX(-3px);
+    box-shadow: 0 12px 40px rgba(8,4,126,0.13);
+  }
+
+  .section-num {
+    font-size: 0.72rem; font-weight: 800;
+    color: rgba(8,4,126,0.25);
+    padding-top: 0.25rem; text-align: center;
+  }
+
+  .section-icon-wrap {
+    width: 48px; height: 48px; border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; flex-shrink: 0;
+  }
+
+  .section-body { min-width: 0; }
+
+  .section-body h2 {
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--text); margin: 0.3rem 0 0.9rem;
+  }
+
+  .section-content { font-size: 0.92rem; color: var(--text-m); line-height: 1.8; }
+  .section-content p   { margin: 0 0 0.75rem; }
+  .section-content p:last-child { margin-bottom: 0; }
+  .section-content ul, .section-content ol { padding-right: 1.4rem; margin: 0 0 0.75rem; }
+  .section-content li  { margin-bottom: 0.45rem; }
+  .section-content h4  { font-size: 0.95rem; font-weight: 700; color: var(--text); margin: 1rem 0 0.5rem; }
+  .section-content strong { color: var(--text); }
+  .section-content a   { color: var(--sea); text-decoration: none; font-weight: 600; }
+  .section-content a:hover { text-decoration: underline; }
+
+  /* ── BOTTOM CTA ── */
+  .bottom-cta {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--sea) 100%);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 12px 40px rgba(8,4,126,0.22);
+  }
+  .bottom-cta p {
+    font-size: 1.15rem; font-weight: 600;
+    color: rgba(255,255,255,0.88); margin: 0 0 1.35rem;
+  }
+  .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-weight: 700; font-size: 0.96rem;
+    padding: 0.8rem 1.75rem; border-radius: 12px;
+    text-decoration: none; transition: all 0.25s ease;
+  }
+  .cta-btn.primary { background: white; color: var(--navy); }
+  .cta-btn.primary:hover { background: var(--gold-l); transform: translateY(-2px); }
+  .cta-btn.wa { background: #25D366; color: white; }
+  .cta-btn.wa:hover { background: #128C7E; transform: translateY(-2px); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .toc-list { grid-template-columns: 1fr; }
+    .section-card {
+      grid-template-columns: 22px 40px 1fr;
+      padding: 1.5rem 1.25rem;
+    }
+    .content-wrapper { padding: 2rem 1rem 4rem; gap: 1.25rem; }
+    .page-hero { padding: 4rem 1.25rem 4rem; }
+    .hero-meta { flex-direction: column; gap: 0.3rem; font-size: 0.76rem; }
+    .dot-sep { display: none; }
+  }
+</style>

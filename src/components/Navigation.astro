@@ -1,68 +1,603 @@
 ---
 import { Image } from 'astro:assets';
 import headerBg from '../assets/sky.webp';
+
+const navLinks = [
+  { href: '/',                  label: 'דף הבית',         icon: '🏠' },
+  { href: '/haifa',             label: 'שייט בחיפה',       icon: '⚓' },
+  { href: '/hertzliya',         label: 'שייט בהרצליה',     icon: '🌊' },
+  { href: '/צור-קשר',           label: 'צור קשר',          icon: '📞' },
+  { href: '/שאלות',              label: 'שאלות ותשובות',   icon: '❓' },
+  { href: '/אודות',              label: 'אודות',             icon: '⚓' },
+  { href: '/הצהרת-הנגישות',     label: 'נגישות',           icon: '♿' },
+  { href: '/מדיניות-פרטיות',   label: 'פרטיות',           icon: '🔒' },
+];
 ---
 
-<header class="main-header">
-  <Image 
-    src={headerBg} 
-    widths={[768, 1280, 1920, 2560]}
-    sizes="(max-width: 800px) 100vw, 1920px"
+<header class="main-header" id="main-header" dir="rtl">
+  <!-- Background image (only visible when scrolled to top) -->
+  <Image
+    src={headerBg}
+    widths={[768, 1280, 1920]}
+    sizes="100vw"
     format="webp"
-    alt="שמיים כחולים עם עננים לבנים גדולים" 
-    class="header-background-image"
+    alt="שמיים כחולים"
+    class="header-bg-img"
+    loading="eager"
+    fetchpriority="high"
   />
-  <div class="header-content">
-    <a href="/" class="site-title" rel="home">LEADER</a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="main-navigation">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
-    <nav id="main-navigation" class="main-navigation">
-        <ul>
-            <li><a href="/">דף הבית</a></li>
-            <li><a href="/hertzliya">שייט בהרצליה</a></li>
-            <li><a href="/haifa">שייט בחיפה</a></li>
-        </ul>
+
+  <!-- Glass overlay -->
+  <div class="header-glass"></div>
+
+  <div class="header-inner">
+    <!-- Logo / Brand -->
+    <a href="/" class="brand" rel="home" aria-label="לדף הבית">
+      <span class="brand-anchor">⚓</span>
+      <div class="brand-text">
+        <span class="brand-main">LEADER</span>
+        <span class="brand-sub">הפלגות &amp; שייט</span>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="desktop-nav" aria-label="ניווט ראשי">
+      <ul>
+        {navLinks.map(link => (
+          <li>
+            <a href={link.href} class="nav-link">
+              {link.label}
+              <span class="nav-underline"></span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </nav>
+
+    <!-- CTA button (desktop) -->
+    <a href="tel:0533403449" class="header-phone-btn" aria-label="התקשרו אלינו">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      <span>053-340-3449</span>
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button
+      class="hamburger"
+      id="hamburger-btn"
+      aria-expanded="false"
+      aria-controls="mobile-drawer"
+      aria-label="פתח תפריט"
+    >
+      <span class="bar bar-1"></span>
+      <span class="bar bar-2"></span>
+      <span class="bar bar-3"></span>
+    </button>
   </div>
 </header>
 
+<!-- Mobile Drawer Overlay -->
+<div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+
+<!-- Mobile Drawer -->
+<aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true" dir="rtl">
+  <div class="drawer-header">
+    <a href="/" class="drawer-brand">
+      <span class="brand-anchor">⚓</span>
+      <div class="brand-text">
+        <span class="brand-main">LEADER</span>
+        <span class="brand-sub">הפלגות &amp; שייט</span>
+      </div>
+    </a>
+    <button class="drawer-close" id="drawer-close" aria-label="סגור תפריט">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav aria-label="תפריט נייד">
+    <ul class="drawer-links">
+      {navLinks.map((link, i) => (
+        <li style={`--i:${i}`}>
+          <a href={link.href} class="drawer-link">
+            <span class="drawer-icon">{link.icon}</span>
+            <span>{link.label}</span>
+            <svg class="drawer-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <div class="drawer-footer">
+    <a href="tel:0533403449" class="drawer-cta">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      053-340-3449
+    </a>
+    <a href="https://wa.me/972533403449" target="_blank" rel="noopener" class="drawer-wa">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      ווטסאפ
+    </a>
+  </div>
+</aside>
+
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const mainNavigation = document.getElementById('main-navigation');
+  const header      = document.getElementById('main-header')!;
+  const hamburger   = document.getElementById('hamburger-btn')!;
+  const drawer      = document.getElementById('mobile-drawer')!;
+  const overlay     = document.getElementById('drawer-overlay')!;
+  const closeBtn    = document.getElementById('drawer-close')!;
 
-        if (menuToggle && mainNavigation) {
-            menuToggle.addEventListener('click', () => {
-                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-                menuToggle.setAttribute('aria-expanded', (!isExpanded).toString());
-                mainNavigation.classList.toggle('nav-open');
-            });
+  /* ── Scroll-aware header ── */
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-            // Close menu when a link is clicked (for single-page navigation or convenience)
-            mainNavigation.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) { // Only close on mobile
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                        mainNavigation.classList.remove('nav-open');
-                    }
-                });
-            });
+  /* ── Drawer open/close ── */
+  const openDrawer = () => {
+    drawer.classList.add('open');
+    overlay.classList.add('visible');
+    hamburger.setAttribute('aria-expanded', 'true');
+    hamburger.classList.add('active');
+    drawer.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
 
-            // Close menu if window is resized to desktop from mobile
-            let isMobile = window.innerWidth <= 768;
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768 && isMobile) {
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    mainNavigation.classList.remove('nav-open');
-                    isMobile = false;
-                } else if (window.innerWidth <= 768 && !isMobile) {
-                    isMobile = true;
-                }
-            });
-        }
-    });
+  const closeDrawer = () => {
+    drawer.classList.remove('open');
+    overlay.classList.remove('visible');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.classList.remove('active');
+    drawer.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = drawer.classList.contains('open');
+    isOpen ? closeDrawer() : openDrawer();
+  });
+
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  // Close on link click
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // Close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeDrawer();
+  });
+
+  /* ── Active link highlight ── */
+  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-link, .drawer-link').forEach(link => {
+    const href = (link as HTMLAnchorElement).getAttribute('href')?.replace(/\/$/, '') || '';
+    if (href === currentPath || (href !== '' && href !== '/' && currentPath.startsWith(href))) {
+      link.classList.add('active');
+    }
+  });
 </script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
+
+  /* ═══════════════════════════════════════════
+     HEADER
+  ═══════════════════════════════════════════ */
+  .main-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    height: 70px;
+    transition: height 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+    font-family: 'Rubik', 'Segoe UI', Arial, sans-serif;
+    overflow: visible; /* allow dropdowns */
+  }
+
+  /* Background sky image */
+  .header-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    z-index: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  /* Glass overlay — tints darker on scroll */
+  .header-glass {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left,
+      rgba(8,4,126,0.55) 0%,
+      rgba(15,122,176,0.45) 50%,
+      rgba(8,4,126,0.55) 100%
+    );
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1;
+    transition: background 0.35s ease;
+  }
+
+  /* Scrolled state: more opaque, smaller, stronger shadow */
+  .main-header.scrolled {
+    height: 60px;
+    box-shadow: 0 4px 30px rgba(8,4,126,0.35);
+  }
+  .main-header.scrolled .header-bg-img { opacity: 0.6; }
+  .main-header.scrolled .header-glass {
+    background: linear-gradient(to left,
+      rgba(8,4,126,0.82) 0%,
+      rgba(10,90,140,0.78) 50%,
+      rgba(8,4,126,0.82) 100%
+    );
+  }
+
+  /* Bottom accent line */
+  .main-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(212,160,23,0.8), rgba(29,168,232,0.6), transparent);
+    z-index: 2;
+  }
+
+  /* ── Inner row ── */
+  .header-inner {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+  }
+
+  /* ═══════════════════════════════════════════
+     BRAND / LOGO
+  ═══════════════════════════════════════════ */
+  .brand, .drawer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .brand-anchor {
+    font-size: 1.6rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+    transition: transform 0.3s ease;
+  }
+  .brand:hover .brand-anchor { transform: rotate(-15deg) scale(1.1); }
+
+  .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+
+  .brand-main {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+
+  .brand-sub {
+    font-size: 0.64rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════════════
+     DESKTOP NAV
+  ═══════════════════════════════════════════ */
+  .desktop-nav { display: flex; }
+
+  .desktop-nav ul {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex;
+    gap: 0.15rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.85rem;
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-underline {
+    position: absolute;
+    bottom: 4px; left: 0.85rem; right: 0.85rem;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(to right, #d4a017, #f0c040);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-link:hover {
+    color: white;
+    background: rgba(255,255,255,0.1);
+  }
+  .nav-link:hover .nav-underline { transform: scaleX(1); transform-origin: left; }
+
+  .nav-link.active {
+    color: #f0c040;
+    background: rgba(255,255,255,0.12);
+  }
+  .nav-link.active .nav-underline { transform: scaleX(1); }
+
+  /* ── Phone CTA button ── */
+  .header-phone-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: linear-gradient(135deg, #d4a017, #f0c040);
+    color: #08047e;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-shadow: 0 3px 12px rgba(212,160,23,0.4);
+    transition: all 0.25s ease;
+  }
+  .header-phone-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212,160,23,0.55);
+    background: linear-gradient(135deg, #e6b520, #ffd553);
+  }
+
+  /* ═══════════════════════════════════════════
+     HAMBURGER
+  ═══════════════════════════════════════════ */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    cursor: pointer;
+    gap: 5px;
+    padding: 0;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .hamburger:hover { background: rgba(255,255,255,0.2); }
+
+  .bar {
+    width: 22px; height: 2.5px;
+    background: white; border-radius: 3px;
+    transition: transform 0.35s ease, opacity 0.25s ease, width 0.25s ease;
+  }
+  .bar-2 { width: 15px; } /* shorter middle bar */
+
+  /* Animated X when active */
+  .hamburger.active .bar-1 { transform: translateY(7.5px) rotate(45deg); width: 22px; }
+  .hamburger.active .bar-2 { opacity: 0; transform: scaleX(0); }
+  .hamburger.active .bar-3 { transform: translateY(-7.5px) rotate(-45deg); width: 22px; }
+
+  /* ═══════════════════════════════════════════
+     DRAWER OVERLAY
+  ═══════════════════════════════════════════ */
+  .drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(8,4,126,0.55);
+    backdrop-filter: blur(3px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .drawer-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ═══════════════════════════════════════════
+     MOBILE DRAWER
+  ═══════════════════════════════════════════ */
+  .mobile-drawer {
+    position: fixed;
+    top: 0; right: 0;
+    width: min(320px, 88vw);
+    height: 100dvh;
+    background: linear-gradient(160deg, #08047e 0%, #0a0590 40%, #0f5e8f 100%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(110%);
+    transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -8px 0 40px rgba(0,0,0,0.4);
+    overflow-y: auto;
+  }
+  .mobile-drawer.open {
+    transform: translateX(0);
+  }
+
+  /* Drawer header */
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    flex-shrink: 0;
+  }
+
+  .drawer-brand .brand-main { font-size: 1.3rem; }
+
+  .drawer-close {
+    width: 38px; height: 38px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .drawer-close:hover { background: rgba(255,255,255,0.2); }
+
+  /* Drawer nav links */
+  .drawer-links {
+    list-style: none;
+    margin: 0; padding: 1rem 0;
+    flex: 1;
+  }
+
+  .drawer-links li {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideIn 0.35s ease forwards;
+    animation-delay: calc(var(--i) * 0.05s + 0.1s);
+  }
+
+  .mobile-drawer.open .drawer-links li {
+    opacity: 0;
+    animation: slideIn 0.35s ease forwards;
+    animation-delay: calc(var(--i) * 0.06s + 0.15s);
+  }
+
+  @keyframes slideIn {
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .drawer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.9rem 1.5rem;
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, padding 0.2s;
+    border-right: 3px solid transparent;
+    position: relative;
+  }
+  .drawer-link:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    padding-right: 2rem;
+    border-right-color: #f0c040;
+  }
+  .drawer-link.active {
+    background: rgba(255,255,255,0.12);
+    color: #f0c040;
+    border-right-color: #f0c040;
+    font-weight: 600;
+  }
+
+  .drawer-icon { font-size: 1.15rem; width: 26px; text-align: center; }
+
+  .drawer-arrow {
+    margin-right: auto;
+    opacity: 0.4;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .drawer-link:hover .drawer-arrow { opacity: 0.8; transform: translateX(-3px); }
+
+  /* Drawer footer CTAs */
+  .drawer-footer {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .drawer-cta, .drawer-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.85rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.97rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .drawer-cta {
+    background: linear-gradient(135deg, #d4a017, #f0c040);
+    color: #08047e;
+  }
+  .drawer-cta:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+  .drawer-wa {
+    background: #25D366;
+    color: white;
+  }
+  .drawer-wa:hover { background: #128C7E; transform: translateY(-1px); }
+
+  /* ═══════════════════════════════════════════
+     RESPONSIVE BREAKPOINTS
+  ═══════════════════════════════════════════ */
+  @media (max-width: 1000px) {
+    .desktop-nav ul { gap: 0; }
+    .nav-link { font-size: 0.82rem; padding: 0.45rem 0.6rem; }
+    .header-phone-btn span { display: none; } /* keep icon only */
+    .header-phone-btn { padding: 0.55rem 0.7rem; border-radius: 50%; }
+  }
+
+  @media (max-width: 768px) {
+    .desktop-nav    { display: none; }
+    .header-phone-btn { display: none; }
+    .hamburger      { display: flex; }
+    .main-header    { height: 64px; }
+    .main-header.scrolled { height: 56px; }
+  }
+
+  /* ── sr-only ── */
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+</style>

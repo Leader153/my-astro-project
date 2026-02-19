@@ -1,0 +1,576 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stats = [
+  { num: '10+',  label: 'שנות ניסיון',       icon: '⚓' },
+  { num: '500+', label: 'הפלגות שמחות',      icon: '⛵' },
+  { num: '4',    label: 'יאכטות בצי',         icon: '🚢' },
+  { num: '24/7', label: 'זמינים עבורכם',      icon: '📞' },
+];
+
+const experiences = [
+  { icon: '🌅', title: 'דייט רומנטי בשקיעה',         desc: 'רגעים בלתי נשכחים לשניים, עם נוף ים מרהיב.' },
+  { icon: '🎉', title: 'מסיבות ואירועים',             desc: 'ימי הולדת, מסיבות רווקות ורווקים על הסיפון.' },
+  { icon: '👨‍👩‍👧‍👦', title: 'אירועים משפחתיים',          desc: 'חוויה בטוחה ומהנה לכל הגיל ומשפחה.' },
+  { icon: '🌟', title: 'צפייה בכוכבים',              desc: 'ליקויי ירח וכוכבים מסיפון היאכטה בלילה.' },
+  { icon: '🌊', title: 'בריזת ים',                    desc: 'בריחה מהשגרה העירונית לרוח ים רעננה.' },
+  { icon: '🏆', title: 'שירות ברמה הגבוהה ביותר',   desc: 'מחויבות מוחלטת לנוחות ולבטיחות שלכם.' },
+];
+
+const bizDetails = [
+  { label: 'שם העוסק',            value: 'פלידר דניאל' },
+  { label: 'כינוי העסק',          value: 'לידר' },
+  { label: 'מספר עוסק מורשה',    value: '304089212' },
+  { label: 'מען העסק',            value: 'שד\' קרן קימת 7, דירה 6, קריית מוצקין' },
+];
+---
+
+<Layout title="אודות - Leader הפלגות חיפה">
+<div class="about-page" dir="rtl">
+
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <div class="page-hero">
+    <div class="hero-bg-circles">
+      <div class="circle c1"></div>
+      <div class="circle c2"></div>
+      <div class="circle c3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        Aflagot Haifa
+        <span class="eyebrow-dot"></span>
+      </div>
+      <h1>ברוכים הבאים לעולם הים</h1>
+      <p class="hero-sub">
+        מתמחים בארגון הפלגות בלתי נשכחות והשכרת יאכטות בחיפה —
+        כי כל הרגע על הים שווה אלף מילים
+      </p>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ STATS BAR ══════════════════ -->
+  <div class="stats-bar">
+    {stats.map(s => (
+      <div class="stat-item">
+        <span class="stat-icon">{s.icon}</span>
+        <span class="stat-num">{s.num}</span>
+        <span class="stat-label">{s.label}</span>
+      </div>
+    ))}
+  </div>
+
+  <div class="content-wrapper">
+
+    <!-- ══════════════════ INTRO SECTION ══════════════════ -->
+    <section class="intro-section">
+      <div class="intro-text-col">
+        <div class="section-eyebrow">מי אנחנו</div>
+        <h2>הפלגות חיפה — חוויות ים שלא נשכחות</h2>
+        <p>
+          אנו מתמחים בארגון הפלגות בלתי נשכחות והשכרת יאכטות בחיפה.
+          המטרה העיקרית שלנו היא להעניק לכם חוויות מרגשות וייחודיות בלב ים.
+        </p>
+        <p>
+          אנו דואגים לכל פרט קטן מתוך מחויבות מוחלטת לנוחות ולבטיחות שלכם,
+          כדי להבטיח שההפלגה שלכם תהיה ברמה הגבוהה ביותר.
+        </p>
+        <div class="intro-badges">
+          <span class="badge">✅ מבוטח צד ג'</span>
+          <span class="badge">🛡️ בטיחות מקסימלית</span>
+          <span class="badge">⚓ סקיפר מוסמך</span>
+        </div>
+      </div>
+
+      <div class="intro-visual-col">
+        <div class="visual-card main-card">
+          <div class="visual-icon big">⛵</div>
+          <div class="visual-text">
+            <strong>Leader הפלגות</strong>
+            <span>חיפה | הרצליה</span>
+          </div>
+        </div>
+        <div class="visual-card accent-card">
+          <div class="visual-icon">🌊</div>
+          <span>מים כחולים · שמיים פתוחים</span>
+        </div>
+        <div class="visual-card accent-card-2">
+          <div class="visual-icon">⭐</div>
+          <span>שירות פרמיום</span>
+        </div>
+        <!-- Floating dots -->
+        <div class="dot-grid" aria-hidden="true">
+          {Array.from({length:15}).map(() => <span class="dot"/>)}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ EXPERIENCES ══════════════════ -->
+    <section class="experiences-section">
+      <div class="section-header center">
+        <div class="section-eyebrow">מה אנחנו מציעים</div>
+        <h2>חוויות על הים לכל מטרה</h2>
+        <p class="section-desc">
+          בין אם מדובר בדייט רומנטי, מסיבה תוססת או בריחה מהשגרה — אנחנו כאן כדי להפיק לכם את האירוע המושלם.
+        </p>
+      </div>
+      <div class="exp-grid">
+        {experiences.map((e, i) => (
+          <div class="exp-card" style={`--delay:${i * 0.07}s`}>
+            <div class="exp-icon">{e.icon}</div>
+            <h3>{e.title}</h3>
+            <p>{e.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ══════════════════ BUSINESS DETAILS ══════════════════ -->
+    <section class="biz-section">
+      <div class="biz-card">
+        <div class="biz-header">
+          <div class="biz-shield">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="section-eyebrow">שקיפות מלאה</div>
+            <h2>פרטי העסק הרשמיים</h2>
+            <p class="biz-subtext">
+              למען שקיפות מלאה ובהתאם לחוק הגנת הצרכן, להלן הפרטים המשפטיים והרשמיים שלנו:
+            </p>
+          </div>
+        </div>
+
+        <div class="biz-details-grid">
+          {bizDetails.map(d => (
+            <div class="biz-row">
+              <div class="biz-label">{d.label}</div>
+              <div class="biz-value">{d.value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ CONTACT CTA ══════════════════ -->
+    <section class="cta-section">
+      <div class="cta-card">
+        <div class="cta-bg-wave" aria-hidden="true"></div>
+        <div class="cta-content">
+          <h2>מוכנים לצאת לים?</h2>
+          <p>דברו איתנו ונבנה יחד את ההפלגה המושלמת עבורכם</p>
+          <div class="cta-actions">
+            <a href="tel:0533403449" class="cta-btn primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              053-340-3449
+            </a>
+            <a href="https://wa.me/972533403449" target="_blank" rel="noopener" class="cta-btn whatsapp">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a href="mailto:danielflider78@gmail.com" class="cta-btn email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              danielflider78@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /content-wrapper -->
+</div>
+</Layout>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
+
+  /* ════════════════ VARIABLES ════════════════ */
+  .about-page {
+    --navy:     #08047e;
+    --navy-d:   #05036a;
+    --sea:      #0f7ab0;
+    --sea-l:    #1da8e8;
+    --gold:     #d4a017;
+    --gold-l:   #f0c040;
+    --green:    #059669;
+    --wa:       #25D366;
+    --bg:       #f2f5fb;
+    --white:    #ffffff;
+    --text:     #1a1a2e;
+    --text-m:   #3a3a5c;
+    --text-l:   #6b7280;
+    --radius:   18px;
+    --shadow:   0 6px 28px rgba(8,4,126,0.09);
+    --shadow-h: 0 16px 48px rgba(8,4,126,0.18);
+
+    background: var(--bg);
+    font-family: 'Rubik', 'Segoe UI', Arial, sans-serif;
+    color: var(--text);
+  }
+
+  /* ════════════════ HERO ════════════════ */
+  .page-hero {
+    position: relative;
+    background: linear-gradient(145deg, var(--navy-d) 0%, var(--navy) 40%, #0a5a8f 75%, var(--sea) 100%);
+    padding: 6rem 2rem 5rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* Floating glowing circles */
+  .hero-bg-circles { position: absolute; inset: 0; pointer-events: none; }
+  .circle {
+    position: absolute; border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    animation: pulse 6s ease-in-out infinite;
+  }
+  .c1 { width: 420px; height: 420px; top: -120px; right: -60px; animation-delay: 0s; }
+  .c2 { width: 280px; height: 280px; bottom: -60px; left: 8%; animation-delay: 2s; border: 1px solid rgba(255,255,255,0.06); background: transparent; }
+  .c3 { width: 180px; height: 180px; top: 20%; left: 55%; animation-delay: 4s; background: rgba(212,160,23,0.07); }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.06); opacity: 0.7; }
+  }
+
+  /* Wave at bottom */
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0; height: 64px;
+    background: var(--bg);
+    clip-path: ellipse(55% 64px at 50% 64px);
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 3px;
+    color: rgba(255,255,255,0.65); text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+  .eyebrow-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--gold); display: inline-block;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2rem, 5.5vw, 3.4rem);
+    font-weight: 800; color: white;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem; color: rgba(255,255,255,0.78);
+    max-width: 580px; margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .hero-scroll-hint {
+    color: rgba(255,255,255,0.4);
+    animation: bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
+
+  /* ════════════════ STATS BAR ════════════════ */
+  .stats-bar {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 0;
+    background: var(--navy);
+    position: relative; z-index: 2;
+  }
+
+  .stat-item {
+    flex: 1; min-width: 140px;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 1.5rem 1rem;
+    border-left: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.25s;
+  }
+  .stat-item:first-child { border-left: none; }
+  .stat-item:hover { background: rgba(255,255,255,0.06); }
+
+  .stat-icon { font-size: 1.5rem; margin-bottom: 0.3rem; }
+  .stat-num  { font-size: 1.75rem; font-weight: 800; color: var(--gold-l); line-height: 1; }
+  .stat-label{ font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 0.2rem; font-weight: 500; }
+
+  /* ════════════════ CONTENT WRAPPER ════════════════ */
+  .content-wrapper {
+    max-width: 1100px; margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+    display: flex; flex-direction: column; gap: 4rem;
+  }
+
+  /* ════════════════ SHARED SECTION HEADER ════════════════ */
+  .section-eyebrow {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--sea);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-header.center { text-align: center; }
+
+  .section-header h2 {
+    font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800;
+    color: var(--text); margin: 0 0 0.75rem;
+  }
+
+  .section-desc {
+    font-size: 1rem; color: var(--text-l);
+    max-width: 600px; margin: 0 auto; line-height: 1.7;
+  }
+
+  /* ════════════════ INTRO SECTION ════════════════ */
+  .intro-section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .intro-text-col h2 {
+    font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800;
+    color: var(--text); margin: 0 0 1.25rem; line-height: 1.3;
+  }
+  .intro-text-col p {
+    font-size: 1rem; color: var(--text-m);
+    line-height: 1.85; margin: 0 0 1rem;
+  }
+  .intro-text-col p:last-of-type { margin-bottom: 1.5rem; }
+
+  .intro-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .badge {
+    display: inline-block;
+    background: var(--bg);
+    border: 1.5px solid rgba(8,4,126,0.1);
+    color: var(--text-m);
+    font-size: 0.82rem; font-weight: 600;
+    padding: 0.4rem 0.9rem; border-radius: 20px;
+    transition: all 0.2s;
+  }
+  .badge:hover { border-color: var(--sea); color: var(--sea); }
+
+  /* Visual column */
+  .intro-visual-col { position: relative; height: 320px; }
+
+  .visual-card {
+    position: absolute;
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    display: flex; align-items: center; gap: 0.85rem;
+    box-shadow: var(--shadow-h);
+    transition: transform 0.3s ease;
+  }
+  .visual-card:hover { transform: translateY(-4px) scale(1.02); }
+
+  .main-card {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--sea) 100%);
+    color: white; width: 70%;
+    top: 0; right: 0;
+  }
+  .main-card strong { font-size: 1.05rem; font-weight: 700; display: block; }
+  .main-card span   { font-size: 0.82rem; opacity: 0.75; }
+
+  .accent-card {
+    background: white;
+    color: var(--text-m);
+    font-size: 0.88rem; font-weight: 600;
+    bottom: 30px; right: 20px;
+    box-shadow: var(--shadow);
+  }
+  .accent-card-2 {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-l) 100%);
+    color: var(--navy);
+    font-size: 0.88rem; font-weight: 700;
+    top: 110px; left: 0; right: auto;
+    box-shadow: 0 8px 24px rgba(212,160,23,0.35);
+  }
+
+  .visual-icon { font-size: 1.6rem; line-height: 1; }
+  .visual-icon.big { font-size: 2.5rem; }
+
+  /* Dot grid background */
+  .dot-grid {
+    position: absolute; bottom: 0; left: 0;
+    display: grid; grid-template-columns: repeat(5,1fr); gap: 10px;
+    opacity: 0.25; z-index: -1;
+  }
+  .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--navy); display: block;
+  }
+
+  /* ════════════════ EXPERIENCES GRID ════════════════ */
+  .experiences-section { display: flex; flex-direction: column; gap: 2.5rem; }
+
+  .exp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .exp-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow);
+    border-top: 3px solid transparent;
+    transition: all 0.25s ease;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: var(--delay);
+  }
+  .exp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-h);
+    border-top-color: var(--gold);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .exp-icon {
+    font-size: 2.4rem; margin-bottom: 0.85rem;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .exp-card:hover .exp-icon { transform: scale(1.2) rotate(-5deg); }
+
+  .exp-card h3 {
+    font-size: 1rem; font-weight: 700;
+    color: var(--text); margin: 0 0 0.5rem;
+  }
+  .exp-card p {
+    font-size: 0.88rem; color: var(--text-l);
+    line-height: 1.6; margin: 0;
+  }
+
+  /* ════════════════ BUSINESS DETAILS ════════════════ */
+  .biz-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(8,4,126,0.07);
+  }
+
+  .biz-header {
+    display: flex; align-items: flex-start; gap: 1.5rem;
+    margin-bottom: 2rem; padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(8,4,126,0.07);
+  }
+
+  .biz-shield {
+    width: 64px; height: 64px; border-radius: 16px;
+    background: linear-gradient(135deg, var(--navy), var(--sea));
+    display: flex; align-items: center; justify-content: center;
+    color: white; flex-shrink: 0;
+    box-shadow: 0 8px 20px rgba(8,4,126,0.25);
+  }
+
+  .biz-header h2 { margin: 0.3rem 0 0.6rem; font-size: 1.5rem; color: var(--text); font-weight: 800; }
+  .biz-subtext { font-size: 0.92rem; color: var(--text-l); line-height: 1.6; margin: 0; }
+
+  .biz-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .biz-row {
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    border-right: 3px solid var(--navy);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .biz-row:hover { transform: translateX(-3px); box-shadow: var(--shadow); }
+
+  .biz-label {
+    font-size: 0.72rem; font-weight: 700; color: var(--text-l);
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem;
+  }
+  .biz-value { font-size: 1rem; font-weight: 600; color: var(--text); }
+
+  /* ════════════════ CTA SECTION ════════════════ */
+  .cta-card {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy-d) 0%, var(--navy) 40%, #0a5a8f 100%);
+    border-radius: var(--radius);
+    padding: 4rem 2rem;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: var(--shadow-h);
+  }
+
+  .cta-bg-wave {
+    position: absolute; bottom: -1px; left: 0; right: 0; height: 80px;
+    background: rgba(255,255,255,0.03);
+    clip-path: ellipse(60% 80px at 50% 80px);
+  }
+
+  /* shimmer ring */
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px; border-radius: 50%;
+    border: 60px solid rgba(255,255,255,0.03);
+    top: -200px; right: -100px;
+    pointer-events: none;
+  }
+
+  .cta-content { position: relative; z-index: 1; }
+
+  .cta-card h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800;
+    color: white; margin: 0 0 0.85rem;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .cta-card p {
+    font-size: 1.05rem; color: rgba(255,255,255,0.78);
+    margin: 0 0 2.25rem; line-height: 1.6;
+  }
+
+  .cta-actions {
+    display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+  }
+
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    font-weight: 700; font-size: 0.97rem;
+    padding: 0.85rem 1.75rem; border-radius: 12px;
+    text-decoration: none; transition: all 0.25s ease;
+  }
+  .cta-btn.primary  { background: var(--white); color: var(--navy); }
+  .cta-btn.primary:hover  { background: var(--gold-l); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .cta-btn.whatsapp { background: var(--wa); color: white; }
+  .cta-btn.whatsapp:hover { background: #128C7E; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
+  .cta-btn.email    { background: rgba(255,255,255,0.12); color: white; border: 1.5px solid rgba(255,255,255,0.25); }
+  .cta-btn.email:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
+
+  /* ════════════════ RESPONSIVE ════════════════ */
+  @media (max-width: 900px) {
+    .intro-section { grid-template-columns: 1fr; }
+    .intro-visual-col { height: 220px; }
+    .exp-grid { grid-template-columns: 1fr 1fr; }
+    .biz-details-grid { grid-template-columns: 1fr; }
+    .biz-header { flex-direction: column; }
+  }
+
+  @media (max-width: 600px) {
+    .page-hero { padding: 4rem 1.25rem 4rem; }
+    .content-wrapper { padding: 2.5rem 1rem 4rem; gap: 3rem; }
+    .stats-bar { gap: 0; }
+    .stat-item { min-width: 50%; border-top: 1px solid rgba(255,255,255,0.08); }
+    .exp-grid { grid-template-columns: 1fr; }
+    .biz-card { padding: 1.5rem 1.25rem; }
+    .cta-btn { width: 100%; justify-content: center; }
+    .intro-visual-col { display: none; }
+  }
+</style>
