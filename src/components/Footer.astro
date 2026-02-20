@@ -525,11 +525,40 @@ const socials = [
   @media (max-width: 600px) {
     .footer-inner {
       grid-template-columns: 1fr;
-      padding: 2.5rem 1.25rem 2rem;
+      padding: 2.5rem 1.5rem 2rem;
       gap: 2rem;
     }
     .footer-wave svg { height: 40px; }
-    .footer-bottom { padding: 1rem 1.25rem; }
-    .footer-bottom-inner { flex-direction: column; text-align: center; }
+
+    /* Bottom bar */
+    .footer-bottom { padding: 1rem 1.5rem; }
+    .footer-bottom-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.6rem;
+    }
+    .footer-bottom-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .footer-takanon-note { padding: 0 1.5rem; }
+
+    /* WhatsApp button — full width, not clipped */
+    .footer-wa-btn {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    /* Contact cards — don't overflow */
+    .footer-contact-item {
+      box-sizing: border-box;
+      min-width: 0;
+    }
+    .contact-item-val {
+      word-break: break-all;
+      font-size: 0.88rem;
+    }
   }
 </style>
