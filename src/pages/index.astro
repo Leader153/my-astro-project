@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import cardImg from '../assets/Romantic cruise 2.webp';
 
 const services = [
   {
@@ -9,6 +11,7 @@ const services = [
     tag: 'לזוגות',
     color: '#e91e8c',
     href: '/צור-קשר',
+    alt: 'זוג מאושר על יאכטה בשקיעה רומנטית בים התיכון',
   },
   {
     icon: '🎉',
@@ -17,6 +20,7 @@ const services = [
     tag: 'פופולרי',
     color: '#7c3aed',
     href: '/צור-קשר',
+    alt: 'קבוצת חברים חוגגת מסיבת רווקות על יאכטה פרטית',
   },
   {
     icon: '🎂',
@@ -25,6 +29,7 @@ const services = [
     tag: 'מומלץ',
     color: '#d4a017',
     href: '/צור-קשר',
+    alt: 'חגיגת יום הולדת על סיפון יאכטה עם חברים ועוגה',
   },
   {
     icon: '👔',
@@ -33,6 +38,7 @@ const services = [
     tag: 'עסקי',
     color: '#0f7ab0',
     href: '/צור-קשר',
+    alt: 'צוות עובדים ביום גיבוש על יאכטה עם נוף ים',
   },
   {
     icon: '👨‍👩‍👧‍👦',
@@ -41,6 +47,7 @@ const services = [
     tag: 'משפחות',
     color: '#059669',
     href: '/צור-קשר',
+    alt: 'משפחה שמחה עם ילדים נהנים מהפלגה ביאכטה בים',
   },
   {
     icon: '💍',
@@ -49,6 +56,7 @@ const services = [
     tag: 'מיוחד',
     color: '#e91e8c',
     href: '/צור-קשר',
+    alt: 'זוג לבוש בבגדי חתונה שניים על יאכטה מפרשית — הצעת נישואין רומנטית',
   },
 ];
 
@@ -159,13 +167,28 @@ const testimonials = [
       <div class="services-grid">
         {services.map((s, i) => (
           <a href={s.href} class="service-card" style={`--c:${s.color}; --i:${i}`}>
-            <div class="sc-tag" style={`background:${s.color}18; color:${s.color}`}>{s.tag}</div>
-            <div class="sc-icon">{s.icon}</div>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-            <div class="sc-arrow" style={`color:${s.color}`}>
-              קבלו פרטים
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><polyline points="15 18 9 12 15 6"/></svg>
+            <!-- Card image -->
+            <div class="sc-img-wrap">
+              <Image
+                src={cardImg}
+                width={600}
+                height={400}
+                format="webp"
+                alt={s.alt}
+                class="sc-img"
+                loading={i < 3 ? 'eager' : 'lazy'}
+              />
+              <div class="sc-tag" style={`background:${s.color}; color:#fff`}>{s.tag}</div>
+            </div>
+            <!-- Card body -->
+            <div class="sc-body">
+              <div class="sc-icon">{s.icon}</div>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+              <div class="sc-arrow" style={`color:${s.color}`}>
+                קבלו פרטים
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><polyline points="15 18 9 12 15 6"/></svg>
+              </div>
             </div>
             <div class="sc-glow" style={`background:${s.color}`}></div>
           </a>
@@ -476,14 +499,14 @@ const testimonials = [
     position: relative; overflow: hidden;
     background: var(--white);
     border-radius: 20px;
-    padding: 1.75rem 1.5rem 1.5rem;
+    padding: 0;                        /* убираем общий padding — у каждой части свой */
     text-decoration: none; color: var(--text);
     box-shadow: 0 4px 20px rgba(8,4,126,0.07);
     border: 1px solid rgba(8,4,126,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeUp 0.5s ease both;
     animation-delay: calc(var(--i) * 0.08s);
-    display: flex; flex-direction: column; gap: 0.6rem;
+    display: flex; flex-direction: column;
   }
   @keyframes fadeUp {
     from { opacity:0; transform:translateY(24px); }
@@ -495,16 +518,45 @@ const testimonials = [
   }
   .service-card:hover .sc-glow { opacity: 0.06; }
 
-  .sc-tag {
-    display: inline-block; align-self: flex-start;
-    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px;
-    padding: 0.25rem 0.65rem; border-radius: 20px;
+  /* ── Image wrap ── */
+  .sc-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2;     /* фиксированная пропорция */
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    flex-shrink: 0;
   }
-  .sc-icon { font-size: 2.6rem; transition: transform 0.3s; }
+  .sc-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .service-card:hover .sc-img { transform: scale(1.06); }
+
+  /* ── Tag badge overlaid on image (top-right for RTL) ── */
+  .sc-tag {
+    position: absolute;
+    top: 0.75rem; right: 0.75rem;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px;
+    padding: 0.28rem 0.7rem; border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── Card body ── */
+  .sc-body {
+    padding: 1.2rem 1.4rem 1.35rem;
+    display: flex; flex-direction: column; gap: 0.45rem;
+    flex: 1;
+  }
+
+  .sc-icon { font-size: 2rem; transition: transform 0.3s; }
   .service-card:hover .sc-icon { transform: scale(1.15) rotate(-5deg); }
 
-  .service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin: 0; }
-  .service-card p  { font-size: 0.875rem; color: var(--text-l); line-height: 1.6; margin: 0; flex: 1; }
+  .sc-body h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin: 0; }
+  .sc-body p  { font-size: 0.875rem; color: var(--text-l); line-height: 1.6; margin: 0; flex: 1; }
 
   .sc-arrow {
     display: inline-flex; align-items: center; gap: 0.35rem;

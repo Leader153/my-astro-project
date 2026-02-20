@@ -2,15 +2,20 @@
 import { Image } from 'astro:assets';
 import headerBg from '../assets/sky.webp';
 
-const navLinks = [
-  { href: '/',                  label: 'דף הבית',         icon: '🏠' },
-  { href: '/haifa',             label: 'שייט בחיפה',       icon: '⚓' },
-  { href: '/hertzliya',         label: 'שייט בהרצליה',     icon: '🌊' },
-  { href: '/צור-קשר',           label: 'צור קשר',          icon: '📞' },
-  { href: '/שאלות',              label: 'שאלות ותשובות',   icon: '❓' },
-  { href: '/אודות',              label: 'אודות',             icon: '⚓' },
-  { href: '/הצהרת-הנגישות',     label: 'נגישות',           icon: '♿' },
-  { href: '/מדיניות-פרטיות',   label: 'פרטיות',           icon: '🔒' },
+// Main nav links shown in header bar
+const mainLinks = [
+  { href: '/',           label: 'דף הבית',     icon: '🏠', hasDropdown: true },
+  { href: '/haifa',      label: 'שייט בחיפה',  icon: '⚓',  hasDropdown: false },
+  { href: '/hertzliya',  label: 'שייט בהרצליה',icon: '🌊', hasDropdown: false },
+];
+
+// Pages hidden inside "דף הבית" dropdown
+const dropdownLinks = [
+  { href: '/צור-קשר',          label: 'צור קשר',          icon: '📞' },
+  { href: '/שאלות',             label: 'שאלות ותשובות',    icon: '❓' },
+  { href: '/אודות',             label: 'אודות',             icon: '⚓' },
+  { href: '/הצהרת-הנגישות',   label: 'נגישות',            icon: '♿' },
+  { href: '/מדיניות-פרטיות',  label: 'פרטיות',            icon: '🔒' },
 ];
 ---
 
@@ -43,12 +48,27 @@ const navLinks = [
     <!-- Desktop nav -->
     <nav class="desktop-nav" aria-label="ניווט ראשי">
       <ul>
-        {navLinks.map(link => (
-          <li>
-            <a href={link.href} class="nav-link">
+        {mainLinks.map(link => (
+          <li class={link.hasDropdown ? 'has-dropdown' : ''}>
+            <a href={link.href} class="nav-link" aria-haspopup={link.hasDropdown ? 'true' : undefined}>
               {link.label}
+              {link.hasDropdown && (
+                <svg class="dropdown-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              )}
               <span class="nav-underline"></span>
             </a>
+            {link.hasDropdown && (
+              <div class="dropdown-menu" role="menu">
+                {dropdownLinks.map(sub => (
+                  <a href={sub.href} class="dropdown-item" role="menuitem">
+                    <span class="drop-icon">{sub.icon}</span>
+                    {sub.label}
+                  </a>
+                ))}
+              </div>
+            )}
           </li>
         ))}
       </ul>
@@ -99,15 +119,44 @@ const navLinks = [
 
   <nav aria-label="תפריט נייד">
     <ul class="drawer-links">
-      {navLinks.map((link, i) => (
-        <li style={`--i:${i}`}>
-          <a href={link.href} class="drawer-link">
-            <span class="drawer-icon">{link.icon}</span>
-            <span>{link.label}</span>
-            <svg class="drawer-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-              <polyline points="15 18 9 12 15 6"/>
-            </svg>
-          </a>
+      {mainLinks.map((link, i) => (
+        <li style={`--i:${i}`} class={link.hasDropdown ? 'drawer-item-group' : ''}>
+          {link.hasDropdown ? (
+            <>
+              <!-- Accordion trigger for sub-pages -->
+              <button class="drawer-link drawer-group-btn" id="drawer-group-btn" aria-expanded="false">
+                <span class="drawer-icon">{link.icon}</span>
+                <span>{link.label}</span>
+                <svg class="drawer-arrow group-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </button>
+              <!-- Sub-links -->
+              <ul class="drawer-sub" id="drawer-sub" aria-hidden="true">
+                <!-- Home itself -->
+                <li>
+                  <a href="/" class="drawer-sub-link">
+                    <span>🏠</span> דף הבית
+                  </a>
+                </li>
+                {dropdownLinks.map(sub => (
+                  <li>
+                    <a href={sub.href} class="drawer-sub-link">
+                      <span>{sub.icon}</span> {sub.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <a href={link.href} class="drawer-link">
+              <span class="drawer-icon">{link.icon}</span>
+              <span>{link.label}</span>
+              <svg class="drawer-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </a>
+          )}
         </li>
       ))}
     </ul>
@@ -186,12 +235,46 @@ const navLinks = [
 
   /* ── Active link highlight ── */
   const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-  document.querySelectorAll('.nav-link, .drawer-link').forEach(link => {
+  document.querySelectorAll('.nav-link, .drawer-link, .drawer-sub-link').forEach(link => {
     const href = (link as HTMLAnchorElement).getAttribute('href')?.replace(/\/$/, '') || '';
     if (href === currentPath || (href !== '' && href !== '/' && currentPath.startsWith(href))) {
       link.classList.add('active');
     }
   });
+
+  /* ── Mobile drawer: accordion for group button ── */
+  const groupBtn = document.getElementById('drawer-group-btn') as HTMLButtonElement | null;
+  const subMenu  = document.getElementById('drawer-sub') as HTMLElement | null;
+
+  if (groupBtn && subMenu) {
+    // auto-open if current page is one of the sub-links
+    const subLinks = Array.from(subMenu.querySelectorAll<HTMLAnchorElement>('a'));
+    const anyActive = subLinks.some(a => {
+      const h = a.getAttribute('href')?.replace(/\/$/, '') || '';
+      return h === currentPath || (h !== '' && h !== '/' && currentPath.startsWith(h));
+    });
+    if (anyActive) {
+      subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
+      subMenu.setAttribute('aria-hidden', 'false');
+      groupBtn.setAttribute('aria-expanded', 'true');
+      groupBtn.classList.add('open');
+    }
+
+    groupBtn.addEventListener('click', () => {
+      const isOpen = groupBtn.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        subMenu.style.maxHeight = '0';
+        subMenu.setAttribute('aria-hidden', 'true');
+        groupBtn.setAttribute('aria-expanded', 'false');
+        groupBtn.classList.remove('open');
+      } else {
+        subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
+        subMenu.setAttribute('aria-hidden', 'false');
+        groupBtn.setAttribute('aria-expanded', 'true');
+        groupBtn.classList.add('open');
+      }
+    });
+  }
 </script>
 
 <style>
@@ -599,5 +682,154 @@ const navLinks = [
     position: absolute; width: 1px; height: 1px;
     padding: 0; margin: -1px; overflow: hidden;
     clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ═══════════════════════════════════════════
+     DESKTOP DROPDOWN
+  ═══════════════════════════════════════════ */
+  .desktop-nav li.has-dropdown {
+    position: relative;
+  }
+
+  .dropdown-chevron {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    margin-bottom: 1px;
+    transition: transform 0.25s ease;
+  }
+  .has-dropdown:hover .dropdown-chevron {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 2px);   /* тесный зазор */
+    right: 0;
+    min-width: 210px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 16px 48px rgba(8,4,126,0.2), 0 2px 8px rgba(0,0,0,0.08);
+    /* padding-top большой — это и есть «мостик» над меню */
+    padding: 0.5rem;
+    padding-top: 10px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    /* открывается быстро, закрывается с задержкой */
+    transition:
+      opacity  0.2s ease 0s,
+      transform 0.2s ease 0s,
+      pointer-events 0s linear 0.3s;
+  }
+
+  /* Невидимый «мостик» — заполняет зазор между ссылкой и меню */
+  .dropdown-menu::after {
+    content: '';
+    position: absolute;
+    top: -14px;          /* перекрывает зазор + немного выше */
+    left: 0; right: 0;
+    height: 14px;
+    background: transparent;
+  }
+
+  /* маленький хвостик-треугольник */
+  .dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 18px;
+    width: 10px; height: 10px;
+    background: white;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    box-shadow: -2px -2px 4px rgba(0,0,0,0.04);
+  }
+
+  .has-dropdown:hover .dropdown-menu,
+  .has-dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    /* при открытии — без задержки */
+    transition:
+      opacity  0.2s ease 0s,
+      transform 0.2s ease 0s;
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.65rem 0.9rem;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    text-decoration: none;
+    transition: background 0.18s, color 0.18s;
+    white-space: nowrap;
+  }
+  .dropdown-item:hover {
+    background: #f2f5fb;
+    color: #08047e;
+  }
+  .dropdown-item.active {
+    background: #08047e12;
+    color: #08047e;
+  }
+  .drop-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  /* ═══════════════════════════════════════════
+     MOBILE DRAWER — SUB-MENU
+  ═══════════════════════════════════════════ */
+  .drawer-group-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    color: inherit;
+    text-align: right;
+  }
+  .drawer-group-btn .group-chevron {
+    margin-right: auto;
+    transition: transform 0.3s ease;
+  }
+  .drawer-group-btn.open .group-chevron {
+    transform: rotate(180deg);
+  }
+
+  .drawer-sub {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    border-right: 2px solid rgba(255,255,255,0.12);
+    margin-right: 1.5rem;
+  }
+
+  .drawer-sub-link {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.65rem 0.6rem;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .drawer-sub-link:hover,
+  .drawer-sub-link.active {
+    background: rgba(255,255,255,0.1);
+    color: white;
   }
 </style>
