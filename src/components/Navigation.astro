@@ -236,8 +236,11 @@ const dropdownLinks = [
   /* ── Active link highlight ── */
   const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
   document.querySelectorAll('.nav-link, .drawer-link, .drawer-sub-link').forEach(link => {
-    const href = (link as HTMLAnchorElement).getAttribute('href')?.replace(/\/$/, '') || '';
-    if (href === currentPath || (href !== '' && href !== '/' && currentPath.startsWith(href))) {
+    const rawHref = (link as HTMLAnchorElement).getAttribute('href') || '';
+    const href = rawHref.replace(/\/$/, '') || '/';   // '/' → '/', '' → '/'
+    const isHome = href === '/' && currentPath === '/';
+    const isMatch = href === currentPath || (href !== '/' && currentPath.startsWith(href));
+    if (isHome || isMatch) {
       link.classList.add('active');
     }
   });
@@ -793,8 +796,13 @@ const dropdownLinks = [
     border: none;
     cursor: pointer;
     font-family: inherit;
-    color: inherit;
+    /* явно белый — браузер по умолчанию ставит чёрный на <button> */
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1rem;
+    font-weight: 600;
     text-align: right;
+    -webkit-appearance: none;
+    appearance: none;
   }
   .drawer-group-btn .group-chevron {
     margin-right: auto;
