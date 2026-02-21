@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://leader-sailing.co.il', // ← замени на свой домен
+  site: 'https://derechalhaosher.netlify.app',
   integrations: [
     partytown({
       config: {
