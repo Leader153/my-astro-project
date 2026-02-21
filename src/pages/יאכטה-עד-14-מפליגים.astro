@@ -1,0 +1,140 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+    title="יאכטה עד 14 מפליגים חיפה | Leader הפלגות"
+    description="הפלגות חופיות יוקרתיות על יאכטה מרווחת עד 14 איש בחיפה. אידאלי לחגיגות וימי הולדת בים התיכון."
+>
+    <div class="service-page" dir="rtl">
+        <section class="sp-hero">
+            <div class="sp-inner text-center">
+                <div class="sp-eyebrow">שייט בחיפה</div>
+                <h1>יאכטה עד 14 מפליגים</h1>
+                <p>
+                    יאכטה קלאסית ומרווחת להפלגה חופית יוקרתית. הבחירה המושלמת
+                    לקבוצה בינונית למסיבות וכיף בים.
+                </p>
+                <div class="sp-btns">
+                    <a href="/צור-קשר" class="sp-btn primary">הזמינו עכשיו</a>
+                    <a href="https://wa.me/972533403449" class="sp-btn wa"
+                        >WhatsApp</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section class="sp-content">
+            <div class="sp-inner">
+                <h2>מרווחת, מפנקת ויוקרתית</h2>
+                <p>
+                    כשמדובר בקבוצת חברים גדולה יותר או משפחה מורחבת עד 14
+                    מפליגים, היאכטה הזו מוודאת שיהיה לכם נוח, נעים ומרווח. עם
+                    סיפון קדמי להשתזפות, סלון יוקרתי, אוויר ים צלול המשלים את
+                    המרחבים של מפרץ חיפה ונוף מהפנט - מובטחת לכם הפלגת חלומות.
+                    פתחו בקבוקי שמפניה, שימו איזה שיר שמתחשק, בואו לחוות ים ברמה
+                    הכי גבוהה.
+                </p>
+                <a href="/haifa" class="back-link">← חזרה לכל ההפלגות בחיפה</a>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    .service-page {
+        background: #f2f5fb;
+        min-height: 100vh;
+        font-family: "Rubik", sans-serif;
+    }
+    .sp-hero {
+        padding: 8rem 2rem 5rem;
+        background: linear-gradient(135deg, #08047e 0%, #0a5a8f 100%);
+        color: white;
+        text-align: center;
+    }
+    .sp-eyebrow {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #f0c040;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+    }
+    .sp-hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+    .sp-hero p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.6;
+    }
+    .sp-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .sp-btn {
+        padding: 0.85rem 2rem;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+    .sp-btn.primary {
+        background: #d4a017;
+        color: #08047e;
+        box-shadow: 0 6px 20px rgba(212, 160, 23, 0.3);
+    }
+    .sp-btn.primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(212, 160, 23, 0.5);
+    }
+    .sp-btn.wa {
+        background: #25d366;
+        color: white;
+    }
+    .sp-btn.wa:hover {
+        background: #128c7e;
+        transform: translateY(-3px);
+    }
+
+    .sp-content {
+        padding: 5rem 2rem;
+        text-align: center;
+    }
+    .sp-inner {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .sp-content h2 {
+        font-size: 2.2rem;
+        color: #1a1a2e;
+        margin-bottom: 1.5rem;
+    }
+    .sp-content p {
+        color: #3a3a5c;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 3rem;
+    }
+    .back-link {
+        display: inline-block;
+        color: #0f7ab0;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border: 1px solid #0f7ab0;
+        border-radius: 8px;
+        transition: 0.2s;
+    }
+    .back-link:hover {
+        background: #0f7ab0;
+        color: white;
+    }
+</style>

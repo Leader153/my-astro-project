@@ -1,0 +1,356 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import louseImg from "../assets/Louse.jpeg";
+import romantic2Img from "../assets/Romantic cruise 2.webp";
+import romanticImg from "../assets/Romantic cruise.webp";
+import marinaImg from "../assets/marina-herzelia.webp";
+
+// Array of 8 yachts
+const yachts = [
+    {
+        name: "יאכטה ג'וי בי",
+        capacity: "עד 13 מפליגים",
+        desc: "יאכטה מרווחת ומפנקת במיוחד, נוחה מאוד לחגיגות ומשפחות בהרצליה.",
+        img: romantic2Img,
+        tag: "מפנקת",
+        href: "/יאכטה-ג-וי-בי",
+    },
+    {
+        name: "יאכטה לי ים",
+        capacity: "עד 13 מפליגים",
+        desc: "עיצוב קלאסי ומרחבים נוחים לשייט קסום ופרטי לחלוטין מול החופים.",
+        img: louseImg,
+        tag: "קלאסית",
+        href: "/יאכטה-לי-ים",
+    },
+    {
+        name: "יאכטה בגירה",
+        capacity: "עד 10 מפליגים",
+        desc: "ספינה אינטימית ונהדרת לאירועי יוקרה מצומצמים, עד עשרה אנשים בלבד.",
+        img: romanticImg,
+        tag: "פופולרי",
+        href: "/יאכטה-בגירה",
+    },
+    {
+        name: "יאכטה לואיז",
+        capacity: "עד 6 מפליגים",
+        desc: "יאכטת בוטיק קטנה וחמימה להצעות נישואין, ימי נישואין ורומנטיקה.",
+        img: marinaImg,
+        tag: "רומנטי",
+        href: "/יאכטה-לואיז",
+    },
+    {
+        name: "יאכטה דולפין",
+        desc: "יאכטה קלאסית לשייט זוגי או משפחתי יציב, קפיצות למים והרבה רוגע.",
+        capacity: "זוגות ומשפחות",
+        img: romantic2Img,
+        tag: "למשפחות",
+        href: "/יאכטה-דולפין",
+    },
+    {
+        name: "קטמרן ענקית",
+        capacity: "עד 21 מפליגים",
+        desc: "ספינת קטמרן ענקית, מרווחת ויציבה למסיבות וגיבושים. גולת הכותרת לחוגגים.",
+        img: louseImg,
+        tag: "לקבוצות גדולות",
+        href: "/קטמרן-עד-21-מפליגים",
+    },
+    {
+        name: "סירת מנוע אחמית",
+        capacity: "עד 9 מפליגים",
+        desc: "סירת מנוע מהירה לאדרנלין ואקסטרים על הגלים! שייט ספורטיבי.",
+        img: romanticImg,
+        tag: "אקסטרים",
+        href: "/סירת-מנוע-אחמית",
+    },
+];
+---
+
+<Layout
+    title="יאכטות בהרצליה | צי היאכטות של Leader הפלגות"
+    description="הכירו את צי היאכטות המפואר שלנו במרינה הרצליה. מגוון יאכטות להפלגות זוגיות, קבוצות עד 21 איש, אירועים ומסיבות."
+>
+    <div class="yachts-page" dir="rtl">
+        <section class="yp-hero">
+            <div class="yp-inner text-center">
+                <div class="yp-eyebrow">מרינה הרצליה</div>
+                <h1>היאכטות שלנו בהרצליה</h1>
+                <p>
+                    צי יאכטות מגוון ומפואר — מקטמרן ענקית ל-21 איש ועד יאכטות
+                    אינטימיות לזוגות. בחרו את היאכטה המושלמת עבורכם.
+                </p>
+                <div class="yp-btns">
+                    <a href="/צור-קשר" class="yp-btn primary"
+                        >לייעוץ ובחירת יאכטה</a
+                    >
+                    <a href="https://wa.me/972533403449" class="yp-btn wa"
+                        >WhatsApp</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section class="yp-grid-section">
+            <div class="yp-container">
+                <div class="yp-grid">
+                    {
+                        yachts.map((yacht, i) => (
+                            <div
+                                class="yacht-card"
+                                style={`--animation-delay: ${i * 0.1}s`}
+                            >
+                                <div class="yc-img-wrapper">
+                                    <Image
+                                        src={yacht.img}
+                                        alt={yacht.name}
+                                        width={600}
+                                        height={400}
+                                        class="yc-img"
+                                        loading={i < 4 ? "eager" : "lazy"}
+                                    />
+                                    <span class="yc-tag">{yacht.tag}</span>
+                                </div>
+                                <div class="yc-content">
+                                    <h3>{yacht.name}</h3>
+                                    <div class="yc-capacity">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            width="18"
+                                            height="18"
+                                        >
+                                            <>
+                                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                                <circle cx="9" cy="7" r="4" />
+                                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                            </>
+                                        </svg>
+                                        {yacht.capacity}
+                                    </div>
+                                    <p>{yacht.desc}</p>
+                                    <a href={yacht.href} class="yc-btn">
+                                        לכל הפרטים
+                                    </a>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+                <div class="text-center" style="margin-top: 4rem;">
+                    <a href="/hertzliya" class="back-link"
+                        >← חזרה לכל ההפלגות בהרצליה</a
+                    >
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    .yachts-page {
+        background: #f2f5fb;
+        min-height: 100vh;
+        font-family: "Rubik", sans-serif;
+    }
+
+    /* Hero */
+    .yp-hero {
+        padding: 8rem 2rem 5rem;
+        background: linear-gradient(135deg, #08047e 0%, #0a5a8f 100%);
+        color: white;
+        text-align: center;
+    }
+    .yp-eyebrow {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #f0c040;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+    }
+    .yp-hero h1 {
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+    .yp-hero p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        max-width: 650px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.6;
+    }
+
+    .yp-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .yp-btn {
+        padding: 0.85rem 2rem;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-decoration: none;
+        transition: 0.2s;
+    }
+    .yp-btn.primary {
+        background: #d4a017;
+        color: #08047e;
+        box-shadow: 0 6px 20px rgba(212, 160, 23, 0.3);
+    }
+    .yp-btn.primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(212, 160, 23, 0.5);
+    }
+    .yp-btn.wa {
+        background: #25d366;
+        color: white;
+    }
+    .yp-btn.wa:hover {
+        background: #128c7e;
+        transform: translateY(-3px);
+    }
+
+    /* Grid Section */
+    .yp-grid-section {
+        padding: 5rem 2rem;
+    }
+    .yp-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .yp-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    /* Yacht Card */
+    .yacht-card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(8, 4, 126, 0.06);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        animation: fadeUp 0.6s ease-out backwards;
+        animation-delay: var(--animation-delay);
+        display: flex;
+        flex-direction: column;
+    }
+    .yacht-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(8, 4, 126, 0.12);
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .yc-img-wrapper {
+        position: relative;
+        height: 220px;
+        overflow: hidden;
+    }
+    .yc-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .yacht-card:hover .yc-img {
+        transform: scale(1.08);
+    }
+
+    .yc-tag {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(8, 4, 126, 0.85);
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        backdrop-filter: blur(4px);
+    }
+
+    .yc-content {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .yc-content h3 {
+        font-size: 1.3rem;
+        color: #1a1a2e;
+        margin: 0 0 0.5rem;
+        font-weight: 700;
+    }
+
+    .yc-capacity {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #0f7ab0;
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .yc-content p {
+        color: #6b7280;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        flex: 1;
+    }
+
+    .yc-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: #f2f5fb;
+        color: #08047e;
+        padding: 0.8rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.2s;
+        border: 1px solid rgba(8, 4, 126, 0.1);
+    }
+    .yacht-card:hover .yc-btn {
+        background: #08047e;
+        color: white;
+    }
+
+    .back-link {
+        display: inline-block;
+        color: #0f7ab0;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border: 1px solid #0f7ab0;
+        border-radius: 8px;
+        transition: 0.2s;
+    }
+    .back-link:hover {
+        background: #0f7ab0;
+        color: white;
+    }
+</style>

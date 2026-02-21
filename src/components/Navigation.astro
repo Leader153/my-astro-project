@@ -2,20 +2,53 @@
 import { Image } from 'astro:assets';
 import headerBg from '../assets/sky.webp';
 
-// Main nav links shown in header bar
+// Main nav links and their dropdowns
 const mainLinks = [
-  { href: '/',           label: 'דף הבית',     icon: '🏠', hasDropdown: true },
-  { href: '/haifa',      label: 'שייט בחיפה',  icon: '⚓',  hasDropdown: false },
-  { href: '/hertzliya',  label: 'שייט בהרצליה',icon: '🌊', hasDropdown: false },
-];
-
-// Pages hidden inside "דף הבית" dropdown
-const dropdownLinks = [
-  { href: '/צור-קשר',          label: 'צור קשר',          icon: '📞' },
-  { href: '/שאלות',             label: 'שאלות ותשובות',    icon: '❓' },
-  { href: '/אודות',             label: 'אודות',             icon: '⚓' },
-  { href: '/הצהרת-הנגישות',   label: 'נגישות',            icon: '♿' },
-  { href: '/מדיניות-פרטיות',  label: 'פרטיות',            icon: '🔒' },
+  { 
+    href: '/',           
+    label: 'דף הבית',     
+    icon: '🏠', 
+    subLinks: [
+      { href: '/',                   label: 'דף הבית',           icon: '🏠' },
+      { href: '/יום-הולדת-על-יאכטה', label: 'יום הולדת על יאכטה', icon: '🎂' },
+      { href: '/שייט-קבוצתי',        label: 'שייט קבוצתי',       icon: '🎉' },
+      { href: '/שייט-זוגי',          label: 'שייט זוגי',         icon: '🥂' },
+      { href: '/ימי-גיבוש-לעובדים',   label: 'ימי גיבוש לעובדים', icon: '💼' },
+      { href: '/הפלגה-לקפריסין',     label: 'הפלגה לקפריסין',    icon: '🧭' },
+      { href: '/צור-קשר',          label: 'צור קשר',          icon: '📞' },
+      { href: '/שאלות',             label: 'שאלות ותשובות',    icon: '❓' },
+      { href: '/אודות',             label: 'אודות',             icon: '⚓' },
+    ]
+  },
+  { 
+    href: '/haifa',      
+    label: 'שייט בחיפה',  
+    icon: '⚓',
+    subLinks: [
+      { href: '/haifa',                         label: 'כל ההפלגות בחיפה', icon: '⚓' },
+      { href: '/יאכטה-עד-11-מפליגים',            label: 'יאכטה עד 11',      icon: '⛵' },
+      { href: '/יאכטה-עד-14-מפליגים',            label: 'יאכטה עד 14',      icon: '⛵' },
+      { href: '/ספינת-טייפון-עד-30-מפליגים',     label: 'ספינת טייפון',      icon: '🚢' },
+      { href: '/יאכטה-קטמרן-מפרשית-מפוארת',      label: 'קטמרן מפרשית',      icon: '⛵' },
+      { href: '/יאכטה-קטמרן-מנועית',             label: 'קטמרן מנועית',      icon: '🛥️' },
+      { href: '/סירת-מנוע-מהירה',                label: 'סירת מנוע מהירה',    icon: '🚤' }
+    ]
+  },
+  { 
+    href: '/hertzliya',  
+    label: 'שייט בהרצליה',
+    icon: '🌊',
+    subLinks: [
+      { href: '/hertzliya',           label: 'כל ההפלגות בהרצליה', icon: '🌊' },
+      { href: '/יאכטות-בהרצליה',      label: 'יאכטות בהרצליה',  icon: '🛥️' },
+      { href: '/קטמרן-עד-21-מפליגים', label: 'קטמרן עד 21',    icon: '⛵' },
+      { href: '/שייט-רומנטי',         label: 'שייט רומנטי',     icon: '🥂' },
+      { href: '/ארוחה-על-יאכטה',      label: 'ארוחה על יאכטה',  icon: '🍽️' },
+      { href: '/דייג',                label: 'דייג חוויתי',     icon: '🎣' },
+      { href: '/הפלגת-סקיפר-ליום-אחד',label: 'הפלגת סקיפר',     icon: '⛵' },
+      { href: '/צימר-על-הים',         label: 'צימר על הים',     icon: '🌙' },
+    ]
+  },
 ];
 ---
 
@@ -49,19 +82,19 @@ const dropdownLinks = [
     <nav class="desktop-nav" aria-label="ניווט ראשי">
       <ul>
         {mainLinks.map(link => (
-          <li class={link.hasDropdown ? 'has-dropdown' : ''}>
-            <a href={link.href} class="nav-link" aria-haspopup={link.hasDropdown ? 'true' : undefined}>
+          <li class={link.subLinks ? 'has-dropdown' : ''}>
+            <a href={link.href} class="nav-link" aria-haspopup={link.subLinks ? 'true' : undefined}>
               {link.label}
-              {link.hasDropdown && (
+              {link.subLinks && (
                 <svg class="dropdown-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13" aria-hidden="true">
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               )}
               <span class="nav-underline"></span>
             </a>
-            {link.hasDropdown && (
+            {link.subLinks && (
               <div class="dropdown-menu" role="menu">
-                {dropdownLinks.map(sub => (
+                {link.subLinks.map(sub => (
                   <a href={sub.href} class="dropdown-item" role="menuitem">
                     <span class="drop-icon">{sub.icon}</span>
                     {sub.label}
@@ -120,11 +153,11 @@ const dropdownLinks = [
   <nav aria-label="תפריט נייד">
     <ul class="drawer-links">
       {mainLinks.map((link, i) => (
-        <li style={`--i:${i}`} class={link.hasDropdown ? 'drawer-item-group' : ''}>
-          {link.hasDropdown ? (
+        <li style={`--i:${i}`} class={link.subLinks ? 'drawer-item-group' : ''}>
+          {link.subLinks ? (
             <>
               <!-- Accordion trigger for sub-pages -->
-              <button class="drawer-link drawer-group-btn" id="drawer-group-btn" aria-expanded="false">
+              <button class="drawer-link drawer-group-btn" aria-expanded="false">
                 <span class="drawer-icon">{link.icon}</span>
                 <span>{link.label}</span>
                 <svg class="drawer-arrow group-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
@@ -132,14 +165,14 @@ const dropdownLinks = [
                 </svg>
               </button>
               <!-- Sub-links -->
-              <ul class="drawer-sub" id="drawer-sub" aria-hidden="true">
-                <!-- Home itself -->
+              <ul class="drawer-sub" aria-hidden="true">
+                <!-- Main link -->
                 <li>
-                  <a href="/" class="drawer-sub-link">
-                    <span>🏠</span> דף הבית
+                  <a href={link.href} class="drawer-sub-link">
+                    <span>{link.icon}</span> {link.href === '/' ? 'דף הבית' : link.label}
                   </a>
                 </li>
-                {dropdownLinks.map(sub => (
+                {link.subLinks.filter(sub => sub.href !== link.href).map(sub => (
                   <li>
                     <a href={sub.href} class="drawer-sub-link">
                       <span>{sub.icon}</span> {sub.label}
@@ -246,38 +279,39 @@ const dropdownLinks = [
   });
 
   /* ── Mobile drawer: accordion for group button ── */
-  const groupBtn = document.getElementById('drawer-group-btn') as HTMLButtonElement | null;
-  const subMenu  = document.getElementById('drawer-sub') as HTMLElement | null;
-
-  if (groupBtn && subMenu) {
-    // auto-open if current page is one of the sub-links
-    const subLinks = Array.from(subMenu.querySelectorAll<HTMLAnchorElement>('a'));
-    const anyActive = subLinks.some(a => {
-      const h = a.getAttribute('href')?.replace(/\/$/, '') || '';
-      return h === currentPath || (h !== '' && h !== '/' && currentPath.startsWith(h));
-    });
-    if (anyActive) {
-      subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
-      subMenu.setAttribute('aria-hidden', 'false');
-      groupBtn.setAttribute('aria-expanded', 'true');
-      groupBtn.classList.add('open');
-    }
-
-    groupBtn.addEventListener('click', () => {
-      const isOpen = groupBtn.getAttribute('aria-expanded') === 'true';
-      if (isOpen) {
-        subMenu.style.maxHeight = '0';
-        subMenu.setAttribute('aria-hidden', 'true');
-        groupBtn.setAttribute('aria-expanded', 'false');
-        groupBtn.classList.remove('open');
-      } else {
+  const groupBtns = document.querySelectorAll('.drawer-group-btn');
+  groupBtns.forEach(groupBtn => {
+    const subMenu = groupBtn.nextElementSibling as HTMLElement;
+    if (subMenu) {
+      // auto-open if current page is one of the sub-links
+      const subLinks = Array.from(subMenu.querySelectorAll<HTMLAnchorElement>('a'));
+      const anyActive = subLinks.some(a => {
+        const h = a.getAttribute('href')?.replace(/\/$/, '') || '';
+        return h === currentPath || (h !== '' && h !== '/' && currentPath.startsWith(h));
+      });
+      if (anyActive) {
         subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
         subMenu.setAttribute('aria-hidden', 'false');
         groupBtn.setAttribute('aria-expanded', 'true');
         groupBtn.classList.add('open');
       }
-    });
-  }
+
+      groupBtn.addEventListener('click', () => {
+        const isOpen = groupBtn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          subMenu.style.maxHeight = '0';
+          subMenu.setAttribute('aria-hidden', 'true');
+          groupBtn.setAttribute('aria-expanded', 'false');
+          groupBtn.classList.remove('open');
+        } else {
+          subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
+          subMenu.setAttribute('aria-hidden', 'false');
+          groupBtn.setAttribute('aria-expanded', 'true');
+          groupBtn.classList.add('open');
+        }
+      });
+    }
+  });
 </script>
 
 <style>
