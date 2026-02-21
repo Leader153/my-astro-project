@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /
+
+# Sitemap: https://leader-sailing.co.il/sitemap-index.xml
+
+
+# Строку Sitemap закомментировал (#) —
+# Allow: / она не нужна пока сайт закрыт.

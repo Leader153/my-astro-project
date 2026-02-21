@@ -1,437 +1,539 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const categories = [
   {
-    id: 'booking',
-    icon: '🗓️',
-    label: 'הזמנה ותיאום',
-    color: '#08047e',
+    id: "booking",
+    icon: "🗓️",
+    label: "הזמנה ותיאום",
+    color: "#08047e",
     faqs: [
       {
-        q: 'איך מבצעים הזמנה?',
-        a: 'פשוט מאוד! מתקשרים או שולחים הודעה בווטסאפ למספר 053-340-3449. נתאם יחד את כל הפרטים — תאריך, שעה, מספר משתתפים וסוג ההפלגה. לאחר מכן תקבלו אישור הזמנה מפורט בווטסאפ.',
+        q: "איך מבצעים הזמנה?",
+        a: "פשוט מאוד! מתקשרים או שולחים הודעה בווטסאפ למספר 053-340-3449. נתאם יחד את כל הפרטים — תאריך, שעה, מספר משתתפים וסוג ההפלגה. לאחר מכן תקבלו אישור הזמנה מפורט בווטסאפ.",
       },
       {
-        q: 'כמה זמן מראש צריך להזמין?',
-        a: 'מומלץ להזמין לפחות 3–7 ימים מראש, ובמיוחד בסופי שבוע וחגים. בעונת הקיץ ובתקופות שיא — מומלץ להזמין 2–3 שבועות מראש כדי לשמור על המועד הרצוי.',
+        q: "כמה זמן מראש צריך להזמין?",
+        a: "מומלץ להזמין לפחות 3–7 ימים מראש, ובמיוחד בסופי שבוע וחגים. בעונת הקיץ ובתקופות שיא — מומלץ להזמין 2–3 שבועות מראש כדי לשמור על המועד הרצוי.",
       },
       {
-        q: 'האם ניתן לבצע הזמנה ליום אותו יום?',
-        a: 'לפעמים כן, בכפוף לזמינות. צרו קשר ישירות בטלפון ונבדוק אפשרות. אנו ממליצים מאוד לא להסתמך על זה ולהזמין מראש.',
+        q: "האם ניתן לבצע הזמנה ליום אותו יום?",
+        a: "לפעמים כן, בכפוף לזמינות. צרו קשר ישירות בטלפון ונבדוק אפשרות. אנו ממליצים מאוד לא להסתמך על זה ולהזמין מראש.",
       },
       {
-        q: 'האם יש מינימום מספר משתתפים?',
-        a: 'אין מינימום! ניתן להפליג גם כזוג בלבד. המחיר משתנה בהתאם לגודל הקבוצה ולסוג היאכטה הנבחרת.',
+        q: "האם יש מינימום מספר משתתפים?",
+        a: "אין מינימום! ניתן להפליג גם כזוג בלבד. המחיר משתנה בהתאם לגודל הקבוצה ולסוג היאכטה הנבחרת.",
       },
       {
-        q: 'מה כולל אישור ההזמנה?',
-        a: 'אישור ההזמנה בווטסאפ כולל: תאריך ושעות, שם היאכטה וקיבולתה, מספר משתתפים, מחיר כולל, מקדמה ששולמה, יתרה לתשלום ומיקום עגינה. יש לאשר את הפרטים בהודעה חוזרת.',
+        q: "מה כולל אישור ההזמנה?",
+        a: "אישור ההזמנה בווטסאפ כולל: תאריך ושעות, שם היאכטה וקיבולתה, מספר משתתפים, מחיר כולל, מקדמה ששולמה, יתרה לתשלום ומיקום עגינה. יש לאשר את הפרטים בהודעה חוזרת.",
       },
     ],
   },
   {
-    id: 'payment',
-    icon: '💳',
-    label: 'תשלום ומחירים',
-    color: '#059669',
+    id: "payment",
+    icon: "💳",
+    label: "תשלום ומחירים",
+    color: "#059669",
     faqs: [
       {
-        q: 'כמה עולה הפלגה?',
-        a: 'המחיר תלוי בסוג היאכטה, מספר המשתתפים ומשך ההפלגה. צרו קשר לקבלת הצעת מחיר מותאמת אישית. יש לנו יאכטות לכל תקציב!',
+        q: "כמה עולה הפלגה?",
+        a: "המחיר תלוי בסוג היאכטה, מספר המשתתפים ומשך ההפלגה. צרו קשר לקבלת הצעת מחיר מותאמת אישית. יש לנו יאכטות לכל תקציב!",
       },
       {
-        q: 'מה הם אמצעי התשלום המקובלים?',
-        a: 'ניתן לשלם מקדמה דרך: פאי פלוס (PayBox), ביט (Bit), כרטיס ויזה, או העברה בנקאית. יתרת הסכום משולמת במזומן במקום לפני ההפלגה.',
+        q: "מה הם אמצעי התשלום המקובלים?",
+        a: "ניתן לשלם מקדמה דרך: פאי פלוס (PayBox), ביט (Bit), כרטיס ויזה, או העברה בנקאית. יתרת הסכום משולמת במזומן במקום לפני ההפלגה.",
       },
       {
-        q: 'כמה עולה המקדמה?',
-        a: 'המקדמה לשריון מועד עומדת על 300–600 ₪ בהתאם לסכום ההזמנה הכולל. לאחר תשלום המקדמה תישלח קבלה דיגיטלית בווטסאפ.',
+        q: "כמה עולה המקדמה?",
+        a: "המקדמה לשריון מועד עומדת על 300–600 ₪ בהתאם לסכום ההזמנה הכולל. לאחר תשלום המקדמה תישלח קבלה דיגיטלית בווטסאפ.",
       },
       {
-        q: 'האם ניתן לשלם בכרטיס אשראי?',
-        a: 'כן — ניתן לשלם מקדמה בכרטיס ויזה. יתרת הסכום תשולם במזומן ביום ההפלגה.',
+        q: "האם ניתן לשלם בכרטיס אשראי?",
+        a: "כן — ניתן לשלם מקדמה בכרטיס ויזה. יתרת הסכום תשולם במזומן ביום ההפלגה.",
       },
       {
-        q: 'האם יש הנחות לקבוצות גדולות?',
-        a: 'כן! לקבוצות גדולות ולהזמנות חוזרות יש הטבות מיוחדות. צרו קשר לפרטים.',
+        q: "האם יש הנחות לקבוצות גדולות?",
+        a: "כן! לקבוצות גדולות ולהזמנות חוזרות יש הטבות מיוחדות. צרו קשר לפרטים.",
       },
     ],
   },
   {
-    id: 'sailing',
-    icon: '⛵',
-    label: 'ההפלגה עצמה',
-    color: '#0f7ab0',
+    id: "sailing",
+    icon: "⛵",
+    label: "ההפלגה עצמה",
+    color: "#0f7ab0",
     faqs: [
       {
-        q: 'מה קורה ביום ההפלגה?',
-        a: 'יש להגיע בזמן שנקבע לתדריך בטיחות חובה. לאחר מכן, הסקיפר יוביל אתכם לחוויה בלתי נשכחת! כל איחור של הלקוח ייגרע מזמן השייט הכולל.',
+        q: "מה קורה ביום ההפלגה?",
+        a: "יש להגיע בזמן שנקבע לתדריך בטיחות חובה. לאחר מכן, הסקיפר יוביל אתכם לחוויה בלתי נשכחת! כל איחור של הלקוח ייגרע מזמן השייט הכולל.",
       },
       {
-        q: 'האם ניתן לרחוץ בים?',
-        a: 'ירידה למים מותנית במצב הים ובאישור הסקיפר. רחצה בים היא באחריות המתרחצים בלבד. יש לציית להנחיות הסקיפר בנושא.',
+        q: "האם ניתן לרחוץ בים?",
+        a: "ירידה למים מותנית במצב הים ובאישור הסקיפר. רחצה בים היא באחריות המתרחצים בלבד. יש לציית להנחיות הסקיפר בנושא.",
       },
       {
-        q: 'מה מותר להביא איתנו?',
-        a: 'ניתן להביא: אוכל ושתיה (ניתן להזמין גם מאיתנו), מוסיקה, קישוטים לאירוע ומצלמות. יש להימנע מהבאת חפצים יקרים שעלולים להינזק.',
+        q: "מה מותר להביא איתנו?",
+        a: "ניתן להביא: אוכל ושתיה (ניתן להזמין גם מאיתנו), מוסיקה, קישוטים לאירוע ומצלמות. יש להימנע מהבאת חפצים יקרים שעלולים להינזק.",
       },
       {
-        q: 'האם יש מקום לשים חפצים?',
-        a: 'כן, ביאכטות יש אחסון פנימי. עם זאת, החברה אינה אחראית לנזק לחפצים אישיים.',
+        q: "האם יש מקום לשים חפצים?",
+        a: "כן, ביאכטות יש אחסון פנימי. עם זאת, החברה אינה אחראית לנזק לחפצים אישיים.",
       },
       {
-        q: 'האם ניתן להביא חיות מחמד?',
-        a: 'נא לפנות אלינו מראש לגבי חיות מחמד. במקרים מסוימים ניתן, בתיאום מראש ובאחריות הבעלים.',
+        q: "האם ניתן להביא חיות מחמד?",
+        a: "נא לפנות אלינו מראש לגבי חיות מחמד. במקרים מסוימים ניתן, בתיאום מראש ובאחריות הבעלים.",
       },
       {
-        q: 'האם מומלץ לקחת כדורים נגד בחילה?',
-        a: 'בהחלט! ממליצים ליטול כדורים נגד בחילה ללא מרשם (למשל Dramamine) כשעה לפני תחילת השייט, במיוחד אם אתם רגישים לתנועה.',
+        q: "האם מומלץ לקחת כדורים נגד בחילה?",
+        a: "בהחלט! ממליצים ליטול כדורים נגד בחילה ללא מרשם (למשל Dramamine) כשעה לפני תחילת השייט, במיוחד אם אתם רגישים לתנועה.",
       },
     ],
   },
   {
-    id: 'cancellation',
-    icon: '🔄',
-    label: 'ביטולים ושינויים',
-    color: '#dc2626',
+    id: "cancellation",
+    icon: "🔄",
+    label: "ביטולים ושינויים",
+    color: "#dc2626",
     faqs: [
       {
-        q: 'מה מדיניות הביטול?',
-        a: 'ביטול בכל עת — דמי ניהול 150 ₪. ביטול עד 14 ימים לפני — 40% מהעסקה או 250 ₪ (הנמוך). ביטול תוך 48 שעות — אין החזר. ביטול בשל מצב הים מצד החברה — החזר מקדמה מלא.',
+        q: "מה מדיניות הביטול?",
+        a: "ביטול בכל עת — דמי ניהול 150 ₪. ביטול עד 14 ימים לפני — 40% מהעסקה או 250 ₪ (הנמוך). ביטול תוך 48 שעות — אין החזר. ביטול בשל מצב הים מצד החברה — החזר מקדמה מלא.",
       },
       {
-        q: 'מה קורה אם מזג האוויר גרוע?',
-        a: 'החברה תפעיל שיקול דעת לגבי יציאת הפלגה. אם מצב הים לא מאפשר הפלגה בטוחה — תינתן אפשרות לדחייה למועד חלופי, או ביטול עם החזר מקדמה מלא.',
+        q: "מה קורה אם מזג האוויר גרוע?",
+        a: "החברה תפעיל שיקול דעת לגבי יציאת הפלגה. אם מצב הים לא מאפשר הפלגה בטוחה — תינתן אפשרות לדחייה למועד חלופי, או ביטול עם החזר מקדמה מלא.",
       },
       {
-        q: 'האם ניתן לשנות תאריך?',
-        a: 'כן, שינוי מועד אפשרי בכפוף לזמינות ואישור החברה, עד 72 שעות לפני ההפלגה. דמי טיפול בגובה 100 ₪ יגבו.',
+        q: "האם ניתן לשנות תאריך?",
+        a: "כן, שינוי מועד אפשרי בכפוף לזמינות ואישור החברה, עד 72 שעות לפני ההפלגה. דמי טיפול בגובה 100 ₪ יגבו.",
       },
       {
-        q: 'מה קורה אם אנחנו מגיעים באיחור?',
-        a: 'כל איחור של הלקוח ייגרע מזמן השייט הכולל שנקבע מראש. אנא הגיעו בזמן!',
+        q: "מה קורה אם אנחנו מגיעים באיחור?",
+        a: "כל איחור של הלקוח ייגרע מזמן השייט הכולל שנקבע מראש. אנא הגיעו בזמן!",
       },
     ],
   },
   {
-    id: 'safety',
-    icon: '🛡️',
-    label: 'בטיחות וביטוח',
-    color: '#7c3aed',
+    id: "safety",
+    icon: "🛡️",
+    label: "בטיחות וביטוח",
+    color: "#7c3aed",
     faqs: [
       {
-        q: 'האם ההפלגות בטוחות?',
-        a: 'בהחלט! היאכטות שלנו עוברות בדיקות תקופתיות. כל הפלגה מלווה בסקיפר מוסמך ומנוסה. ציוד הצלה מלא קיים בכל כלי שיט.',
+        q: "האם ההפלגות בטוחות?",
+        a: "בהחלט! היאכטות שלנו עוברות בדיקות תקופתיות. כל הפלגה מלווה בסקיפר מוסמך ומנוסה. ציוד הצלה מלא קיים בכל כלי שיט.",
       },
       {
-        q: 'האם היאכטות מבוטחות?',
-        a: 'כן — כל היאכטות מבוטחות בביטוח צד ג\' בהתאם לדרישות החוק.',
+        q: "האם היאכטות מבוטחות?",
+        a: "כן — כל היאכטות מבוטחות בביטוח צד ג' בהתאם לדרישות החוק.",
       },
       {
-        q: 'האם ילדים יכולים להשתתף?',
-        a: 'כן! ילדים מוזמנים. ילדים עד גיל 12 חייבים ללבוש אפודי הצלה בכל עת בסיפון. מומלץ להודיע מראש על מספר הילדים.',
+        q: "האם ילדים יכולים להשתתף?",
+        a: "כן! ילדים מוזמנים. ילדים עד גיל 12 חייבים ללבוש אפודי הצלה בכל עת בסיפון. מומלץ להודיע מראש על מספר הילדים.",
       },
       {
-        q: 'מה עושים במקרה חירום?',
-        a: 'לכל הסקיפרים שלנו יש הכשרה בעזרה ראשונה ימית. ביאכטות קיים ציוד חירום מלא. הסקיפר יודע לטפל בכל מצב לפי נהלי הבטיחות הימית.',
+        q: "מה עושים במקרה חירום?",
+        a: "לכל הסקיפרים שלנו יש הכשרה בעזרה ראשונה ימית. ביאכטות קיים ציוד חירום מלא. הסקיפר יודע לטפל בכל מצב לפי נהלי הבטיחות הימית.",
       },
     ],
   },
   {
-    id: 'extras',
-    icon: '🎉',
-    label: 'תוספות ושירותים',
-    color: '#d4a017',
+    id: "extras",
+    icon: "🎉",
+    label: "תוספות ושירותים",
+    color: "#d4a017",
     faqs: [
       {
-        q: 'האם ניתן להזמין אוכל ושתיה?',
-        a: 'בהחלט! אנו מציעים שירותי קייטרינג לאירועים והפלגות. ניתן להזמין מגשים, שתיה, עוגות ועוד — הכל יחכה לכם קיים ביאכטה.',
+        q: "האם ניתן להזמין אוכל ושתיה?",
+        a: "בהחלט! אנו מציעים שירותי קייטרינג לאירועים והפלגות. ניתן להזמין מגשים, שתיה, עוגות ועוד — הכל יחכה לכם קיים ביאכטה.",
       },
       {
-        q: 'האם יש שירות מסאז׳?',
-        a: 'כן! ניתן להזמין מסאז׳ ביאכטה לחוויה בלתי נשכחת. יש לתאם מראש.',
+        q: "האם יש שירות מסאז׳?",
+        a: "כן! ניתן להזמין מסאז׳ ביאכטה לחוויה בלתי נשכחת. יש לתאם מראש.",
       },
       {
-        q: 'האם ניתן לקשט את היאכטה?',
-        a: 'כמובן! ניתן לקשט את היאכטה לאירוע מיוחד — יום הולדת, מסיבת רווקות, חתונה ועוד. יש לתאם את הקישוטים מראש.',
+        q: "האם ניתן לקשט את היאכטה?",
+        a: "כמובן! ניתן לקשט את היאכטה לאירוע מיוחד — יום הולדת, מסיבת רווקות, חתונה ועוד. יש לתאם את הקישוטים מראש.",
       },
       {
-        q: 'האם יש DJ או מוסיקה?',
-        a: 'ניתן להביא מוסיקה משלכם. ביאכטות יש מערכת סאונד. לאירועים גדולים ניתן לתאם DJ בהסדר מיוחד.',
+        q: "האם יש DJ או מוסיקה?",
+        a: "ניתן להביא מוסיקה משלכם. ביאכטות יש מערכת סאונד. לאירועים גדולים ניתן לתאם DJ בהסדר מיוחד.",
       },
       {
-        q: 'האם יש צילום מקצועי?',
-        a: 'ניתן לתאם צלם מקצועי לאירוע. צרו קשר לפרטים ומחירים.',
+        q: "האם יש צילום מקצועי?",
+        a: "ניתן לתאם צלם מקצועי לאירוע. צרו קשר לפרטים ומחירים.",
       },
     ],
   },
 ];
 ---
 
-<Layout title="שאלות ותשובות - Leader הפלגות חיפה">
-<div class="faq-page" dir="rtl">
-
-  <!-- ══════════════ HERO ══════════════ -->
-  <div class="page-hero">
-    <div class="hero-bubbles" aria-hidden="true">
-      <span class="bubble b1">?</span>
-      <span class="bubble b2">?</span>
-      <span class="bubble b3">?</span>
-    </div>
-    <div class="hero-content">
-      <div class="hero-icon-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-          <line x1="12" y1="17" x2="12.01" y2="17" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
+<Layout
+  title="שאלות ותשובות - Leader הפלגות חיפה"
+  description="תשובות לשאלות הנפוצות על הפלגות יאכטה עם Leader — מחירים, כמות נוסעים, מה כלול, ביטול הזמנה, בטיחות ועוד. כל מה שצריך לדעת לפני ההפלגה."
+>
+  <div class="faq-page" dir="rtl">
+    <!-- ══════════════ HERO ══════════════ -->
+    <div class="page-hero">
+      <div class="hero-bubbles" aria-hidden="true">
+        <span class="bubble b1">?</span>
+        <span class="bubble b2">?</span>
+        <span class="bubble b3">?</span>
       </div>
-      <h1>שאלות ותשובות</h1>
-      <p class="hero-sub">כל מה שרציתם לדעת על ההפלגות שלנו — במקום אחד</p>
+      <div class="hero-content">
+        <div class="hero-icon-wrap">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            width="36"
+            height="36"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line
+              x1="12"
+              y1="17"
+              x2="12.01"
+              y2="17"
+              stroke-width="2.5"
+              stroke-linecap="round"></line>
+          </svg>
+        </div>
+        <h1>שאלות ותשובות</h1>
+        <p class="hero-sub">כל מה שרציתם לדעת על ההפלגות שלנו — במקום אחד</p>
 
-      <!-- Search bar -->
-      <div class="search-wrap">
-        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-        <input
-          type="search"
-          id="faq-search"
-          class="search-input"
-          placeholder="חפשו שאלה..."
-          autocomplete="off"
-          aria-label="חיפוש שאלות"
-        />
-        <div class="search-clear" id="search-clear" aria-hidden="true">✕</div>
+        <!-- Search bar -->
+        <div class="search-wrap">
+          <svg
+            class="search-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            width="18"
+            height="18"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="8"></circle><line
+              x1="21"
+              y1="21"
+              x2="16.65"
+              y2="16.65"></line>
+          </svg>
+          <input
+            type="search"
+            id="faq-search"
+            class="search-input"
+            placeholder="חפשו שאלה..."
+            autocomplete="off"
+            aria-label="חיפוש שאלות"
+          />
+          <div class="search-clear" id="search-clear" aria-hidden="true">✕</div>
+        </div>
       </div>
-
     </div>
-  </div>
 
-  <div class="content-wrapper">
-
-    <!-- Category tabs -->
-    <div class="cat-tabs" id="cat-tabs" role="tablist" aria-label="קטגוריות שאלות">
-      <button class="cat-tab active" data-cat="all" role="tab" aria-selected="true">
-        🌊 הכל
-      </button>
-      {categories.map(c => (
+    <div class="content-wrapper">
+      <!-- Category tabs -->
+      <div
+        class="cat-tabs"
+        id="cat-tabs"
+        role="tablist"
+        aria-label="קטגוריות שאלות"
+      >
         <button
-          class="cat-tab"
-          data-cat={c.id}
+          class="cat-tab active"
+          data-cat="all"
           role="tab"
-          aria-selected="false"
-          style={`--cat-color:${c.color}`}
+          aria-selected="true"
         >
-          {c.icon} {c.label}
+          🌊 הכל
         </button>
-      ))}
-    </div>
+        {
+          categories.map((c) => (
+            <button
+              class="cat-tab"
+              data-cat={c.id}
+              role="tab"
+              aria-selected="false"
+              style={`--cat-color:${c.color}`}
+            >
+              {c.icon} {c.label}
+            </button>
+          ))
+        }
+      </div>
 
-    <!-- No results msg -->
-    <div class="no-results" id="no-results" hidden>
-      <div class="no-results-icon">🔍</div>
-      <p>לא נמצאו תוצאות לחיפוש זה.</p>
-      <button class="no-results-reset" id="no-results-reset">נקה חיפוש</button>
-    </div>
+      <!-- No results msg -->
+      <div class="no-results" id="no-results" hidden>
+        <div class="no-results-icon">🔍</div>
+        <p>לא נמצאו תוצאות לחיפוש זה.</p>
+        <button class="no-results-reset" id="no-results-reset">נקה חיפוש</button
+        >
+      </div>
 
-    <!-- FAQ sections -->
-    <div class="faq-sections" id="faq-sections">
-      {categories.map(cat => (
-        <section class="faq-section" data-cat={cat.id}>
-          <div class="section-heading">
-            <div class="section-icon" style={`background:${cat.color}18; color:${cat.color}`}>
-              {cat.icon}
-            </div>
-            <h2 style={`color:${cat.color}`}>{cat.label}</h2>
-          </div>
-
-          <div class="accordion">
-            {cat.faqs.map((item, i) => (
-              <div class="accordion-item" data-q={item.q.toLowerCase()}>
-                <button
-                  class="accordion-trigger"
-                  aria-expanded="false"
-                  id={`q-${cat.id}-${i}`}
-                  aria-controls={`a-${cat.id}-${i}`}
-                >
-                  <span class="q-num" style={`background:${cat.color}18; color:${cat.color}`}>
-                    {i + 1}
-                  </span>
-                  <span class="q-text">{item.q}</span>
-                  <span class="q-chevron" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
-                      <polyline points="6 9 12 15 18 9"/>
-                    </svg>
-                  </span>
-                </button>
+      <!-- FAQ sections -->
+      <div class="faq-sections" id="faq-sections">
+        {
+          categories.map((cat) => (
+            <section class="faq-section" data-cat={cat.id}>
+              <div class="section-heading">
                 <div
-                  class="accordion-body"
-                  id={`a-${cat.id}-${i}`}
-                  role="region"
-                  aria-labelledby={`q-${cat.id}-${i}`}
-                  hidden
+                  class="section-icon"
+                  style={`background:${cat.color}18; color:${cat.color}`}
                 >
-                  <div class="accordion-answer">
-                    <div class="answer-bar" style={`background:${cat.color}`}></div>
-                    <p>{item.a}</p>
-                  </div>
+                  {cat.icon}
                 </div>
+                <h2 style={`color:${cat.color}`}>{cat.label}</h2>
               </div>
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
 
-    <!-- Still have questions CTA -->
-    <div class="still-questions">
-      <div class="still-icon">💬</div>
-      <div class="still-text">
-        <h3>לא מצאתם את התשובה?</h3>
-        <p>אנחנו כאן 24/7 — שלחו לנו הודעה ונענה בהקדם</p>
+              <div class="accordion">
+                {cat.faqs.map((item, i) => (
+                  <div class="accordion-item" data-q={item.q.toLowerCase()}>
+                    <button
+                      class="accordion-trigger"
+                      aria-expanded="false"
+                      id={`q-${cat.id}-${i}`}
+                      aria-controls={`a-${cat.id}-${i}`}
+                    >
+                      <span
+                        class="q-num"
+                        style={`background:${cat.color}18; color:${cat.color}`}
+                      >
+                        {i + 1}
+                      </span>
+                      <span class="q-text">{item.q}</span>
+                      <span class="q-chevron" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          width="18"
+                          height="18"
+                        >
+                          <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                      </span>
+                    </button>
+                    <div
+                      class="accordion-body"
+                      id={`a-${cat.id}-${i}`}
+                      role="region"
+                      aria-labelledby={`q-${cat.id}-${i}`}
+                      hidden
+                    >
+                      <div class="accordion-answer">
+                        <div
+                          class="answer-bar"
+                          style={`background:${cat.color}`}
+                        />
+                        <p>{item.a}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))
+        }
       </div>
-      <div class="still-actions">
-        <a href="tel:0533403449" class="still-btn phone">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          053-340-3449
-        </a>
-        <a href="https://wa.me/972533403449" target="_blank" rel="noopener" class="still-btn wa">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp
-        </a>
-      </div>
-    </div>
 
-  </div><!-- /content-wrapper -->
-</div>
+      <!-- Still have questions CTA -->
+      <div class="still-questions">
+        <div class="still-icon">💬</div>
+        <div class="still-text">
+          <h3>לא מצאתם את התשובה?</h3>
+          <p>אנחנו כאן 24/7 — שלחו לנו הודעה ונענה בהקדם</p>
+        </div>
+        <div class="still-actions">
+          <a href="tel:0533403449" class="still-btn phone">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="17"
+              height="17"
+              ><path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+              ></path></svg
+            >
+            053-340-3449
+          </a>
+          <a
+            href="https://wa.me/972533403449"
+            target="_blank"
+            rel="noopener"
+            class="still-btn wa"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="17"
+              height="17"
+              ><path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              ></path></svg
+            >
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div><!-- /content-wrapper -->
+  </div>
 </Layout>
 
 <script>
   /* ════════════════════════════════════════
      ACCORDION
   ════════════════════════════════════════ */
-  document.querySelectorAll<HTMLButtonElement>('.accordion-trigger').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      const bodyId   = btn.getAttribute('aria-controls')!;
-      const body     = document.getElementById(bodyId)!;
-      const item     = btn.closest('.accordion-item')!;
+  document
+    .querySelectorAll<HTMLButtonElement>(".accordion-trigger")
+    .forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        const bodyId = btn.getAttribute("aria-controls")!;
+        const body = document.getElementById(bodyId)!;
+        const item = btn.closest(".accordion-item")!;
 
-      // close siblings in same accordion
-      btn.closest('.accordion')!.querySelectorAll<HTMLButtonElement>('.accordion-trigger').forEach(b => {
-        if (b !== btn) {
-          b.setAttribute('aria-expanded', 'false');
-          b.closest('.accordion-item')!.classList.remove('open');
-          const sid = b.getAttribute('aria-controls')!;
-          const sb  = document.getElementById(sid)!;
-          sb.hidden = true;
-          sb.style.maxHeight = '0';
+        // close siblings in same accordion
+        btn
+          .closest(".accordion")!
+          .querySelectorAll<HTMLButtonElement>(".accordion-trigger")
+          .forEach((b) => {
+            if (b !== btn) {
+              b.setAttribute("aria-expanded", "false");
+              b.closest(".accordion-item")!.classList.remove("open");
+              const sid = b.getAttribute("aria-controls")!;
+              const sb = document.getElementById(sid)!;
+              sb.hidden = true;
+              sb.style.maxHeight = "0";
+            }
+          });
+
+        if (expanded) {
+          btn.setAttribute("aria-expanded", "false");
+          item.classList.remove("open");
+          body.hidden = true;
+          body.style.maxHeight = "0";
+        } else {
+          btn.setAttribute("aria-expanded", "true");
+          item.classList.add("open");
+          body.hidden = false;
+          body.style.maxHeight = body.scrollHeight + "px";
         }
       });
-
-      if (expanded) {
-        btn.setAttribute('aria-expanded', 'false');
-        item.classList.remove('open');
-        body.hidden = true;
-        body.style.maxHeight = '0';
-      } else {
-        btn.setAttribute('aria-expanded', 'true');
-        item.classList.add('open');
-        body.hidden = false;
-        body.style.maxHeight = body.scrollHeight + 'px';
-      }
     });
-  });
 
   /* ════════════════════════════════════════
      CATEGORY TABS
   ════════════════════════════════════════ */
-  const tabs     = document.querySelectorAll<HTMLButtonElement>('.cat-tab');
-  const sections = document.querySelectorAll<HTMLElement>('.faq-section');
+  const tabs = document.querySelectorAll<HTMLButtonElement>(".cat-tab");
+  const sections = document.querySelectorAll<HTMLElement>(".faq-section");
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected','true');
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
 
       const cat = tab.dataset.cat!;
-      sections.forEach(s => {
-        s.style.display = (cat === 'all' || s.dataset.cat === cat) ? '' : 'none';
+      sections.forEach((s) => {
+        s.style.display = cat === "all" || s.dataset.cat === cat ? "" : "none";
       });
 
       // clear search when switching tabs
-      (document.getElementById('faq-search') as HTMLInputElement).value = '';
-      applySearch('');
+      (document.getElementById("faq-search") as HTMLInputElement).value = "";
+      applySearch("");
     });
   });
 
   /* ════════════════════════════════════════
      SEARCH
   ════════════════════════════════════════ */
-  const searchInput  = document.getElementById('faq-search') as HTMLInputElement;
-  const searchClear  = document.getElementById('search-clear')!;
-  const noResults    = document.getElementById('no-results')!;
-  const noResBtn     = document.getElementById('no-results-reset')!;
+  const searchInput = document.getElementById("faq-search") as HTMLInputElement;
+  const searchClear = document.getElementById("search-clear")!;
+  const noResults = document.getElementById("no-results")!;
+  const noResBtn = document.getElementById("no-results-reset")!;
 
   const applySearch = (query: string) => {
-    const q  = query.trim().toLowerCase();
+    const q = query.trim().toLowerCase();
     let found = 0;
 
-    sections.forEach(sec => {
+    sections.forEach((sec) => {
       let secVisible = false;
-      sec.querySelectorAll<HTMLElement>('.accordion-item').forEach(item => {
-        const text  = (item.dataset.q || '') + ' ' + (item.querySelector('.accordion-answer p')?.textContent || '').toLowerCase();
+      sec.querySelectorAll<HTMLElement>(".accordion-item").forEach((item) => {
+        const text =
+          (item.dataset.q || "") +
+          " " +
+          (
+            item.querySelector(".accordion-answer p")?.textContent || ""
+          ).toLowerCase();
         const match = !q || text.includes(q);
-        item.style.display = match ? '' : 'none';
-        if (match) { secVisible = true; found++; }
+        item.style.display = match ? "" : "none";
+        if (match) {
+          secVisible = true;
+          found++;
+        }
       });
-      sec.style.display = secVisible ? '' : 'none';
+      sec.style.display = secVisible ? "" : "none";
     });
 
     noResults.hidden = found > 0;
-    searchClear.style.display = q ? 'flex' : 'none';
+    searchClear.style.display = q ? "flex" : "none";
   };
 
-  searchInput.addEventListener('input', () => {
+  searchInput.addEventListener("input", () => {
     // switch to "all" tab when searching
-    tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-    tabs[0].classList.add('active'); tabs[0].setAttribute('aria-selected','true');
+    tabs.forEach((t) => {
+      t.classList.remove("active");
+      t.setAttribute("aria-selected", "false");
+    });
+    tabs[0].classList.add("active");
+    tabs[0].setAttribute("aria-selected", "true");
     applySearch(searchInput.value);
   });
 
-  searchClear.addEventListener('click', () => {
-    searchInput.value = '';
-    applySearch('');
+  searchClear.addEventListener("click", () => {
+    searchInput.value = "";
+    applySearch("");
     searchInput.focus();
   });
-  noResBtn.addEventListener('click', () => {
-    searchInput.value = '';
-    applySearch('');
+  noResBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    applySearch("");
   });
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap");
 
   /* ═══════════ VARS ═══════════ */
   .faq-page {
-    --navy:   #08047e;
-    --sea:    #0f7ab0;
-    --gold:   #d4a017;
+    --navy: #08047e;
+    --sea: #0f7ab0;
+    --gold: #d4a017;
     --gold-l: #f0c040;
-    --bg:     #f2f5fb;
-    --white:  #ffffff;
-    --text:   #1a1a2e;
+    --bg: #f2f5fb;
+    --white: #ffffff;
+    --text: #1a1a2e;
     --text-m: #3a3a5c;
     --text-l: #6b7280;
     --radius: 16px;
-    --shadow: 0 6px 28px rgba(8,4,126,0.09);
+    --shadow: 0 6px 28px rgba(8, 4, 126, 0.09);
 
     background: var(--bg);
-    font-family: 'Rubik', 'Segoe UI', Arial, sans-serif;
+    font-family: "Rubik", "Segoe UI", Arial, sans-serif;
     color: var(--text);
   }
 
@@ -444,48 +546,87 @@ const categories = [
     overflow: hidden;
   }
   .page-hero::after {
-    content: '';
+    content: "";
     position: absolute;
-    bottom: -2px; left: 0; right: 0; height: 64px;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 64px;
     background: var(--bg);
     clip-path: ellipse(55% 64px at 50% 64px);
   }
 
   /* floating ? bubbles */
-  .hero-bubbles { position: absolute; inset: 0; pointer-events: none; }
+  .hero-bubbles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
   .bubble {
     position: absolute;
-    font-size: 5rem; font-weight: 800;
-    color: rgba(255,255,255,0.04);
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.04);
     animation: float 8s ease-in-out infinite;
     line-height: 1;
   }
-  .b1 { top: 10%; right: 8%; animation-delay: 0s; }
-  .b2 { top: 50%; left: 5%; animation-delay: 2.5s; font-size: 7rem; }
-  .b3 { bottom: 20%; right: 30%; animation-delay: 5s; font-size: 3rem; }
+  .b1 {
+    top: 10%;
+    right: 8%;
+    animation-delay: 0s;
+  }
+  .b2 {
+    top: 50%;
+    left: 5%;
+    animation-delay: 2.5s;
+    font-size: 7rem;
+  }
+  .b3 {
+    bottom: 20%;
+    right: 30%;
+    animation-delay: 5s;
+    font-size: 3rem;
+  }
   @keyframes float {
-    0%,100% { transform: translateY(0) rotate(-5deg); }
-    50%      { transform: translateY(-18px) rotate(5deg); }
+    0%,
+    100% {
+      transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+      transform: translateY(-18px) rotate(5deg);
+    }
   }
 
-  .hero-content { position: relative; z-index: 1; }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
 
   .hero-icon-wrap {
-    width: 72px; height: 72px; border-radius: 20px;
-    background: rgba(255,255,255,0.12);
-    border: 1.5px solid rgba(255,255,255,0.22);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 1.4rem; color: white;
+    width: 72px;
+    height: 72px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.4rem;
+    color: white;
   }
 
   .page-hero h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; color: white;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    color: white;
     margin: 0 0 0.7rem;
-    text-shadow: 0 2px 14px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
   }
   .hero-sub {
-    font-size: 1.05rem; color: rgba(255,255,255,0.76);
-    margin: 0 0 2rem; line-height: 1.6;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.76);
+    margin: 0 0 2rem;
+    line-height: 1.6;
   }
 
   /* Search bar */
@@ -493,64 +634,87 @@ const categories = [
     position: relative;
     max-width: 460px;
     margin: 0 auto;
-    display: flex; align-items: center;
+    display: flex;
+    align-items: center;
   }
   .search-icon {
-    position: absolute; right: 1rem;
-    color: rgba(255,255,255,0.5);
+    position: absolute;
+    right: 1rem;
+    color: rgba(255, 255, 255, 0.5);
     pointer-events: none;
   }
   .search-input {
     width: 100%;
     padding: 0.85rem 3rem 0.85rem 2.5rem;
     border-radius: 14px;
-    border: 1.5px solid rgba(255,255,255,0.22);
-    background: rgba(255,255,255,0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.12);
     color: white;
     font-size: 1rem;
     font-family: inherit;
     backdrop-filter: blur(10px);
-    transition: border-color 0.2s, background 0.2s;
+    transition:
+      border-color 0.2s,
+      background 0.2s;
     direction: rtl;
   }
-  .search-input::placeholder { color: rgba(255,255,255,0.5); }
+  .search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
   .search-input:focus {
     outline: none;
-    border-color: rgba(255,255,255,0.5);
-    background: rgba(255,255,255,0.18);
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.18);
   }
   .search-clear {
-    position: absolute; left: 0.8rem;
-    width: 24px; height: 24px; border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    color: white; font-size: 0.65rem;
-    cursor: pointer; display: none;
-    align-items: center; justify-content: center;
+    position: absolute;
+    left: 0.8rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.65rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
     transition: background 0.2s;
   }
-  .search-clear:hover { background: rgba(255,255,255,0.35); }
+  .search-clear:hover {
+    background: rgba(255, 255, 255, 0.35);
+  }
 
   /* ═══════════ LAYOUT ═══════════ */
   .content-wrapper {
-    max-width: 860px; margin: 0 auto;
+    max-width: 860px;
+    margin: 0 auto;
     padding: 2.5rem 1.5rem 5rem;
-    display: flex; flex-direction: column; gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   /* ═══════════ CATEGORY TABS ═══════════ */
   .cat-tabs {
-    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .cat-tab {
-    display: inline-flex; align-items: center; gap: 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     padding: 0.5rem 1rem;
     border-radius: 30px;
     border: 1.5px solid #e2e8f0;
     background: var(--white);
     color: var(--text-l);
-    font-size: 0.85rem; font-weight: 600;
-    cursor: pointer; font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
     transition: all 0.2s ease;
     box-shadow: var(--shadow);
   }
@@ -563,48 +727,81 @@ const categories = [
     background: var(--cat-color, var(--navy));
     border-color: var(--cat-color, var(--navy));
     color: white;
-    box-shadow: 0 4px 14px rgba(8,4,126,0.25);
+    box-shadow: 0 4px 14px rgba(8, 4, 126, 0.25);
   }
-  .cat-tab[data-cat="all"] { --cat-color: #08047e; }
+  .cat-tab[data-cat="all"] {
+    --cat-color: #08047e;
+  }
 
   /* ═══════════ NO RESULTS ═══════════ */
   .no-results {
-    text-align: center; padding: 3rem 2rem;
-    background: var(--white); border-radius: var(--radius);
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--white);
+    border-radius: var(--radius);
     box-shadow: var(--shadow);
   }
-  .no-results-icon { font-size: 3rem; margin-bottom: 0.75rem; }
-  .no-results p { color: var(--text-l); margin: 0 0 1rem; }
-  .no-results-reset {
-    background: var(--navy); color: white;
-    border: none; border-radius: 10px;
-    padding: 0.6rem 1.5rem; font-size: 0.9rem; font-weight: 600;
-    cursor: pointer; font-family: inherit; transition: background 0.2s;
+  .no-results-icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
   }
-  .no-results-reset:hover { background: var(--sea); }
+  .no-results p {
+    color: var(--text-l);
+    margin: 0 0 1rem;
+  }
+  .no-results-reset {
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+  }
+  .no-results-reset:hover {
+    background: var(--sea);
+  }
 
   /* ═══════════ FAQ SECTIONS ═══════════ */
-  .faq-sections { display: flex; flex-direction: column; gap: 2rem; }
+  .faq-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-  .faq-section {}
+  .faq-section {
+  }
 
   .section-heading {
-    display: flex; align-items: center; gap: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
     margin-bottom: 1rem;
   }
   .section-icon {
-    width: 44px; height: 44px; border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem; flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
   }
   .section-heading h2 {
-    font-size: 1.15rem; font-weight: 700;
+    font-size: 1.15rem;
+    font-weight: 700;
     margin: 0;
   }
 
   /* ═══════════ ACCORDION ═══════════ */
   .accordion {
-    display: flex; flex-direction: column; gap: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
   }
 
   .accordion-item {
@@ -615,40 +812,60 @@ const categories = [
     transition: box-shadow 0.25s;
   }
   .accordion-item.open {
-    box-shadow: 0 10px 36px rgba(8,4,126,0.14);
+    box-shadow: 0 10px 36px rgba(8, 4, 126, 0.14);
   }
 
   .accordion-trigger {
     width: 100%;
-    display: flex; align-items: center; gap: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
     padding: 1.1rem 1.25rem;
-    border: none; background: transparent;
-    text-align: right; cursor: pointer;
+    border: none;
+    background: transparent;
+    text-align: right;
+    cursor: pointer;
     font-family: inherit;
     transition: background 0.2s;
   }
-  .accordion-trigger:hover { background: #fafbff; }
-  .accordion-trigger:focus-visible { outline: 2px solid var(--sea); outline-offset: -2px; }
+  .accordion-trigger:hover {
+    background: #fafbff;
+  }
+  .accordion-trigger:focus-visible {
+    outline: 2px solid var(--sea);
+    outline-offset: -2px;
+  }
 
   .q-num {
-    min-width: 28px; height: 28px; border-radius: 8px;
-    font-size: 0.75rem; font-weight: 800;
-    display: flex; align-items: center; justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
   }
 
   .q-text {
     flex: 1;
-    font-size: 0.97rem; font-weight: 600; color: var(--text);
-    text-align: right; line-height: 1.4;
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: var(--text);
+    text-align: right;
+    line-height: 1.4;
   }
 
   .q-chevron {
-    flex-shrink: 0; color: var(--text-l);
+    flex-shrink: 0;
+    color: var(--text-l);
     transition: transform 0.3s ease;
     display: flex;
   }
-  .accordion-item.open .q-chevron { transform: rotate(180deg); }
+  .accordion-item.open .q-chevron {
+    transform: rotate(180deg);
+  }
 
   /* Answer panel */
   .accordion-body {
@@ -656,20 +873,28 @@ const categories = [
     overflow: hidden;
     transition: max-height 0.35s ease;
   }
-  .accordion-body:not([hidden]) { max-height: 500px; }
+  .accordion-body:not([hidden]) {
+    max-height: 500px;
+  }
 
   .accordion-answer {
-    display: flex; gap: 1rem;
+    display: flex;
+    gap: 1rem;
     padding: 0 1.25rem 1.25rem 1.25rem;
   }
   .answer-bar {
-    width: 3px; border-radius: 3px; flex-shrink: 0;
-    align-self: stretch; min-height: 100%;
+    width: 3px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 100%;
     opacity: 0.6;
   }
   .accordion-answer p {
     margin: 0;
-    font-size: 0.93rem; color: var(--text-m); line-height: 1.75;
+    font-size: 0.93rem;
+    color: var(--text-m);
+    line-height: 1.75;
   }
 
   /* ═══════════ STILL QUESTIONS CTA ═══════════ */
@@ -677,48 +902,112 @@ const categories = [
     background: linear-gradient(135deg, var(--navy) 0%, var(--sea) 100%);
     border-radius: var(--radius);
     padding: 2rem 2rem;
-    display: flex; align-items: center; gap: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
     flex-wrap: wrap;
-    box-shadow: 0 12px 40px rgba(8,4,126,0.25);
+    box-shadow: 0 12px 40px rgba(8, 4, 126, 0.25);
   }
 
   .still-icon {
-    font-size: 2.8rem; flex-shrink: 0;
+    font-size: 2.8rem;
+    flex-shrink: 0;
     animation: wobble 3s ease-in-out infinite;
   }
   @keyframes wobble {
-    0%,100% { transform: rotate(0deg); }
-    25%      { transform: rotate(-8deg); }
-    75%      { transform: rotate(8deg); }
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-8deg);
+    }
+    75% {
+      transform: rotate(8deg);
+    }
   }
 
-  .still-text { flex: 1; min-width: 180px; }
-  .still-text h3 { font-size: 1.1rem; font-weight: 700; color: white; margin: 0 0 0.3rem; }
-  .still-text p  { font-size: 0.88rem; color: rgba(255,255,255,0.75); margin: 0; }
+  .still-text {
+    flex: 1;
+    min-width: 180px;
+  }
+  .still-text h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.3rem;
+  }
+  .still-text p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+  }
 
-  .still-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+  .still-actions {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
 
   .still-btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.7rem 1.35rem;
     border-radius: 12px;
-    font-weight: 700; font-size: 0.9rem;
-    text-decoration: none; transition: all 0.25s ease; white-space: nowrap;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
   }
-  .still-btn.phone { background: white; color: var(--navy); }
-  .still-btn.phone:hover { background: var(--gold-l); transform: translateY(-2px); }
-  .still-btn.wa    { background: #25D366; color: white; }
-  .still-btn.wa:hover { background: #128C7E; transform: translateY(-2px); }
+  .still-btn.phone {
+    background: white;
+    color: var(--navy);
+  }
+  .still-btn.phone:hover {
+    background: var(--gold-l);
+    transform: translateY(-2px);
+  }
+  .still-btn.wa {
+    background: #25d366;
+    color: white;
+  }
+  .still-btn.wa:hover {
+    background: #128c7e;
+    transform: translateY(-2px);
+  }
 
   /* ═══════════ RESPONSIVE ═══════════ */
   @media (max-width: 640px) {
-    .page-hero { padding: 4rem 1.25rem 4.5rem; }
-    .content-wrapper { padding: 2rem 1rem 4rem; gap: 1.5rem; }
-    .cat-tabs { gap: 0.4rem; }
-    .cat-tab  { font-size: 0.78rem; padding: 0.4rem 0.75rem; }
-    .still-questions { flex-direction: column; text-align: center; padding: 1.75rem 1.25rem; }
-    .still-actions { justify-content: center; }
-    .accordion-trigger { padding: 1rem; gap: 0.65rem; }
-    .q-text { font-size: 0.9rem; }
+    .page-hero {
+      padding: 4rem 1.25rem 4.5rem;
+    }
+    .content-wrapper {
+      padding: 2rem 1rem 4rem;
+      gap: 1.5rem;
+    }
+    .cat-tabs {
+      gap: 0.4rem;
+    }
+    .cat-tab {
+      font-size: 0.78rem;
+      padding: 0.4rem 0.75rem;
+    }
+    .still-questions {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.75rem 1.25rem;
+    }
+    .still-actions {
+      justify-content: center;
+    }
+    .accordion-trigger {
+      padding: 1rem;
+      gap: 0.65rem;
+    }
+    .q-text {
+      font-size: 0.9rem;
+    }
   }
 </style>

@@ -1,118 +1,120 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const sections = [
   {
-    id: 'services',
-    icon: '⚙️',
-    title: 'שירותים והתאמות',
-    color: 'blue',
-    text: 'לידר הפלגות שייט - שם חברה לידר (להלן: "החברה", "אנחנו" או "אנו") מכבדת את הפרטיות של כל לקוחותיה ומשתמשי השירותים שלה. השימוש באתר, במערכת ו/או בשירותים כפוף למדיניות הפרטיות זו (להלן "מדיניות הפרטיות"). "אתה" או "משתמש/ים" פירושו כל אדם המשתמש באתר, במערכת ו/או בשירותים. המונחים אשר לא הוגדרו במפורש במסמך זה, יפורשו בהתאם להגדרות שנקבעו בתנאי השימוש של החברה.'
+    id: "services",
+    icon: "⚙️",
+    title: "שירותים והתאמות",
+    color: "blue",
+    text: 'לידר הפלגות שייט - שם חברה לידר (להלן: "החברה", "אנחנו" או "אנו") מכבדת את הפרטיות של כל לקוחותיה ומשתמשי השירותים שלה. השימוש באתר, במערכת ו/או בשירותים כפוף למדיניות הפרטיות זו (להלן "מדיניות הפרטיות"). "אתה" או "משתמש/ים" פירושו כל אדם המשתמש באתר, במערכת ו/או בשירותים. המונחים אשר לא הוגדרו במפורש במסמך זה, יפורשו בהתאם להגדרות שנקבעו בתנאי השימוש של החברה.',
   },
   {
-    id: 'statistics',
-    icon: '📊',
-    title: 'נתונים סטטיסטיים',
-    color: 'sea',
-    text: 'אנו עשויים לאסוף נתונים סטטיסטיים שהתקבלו כתוצאה מעיבוד מידע, בכלל זה מידע אישי המתקבל ממגוון משתמשים ("נתונים סטטיסטיים"). זאת בכדי להתאים את האתר, המערכת ו/או השירותים לצרכים שונים ועל מנת לשפר ולייעל את השירותים. אנו עשויים להעביר את הנתונים הסטטיסטיים לספקי השירות שלנו או לשותפינו העסקיים, בהתאם לתנאים המסחריים שאנו קובעים ועל פי שיקול דעתנו הבלעדי.'
+    id: "statistics",
+    icon: "📊",
+    title: "נתונים סטטיסטיים",
+    color: "sea",
+    text: 'אנו עשויים לאסוף נתונים סטטיסטיים שהתקבלו כתוצאה מעיבוד מידע, בכלל זה מידע אישי המתקבל ממגוון משתמשים ("נתונים סטטיסטיים"). זאת בכדי להתאים את האתר, המערכת ו/או השירותים לצרכים שונים ועל מנת לשפר ולייעל את השירותים. אנו עשויים להעביר את הנתונים הסטטיסטיים לספקי השירות שלנו או לשותפינו העסקיים, בהתאם לתנאים המסחריים שאנו קובעים ועל פי שיקול דעתנו הבלעדי.',
   },
   {
-    id: 'analytics',
-    icon: '📈',
-    title: 'ניתוח נתונים סטטיסטיים',
-    color: 'teal',
-    text: 'אנו עשויים לנתח את הנתונים הסטטיסטיים באמצעות תוכנות המספקות שירותי מידע וניתוח סטטיסטי לרבות, אך ללא הגבלה, באמצעות Google Analytics ("כלים אנליטיים"). המידע הנאסף נועד לצרכי ניתוח, מחקר ובקרה. כמו כן, אנו משתמשים במידע שאנו מקבלים באמצעות הכלים האנליטיים לשיפור המערכת.'
+    id: "analytics",
+    icon: "📈",
+    title: "ניתוח נתונים סטטיסטיים",
+    color: "teal",
+    text: 'אנו עשויים לנתח את הנתונים הסטטיסטיים באמצעות תוכנות המספקות שירותי מידע וניתוח סטטיסטי לרבות, אך ללא הגבלה, באמצעות Google Analytics ("כלים אנליטיים"). המידע הנאסף נועד לצרכי ניתוח, מחקר ובקרה. כמו כן, אנו משתמשים במידע שאנו מקבלים באמצעות הכלים האנליטיים לשיפור המערכת.',
   },
   {
-    id: 'transfer',
-    icon: '🔄',
-    title: 'שימושים אחרים או העברת המידע שלך',
-    color: 'purple',
-    text: 'נשתף את המידע שלך בהתאם לאמור להלן, ואם נידרש לעשות כן לפי כל חוק, תקנה או צו בית משפט או בכדי לשתף פעולה עם חקירה של רשויות אכיפת החוק.'
+    id: "transfer",
+    icon: "🔄",
+    title: "שימושים אחרים או העברת המידע שלך",
+    color: "purple",
+    text: "נשתף את המידע שלך בהתאם לאמור להלן, ואם נידרש לעשות כן לפי כל חוק, תקנה או צו בית משפט או בכדי לשתף פעולה עם חקירה של רשויות אכיפת החוק.",
   },
   {
-    id: 'partners',
-    icon: '🤝',
-    title: 'שותפים עסקיים, ספקי שירות וקבלני משנה',
-    color: 'orange',
-    text: 'אנו עשויים לשתף מידע, כולל מידע אישי, עם לקוחותינו, כמו כן עם ספקי שירות, קבלני משנה, חברות קשורות, ושותפים עסקיים אשר עשויים להשתמש במידע כדי: (1) לסייע לנו לספק את השירותים; (2) לסייע להם בהבנת השימוש באתר; (3) פרסום מידע ותכנים מותאמים אישית. החברה תנקוט בצעדים כדי להבטיח רמה נאותה של הגנה למידע האישי.'
+    id: "partners",
+    icon: "🤝",
+    title: "שותפים עסקיים, ספקי שירות וקבלני משנה",
+    color: "orange",
+    text: "אנו עשויים לשתף מידע, כולל מידע אישי, עם לקוחותינו, כמו כן עם ספקי שירות, קבלני משנה, חברות קשורות, ושותפים עסקיים אשר עשויים להשתמש במידע כדי: (1) לסייע לנו לספק את השירותים; (2) לסייע להם בהבנת השימוש באתר; (3) פרסום מידע ותכנים מותאמים אישית. החברה תנקוט בצעדים כדי להבטיח רמה נאותה של הגנה למידע האישי.",
   },
   {
-    id: 'ownership',
-    icon: '🏢',
-    title: 'העברת בעלות',
-    color: 'rose',
-    text: 'אנו עשויים להעביר את מאגרי המידע שלנו המכילים מידע אישי לצד שלישי כלשהו ככל שהוא ירכוש את החברה, את נכסיה או חלק מאלו ו/או במהלך מו"מ על רכישת החברה ו/או נכסיה ו/או חלק מאלה.'
+    id: "ownership",
+    icon: "🏢",
+    title: "העברת בעלות",
+    color: "rose",
+    text: 'אנו עשויים להעביר את מאגרי המידע שלנו המכילים מידע אישי לצד שלישי כלשהו ככל שהוא ירכוש את החברה, את נכסיה או חלק מאלו ו/או במהלך מו"מ על רכישת החברה ו/או נכסיה ו/או חלק מאלה.',
   },
   {
-    id: 'law',
-    icon: '⚖️',
-    title: 'העברת מידע במסגרת אכיפת חוק',
-    color: 'navy',
-    text: 'אנו נשתף פעולה עם רשויות אכיפת החוק או כל צו שיפוטי הדורש או מנחה אותנו לגלות את זהות, התנהגות או תוכן דיגיטאלי של משתמש אשר נחשד בפעולות הנחזות למנוגדות לדין. כמו כן, אנו עשויים לשתף את המידע האישי שלך עם צדדים שלישיים, אם אנו מאמינים בתום לב שגילוי המידע הינו נאות ונועד להגן על הזכויות, הרכוש או הבטיחות שלנו.'
+    id: "law",
+    icon: "⚖️",
+    title: "העברת מידע במסגרת אכיפת חוק",
+    color: "navy",
+    text: "אנו נשתף פעולה עם רשויות אכיפת החוק או כל צו שיפוטי הדורש או מנחה אותנו לגלות את זהות, התנהגות או תוכן דיגיטאלי של משתמש אשר נחשד בפעולות הנחזות למנוגדות לדין. כמו כן, אנו עשויים לשתף את המידע האישי שלך עם צדדים שלישיים, אם אנו מאמינים בתום לב שגילוי המידע הינו נאות ונועד להגן על הזכויות, הרכוש או הבטיחות שלנו.",
   },
   {
-    id: 'more-sharing',
-    icon: '📤',
-    title: 'שיתוף מידע נוסף',
-    color: 'sea',
-    text: 'נעביר את המידע האישי שלך לצדדים שלישיים רלוונטיים במקרים שלהלן: (1) החברה תגלה כי אילו מפעולותיך מפרות את תנאי השימוש או נעשו לשם ביצוע תרמית; (2) החברה תעמוד בפני נקיטת צעדים משפטיים; (3) ההעברה נדרשת על פי דין, תקנה, צו בית משפט או צו מטעם רשות אכיפה כלשהיא.'
+    id: "more-sharing",
+    icon: "📤",
+    title: "שיתוף מידע נוסף",
+    color: "sea",
+    text: "נעביר את המידע האישי שלך לצדדים שלישיים רלוונטיים במקרים שלהלן: (1) החברה תגלה כי אילו מפעולותיך מפרות את תנאי השימוש או נעשו לשם ביצוע תרמית; (2) החברה תעמוד בפני נקיטת צעדים משפטיים; (3) ההעברה נדרשת על פי דין, תקנה, צו בית משפט או צו מטעם רשות אכיפה כלשהיא.",
   },
   {
-    id: 'security',
-    icon: '🔒',
-    title: 'כיצד אנו מגנים על מידע',
-    color: 'green',
-    text: 'אנו נוקטים באמצעי אבטחה העומדים בסטנדרטים המסחריים המקובלים בתעשייה, על מנת להגן על המידע האישי שנמסר לנו. למרות האמור לעיל, העברת מידע באמצעות האינטרנט אינה בטוחה לחלוטין. בהתאם לכך, איננו יכולים להבטיח את בטיחות הנתונים המועברים אלינו במלואה.'
+    id: "security",
+    icon: "🔒",
+    title: "כיצד אנו מגנים על מידע",
+    color: "green",
+    text: "אנו נוקטים באמצעי אבטחה העומדים בסטנדרטים המסחריים המקובלים בתעשייה, על מנת להגן על המידע האישי שנמסר לנו. למרות האמור לעיל, העברת מידע באמצעות האינטרנט אינה בטוחה לחלוטין. בהתאם לכך, איננו יכולים להבטיח את בטיחות הנתונים המועברים אלינו במלואה.",
   },
   {
-    id: 'notifications',
-    icon: '🔔',
-    title: 'הודעות',
-    color: 'blue',
-    text: 'אנו שומרים לעצמנו את הזכות לשלוח לך הודעות הקשורות לשימוש באתר, במערכת ו/או בשירותים, לרבות הודעות שירות ומסרים מנהליים. אם אינך מעוניין לקבל הודעות כאלו, תוכל לבטל את חשבונך.'
+    id: "notifications",
+    icon: "🔔",
+    title: "הודעות",
+    color: "blue",
+    text: "אנו שומרים לעצמנו את הזכות לשלוח לך הודעות הקשורות לשימוש באתר, במערכת ו/או בשירותים, לרבות הודעות שירות ומסרים מנהליים. אם אינך מעוניין לקבל הודעות כאלו, תוכל לבטל את חשבונך.",
   },
   {
-    id: 'children',
-    icon: '👶',
-    title: 'ילדים',
-    color: 'teal',
-    text: 'החברה אינה אוספת במכוון מידע אודות משתמשים שגילם מתחת לגיל 13. במידה ונחשפת לכך שמשתמש מתחת לגיל 13 נרשם למערכת, הנך מתבקש להודיע לנו על כך ללא דיחוי.'
+    id: "children",
+    icon: "👶",
+    title: "ילדים",
+    color: "teal",
+    text: "החברה אינה אוספת במכוון מידע אודות משתמשים שגילם מתחת לגיל 13. במידה ונחשפת לכך שמשתמש מתחת לגיל 13 נרשם למערכת, הנך מתבקש להודיע לנו על כך ללא דיחוי.",
   },
   {
-    id: 'rights',
-    icon: '✏️',
-    title: 'זכות עיון ושינוי מידע',
-    color: 'purple',
-    text: 'לזכות המשתמש עומדת האפשרות לבקש לעיין ו/או למחוק מידע שנאסף עליו על ידי החברה, בהתאם להוראות החוק. החברה תמחק ו/או תשנה מידע שנאסף על המשתמש בהתאם לבקשה אשר תתקבל בכתב מהמשתמש בכתובת danielflider78@gmail.com אם וככל שאפשרי ובהתאם להוראות החוק.'
+    id: "rights",
+    icon: "✏️",
+    title: "זכות עיון ושינוי מידע",
+    color: "purple",
+    text: "לזכות המשתמש עומדת האפשרות לבקש לעיין ו/או למחוק מידע שנאסף עליו על ידי החברה, בהתאם להוראות החוק. החברה תמחק ו/או תשנה מידע שנאסף על המשתמש בהתאם לבקשה אשר תתקבל בכתב מהמשתמש בכתובת danielflider78@gmail.com אם וככל שאפשרי ובהתאם להוראות החוק.",
   },
   {
-    id: 'cookies',
-    icon: '🍪',
-    title: 'Cookies',
-    color: 'orange',
-    text: 'אנחנו עשויים להשתמש ב"עוגיות" ("cookies" – קבצי טקסט קטנים אשר נשלחים לדפדפן במחשב בו אתה משתמש), על מנת לספק לך שירות מהיר, יעיל ומותאם אישית. יובהר כי ה"עוגיות" אינן מכילות כל מידע אשר מזהה אותך באופן אישי. ביכולתך לשנות את הגדרות הדפדפן שלך כך שלא ייאספו "עוגיות".'
+    id: "cookies",
+    icon: "🍪",
+    title: "Cookies",
+    color: "orange",
+    text: 'אנחנו עשויים להשתמש ב"עוגיות" ("cookies" – קבצי טקסט קטנים אשר נשלחים לדפדפן במחשב בו אתה משתמש), על מנת לספק לך שירות מהיר, יעיל ומותאם אישית. יובהר כי ה"עוגיות" אינן מכילות כל מידע אשר מזהה אותך באופן אישי. ביכולתך לשנות את הגדרות הדפדפן שלך כך שלא ייאספו "עוגיות".',
   },
   {
-    id: 'retention',
-    icon: '💾',
-    title: 'שמירת המידע',
-    color: 'rose',
-    text: 'אנו נשמור את המידע האישי אודותיך למשך הזמן הדרוש על מנת: לממש את מטרות השימוש במידע המפורטות במדיניות הפרטיות; לעמוד בהתחייבויות המשפטיות שלנו; לפתור סכסוכים; לאכוף את ההסכמים שלנו; או למשך פרק זמן ארוך יותר כפי שיידרש לפי הוראות הדין הרלוונטי.'
+    id: "retention",
+    icon: "💾",
+    title: "שמירת המידע",
+    color: "rose",
+    text: "אנו נשמור את המידע האישי אודותיך למשך הזמן הדרוש על מנת: לממש את מטרות השימוש במידע המפורטות במדיניות הפרטיות; לעמוד בהתחייבויות המשפטיות שלנו; לפתור סכסוכים; לאכוף את ההסכמים שלנו; או למשך פרק זמן ארוך יותר כפי שיידרש לפי הוראות הדין הרלוונטי.",
   },
   {
-    id: 'changes',
-    icon: '🔄',
-    title: 'שינויים',
-    color: 'navy',
-    text: 'על ידי השימוש באתר, במערכת ו/או בשירותים, הנך מקבל את התנאים של מדיניות פרטיות זו. אם אינך מסכים לתנאים, אל תשמש באתר. אנו רשאים לשנות, מעת לעת, ועל פי שיקול דעתנו הבלעדי, את הוראות מדיניות הפרטיות. אם יבוצעו שינויים מהותיים, נעדכן אותך על כך מראש.'
+    id: "changes",
+    icon: "🔄",
+    title: "שינויים",
+    color: "navy",
+    text: "על ידי השימוש באתר, במערכת ו/או בשירותים, הנך מקבל את התנאים של מדיניות פרטיות זו. אם אינך מסכים לתנאים, אל תשמש באתר. אנו רשאים לשנות, מעת לעת, ועל פי שיקול דעתנו הבלעדי, את הוראות מדיניות הפרטיות. אם יבוצעו שינויים מהותיים, נעדכן אותך על כך מראש.",
   },
 ];
 ---
 
-<Layout title="מדיניות פרטיות - Leader הפלגות">
+<Layout
+  title="מדיניות פרטיות - Leader הפלגות"
+  description="מדיניות הפרטיות של Leader הפלגות — כיצד אנו אוספים, מאחסנים ומשתמשים במידע שלכם. שקיפות מלאה על אבטחת המידע."
+>
   <div class="privacy-page" dir="rtl">
-
     <!-- Hero -->
     <div class="page-hero">
       <div class="hero-shapes">
@@ -122,19 +124,56 @@ const sections = [
       </div>
       <div class="hero-content">
         <div class="hero-icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="44" height="44">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            width="44"
+            height="44"
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
         </div>
         <h1>מדיניות פרטיות</h1>
         <p class="hero-sub">לידר הפלגות שייט – שמירה על הפרטיות שלך</p>
         <div class="hero-meta">
           <span class="meta-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              width="14"
+              height="14"
+              ><rect x="3" y="4" width="18" height="18" rx="2"></rect><line
+                x1="16"
+                y1="2"
+                x2="16"
+                y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line
+                x1="3"
+                y1="10"
+                x2="21"
+                y2="10"></line></svg
+            >
             עודכן לאחרונה: מאי 2024
           </span>
           <span class="meta-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              width="14"
+              height="14"
+              ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+              ></path></svg
+            >
             GDPR Compliant
           </span>
         </div>
@@ -142,17 +181,41 @@ const sections = [
     </div>
 
     <div class="content-wrapper">
-
       <!-- Table of Contents -->
       <nav class="toc-card" aria-label="תוכן עניינים">
         <div class="toc-header">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            width="20"
+            height="20"
+            ><line x1="8" y1="6" x2="21" y2="6"></line><line
+              x1="8"
+              y1="12"
+              x2="21"
+              y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line
+              x1="3"
+              y1="6"
+              x2="3.01"
+              y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line
+              x1="3"
+              y1="18"
+              x2="3.01"
+              y2="18"></line></svg
+          >
           <span>תוכן עניינים</span>
         </div>
         <ol class="toc-list">
-          {sections.map((s, i) => (
-            <li><a href={`#${s.id}`}>{s.title}</a></li>
-          ))}
+          {
+            sections.map((s, i) => (
+              <li>
+                <a href={`#${s.id}`}>{s.title}</a>
+              </li>
+            ))
+          }
           <li><a href="#contact">הערות ושאלות</a></li>
         </ol>
       </nav>
@@ -160,8 +223,8 @@ const sections = [
       <!-- Intro -->
       <div class="intro-card">
         <p>
-          <strong>לידר הפלגות שייט</strong> מכבדת את הפרטיות של כל לקוחותיה ומשתמשי השירותים שלה.
-          השימוש באתר, במערכת ו/או בשירותים כפוף למדיניות הפרטיות זו.
+          <strong>לידר הפלגות שייט</strong> מכבדת את הפרטיות של כל לקוחותיה ומשתמשי
+          השירותים שלה. השימוש באתר, במערכת ו/או בשירותים כפוף למדיניות הפרטיות זו.
         </p>
         <p>
           מדיניות זו מפרטת כיצד אנו אוספים, משתמשים ומגינים על המידע האישי שלך.
@@ -171,30 +234,56 @@ const sections = [
 
       <!-- Sections -->
       <div class="sections-list">
-        {sections.map((section) => (
-          <div class={`section-card color-${section.color}`} id={section.id}>
-            <div class="section-top">
-              <div class="section-emoji">{section.icon}</div>
-              <h2>{section.title}</h2>
+        {
+          sections.map((section) => (
+            <div class={`section-card color-${section.color}`} id={section.id}>
+              <div class="section-top">
+                <div class="section-emoji">{section.icon}</div>
+                <h2>{section.title}</h2>
+              </div>
+              <p>{section.text}</p>
             </div>
-            <p>{section.text}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
 
       <!-- Contact / Questions -->
       <div class="contact-card" id="contact">
         <div class="contact-left">
           <div class="contact-icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              width="32"
+              height="32"
+              ><path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              ></path></svg
+            >
           </div>
           <div>
             <h2>הערות ושאלות</h2>
-            <p>אם יש לך שאלות או הערות לגבי מדיניות הפרטיות שלנו, אנא צור קשר:</p>
+            <p>
+              אם יש לך שאלות או הערות לגבי מדיניות הפרטיות שלנו, אנא צור קשר:
+            </p>
           </div>
         </div>
         <a href="mailto:danielflider78@gmail.com" class="contact-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            width="18"
+            height="18"
+            ><path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            ></path><polyline points="22,6 12,13 2,6"></polyline></svg
+          >
           danielflider78@gmail.com
         </a>
       </div>
@@ -204,35 +293,34 @@ const sections = [
         <a href="/" class="back-link">← חזרה לדף הבית</a>
         <a href="/הצהרת-הנגישות" class="back-link">הצהרת הנגישות ←</a>
       </div>
-
     </div>
   </div>
 </Layout>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap");
 
   /* ================================================
      VARIABLES
   ================================================ */
   .privacy-page {
-    --navy:       #08047e;
+    --navy: #08047e;
     --navy-light: #1a0fa8;
-    --sea:        #0f7ab0;
-    --sea-light:  #1da8e8;
-    --gold:       #d4a017;
+    --sea: #0f7ab0;
+    --sea-light: #1da8e8;
+    --gold: #d4a017;
     --gold-light: #f0c040;
-    --bg:         #f2f5fb;
-    --white:      #ffffff;
-    --text-dark:  #1a1a2e;
-    --text-mid:   #3a3a5c;
+    --bg: #f2f5fb;
+    --white: #ffffff;
+    --text-dark: #1a1a2e;
+    --text-mid: #3a3a5c;
     --text-light: #6b6b8a;
-    --radius:     16px;
-    --shadow:     0 6px 28px rgba(8,4,126,0.09);
-    --shadow-md:  0 12px 40px rgba(8,4,126,0.15);
+    --radius: 16px;
+    --shadow: 0 6px 28px rgba(8, 4, 126, 0.09);
+    --shadow-md: 0 12px 40px rgba(8, 4, 126, 0.15);
 
     background: var(--bg);
-    font-family: 'Rubik', 'Segoe UI', Arial, sans-serif;
+    font-family: "Rubik", "Segoe UI", Arial, sans-serif;
     color: var(--text-dark);
   }
 
@@ -248,7 +336,11 @@ const sections = [
   }
 
   /* Decorative floating shapes */
-  .hero-shapes { position: absolute; inset: 0; pointer-events: none; }
+  .hero-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
   .shape {
     position: absolute;
     border-radius: 50%;
@@ -256,33 +348,63 @@ const sections = [
     background: white;
     animation: float 8s ease-in-out infinite;
   }
-  .shape-1 { width: 320px; height: 320px; top: -80px; right: -60px; animation-delay: 0s; }
-  .shape-2 { width: 200px; height: 200px; bottom: -40px; left: 10%; animation-delay: 2.5s; }
-  .shape-3 { width: 150px; height: 150px; top: 30%; left: 60%; animation-delay: 5s; }
+  .shape-1 {
+    width: 320px;
+    height: 320px;
+    top: -80px;
+    right: -60px;
+    animation-delay: 0s;
+  }
+  .shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: -40px;
+    left: 10%;
+    animation-delay: 2.5s;
+  }
+  .shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 30%;
+    left: 60%;
+    animation-delay: 5s;
+  }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50%       { transform: translateY(-18px) scale(1.04); }
+    0%,
+    100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-18px) scale(1.04);
+    }
   }
 
   /* Wave separator */
   .page-hero::after {
-    content: '';
+    content: "";
     position: absolute;
-    bottom: -2px; left: 0; right: 0;
+    bottom: -2px;
+    left: 0;
+    right: 0;
     height: 60px;
     background: var(--bg);
     clip-path: ellipse(55% 60px at 50% 60px);
   }
 
-  .hero-content { position: relative; z-index: 1; }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
 
   .hero-icon-wrap {
     display: inline-flex;
-    align-items: center; justify-content: center;
-    width: 84px; height: 84px;
-    background: rgba(255,255,255,0.12);
-    border: 2px solid rgba(255,255,255,0.25);
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
     margin-bottom: 1.5rem;
     backdrop-filter: blur(8px);
@@ -295,12 +417,12 @@ const sections = [
     color: white;
     margin: 0 0 0.6rem;
     letter-spacing: -0.5px;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   }
 
   .hero-sub {
     font-size: 1.1rem;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     margin: 0 0 1.75rem;
   }
 
@@ -315,9 +437,9 @@ const sections = [
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 0.8rem;
     font-weight: 500;
     padding: 0.35rem 0.85rem;
@@ -400,8 +522,12 @@ const sections = [
     color: var(--text-mid);
     margin: 0 0 0.85rem;
   }
-  .intro-card p:last-child { margin: 0; }
-  .intro-card strong { color: var(--navy); }
+  .intro-card p:last-child {
+    margin: 0;
+  }
+  .intro-card strong {
+    color: var(--navy);
+  }
 
   /* ================================================
      SECTION CARDS
@@ -418,7 +544,9 @@ const sections = [
     padding: 1.75rem 2rem;
     box-shadow: var(--shadow);
     border-right: 5px solid var(--navy);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .section-card:hover {
@@ -427,14 +555,30 @@ const sections = [
   }
 
   /* Color variants for the right border */
-  .color-blue   { border-color: #0f7ab0; }
-  .color-sea    { border-color: #0da8d0; }
-  .color-teal   { border-color: #0a9e8a; }
-  .color-purple { border-color: #7c3aed; }
-  .color-orange { border-color: #d97706; }
-  .color-rose   { border-color: #e11d48; }
-  .color-navy   { border-color: #08047e; }
-  .color-green  { border-color: #059669; }
+  .color-blue {
+    border-color: #0f7ab0;
+  }
+  .color-sea {
+    border-color: #0da8d0;
+  }
+  .color-teal {
+    border-color: #0a9e8a;
+  }
+  .color-purple {
+    border-color: #7c3aed;
+  }
+  .color-orange {
+    border-color: #d97706;
+  }
+  .color-rose {
+    border-color: #e11d48;
+  }
+  .color-navy {
+    border-color: #08047e;
+  }
+  .color-green {
+    border-color: #059669;
+  }
 
   .section-top {
     display: flex;
@@ -446,8 +590,11 @@ const sections = [
   .section-emoji {
     font-size: 1.65rem;
     line-height: 1;
-    width: 44px; height: 44px;
-    display: flex; align-items: center; justify-content: center;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--bg);
     border-radius: 10px;
     flex-shrink: 0;
@@ -491,10 +638,13 @@ const sections = [
   }
 
   .contact-icon-wrap {
-    width: 60px; height: 60px;
-    background: rgba(255,255,255,0.15);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     color: white;
   }
@@ -508,7 +658,7 @@ const sections = [
 
   .contact-card p {
     font-size: 0.95rem;
-    color: rgba(255,255,255,0.82);
+    color: rgba(255, 255, 255, 0.82);
     margin: 0;
     line-height: 1.5;
   }
@@ -532,7 +682,7 @@ const sections = [
   .contact-btn:hover {
     background: var(--gold-light);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   }
 
   /* ================================================
@@ -568,22 +718,56 @@ const sections = [
      RESPONSIVE
   ================================================ */
   @media (max-width: 768px) {
-    .page-hero { padding: 3.5rem 1.25rem 3rem; }
-    .content-wrapper { padding: 2rem 1rem 3.5rem; gap: 1.5rem; }
-    .toc-card { padding: 1.25rem 1.25rem; }
-    .toc-list { grid-template-columns: 1fr; }
-    .intro-card { padding: 1.5rem 1.25rem; }
-    .section-card { padding: 1.5rem 1.25rem; }
-    .contact-card { flex-direction: column; gap: 1.5rem; padding: 2rem 1.25rem; }
-    .contact-left { flex-direction: column; text-align: center; }
-    .contact-icon-wrap { display: none; }
-    .contact-btn { width: 100%; justify-content: center; }
-    .back-links { flex-direction: column; }
-    .back-link { justify-content: center; }
+    .page-hero {
+      padding: 3.5rem 1.25rem 3rem;
+    }
+    .content-wrapper {
+      padding: 2rem 1rem 3.5rem;
+      gap: 1.5rem;
+    }
+    .toc-card {
+      padding: 1.25rem 1.25rem;
+    }
+    .toc-list {
+      grid-template-columns: 1fr;
+    }
+    .intro-card {
+      padding: 1.5rem 1.25rem;
+    }
+    .section-card {
+      padding: 1.5rem 1.25rem;
+    }
+    .contact-card {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem 1.25rem;
+    }
+    .contact-left {
+      flex-direction: column;
+      text-align: center;
+    }
+    .contact-icon-wrap {
+      display: none;
+    }
+    .contact-btn {
+      width: 100%;
+      justify-content: center;
+    }
+    .back-links {
+      flex-direction: column;
+    }
+    .back-link {
+      justify-content: center;
+    }
   }
 
   @media (max-width: 480px) {
-    .page-hero h1 { font-size: 1.75rem; }
-    .hero-meta { flex-direction: column; align-items: center; }
+    .page-hero h1 {
+      font-size: 1.75rem;
+    }
+    .hero-meta {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 </style>
