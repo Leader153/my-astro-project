@@ -148,7 +148,7 @@ const textSections = [
 
         <div class="hz-grid">
           {
-            services.map((s, i) => (
+            services.slice(0, 2).map((s, i) => (
               <a
                 href={s.href}
                 class="hz-card"
@@ -191,6 +191,121 @@ const textSections = [
               </a>
             ))
           }
+        </div>
+
+        <div class="hz-mid-text" style="margin: 3rem auto;">
+          <p class="hmt-main">
+            <strong>מרינה הרצליה</strong><br/>
+            אנו ממוקמים במרינה המפוארת בהרצליה המשמשת כפלטפורמה ייחודית ויוקרתית ונגישה לכל אירוע. היאכטות שלנו מאובזרות בכל הנדרש על מנת לדאוג לנוחות, להנאה, ולפרטיות שלכם.
+          </p>
+        </div>
+
+        <div class="hz-grid">
+          {
+            services.slice(2, 4).map((s, i) => (
+              <a
+                href={s.href}
+                class="hz-card"
+                style={`--c:${s.color}; --i:${i + 2}`}
+              >
+                <div class="hz-card-img">
+                  <Image
+                    src={cardImg}
+                    width={600}
+                    height={400}
+                    format="webp"
+                    alt={s.alt}
+                    class="hz-img"
+                    loading="lazy"
+                  />
+                  <div class="hz-badge" style={`background:${s.color}`}>
+                    {s.tag}
+                  </div>
+                </div>
+                <div class="hz-card-body">
+                  <div class="hz-card-icon">{s.icon}</div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <span class="hz-card-cta" style={`color:${s.color}`}>
+                    לפרטים
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      width="14"
+                      height="14"
+                    >
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="hz-glow" style={`background:${s.color}`} />
+              </a>
+            ))
+          }
+        </div>
+
+        <div class="hz-mid-text" style="margin: 3rem auto;">
+          <p class="hmt-main">
+            <strong>מיקום יוקרתי ופרטי</strong><br/>
+            היאכטות שלנו עוגנות מול טיילת המסעדות, במעלה הרציף אליו רק מורשים יכולים להיכנס. כך שמצד אחד אתם בלב העניינים ומצד שני תקבלו פרטיות יוקרתית. כל אירוח אצלנו כולל בקבוק שמפניה גדול, מוזיקה מגוונת ואווירה ייחודית.
+          </p>
+        </div>
+
+        <div class="hz-grid">
+          {
+            services.slice(4, 6).map((s, i) => (
+              <a
+                href={s.href}
+                class="hz-card"
+                style={`--c:${s.color}; --i:${i + 4}`}
+              >
+                <div class="hz-card-img">
+                  <Image
+                    src={cardImg}
+                    width={600}
+                    height={400}
+                    format="webp"
+                    alt={s.alt}
+                    class="hz-img"
+                    loading="lazy"
+                  />
+                  <div class="hz-badge" style={`background:${s.color}`}>
+                    {s.tag}
+                  </div>
+                </div>
+                <div class="hz-card-body">
+                  <div class="hz-card-icon">{s.icon}</div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <span class="hz-card-cta" style={`color:${s.color}`}>
+                    לפרטים
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      width="14"
+                      height="14"
+                    >
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="hz-glow" style={`background:${s.color}`} />
+              </a>
+            ))
+          }
+        </div>
+
+        <div class="hz-mid-text" style="margin-top: 3rem;">
+          <p class="hmt-main">
+            <strong>הפלגה פרטית וחלומית</strong><br/>
+            חברת לידר מזמינה אותכם להנות מהפלגה פרטית וחלומית. בהפלגה תצאו עם סקיפר מקצועי על אחת היאכטות שלנו ותוכלו להתפנק מהנופים, להשתזף בשמש, ללגום מהיין האיכותי, להנות מהמוזיקה שלכם ברקע.
+          </p>
         </div>
       </div>
     </section>
@@ -283,6 +398,32 @@ const textSections = [
     font-family: "Rubik", "Segoe UI", Arial, sans-serif;
     color: var(--text);
     background: var(--bg);
+  }
+
+  /* ══ PREMIUM MID TEXT ══ */
+  .hz-mid-text {
+    background: #ffffff;
+    border: 4px solid #d4a017;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    box-shadow: 0 15px 45px rgba(212,160,23,0.3);
+    text-align: center;
+  }
+  .hmt-main {
+    font-size: 1.15rem;
+    color: #000000;
+    font-weight: 500;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .hmt-main strong {
+    color: #0f7ab0;
+    font-size: 1.3rem;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 0.5rem;
   }
 
   /* ══ HERO ══ */

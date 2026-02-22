@@ -10,7 +10,7 @@ const services = [
     desc: 'רגעים קסומים לשניים. שקיעה, כוכבים ורוח ים — החל מ-550 ₪',
     tag: 'לזוגות',
     color: '#e91e8c',
-    href: '/צור-קשר',
+    href: '/romantic-cruise',
     alt: 'זוג מאושר על יאכטה בשקיעה רומנטית בים התיכון',
   },
   {
@@ -19,7 +19,7 @@ const services = [
     desc: 'מסיבה בלתי נשכחת על הסיפון עם חברים. אלכוהול, מוסיקה והרבה כיף',
     tag: 'פופולרי',
     color: '#7c3aed',
-    href: '/צור-קשר',
+    href: '/bachelor-party',
     alt: 'קבוצת חברים חוגגת מסיבת רווקות על יאכטה פרטית',
   },
   {
@@ -28,7 +28,7 @@ const services = [
     desc: 'תחגגו יום הולדת שלא תשכחו לעולם — ביאכטה פרטית עם כל החבר\'ים',
     tag: 'מומלץ',
     color: '#d4a017',
-    href: '/צור-קשר',
+    href: '/birthday',
     alt: 'חגיגת יום הולדת על סיפון יאכטה עם חברים ועוגה',
   },
   {
@@ -37,7 +37,7 @@ const services = [
     desc: 'ימי גיבוש לעובדים ואירוח עסקי ביאכטה — חוויה שתחזק את הצוות',
     tag: 'עסקי',
     color: '#0f7ab0',
-    href: '/צור-קשר',
+    href: '/corporate-events',
     alt: 'צוות עובדים ביום גיבוש על יאכטה עם נוף ים',
   },
   {
@@ -46,7 +46,7 @@ const services = [
     desc: 'יום בים עם כל המשפחה — בטוח, מהנה ובלתי נשכח לכל הגילאים',
     tag: 'משפחות',
     color: '#059669',
-    href: '/צור-קשר',
+    href: '/family-cruise',
     alt: 'משפחה שמחה עם ילדים נהנים מהפלגה ביאכטה בים',
   },
   {
@@ -55,14 +55,41 @@ const services = [
     desc: 'הפתיעו את האהוב/ה שלכם ביאכטה — רגע שתזכרו לכל החיים',
     tag: 'מיוחד',
     color: '#e91e8c',
-    href: '/צור-קשר',
+    href: '/marriage-proposal',
     alt: 'זוג לבוש בבגדי חתונה שניים על יאכטה מפרשית — הצעת נישואין רומנטית',
+  },
+  {
+    icon: '🎣',
+    title: 'הפלגת דייג ללא צורך ברישיון',
+    desc: 'חוויית דייג מהנה בלב ים, ציוד מקצועי עלינו — פשוט לבוא וליהנות',
+    tag: 'אטרקציה',
+    color: '#0ea5e9',
+    href: '/fishing',
+    alt: 'קבוצה בהפלגת דייג על יאכטה במרינה',
+  },
+  {
+    icon: '💆‍♀️',
+    title: 'חבילת ספא על יאכטה',
+    desc: 'חוויית פינוק מושלמת הכוללת טיפולי ספא מרגיעים מול נוף הים הפתוח',
+    tag: 'פינוק',
+    color: '#f43f5e',
+    href: '/spa',
+    alt: 'טיפול ספא מרגיע על סיפון יאכטה אקסקלוסיבית',
+  },
+  {
+    icon: '🌍',
+    title: 'שייט לקפריסין',
+    desc: 'הפלגה ממושכת לאי השכן — חופשה חלומית, בטוחה ובלתי נשכחת מחוץ לגבולות',
+    tag: 'חו״ל',
+    color: '#8b5cf6',
+    href: '/cyprus',
+    alt: 'יאכטה בלב ים בדרכה לקפריסין עם נוף פנורמי',
   },
 ];
 
 const features = [
   { icon: '⭐', title: '10+ שנות ניסיון', desc: 'מאז 2011, מאות הפלגות מאושרות' },
-  { icon: '⛵', title: 'צי של 4 יאכטות', desc: 'יאכטות ברמת פאר גבוהה לכל תקציב' },
+  { icon: '⛵', title: 'צי של 18 יאכטות', desc: 'יאכטות ברמת פאר גבוהה לכל תקציב' },
   { icon: '👨‍✈️', title: 'סקיפרים מוסמכים', desc: 'מקצועיים, אוהבי ים ושירותיים' },
   { icon: '🛡️', title: 'בטיחות מקסימלית', desc: 'מבוטחים, מאובזרים וזמינים 24/7' },
   { icon: '📍', title: 'חיפה + הרצליה', desc: 'שתי מרינות — כנסו בנוח אליכם' },
@@ -162,11 +189,22 @@ const testimonials = [
       <div class="section-header">
         <div class="eyebrow">בחרו את ההפלגה שלכם</div>
         <h2>לכל אירוע — הפלגה מושלמת</h2>
-        <p>מגוון חבילות לכל מטרה — מזוגות שמחפשים רומנטיקה ועד קבוצות גדולות לאירוע בלתי נשכח</p>
+        <div class="intro-highlight">
+          <p class="ih-main">
+            מגוון חבילות לכל מטרה — מזוגות שמחפשים רומנטיקה ועד קבוצות גדולות לאירוע בלתי נשכח
+          </p>
+          <div class="ih-divider"></div>
+          <p class="ih-sub">
+            <strong>מזמינים אתכם לאווירה כיפית</strong><br/>
+            מוזיקה, ים . הנאה מובטחת<br/>
+            צבירת חוויה בלתי נשכחת<br/>
+            וכמובן מלא מצב רוח טוב
+          </p>
+        </div>
       </div>
 
       <div class="services-grid">
-        {services.map((s, i) => (
+        {services.slice(0, 3).map((s, i) => (
           <a href={s.href} class="service-card" style={`--c:${s.color}; --i:${i}`}>
             <!-- Card image -->
             <div class="sc-img-wrap">
@@ -178,6 +216,102 @@ const testimonials = [
                 alt={s.alt}
                 class="sc-img"
                 loading={i < 3 ? 'eager' : 'lazy'}
+              />
+              <div class="sc-tag" style={`background:${s.color}; color:#fff`}>{s.tag}</div>
+            </div>
+            <!-- Card body -->
+            <div class="sc-body">
+              <div class="sc-icon">{s.icon}</div>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+              <div class="sc-arrow" style={`color:${s.color}`}>
+                קבלו פרטים
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><polyline points="15 18 9 12 15 6"/></svg>
+              </div>
+            </div>
+            <div class="sc-glow" style={`background:${s.color}`}></div>
+          </a>
+        ))}
+      </div>
+
+      <div class="mid-text-blocks">
+        <div class="mt-block">
+          <p>
+            <strong>הכול מתחיל בבחירה מסוימת</strong><br/>
+            האירוע ביאכטה שתשנה את הרגע ותהפוך את הרגעים המרגשים ביותר בחייכם למשהו מיוחד !
+          </p>
+        </div>
+        <div class="mt-block">
+          <p>
+            <strong>אצלנו תוכלו למצוא</strong><br/>
+            מגוון של יאכטות<br/>
+            וספינות לאירועים שלכם<br/>
+            בין הפלגה רומנטית לזוג או שייט עם משפחה<br/>
+            ביאכטה מפרשית קטנה לזוג  מפליגים<br/>
+            עד יאכטה מפוארת מדהימה עד 40 מפליגים
+          </p>
+        </div>
+        <div class="mt-block">
+          <p>
+            <strong>ניתן להזמין מבחר מנות</strong><br/>
+            מהתפריט שלנו<br/>
+            או להביא איתכם בחיפה או בהרצליה
+          </p>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        {services.slice(3, 6).map((s, i) => (
+          <a href={s.href} class="service-card" style={`--c:${s.color}; --i:${i + 3}`}>
+            <!-- Card image -->
+            <div class="sc-img-wrap">
+              <Image
+                src={cardImg}
+                width={600}
+                height={400}
+                format="webp"
+                alt={s.alt}
+                class="sc-img"
+                loading="lazy"
+              />
+              <div class="sc-tag" style={`background:${s.color}; color:#fff`}>{s.tag}</div>
+            </div>
+            <!-- Card body -->
+            <div class="sc-body">
+              <div class="sc-icon">{s.icon}</div>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+              <div class="sc-arrow" style={`color:${s.color}`}>
+                קבלו פרטים
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><polyline points="15 18 9 12 15 6"/></svg>
+              </div>
+            </div>
+            <div class="sc-glow" style={`background:${s.color}`}></div>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-block" style="margin-top: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <p>
+          <strong>מבחינתנו השירות מתחיל בעודכם קוראים שורות אלו,</strong><br/>
+          ממשיך בשיחת הטלפון שבה נשמע אתכם, נכיר אתכם, מה אתם חולמים וכיצד ניתן<br/>
+          להגשים את רצונכם ולהתאים לכם חווית שייט אישית בדיוק עבורכם ולמי שאתם
+        </p>
+      </div>
+
+      <div class="services-grid" style="margin-top: 3rem;">
+        {services.slice(6, 9).map((s, i) => (
+          <a href={s.href} class="service-card" style={`--c:${s.color}; --i:${i + 6}`}>
+            <!-- Card image -->
+            <div class="sc-img-wrap">
+              <Image
+                src={cardImg}
+                width={600}
+                height={400}
+                format="webp"
+                alt={s.alt}
+                class="sc-img"
+                loading="lazy"
               />
               <div class="sc-tag" style={`background:${s.color}; color:#fff`}>{s.tag}</div>
             </div>
@@ -358,9 +492,9 @@ const testimonials = [
     --gold-l: #f0c040;
     --bg:     #f2f5fb;
     --white:  #ffffff;
-    --text:   #1a1a2e;
-    --text-m: #3a3a5c;
-    --text-l: #6b7280;
+    --text:   #000000;
+    --text-m: #000000;
+    --text-l: #000000;
 
     font-family: 'Rubik', 'Segoe UI', Arial, sans-serif;
     color: var(--text);
@@ -548,8 +682,45 @@ const testimonials = [
     color: var(--text); margin: 0 0 0.85rem;
   }
   .section-header p {
-    font-size: 1rem; color: var(--text-l);
+    font-size: 1rem; color: #000000;
     max-width: 580px; margin: 0 auto; line-height: 1.7;
+  }
+  .intro-highlight {
+    background: #ffffff;
+    border: 4px solid var(--gold);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    max-width: 750px;
+    margin: 2rem auto 0;
+    box-shadow: 0 15px 45px rgba(212,160,23,0.3);
+  }
+  .ih-main {
+    font-size: 1.3rem;
+    color: #000000;
+    font-weight: 800;
+    margin: 0 0 1.25rem !important;
+    line-height: 1.6;
+    max-width: 100% !important;
+  }
+  .ih-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--sea);
+    margin: 0 auto 1.25rem;
+    border-radius: 3px;
+  }
+  .ih-sub {
+    font-size: 1.15rem;
+    color: #000000 !important;
+    font-weight: 600;
+    line-height: 1.7;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  .ih-sub strong {
+    color: var(--sea);
+    font-weight: 900;
+    font-size: 1.3rem;
   }
 
   /* ════════════ SERVICES ════════════ */
@@ -638,6 +809,44 @@ const testimonials = [
     filter: blur(40px); opacity: 0;
     transition: opacity 0.35s ease;
     pointer-events: none;
+  }
+
+  /* ── Middle text blocks ── */
+  .mid-text-blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+  .mt-block {
+    background: #f8fbff; /* Changed from var(--white) for slight tint */
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(8,4,126,0.04);
+    border: 1px solid rgba(15,122,176,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mt-block p {
+    font-size: 1rem;
+    color: var(--text-m);
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 500;
+  }
+  .mt-block strong {
+    color: var(--sea); /* Make titles pop with the theme's sea blue color */
+    font-size: 1.1rem;
+  }
+  @media (max-width: 900px) {
+    .mid-text-blocks {
+      grid-template-columns: 1fr;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* ════════════ WHY US ════════════ */

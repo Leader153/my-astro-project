@@ -166,7 +166,7 @@ const textSections = [
 
                 <div class="hf-grid">
                     {
-                        yachts.map((y, i) => (
+                        yachts.slice(0, 3).map((y, i) => (
                             <a
                                 href={y.href}
                                 class="hf-card"
@@ -217,6 +217,149 @@ const textSections = [
                             </a>
                         ))
                     }
+                </div>
+
+                <div class="haifa-mid-text">
+                    <p class="hmt-main">
+                        <strong>נפגש במעגנת יאכטות</strong><br />
+                        ונעלה על יאכטת ההחלמות . נפליג על פני הספינות הענק שעוגנות
+                        בנמל<br />
+                        מרימים מפרשים ומפליגים על עבר הים הפתוח<br />
+                        על הרפתקאות הנפלאות
+                    </p>
+                </div>
+
+                <div class="hf-grid">
+                    {
+                        yachts.slice(3, 6).map((y, i) => (
+                            <a
+                                href={y.href}
+                                class="hf-card"
+                                style={`--c:${y.color}; --i:${i + 3}`}
+                            >
+                                <div class="hf-card-img">
+                                    <Image
+                                        src={y.img}
+                                        width={600}
+                                        height={400}
+                                        format="webp"
+                                        alt={y.alt}
+                                        class="hf-img"
+                                        loading="lazy"
+                                    />
+                                    <div
+                                        class="hf-badge"
+                                        style={`background:${y.color}`}
+                                    >
+                                        {y.tag}
+                                    </div>
+                                </div>
+                                <div class="hf-card-body">
+                                    <h3>{y.title}</h3>
+                                    <p>{y.desc}</p>
+                                    <span
+                                        class="hf-card-cta"
+                                        style={`color:${y.color}`}
+                                    >
+                                        הזמן עכשיו
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2.5"
+                                            width="14"
+                                            height="14"
+                                        >
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div
+                                    class="hf-glow"
+                                    style={`background:${y.color}`}
+                                />
+                            </a>
+                        ))
+                    }
+                </div>
+
+                <div class="haifa-mid-text">
+                    <p class="hmt-main">
+                        <strong>תבחרו לכם יאכטה שהכי מתאימה</strong><br />
+                        לסוג האירוע , כמות מפליגים , ועדיפות אישית כמובן !<br />
+                        יאכטות עוגנות במקום קסום<br /><br />
+                        מרינה חיפה - מעגן שביט<br />
+                        בעמוד זה תוכלו למצוא לכם יאכטה<br />
+                        לכל מטרה.
+                    </p>
+                </div>
+
+                <div class="hf-grid">
+                    {
+                        yachts.slice(6).map((y, i) => (
+                            <a
+                                href={y.href}
+                                class="hf-card"
+                                style={`--c:${y.color}; --i:${i + 6}`}
+                            >
+                                <div class="hf-card-img">
+                                    <Image
+                                        src={y.img}
+                                        width={600}
+                                        height={400}
+                                        format="webp"
+                                        alt={y.alt}
+                                        class="hf-img"
+                                        loading="lazy"
+                                    />
+                                    <div
+                                        class="hf-badge"
+                                        style={`background:${y.color}`}
+                                    >
+                                        {y.tag}
+                                    </div>
+                                </div>
+                                <div class="hf-card-body">
+                                    <h3>{y.title}</h3>
+                                    <p>{y.desc}</p>
+                                    <span
+                                        class="hf-card-cta"
+                                        style={`color:${y.color}`}
+                                    >
+                                        הזמן עכשיו
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2.5"
+                                            width="14"
+                                            height="14"
+                                        >
+                                            <polyline points="15 18 9 12 15 6" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div
+                                    class="hf-glow"
+                                    style={`background:${y.color}`}
+                                />
+                            </a>
+                        ))
+                    }
+                </div>
+
+                <div class="haifa-mid-text">
+                    <p class="hmt-main">
+                        <strong
+                            >תמצאו לכם בדיוק את אותה היאכטה שתמיד חלמתם...</strong
+                        ><br />
+                        מחכים לכם !<br />
+                        תתקשרו עכשיו ותקבעו יום ההפלגה<br />
+                        ---<br />
+                        לשירותכם דניאל - לידר הפלגות
+                    </p>
                 </div>
             </div>
         </section>
@@ -297,3 +440,30 @@ const textSections = [
         </section>
     </div>
 </Layout>
+
+<style>
+    .haifa-mid-text {
+        background: #ffffff;
+        border: 4px solid #d4a017; /* Gold border to map the homepage styling */
+        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        max-width: 800px;
+        margin: 3rem auto;
+        box-shadow: 0 15px 45px rgba(212, 160, 23, 0.3);
+        text-align: center;
+    }
+    .hmt-main {
+        font-size: 1.15rem;
+        color: #000000;
+        font-weight: 500;
+        line-height: 1.8;
+        margin: 0;
+    }
+    .hmt-main strong {
+        color: #0f7ab0; /* Sea blue highlight for the first line */
+        font-size: 1.3rem;
+        font-weight: 900;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+</style>

@@ -5,9 +5,9 @@
   --gold-l:#f0c040;
   --bg:    #f9fafb;
   --white: #ffffff;
-  --text:  #1f2937;
-  --text-m:#4b5563;
-  --text-l:#6b7280;
+  --text:  #000000;
+  --text-m:#000000;
+  --text-l:#000000;
   font-family: 'Rubik', 'Segoe UI', Arial, sans-serif;
   color: var(--text);
   background: var(--bg);
