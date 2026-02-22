@@ -1,0 +1,10 @@
+# ══════════════════════════════════════════════════════
+# Netlify / Cloudflare Pages — 301 Redirects
+# ══════════════════════════════════════════════════════
+
+# Herzliya page: old Hebrew URL → new English URL (301 Permanent)
+# Tells Google the page moved, passes all SEO authority to new URL
+/מרינה-הרצליה /herzliya 301
+
+# Extra alias — both spellings work (hertzliya is the internal file)
+/hertzliya /herzliya 301

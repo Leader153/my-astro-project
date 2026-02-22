@@ -14,4 +14,11 @@ export default defineConfig({
     }),
     sitemap(),
   ],
+  // ══ SEO Redirects ══
+  // /herzliya (правильное написание) → /hertzliya (основной файл)
+  // /מרינה-הרצליה (старый URL с иврита) → /hertzliya
+  redirects: {
+    "/herzliya": "/hertzliya",
+    "/מרינה-הרצליה": "/hertzliya",
+  },
 });
