@@ -397,7 +397,6 @@
 .hf-marina-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(11, 28, 60, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -431,8 +430,8 @@
   line-height: 1.15;
 }
 .hf-marina-text p {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.15rem;
+  color: #ffffff;
   margin: 0 0 1.25rem;
   line-height: 1.6;
 }
