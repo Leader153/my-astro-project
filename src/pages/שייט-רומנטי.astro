@@ -1,141 +1,987 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PremiumSwitch from "../components/PremiumSwitch.astro";
+import { Image } from "astro:assets";
+import bannerImg from "../assets/wedding-couple-sailing-yacht-sunset-herzliya.webp";
+import romantic2Img from "../assets/wedding-couple-sailing-yacht-sunset-haifa.webp";
+import coupleImg from "../assets/couple-holding-hands-yacht-bow-haifa.webp";
+import brideImg from "../assets/romantic-couple-sunset-yacht-trip-herzliya.webp";
 ---
 
 <Layout
-    title="שייט רומנטי בהרצליה | Leader הפלגות"
-    description="חוויה אינטימית ומושלמת לזוגות אוהבים בשקיעה. שייט רומנטי ביאכטה במרינה הרצליה כולל יין או שמפניה ומוזיקה לבחירתכם."
+  title="שייט רומנטי | לי-ים השכרת יאכטות"
+  description="שייט רומנטי ביאכטה פרטית מהרצליה – חוויה זוגית בלתי נשכחת לאירועים מיוחדים: הצעות נישואין, יום נישואין, יום הולדת ופינוק זוגי. עם סקיפר, יין ושקיעה."
 >
-    <div class="service-page" dir="rtl">
-        <section class="sp-hero">
-            <div class="sp-inner text-center">
-                <div class="sp-eyebrow">מרינה הרצליה</div>
-                <h1>שייט רומנטי</h1>
-                <p>
-                    חוויה אינטימית ומושלמת לזוגות אוהבים בשקיעה, כולל יין
-                    ומוזיקה לבחירתכם
-                </p>
-                <div class="sp-btns">
-                    <a href="/צור-קשר" class="sp-btn primary">הזמינו עכשיו</a>
-                    <a href="https://wa.me/972533403449" class="sp-btn wa"
-                        >WhatsApp</a
-                    >
-                </div>
-            </div>
-        </section>
-
-        <section class="sp-content">
-            <div class="sp-inner">
-                <h2>זמן איכות זוגי בלב ים</h2>
-                <p>
-                    חפשו את הזמן הבלתי מופרע שלכם. השקיעה הצובעת את המים, רוח
-                    קלה מנשבת וכוס יין צונן ביד. שייט רומנטי מיועד במיוחד לזוגות
-                    שרוצים לברוח משגרת היומיום, לחגוג יום נישואין במקוריות או
-                    פשוט להיות יחד במקום הכי רומנטי שאפשר לדמיין. נשמח גם לסייע
-                    לכם בתכנון הצעת נישואין בהפתעה!
-                </p>
-                <a href="/hertzliya" class="back-link"
-                    >← חזרה לכל ההפלגות בהרצליה</a
-                >
-            </div>
-        </section>
+  <div class="service-page" dir="rtl">
+    <!-- ═══ HERO BANNER ═══ -->
+    <div class="hero-banner">
+      <Image
+        src={bannerImg}
+        alt="זוג בהפגנת אהבה על יאכטה בזמן שקיעה רומנטית בהרצליה"
+        width={1920}
+        height={700}
+        class="hero-banner-image desktop-banner"
+        loading="eager"
+      />
+      <Image
+        src={romantic2Img}
+        alt="זוג בהפגנת אהבה על יאכטה בזמן שקיעה רומנטית בהרצליה"
+        width={1080}
+        height={1080}
+        class="hero-banner-image mobile-banner"
+        loading="eager"
+      />
     </div>
-</Layout>
 
-<style>
+    <!-- ═══ HERO TEXT (below the photo) ═══ -->
+    <div class="hero-text-block">
+      <div class="hero-eyebrow">✦ חוויה זוגית ✦</div>
+      <h1>שייט רומנטי</h1>
+      <p class="hero-subtitle">רק השניים, הים, והשקיעה</p>
+      <a
+        href="https://wa.me/972533403449"
+        target="_blank"
+        rel="noopener"
+        class="hero-cta">💬 ליצירת קשר ב-WhatsApp</a
+      >
+    </div>
+
+    <!-- ═══ SECTION 1: Intro ═══ -->
+    <div class="container container-top-offset">
+      <div class="intro-block">
+        <p>
+          בעידן שבו אנחנו כל הזמן מוקפים במסכים, רעשים ומטלות יומיומיות, קשה
+          למצוא את הרגע הזה שהוא באמת <strong>"רק של שניינו"</strong>.
+        </p>
+        <p>שייט זוגי ביאכטה מציע בדיוק את הניתוק הזה.</p>
+      </div>
+
+      <div class="content">
+        <p>
+          ברגע שאתם עולים על הסיפון , המנוע מותנע והיאכטה יוצאת מהמרינה בהרצליה
+          אל עבר האופק הכחול – הזמן עוצר מלכת.
+        </p>
+        <p>
+          אין פקקים, אין טלפונים, יש רק את צליל הגלים, הרוח שמלטפת את הפנים,
+          ומרחבים אינסופיים של ים ושמיים. זוהי הזדמנות פז להתנתק מהשגרה השוחקת,
+          להסתכל אחד לשנייה בעיניים, לשתות כוס יין צונן מול השקיעה, ולהרגיש שוב
+          את אותם פרפרים בבטן של הדייט הראשון.
+        </p>
+        <p>
+          האווירה הייחודית של הים הפתוח מרחיבה את הלב ומאפשרת לכם לחגוג את האהבה
+          שלכם בצורה הכי טהורה ורומנטית שיש.
+        </p>
+
+        <div class="image-wrapper" style="margin: 3rem auto; max-width: 450px;">
+          <Image
+            src={coupleImg}
+            alt="זוג מחזיק ידיים על חרטום היאכטה מול שקיעה בחיפה"
+            width={900}
+            height={1200}
+            class="vertical-img"
+          />
+        </div>
+
+        <!-- Occasions box -->
+        <div class="highlight-box">
+          <h2>🥂 לאילו אירועים מתאים שייט רומנטי?</h2>
+          <p class="highlight-lead">
+            הפלגה ביאכטה מתאימה לכל אירוע שבו תרצו להפתיע, לרגש ולצאת מהקופסה:
+          </p>
+          <div class="occasions-grid">
+            <div class="occasion-card">
+              <div class="occasion-icon">💍</div>
+              <h3>הצעות נישואין בלתי נשכחות</h3>
+              <p>
+                שעת שקיעה, מוזיקה רומנטית ברקע, כוסות שמפניה משיקות זו לזו –
+                ואתם כורעים ברך על סיפון עץ יוקרתי בלב הים. אנחנו נדאג לתפאורה
+                המושלמת, לכם נשאר רק להביא את הטבעת.
+              </p>
+            </div>
+            <div class="occasion-card">
+              <div class="occasion-icon">💒</div>
+              <h3>יום נישואין</h3>
+              <p>
+                במקום עוד מסעדה שגרתית, בואו לחגוג את הזוגיות שלכם בארוחה
+                רומנטית ופרטית המוגשת לכם על סיפון היאכטה, באווירה של מסעדת
+                מישלן על המים.
+              </p>
+            </div>
+            <div class="occasion-card">
+              <div class="occasion-icon">🎂</div>
+              <h3>ימי הולדת והפתעות לבן/בת הזוג</h3>
+              <p>
+                שייט שקיעה מפנק, בשילוב עיסוי מקצועי וארוחת שף – זוהי מתנת יום
+                ההולדת האולטימטיבית שתיחרט בזיכרון לנצח.
+              </p>
+            </div>
+            <div class="occasion-card">
+              <div class="occasion-icon">❤️</div>
+              <h3>פסק זמן זוגי – סתם כי אוהבים</h3>
+              <p>
+                מי אמר שצריך תאריך מיוחד? לפעמים המתנה הכי טובה היא פשוט לפנות
+                זמן אחד לשנייה, לברוח מהכל למספר שעות של שקט, אינטימיות ופינוק.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ MIDDLE SECTION IMAGE ═══ -->
+    <div style="margin: 4rem auto; max-width: 600px; padding: 0 20px;">
+      <Image
+        src={brideImg}
+        alt="זוג רומנטי ברגע אינטימי על יאכטה בזמן שקיעה בהרצליה"
+        width={900}
+        height={900}
+        class="square-img"
+      />
+    </div>
+    <div class="strip-quote-block">
+      <p class="strip-quote">"הרגע המושלם לא מגיע – אתם יוצרים אותו"</p>
+    </div>
+
+    <!-- ═══ SECTION 2: What to Expect ═══ -->
+    <div class="container container-bottom">
+      <h2 class="section-title">⚓ מה מחכה לכם על הסיפון?</h2>
+      <p class="section-subtitle">
+        כשאתם בוחרים בנו, אתם בוחרים בסטנדרט האירוח הגבוה ביותר.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🛋️</div>
+          <h3>אבזור מלא ונוחות מקסימלית</h3>
+          <p>
+            כל יאכטה מצוידת בסלון מרווח, חדרי שינה מפנקים, מטבח מאובזר, שירותים
+            ומקלחת.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌹</div>
+          <h3>הפרטים הקטנים שעושים את ההבדל</h3>
+          <p>
+            מצעים לבנים ורכים, מגבות נקיות, ורדים פזורים על המיטה, בלונים
+            חגיגיים ופרחים – הכל מוכן לפני הגעתכם.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🍽️</div>
+          <h3>קולינריה בלב ים</h3>
+          <p>
+            ארוחות בוקר עשירות, ארוחות צהריים/ערב עם דג או בשר, מוגשות עם מפות
+            נקיות וכלים יוקרתיים. זמין גם בכשרות רבנות הרצליה / כשרות למהדרין.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🍫</div>
+          <h3>פינוקים מתוקים</h3>
+          <p>
+            כל אירוח זוגי כולל כסטנדרט בקבוק יין איכותי ושוקולדים טעימים שימתיקו
+            לכם את ההפלגה.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💆</div>
+          <h3>ספא על המים</h3>
+          <p>
+            הוסיפו לחבילה שלכם עיסוי מקצועי ומרגיע שיינתן לכם באוויר הפתוח או
+            בתוך היאכטה הממוזגת, לקול פכפוך הגלים.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎵</div>
+          <h3>מוזיקה שלכם</h3>
+          <p>
+            מערכת סאונד מתקדמת עם חיבור בלוטות'. הביאו את הפלייליסט האהוב עליכם,
+            או תנו לנו לבחור מוזיקת רקע רומנטית ונעימה.
+          </p>
+        </div>
+      </div>
+
+      <!-- ═══ FAQ ═══ -->
+      <div class="faq-section">
+        <h2 class="section-title">❓ שאלות ותשובות נפוצות</h2>
+
+        <div class="faq-item">
+          <div class="faq-q">האם צריך לדעת להשיט יאכטה?</div>
+          <div class="faq-a">
+            ממש לא! לכל הפלגה מצטרף סקיפר מקצועי ומנוסה מטעמנו. הסקיפר ידאג
+            לבטיחות שלכם ולניהול ההפלגה, ומיומן בלהעניק לכם שירות אדיב ודיסקרטי
+            – כך שתרגישו בפרטיות מוחלטת לאורך כל השייט.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">מהיכן יוצאת ההפלגה ואיפה חונים?</div>
+          <div class="faq-a">
+            היאכטות שלנו עוגנות במרינה המפוארת של הרצליה. ממוקמים מול טיילת
+            המסעדות התוססת, עם גישה לרציף פרטי לבעלי אישור בלבד – שקט ופרטיות
+            מרגע ההגעה. ישנו חניון מוסדר וצמוד לנוחותכם.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">מה קורה אם סובלים ממחלת ים?</div>
+          <div class="faq-a">
+            ההפלגות הזוגיות שלנו נעשות לרוב בקרבת החוף ובתנאי ים נוחים. אם אתם
+            רגישים, אנו ממליצים לקחת כדור נגד מחלת ים כחצי שעה לפני ההפלגה,
+            ולהסתכל תמיד אל עבר האופק במהלך השייט.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">האם ניתן להשמיע מוזיקה משלנו?</div>
+          <div class="faq-a">
+            בהחלט! יש לנו מערכת סאונד מתקדמת ביאכטה. אתם מוזמנים להתחבר בבלוטות'
+            ולהשמיע את הפלייליסט האהוב עליכם, או לתת לנו לבחור עבורכם מוזיקת רקע
+            רומנטית ונעימה.
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ CTA ═══ -->
+      <div class="cta-block">
+        <h2>מוכנים לחוות את הרגע הכי רומנטי בחיים?</h2>
+        <p>צרו קשר עוד היום ונבנה יחד את ההפלגה המושלמת עבורכם</p>
+        <a
+          href="https://wa.me/972533403449"
+          target="_blank"
+          rel="noopener"
+          class="cta-btn">💬 הזמינו עכשיו ב-WhatsApp</a
+        >
+      </div>
+
+      <div class="fleet-lead-block">
+        <p class="fleet-lead-text">
+          החלטתם איפה תרצו לשוט ולהנות?<br />
+          <strong>בהרצליה? או בחיפה?</strong><br />
+          בואו לבחור לכם יאכטה 🚤
+        </p>
+      </div>
+
+      <div
+        class="dual-fleet-wrapper"
+        style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2rem auto 4rem;"
+      >
+        <!-- Right button → Herzliya -->
+        <!-- Text first (RTL = left side for arrow), Arrow pointing > -->
+        <a
+          href="/יאכטות-בהרצליה"
+          class="cta-btn"
+          style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;"
+        >
+          בהרצליה
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            width="22"
+            height="22"
+          >
+          </svg>
+        </a>
+
+        <!-- Left button → Haifa -->
+        <!-- Arrow first (RTL = right side), Arrow pointing opposite (<) -->
+        <a
+          href="/haifa"
+          class="cta-btn"
+          style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            width="22"
+            height="22"
+          >
+          </svg>
+          בחיפה
+        </a>
+      </div>
+    </div>
+
+    <!-- ═══ PACKAGES SECTION ═══ -->
+    <div class="packages-section">
+      <div class="packages-inner">
+        <p class="packages-lead">אשמח להציע לכם רעיונות לפעילות נוספת</p>
+        <h2 class="packages-title">💎  החבילות שלנו בהרצליה</h2>
+
+        <div class="packages-table">
+          <!-- Header -->
+          <div class="pkg-row pkg-header">
+            <div class="pkg-cell">סוג החבילה</div>
+            <div class="pkg-cell">מה היא כוללת</div>
+            <div class="pkg-cell pkg-price-col">מחיר החל מ-</div>
+          </div>
+
+          <!-- Rows -->
+          <div class="pkg-row">
+            <div class="pkg-cell pkg-name">
+              <span class="pkg-badge platinum">פלטיניום</span>
+              חבילת ספא פלטיניום
+            </div>
+            <div class="pkg-cell pkg-desc">
+              חוויית פינוק מקסימלית ומרגיעה לאורך 4 שעות.
+            </div>
+            <div class="pkg-cell pkg-price">2,200 ₪</div>
+          </div>
+
+          <div class="pkg-row">
+            <div class="pkg-cell pkg-name">
+              <span class="pkg-badge gold">זהב</span>
+              חבילת ספא זהב
+            </div>
+            <div class="pkg-cell pkg-desc">
+              שילוב מושלם של הפלגה וטיפול למשך 3 שעות.
+            </div>
+            <div class="pkg-cell pkg-price">1,700 ₪</div>
+          </div>
+
+          <div class="pkg-row">
+            <div class="pkg-cell pkg-name">
+              <span class="pkg-badge silver">כסף</span>
+              חבילת ספא כסף
+            </div>
+            <div class="pkg-cell pkg-desc">
+              פסק זמן זוגי ומרגיע למשך שעתיים וחצי.
+            </div>
+            <div class="pkg-cell pkg-price">1,400 ₪</div>
+          </div>
+
+          <div class="pkg-row">
+            <div class="pkg-cell pkg-name">
+              <span class="pkg-badge romantic">רומנטי</span>
+              צימר על המים
+            </div>
+            <div class="pkg-cell pkg-desc">
+              לילה רומנטי ביאכטה מאובזרת, ממש כמו מלון בוטיק צף.
+            </div>
+            <div class="pkg-cell pkg-price">2,200 ₪</div>
+          </div>
+
+          <div class="pkg-row">
+            <div class="pkg-cell pkg-name">
+              <span class="pkg-badge active">אקטיבי</span>
+              הפלגת דייג זוגית
+            </div>
+            <div class="pkg-cell pkg-desc">
+              חוויה אקטיבית ומהנה של שעתיים בלב ים.
+            </div>
+            <div class="pkg-cell pkg-price">1100 ₪</div>
+          </div>
+
+          <div class="pkg-row">
+            <div class="pkg-cell pkg-name">
+              <span class="pkg-badge active">אקטיבי</span>
+              סקיפר ליום אחד
+            </div>
+            <div class="pkg-cell pkg-desc">
+              בואו להרגיש איך זה להשיט יאכטה בהפלגה זוגית של שעתיים.
+            </div>
+            <div class="pkg-cell pkg-price">950 ₪</div>
+          </div>
+
+          <div class="pkg-row">
+            <div class="pkg-cell pkg-name">
+              <span class="pkg-badge classic">קלאסי</span>
+              הפלגה זוגית קלאסית
+            </div>
+            <div class="pkg-cell pkg-desc">
+              שייט של שעתיים מול השקיעה או בשמש המלטפת.
+            </div>
+            <div class="pkg-cell pkg-price">900 ₪</div>
+          </div>
+
+          <div class="pkg-row pkg-row-last">
+            <div class="pkg-cell pkg-name">
+              <span class="pkg-badge proposal">הצעה</span>
+              הצעת נישואין ביאכטה
+            </div>
+            <div class="pkg-cell pkg-desc">
+              הפלגה מרגשת של שעה שתהפוך לרגע בלתי נשכח.
+            </div>
+            <div class="pkg-cell pkg-price">600 ₪</div>
+          </div>
+        </div>
+
+        <div class="packages-cta">
+          <a
+            href="https://wa.me/972533403449"
+            target="_blank"
+            rel="noopener"
+            class="cta-btn">💬 לפרטים והזמנה ב-WhatsApp</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* ════════════════════════════════════
+       BASE
+    ════════════════════════════════════ */
     .service-page {
-        background: #f2f5fb;
-        min-height: 100vh;
-        font-family: "Rubik", sans-serif;
-    }
-    .sp-hero {
-        padding: 8rem 2rem 5rem;
-        background: linear-gradient(135deg, #08047e 0%, #0a5a8f 100%);
-        color: white;
-        text-align: center;
-    }
-    .sp-eyebrow {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #f0c040;
-        letter-spacing: 1px;
-        margin-bottom: 1rem;
-    }
-    .sp-hero h1 {
-        font-size: clamp(2.2rem, 5vw, 3.5rem);
-        font-weight: 800;
-        margin-bottom: 1rem;
-    }
-    .sp-hero p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto 2.5rem;
-        line-height: 1.6;
-    }
-    .sp-btns {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .sp-btn {
-        padding: 0.85rem 2rem;
-        border-radius: 12px;
-        font-weight: 700;
-        font-size: 1.05rem;
-        text-decoration: none;
-        transition: 0.2s;
-    }
-    .sp-btn.primary {
-        background: #d4a017;
-        color: #08047e;
-        box-shadow: 0 6px 20px rgba(212, 160, 23, 0.3);
-    }
-    .sp-btn.primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(212, 160, 23, 0.5);
-    }
-    .sp-btn.wa {
-        background: #25d366;
-        color: white;
-    }
-    .sp-btn.wa:hover {
-        background: #128c7e;
-        transform: translateY(-3px);
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
+      padding: 0 0 60px 0;
+      background: #fdf6f0;
+      min-height: 100vh;
+      font-family: "Rubik", sans-serif;
     }
 
-    .sp-content {
-        padding: 5rem 2rem;
-        text-align: center;
+    /* ════════════════════════════════════
+       HERO BANNER
+    ════════════════════════════════════ */
+    .hero-banner {
+      width: 100%;
+      height: 80vh;
+      min-height: 480px;
+      overflow: hidden;
     }
-    .sp-inner {
-        max-width: 800px;
-        margin: 0 auto;
+    .hero-banner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
     }
-    .sp-content h2 {
-        font-size: 2.2rem;
-        color: #1a1a2e;
-        margin-bottom: 1.5rem;
+    .mobile-banner {
+      display: none;
     }
-    .sp-content p {
-        color: #3a3a5c;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 3rem;
+    .desktop-banner {
+      display: block;
     }
-    .back-link {
-        display: inline-block;
-        color: #0f7ab0;
-        font-weight: 600;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border: 1px solid #0f7ab0;
-        border-radius: 8px;
-        transition: 0.2s;
+
+    /* ── Hero text block below the photo ── */
+    .hero-text-block {
+      background: #fdf6f0;
+      text-align: center;
+      padding: 3rem 2rem 5rem;
     }
-    .back-link:hover {
-        background: #0f7ab0;
-        color: white;
+    .hero-eyebrow {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #c0547a;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
     }
-</style>
+    .hero-text-block h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      color: #3c0a28;
+      margin: 0 0 0.75rem;
+      line-height: 1.15;
+    }
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: #7a3050;
+      margin: 0 0 2rem;
+      font-style: italic;
+    }
+    .hero-cta {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, #d4a017, #f0c040);
+      color: #3c0a28;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(212, 160, 23, 0.45);
+      transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+    }
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 35px rgba(212, 160, 23, 0.65);
+    }
+
+    /* ════════════════════════════════════
+       CONTAINERS
+    ════════════════════════════════════ */
+    .container {
+      box-sizing: border-box;
+      max-width: 860px;
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 10px 50px rgba(180, 60, 100, 0.07);
+      text-align: center;
+      border-top: 5px solid #c0547a;
+    }
+    .container-top-offset {
+      margin-top: -3rem;
+      position: relative;
+      z-index: 2;
+    }
+    .container-bottom {
+      margin-top: 4rem;
+    }
+
+    /* ════════════════════════════════════
+       INTRO
+    ════════════════════════════════════ */
+    .intro-block {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      color: #111;
+      line-height: 1.7;
+    }
+    .intro-block p {
+      margin-bottom: 0.5rem;
+    }
+    .intro-block strong {
+      color: #3c0a28;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #111;
+      margin-bottom: 1rem;
+      text-align: right;
+    }
+
+    /* ════════════════════════════════════
+       IMAGES
+    ════════════════════════════════════ */
+    .image-wrapper {
+      overflow: hidden;
+    }
+    .vertical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* ════════════════════════════════════
+       HIGHLIGHT BOX (Occasions)
+    ════════════════════════════════════ */
+    .highlight-box {
+      margin-top: 3rem;
+      background: linear-gradient(135deg, #fff5f8 0%, #fff 100%);
+      border: 2px solid #e08aab;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 10px 30px rgba(180, 60, 100, 0.08);
+    }
+    .highlight-box h2 {
+      color: #3c0a28;
+      font-size: 1.9rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .highlight-lead {
+      color: #111;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+    .occasions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      text-align: right;
+    }
+    .occasion-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      border-right: 4px solid #c0547a;
+      box-shadow: 0 4px 15px rgba(180, 60, 100, 0.07);
+    }
+    .occasion-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .occasion-card h3 {
+      font-size: 1.05rem;
+      color: #3c0a28;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .occasion-card p {
+      font-size: 0.95rem;
+      color: #111;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ════════════════════════════════════
+       FULL-WIDTH STRIP
+    ════════════════════════════════════ */
+    .full-image-strip {
+      width: 100%;
+      height: 45vh;
+      min-height: 280px;
+      margin: 4rem 0 4rem;
+      overflow: hidden;
+    }
+    .strip-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .square-img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+    .strip-quote-block {
+      background: #3c0a28;
+      padding: 1.75rem 2rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .strip-quote {
+      font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+      font-weight: 700;
+      color: #f0c040;
+      font-style: italic;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ════════════════════════════════════
+       SECTION TITLES
+    ════════════════════════════════════ */
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      color: #3c0a28;
+      margin-bottom: 0.5rem;
+    }
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #111;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ════════════════════════════════════
+       FEATURES GRID
+    ════════════════════════════════════ */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 3.5rem;
+      text-align: right;
+    }
+    .feature-card {
+      background: #fff5f8;
+      border-radius: 16px;
+      padding: 1.5rem 1.25rem;
+      border-top: 4px solid #c0547a;
+      box-shadow: 0 4px 20px rgba(180, 60, 100, 0.08);
+      transition: transform 0.22s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .feature-card h3 {
+      font-size: 1rem;
+      color: #3c0a28;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .feature-card p {
+      font-size: 0.92rem;
+      color: #111;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ════════════════════════════════════
+       FAQ
+    ════════════════════════════════════ */
+    .faq-section {
+      margin: 3rem 0;
+      text-align: right;
+    }
+    .faq-section .section-title {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .faq-item {
+      border-bottom: 1px solid #f0d4de;
+      padding: 1.25rem 0;
+    }
+    .faq-q {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #3c0a28;
+      margin-bottom: 0.5rem;
+    }
+    .faq-a {
+      font-size: 1rem;
+      color: #111;
+      line-height: 1.8;
+    }
+
+    /* ════════════════════════════════════
+       CTA BLOCK
+    ════════════════════════════════════ */
+    .cta-block {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #3c0a28 0%, #7a3050 100%);
+      border-radius: 20px;
+    }
+    .cta-block h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .cta-block p {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 1rem 2.75rem;
+      background: linear-gradient(135deg, #d4a017, #f0c040);
+      color: #3c0a28;
+      font-weight: 800;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(212, 160, 23, 0.4);
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(212, 160, 23, 0.65);
+    }
+
+    .premium-switch-spacing {
+      margin-top: 2.5rem;
+    }
+
+    .fleet-lead-block {
+      margin-top: 3rem;
+      padding: 1rem 1rem 0;
+      text-align: center;
+    }
+    .fleet-lead-text {
+      font-size: 1.3rem;
+      line-height: 2;
+      color: #3c0a28;
+      margin: 0;
+    }
+    .fleet-lead-text strong {
+      color: #c0547a;
+      font-size: 1.45rem;
+    }
+
+    /* ════════════════════════════════════
+       MOBILE
+    ════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .hero-banner {
+        height: 55vh;
+        min-height: 350px;
+      }
+      .desktop-banner {
+        display: none;
+      }
+      .mobile-banner {
+        display: block;
+        object-position: center 30%;
+      }
+
+      .hero-text-block {
+        padding: 2rem 1.25rem 1.5rem;
+      }
+
+      .container {
+        padding: 2rem 1.25rem;
+      }
+      .container-top-offset {
+        margin-top: 0;
+      }
+
+      .occasions-grid {
+        grid-template-columns: 1fr;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .full-image-strip {
+        height: 35vh;
+        margin: 2.5rem 0 0;
+      }
+
+      .cta-block {
+        padding: 2rem 1.25rem;
+      }
+
+      /* packages mobile */
+      .pkg-row:not(.pkg-header) {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+      .pkg-cell.pkg-price {
+        font-size: 1.3rem;
+      }
+      .packages-inner {
+        padding: 2rem 1.25rem 2.5rem;
+      }
+    }
+
+    /* ════════════════════════════════════
+       PACKAGES SECTION
+    ════════════════════════════════════ */
+    .packages-section {
+      background: linear-gradient(160deg, #1a0510 0%, #3c0a28 100%);
+      padding: 4rem 0 5rem;
+      margin-top: 3rem;
+    }
+    .packages-inner {
+      max-width: 900px;
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .packages-lead {
+      font-size: 1.2rem;
+      color: #fff;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .packages-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: #f0c040;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Table */
+    .packages-table {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .pkg-row {
+      display: grid;
+      grid-template-columns: 2fr 3fr 1.2fr;
+      gap: 0;
+      text-align: right;
+      transition: background 0.2s;
+    }
+    .pkg-row:not(.pkg-header):hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .pkg-header {
+      background: rgba(192, 84, 122, 0.35);
+    }
+    .pkg-cell {
+      padding: 1rem 1.25rem;
+      font-size: 0.95rem;
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pkg-header .pkg-cell {
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: #f0c040;
+      letter-spacing: 0.5px;
+      border-bottom: none;
+    }
+    .pkg-row-last .pkg-cell {
+      border-bottom: none;
+    }
+    .pkg-name {
+      font-weight: 700;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+    .pkg-desc {
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .pkg-price {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #f0c040;
+      white-space: nowrap;
+    }
+    .pkg-price-col {
+      justify-content: center;
+    }
+
+    /* Badges */
+    .pkg-badge {
+      display: inline-block;
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .pkg-badge.platinum {
+      background: #b0c4de;
+      color: #1a1a2e;
+    }
+    .pkg-badge.gold {
+      background: #f0c040;
+      color: #3c0a28;
+    }
+    .pkg-badge.silver {
+      background: #c8c8c8;
+      color: #2a2a2a;
+    }
+    .pkg-badge.romantic {
+      background: #e08aab;
+      color: #3c0a28;
+    }
+    .pkg-badge.active {
+      background: #4ecdc4;
+      color: #1a2a2a;
+    }
+    .pkg-badge.classic {
+      background: #a29bfe;
+      color: #1a1a2e;
+    }
+    .pkg-badge.proposal {
+      background: #fd79a8;
+      color: #3c0a28;
+    }
+
+    .packages-cta {
+      margin-top: 2.5rem;
+    }
+  </style>
+</Layout>
