@@ -1,115 +1,526 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PremiumSwitch from "../components/PremiumSwitch.astro";
 import { Image } from "astro:assets";
-import cardImg from "../assets/Romantic cruise 2.webp"; // Placeholder
+import cardImg from "../assets/large-group-bachelorette-party-yacht-haifa.webp";
+import mobileBannerImg from "../assets/paty-girls-with-skipper.webp";
+import img1 from "../assets/Bride-on-a-sailing-yacht.webp";
+import img2 from "../assets/Bachelorette-party-on-a-boat.webp";
+import img3 from "../assets/Woman-in-white-robe-on-sailboat.webp";
+import img4 from "../assets/Friends-enjoying-a-boat-trip.webp";
+import blondeImg from "../assets/A-blonde-is-having-fun-on-a-yacht.webp";
+import skipperImg from "../assets/skipper-girl-in-red.webp";
 ---
 
 <Layout
-    title="מסיבת רווקות / רווקים"
-    description="מסיבה בלתי נשכחת על הסיפון עם חברים. אלכוהול, מוסיקה והרבה כיף"
+  title="מסיבת רווקות"
+  description="מסיבה בלתי נשכחת על הסיפון עם חברים. אלכוהול, מוסיקה והרבה כיף"
 >
-    <div class="service-page" dir="rtl">
-        <div class="container">
-            <h1>מסיבת רווקות / רווקים</h1>
-            <p class="subtitle">
-                מסיבה בלתי נשכחת על הסיפון עם חברים. אלכוהול, מוסיקה והרבה כיף
-            </p>
-
-            <div class="image-wrapper">
-                <Image
-                    src={cardImg}
-                    alt="קבוצת חברים חוגגת מסיבת רווקות על יאכטה פרטית"
-                    width={800}
-                    height={500}
-                    class="main-img"
-                />
-            </div>
-
-            <div class="content">
-                <p>
-                    לחגוג את סוף הרווקות בצורה הכי מיוחדת שיש - מסיבה על יאכטה
-                    מפוארת בלב הים.
-                </p>
-                <p>
-                    אצלנו תוכלו ליהנות ממערכת הגברה מקצועית, רחבת ריקודים,
-                    ומתחמי שיזוף וישיבה למסיבה שתיזכר לכל החיים.
-                </p>
-
-                <a
-                    href="https://wa.me/972533403449"
-                    target="_blank"
-                    rel="noopener"
-                    class="cta-btn">הזמינו עכשיו ב-WhatsApp</a
-                >
-            </div>
-        </div>
+  <div class="service-page" dir="rtl">
+    <!-- HERO BANNER -->
+    <div class="hero-banner">
+      <Image
+        src={cardImg}
+        alt="קבוצה חברות חוגגת מסיבת רווקות מול ערים מים בחיפה על יאכטה"
+        width={1920}
+        height={700}
+        class="hero-banner-image desktop-banner"
+        loading="eager"
+      />
+      <Image
+        src={mobileBannerImg}
+        alt="קבוצה חברות חוגגת מסיבת רווקות מול ערים מים בחיפה על יאכטה"
+        width={1080}
+        height={1080}
+        class="hero-banner-image mobile-banner"
+        loading="eager"
+      />
+      <div class="hero-banner-overlay"></div>
+      <div class="hero-banner-content">
+        <h1>מסיבת רווקות על יאכטה</h1>
+      </div>
     </div>
-</Layout>
 
-<style>
+    <!-- БЛОК 1: Вступление и первая фотка -->
+    <div class="container container-top-offset">
+      <div class="intro-block">
+        <p>
+          הגעת לרגע שבו נפרדת לשלום מעולם הרווקות? <strong>מזל טוב!</strong>
+        </p>
+        <p>
+          חברה שלך מתחתנת והפילו עלייך את התיק לארגן מסיבת רווקות או רווקים
+          מושקעת וייחודית?
+        </p>
+        <p>
+          לארגן מסיבת רווקות זו הפקה קשה מדי? <strong>אנחנו כאן עבורכן!</strong>
+        </p>
+      </div>
+
+      <div class="content">
+        <p>
+          מסיבת רווקות על יאכטה מתרחשת בדיוק רגע לפני האירוע הגדול בחיים, לי ים
+          השכרת יאכטות חוגגת איתך הכלה ועם החברות הכי טובות שלך את הפרידה מעולם
+          הרווקות בחגיגה שטופת שמש, אלכוהול ומוזיקה טובה, וכמובן, וים של כיף
+          בזולה הרווקות הפרטית שלכן בים-אי בודד רק שלכן.
+        </p>
+        <p>
+          ניפגש ביאכטה מפוארת ומפנקת ובה תמצאו את כל מה שצריך כדי לחגוג בצורה לא
+          שגרתית מסיבת רווקות בים. בואו להתפרע, להתפנק במי הים, להתמסר לגלים,
+          הים, ולריקוד, לשתות ולרקוד כל הדרך אל החופה לחוויה של פעם בחיים.
+        </p>
+
+        <div class="image-wrapper" style="margin: 3rem 0;">
+          <Image
+            src={blondeImg}
+            alt="אישה בלונדינית נהנית מיופיו של הים על יאכטה"
+            width={900}
+            height={1200}
+            class="vertical-img"
+          />
+        </div>
+
+        <!-- БЛОК 3: Выделенный бокс -->
+        <div class="highlight-box">
+          <h2>מסיבת רווקות – תבואו רק להנות</h2>
+          <p>
+            <strong>אנו נדאג לאירוח בלתי נשכח ביאכטה.</strong><br />
+            היאכטות שלנו מאובזרות, ממוזגות, מתאימות לאירוח קבוצתי,<br />
+            בכל יאכטה יש סלון, שני חדרי שינה, מטבח מאובזר, מקלחת ושירותים.
+          </p>
+          <p>
+            אנו מקשטים את היאכטה לכבודכן כדי שתהיה לכן מסיבת רווקות בלתי נשכחת
+            עם מוזיקה איכותית, בלונים (בסלון), אבוב לטבילה בים, מזרון שיזוף
+            בחרטום היאכטה, בקבוק שמפניה, מים מינרליים ושתייה חמה חופשי וכל מה
+            שצריך כדי שיהיה לכם ים של כיף.
+          </p>
+          <p>
+            ביאכטות יש מערכות סאונד איכותית למוסיקה שלכן עם אפשרות חיבור לכל סוג
+            מדיה שתביאו,
+            <strong>המוסיקה עליכן הפלטפורמה עלינו!</strong><br />
+            כלה על חרטום בלבן
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End .container -->
+
+    <!-- السлайдер (одно фото на весь блок) вынесен из основного контейнера -->
+    <div class="slideshow-wrapper">
+      <div class="slideshow-track">
+        <Image
+          src={img1}
+          alt="כלה לעתיד בבגד ים לבן והינומה מצטלמת על חרטום היאכטה."
+          width={900}
+          height={1200}
+          class="slide-img"
+        />
+        <Image
+          src={img2}
+          alt="ארבע חברות חוגגות מסיבת רווקות עם שמפניה ובלונים על סיפון יאכטה."
+          width={900}
+          height={1200}
+          class="slide-img"
+        />
+        <Image
+          src={img3}
+          alt="אישה בביקיני וחלוק לבן מתנפנף נהנית ממסיבת רווקות על יאכטה בשקיעה."
+          width={900}
+          height={1200}
+          class="slide-img"
+        />
+        <Image
+          src={img4}
+          alt="שתי חברות בביקיני חוגגות עם פלח אבטיח ובלונים במסיבת רווקות על יאכטה."
+          width={900}
+          height={1200}
+          class="slide-img"
+        />
+        <!-- Дубликат первой картинки для бесшовного зацикливания! -->
+        <Image
+          src={img1}
+          alt="כלה לעתיד בבגד ים לבן והינומה מצטלמת על חרטום היאכטה."
+          width={900}
+          height={1200}
+          class="slide-img"
+        />
+      </div>
+    </div>
+
+    <!-- ВТОРОЙ КОНТЕЙНЕР (блоки 4, 5, 6 и свитч в самом низу) -->
+    <div class="container container-bottom">
+      <div class="grid-cols">
+        <!-- БЛОК 4: Преимущества -->
+        <div class="info-card">
+          <h3>היתרונות של מסיבת רווקות ביאכטה</h3>
+          <p>
+            <strong>אירוע ללא מאמץ</strong> - לא צריך לסגור מקום במיוחד, אנחנו כבר
+            מארגנים עבורכן.
+          </p>
+          <p>
+            יש ביאכטה תנאים של ווילה עם נוף של ים, כולל מקרר, מע’ הגברה, מזרני
+            שיזוף, מגבות ועוד. לא עושים רעש לאף אחד,
+          </p>
+          <p>אצלנו ביאכטה השכנים שקטים שקטים, ובד”כ לא מצייצים.</p>
+        </div>
+
+        <!-- БЛОК 5: Это легко -->
+        <div class="info-card">
+          <h3>לארגן יאכטה זה קל</h3>
+          <p>
+            יחסית בהשוואה למסעדה או ווילה או סתם בית של אחת החברות, וגם לא צריך
+            לשטוף ולנקות אח”כ.
+          </p>
+          <p>
+            <strong>הגעה קרובה ונוחה</strong> - אנו ממוקמים עשרות מטרים בודדים מהחנייה
+            של המרינה. ניתן להביא אטרקציות של מסיבת רווקות בים!!!
+          </p>
+          <p>
+            ותהיה לכם פרטיות מלאה, רק אתן והסקיפר או סקיפרית (ניתן להזמין גם
+            סקיפרית-דרך מוקד ההזמנות).
+          </p>
+        </div>
+      </div>
+
+      <div class="image-wrapper" style="margin: 3rem 0;">
+        <Image
+          src={skipperImg}
+          alt="סקיפרית בחולצה אדומה משיטה יאכטה בים"
+          width={900}
+          height={1200}
+          class="vertical-img"
+        />
+      </div>
+
+      <!-- БЛОК 6: Выбор локации и CTA -->
+      <div class="cta-block">
+        <h2>עכשיו יגיע הזמן לבחור<br />את יאכטת החלומות שלכן!</h2>
+        <p>מאיפה אתן מפליגות מחיפה או מהרצליה? ספרו לנו מהי כמות המפליגות?</p>
+
+        <a
+          href="https://wa.me/972533403449"
+          target="_blank"
+          rel="noopener"
+          class="cta-btn">הזמינו עכשיו ב-WhatsApp</a
+        >
+      </div>
+
+      <div class="premium-switch-spacing">
+        <PremiumSwitch
+          href="/our-fleet"
+          title="צי היאכטות שלנו"
+          subtitle="לצפייה בצי שלנו ולבחירת היאכטה המושלמת"
+        />
+      </div>
+    </div>
+  </div>
+
+  <style>
     .service-page {
-        padding: 120px 20px 60px;
-        background: #f8fbff;
-        min-height: 100vh;
-        font-family: "Rubik", sans-serif;
+      width: 100%;
+      padding: 0 0 60px 0;
+      background: #f8fbff;
+      min-height: 100vh;
+      font-family: "Rubik", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 85vh;
+      min-height: 500px;
+    }
+    .hero-banner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .mobile-banner {
+      display: none;
+    }
+    .desktop-banner {
+      display: block;
+    }
+    .hero-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(8, 4, 126, 0.4) 0%,
+        transparent 40%,
+        rgba(248, 251, 255, 1) 100%
+      );
+      pointer-events: none;
+    }
+
+    .hero-banner-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 4rem;
+      z-index: 1;
+    }
+    .hero-banner-content h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: #08047e;
+      text-align: center;
+      text-shadow:
+        0 5px 15px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(255, 255, 255, 1);
+      margin: 0;
+    }
+
     .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: #ffffff;
-        border-radius: 20px;
-        padding: 3rem;
-        box-shadow: 0 10px 40px rgba(8, 4, 126, 0.06);
-        text-align: center;
-        border-top: 5px solid #7c3aed;
+      max-width: 800px;
+      margin: 0 auto;
+      width: calc(100% - 40px);
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 10px 40px rgba(8, 4, 126, 0.06);
+      text-align: center;
+      border-top: 5px solid #7c3aed;
     }
-    h1 {
-        font-size: 2.5rem;
-        color: #08047e;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
+    .container-top-offset {
+      margin-top: -2rem;
+      position: relative;
+      z-index: 2;
     }
     .subtitle {
-        font-size: 1.2rem;
-        color: #0f7ab0;
-        margin-bottom: 2rem;
-        font-weight: 500;
+      font-size: 1.2rem;
+      color: #0f7ab0;
+      margin-bottom: 2rem;
+      font-weight: 500;
     }
     .image-wrapper {
-        margin-bottom: 2rem;
-        border-radius: 15px;
-        overflow: hidden;
+      margin-bottom: 2rem;
+      border-radius: 15px;
+      overflow: hidden;
     }
     .main-img {
-        width: 100%;
-        height: auto;
-        display: block;
-        aspect-ratio: 16/9;
-        object-fit: cover;
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .vertical-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+    }
+
+    /* ══ SLIDESHOW ══ */
+    .slideshow-wrapper {
+      max-width: 600px; /* Width limit for desktop */
+      width: 100%;
+      margin: 4rem auto 0 auto;
+      overflow: hidden;
+      position: relative;
+      direction: ltr; /* Force LTR for intuitive translateX sliding */
+    }
+    .slideshow-track {
+      display: flex;
+      width: 500%; /* 5 images * 100% wrapper width */
+      animation: slideShow 20s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+    }
+    .slide-img {
+      width: 20%; /* 1/5 of the width of track block */
+      height: auto;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+
+    @keyframes slideShow {
+      0%,
+      20% {
+        transform: translateX(0%);
+      }
+      25%,
+      45% {
+        transform: translateX(-20%);
+      }
+      50%,
+      70% {
+        transform: translateX(-40%);
+      }
+      75%,
+      95% {
+        transform: translateX(-60%);
+      }
+      100% {
+        transform: translateX(
+          -80%
+        ); /* Last frame equals first, then invisible loop */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 2rem 1.25rem;
+      }
+      .slideshow-wrapper {
+        max-width: none;
+        width: calc(
+          100% + 40px
+        ); /* Fully offsets the parent 20px left and right paddings */
+        margin: 3rem -20px 0 -20px;
+        border-radius: 0;
+      }
+      h1 {
+        font-size: 2rem;
+      }
     }
     .content p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #000000;
-        margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #000000;
+      margin-bottom: 1rem;
     }
     .cta-btn {
-        display: inline-block;
-        margin-top: 2rem;
-        padding: 1rem 2.5rem;
-        background: linear-gradient(135deg, #d4a017, #f0c040);
-        color: #08047e;
-        font-weight: 800;
-        font-size: 1.2rem;
-        border-radius: 12px;
-        text-decoration: none;
-        box-shadow: 0 8px 25px rgba(212, 160, 23, 0.4);
-        transition:
-            transform 0.2s,
-            box-shadow 0.2s;
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, #d4a017, #f0c040);
+      color: #08047e;
+      font-weight: 800;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(212, 160, 23, 0.4);
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
     }
     .cta-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(212, 160, 23, 0.6);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(212, 160, 23, 0.6);
     }
-</style>
+
+    /* ══ NEW BLOCK STYLES ══ */
+    .intro-block {
+      margin-bottom: 2.5rem;
+      font-size: 1.15rem;
+      color: #0f7ab0;
+      line-height: 1.6;
+    }
+    .intro-block p {
+      margin-bottom: 0.5rem;
+    }
+    .intro-block strong {
+      color: #08047e;
+    }
+
+    .highlight-box {
+      margin-top: 3rem;
+      background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+      border: 2px solid #0f7ab0;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(15, 122, 176, 0.1);
+    }
+    .highlight-box h2 {
+      color: #08047e;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .highlight-box p {
+      color: #333;
+    }
+
+    .container-bottom {
+      margin-top: 5rem; /* give space under the slider */
+    }
+    .grid-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+    .info-card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 15px;
+      border-top: 5px solid #d4a017;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+      text-align: center;
+    }
+    .info-card h3 {
+      font-size: 1.4rem;
+      color: #08047e;
+      margin-bottom: 1rem;
+      font-weight: 800;
+    }
+    .info-card p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 0.8rem;
+    }
+
+    .cta-block {
+      text-align: center;
+      margin: 2rem 0 3rem;
+    }
+    .cta-block h2 {
+      font-size: 2rem;
+      color: #08047e;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .cta-block p {
+      font-size: 1.2rem;
+      color: #0f7ab0;
+      font-weight: 500;
+    }
+
+    .premium-switch-spacing {
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-banner {
+        height: 50vh;
+        min-height: 400px;
+      }
+      .desktop-banner {
+        display: none;
+      }
+      .mobile-banner {
+        display: block;
+        object-position: center 25%;
+      }
+      .grid-cols {
+        grid-template-columns: 1fr;
+      }
+      .intro-block {
+        font-size: 1.05rem;
+      }
+      .highlight-box {
+        padding: 1.5rem;
+      }
+      .highlight-box h2 {
+        font-size: 1.5rem;
+      }
+      .cta-block h2 {
+        font-size: 1.6rem;
+      }
+      .container-bottom {
+        margin-top: 3rem;
+      }
+    }
+  </style>
+</Layout>

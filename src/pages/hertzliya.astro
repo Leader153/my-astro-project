@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import PremiumSwitch from "../components/PremiumSwitch.astro";
 import cardImg from "../assets/Romantic cruise 2.webp";
 import marinaImg from "../assets/marina-herzelia.webp";
 import marunaImg from "../assets/maruna-herzelia.webp";
@@ -194,26 +195,25 @@ const textSections = [
           }
         </div>
 
-        <div class="hz-mid-text" style="margin: 3rem auto;">
+        <div class="hz-mid-text" style="margin: 3rem auto 2rem auto;">
           <p class="hmt-main">
             <strong>מרינה הרצליה</strong><br />
             אנו ממוקמים במרינה המפוארת בהרצליה המשמשת כפלטפורמה ייחודית ויוקרתית ונגישה
             לכל אירוע. היאכטות שלנו מאובזרות בכל הנדרש על מנת לדאוג לנוחות, להנאה,
             ולפרטיות שלכם.
           </p>
-          <div
-            style="margin-top: 2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.12);"
-          >
-            <Image
-              src={marunaImg}
-              width={800}
-              height={450}
-              format="webp"
-              alt="מבט מרחפן על מרינה הרצליה מי ים"
-              style="width: 100%; height: auto; display: block; transition: transform 0.3s ease;"
-              loading="lazy"
-            />
-          </div>
+        </div>
+
+        <div class="hz-maruna-out-of-frame">
+          <Image
+            src={marunaImg}
+            width={1200}
+            height={675}
+            format="webp"
+            alt="מבט מרחפן על מרינה הרצליה מי ים"
+            class="hz-maruna-img-stretch"
+            loading="lazy"
+          />
         </div>
 
         <div class="hz-grid">
@@ -351,11 +351,17 @@ const textSections = [
             ))
           }
         </div>
+
+        <PremiumSwitch
+          href="/יאכטות-בהרצליה"
+          title="היאכטות שלנו בהרצליה"
+          subtitle="לצפייה בצי שלנו ולבחירת היאכטה המושלמת"
+        />
       </div>
     </section>
 
     <!-- ══ MARINA PHOTO ══ -->
-    <section class="hz-marina-photo">
+    <section class="hz-marina-container">
       <div class="hz-marina-wrap">
         <Image
           src={marinaImg}
@@ -366,22 +372,21 @@ const textSections = [
           class="hz-marina-img"
           loading="lazy"
         />
-        <div class="hz-marina-overlay">
-          <div class="hz-marina-text">
-            <div class="hz-marina-eyebrow">📍 המיקום שלנו</div>
-            <h2>מרינה הרצליה</h2>
-            <p>
-              אנו ממוקמים בלב המרינה המפוארת — רציף E, מול שער A, צמוד לקניון
-              ארנה
-            </p>
-            <a
-              href="https://maps.google.com/?q=מרינה+הרצליה"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="hz-marina-map-btn">פתח במפה ↗</a
-            >
-          </div>
-        </div>
+      </div>
+      <div class="hz-marina-info">
+        <div class="hz-marina-eyebrow-dark">📍 המיקום שלנו</div>
+        <h2>מרינה הרצליה</h2>
+        <p>
+          אנו ממוקמים בלב המרינה המפוארת — רציף E, מול שער A, צמוד לקניון ארנה
+        </p>
+        <a
+          href="https://maps.google.com/?q=מרינה+הרצליה"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hz-btn primary"
+        >
+          פתח במפה ↗
+        </a>
       </div>
     </section>
 
@@ -444,6 +449,19 @@ const textSections = [
     font-weight: 900;
     display: block;
     margin-bottom: 0.5rem;
+  }
+
+  /* ══ MARUNA OUT OF FRAME ══ */
+  .hz-maruna-out-of-frame {
+    margin: 0 auto 3rem auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  .hz-maruna-img-stretch {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   /* ══ HERO ══ */
@@ -847,6 +865,12 @@ const textSections = [
 
   /* ══ RESPONSIVE ══ */
   @media (max-width: 768px) {
+    .hz-maruna-out-of-frame {
+      border-radius: 0;
+      width: calc(100% + 2.5rem);
+      margin-left: -1.25rem;
+      margin-right: -1.25rem;
+    }
     .hz-grid {
       grid-template-columns: 1fr;
     }
@@ -871,14 +895,15 @@ const textSections = [
   }
 
   /* ══ MARINA PHOTO ══ */
-  .hz-marina-photo {
+  .hz-marina-container {
     width: 100%;
-    line-height: 0; /* removes gap under image */
+    background: var(--white);
+    padding-bottom: 4rem;
   }
   .hz-marina-wrap {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 6; /* cinematic bar */
+    aspect-ratio: 16 / 6;
     overflow: hidden;
   }
   .hz-marina-img {
@@ -891,75 +916,78 @@ const textSections = [
     display: block;
     transition: transform 6s ease;
   }
-  .hz-marina-photo:hover .hz-marina-img {
+  .hz-marina-container:hover .hz-marina-img {
     transform: scale(1.03);
   }
 
-  /* Dark gradient overlay — removed */
-  .hz-marina-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 8%;
-  }
-
-  .hz-marina-text {
+  /* Info Below Photo */
+  .hz-marina-info {
+    max-width: 800px;
+    width: 92%;
+    margin: 0 auto;
+    transform: translateY(-3.5rem);
+    position: relative;
+    z-index: 10;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(212, 160, 23, 0.3);
+    border: 4px solid #d4a017;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 520px;
-    padding: 1.75rem 2rem;
-    background: rgba(5, 3, 80, 0.5);
-    border-radius: 18px;
-    backdrop-filter: blur(4px);
+    align-items: center !important;
+    justify-content: center;
   }
-  .hz-marina-eyebrow {
+  .hz-marina-eyebrow-dark {
     font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
+    color: var(--sea);
+    margin: 0 auto 0.5rem auto !important;
+    text-align: center;
   }
-  .hz-marina-text h2 {
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  .hz-marina-info h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     font-weight: 800;
-    color: white;
-    margin: 0 0 0.65rem;
+    color: var(--text);
+    margin: 0 auto 0.85rem auto !important;
     line-height: 1.15;
+    text-align: center;
   }
-  .hz-marina-text p {
+  .hz-marina-info p {
     font-size: 1.15rem;
-    color: #ffffff;
-    margin: 0 0 1.1rem;
+    color: var(--text-l);
+    margin: 0 auto 1.5rem auto !important;
     line-height: 1.65;
-  }
-  .hz-marina-map-btn {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1.5px solid rgba(255, 255, 255, 0.35);
-    color: white;
-    font-size: 0.88rem;
-    font-weight: 700;
-    padding: 0.55rem 1.2rem;
-    border-radius: 10px;
-    text-decoration: none;
-    backdrop-filter: blur(6px);
-    transition: background 0.2s;
-  }
-  .hz-marina-map-btn:hover {
-    background: rgba(255, 255, 255, 0.28);
+    max-width: 500px;
+    text-align: center;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     .hz-marina-wrap {
       aspect-ratio: 16 / 9;
-    } /* чуть выше на мобильном */
-    .hz-marina-overlay {
-      padding: 1.5rem;
+    }
+    .hz-marina-info {
+      width: 92%;
+      transform: translateY(-1.5rem);
+      padding: 1.25rem 1rem;
+      border-radius: 16px;
+      margin: 0 auto;
+    }
+    .hz-marina-eyebrow-dark {
+      font-size: 0.8rem;
+      margin: 0 auto 0.3rem auto !important;
+    }
+    .hz-marina-info h2 {
+      font-size: 1.5rem;
+      margin: 0 auto 0.5rem auto !important;
+    }
+    .hz-marina-info p {
+      font-size: 0.95rem;
+      line-height: 1.45;
+      margin: 0 auto 1rem auto !important;
     }
   }
 </style>

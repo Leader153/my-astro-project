@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import cardImg from '../assets/Romantic cruise 2.webp';
+import bacheloretteImg from '../assets/large-group-bachelorette-party-yacht-haifa.webp';
+import birthdayImg from '../assets/Birthday-party-on-the-yach.webp';
 
 const services = [
   {
@@ -15,12 +17,13 @@ const services = [
   },
   {
     icon: '🎉',
-    title: 'מסיבת רווקות / רווקים',
+    title: 'מסיבת רווקות',
     desc: 'מסיבה בלתי נשכחת על הסיפון עם חברים. אלכוהול, מוסיקה והרבה כיף',
     tag: 'פופולרי',
     color: '#7c3aed',
     href: '/bachelor-party',
     alt: 'קבוצת חברים חוגגת מסיבת רווקות על יאכטה פרטית',
+    img: bacheloretteImg,
   },
   {
     icon: '🎂',
@@ -29,7 +32,8 @@ const services = [
     tag: 'מומלץ',
     color: '#d4a017',
     href: '/birthday',
-    alt: 'חגיגת יום הולדת על סיפון יאכטה עם חברים ועוגה',
+    alt: 'חגיגות יום הולדת על יאכטה בחיפה, קבוצת בנים בנות מרימים לי חיים',
+    img: birthdayImg,
   },
   {
     icon: '👔',
@@ -204,7 +208,7 @@ const testimonials = [
             <!-- Card image -->
             <div class="sc-img-wrap">
               <Image
-                src={cardImg}
+                src={s.img || cardImg}
                 width={600}
                 height={400}
                 format="webp"
@@ -261,7 +265,7 @@ const testimonials = [
             <!-- Card image -->
             <div class="sc-img-wrap">
               <Image
-                src={cardImg}
+                src={s.img || cardImg}
                 width={600}
                 height={400}
                 format="webp"
@@ -300,7 +304,7 @@ const testimonials = [
             <!-- Card image -->
             <div class="sc-img-wrap">
               <Image
-                src={cardImg}
+                src={s.img || cardImg}
                 width={600}
                 height={400}
                 format="webp"
