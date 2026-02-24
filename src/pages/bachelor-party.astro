@@ -217,13 +217,12 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
   <style>
     .service-page {
       width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden;
       padding: 0 0 60px 0;
       background: #f8fbff;
       min-height: 100vh;
       font-family: "Rubik", sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     .hero-banner {
@@ -278,9 +277,10 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
     }
 
     .container {
+      box-sizing: border-box;
       max-width: 800px;
-      margin: 0 auto;
       width: calc(100% - 40px);
+      margin: 0 auto;
       background: #ffffff;
       border-radius: 20px;
       padding: 3rem;
