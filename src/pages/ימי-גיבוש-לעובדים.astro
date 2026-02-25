@@ -1,140 +1,452 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import cardImg from "../assets/employees-teambuilding-group-on-boat-herzliya.webp";
+import mobileImg from "../assets/employees-teambuilding-group-on-boat-herzliya.webp";
+import img1 from "../assets/employees-teambuilding-group-on-boat.webp";
+import midImg from "../assets/employees-teambuilding.webp";
+import botImg from "../assets/group-men-sitting-on-yacht-deck-herzliya.webp";
+import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 ---
 
 <Layout
-    title="ימי גיבוש לעובדים על יאכטה | Leader הפלגות"
-    description="יום גיבוש לעובדים ביאכטה! הפלגה מיוחדת לחברות, צוותים ואנשי עסקים. אווירה ייחודית בים לגיבוש עמוק ומלא בהנאה."
+  title="ימי גיבוש לעובדים על יאכטה | Leader הפלגות"
+  description="יום גיבוש לעובדים ביאכטה! הפלגה מיוחדת לחברות, צוותים ואנשי עסקים. אווירה ייחודית בים לגיבוש עמוק ומלא בהנאה."
 >
-    <div class="service-page" dir="rtl">
-        <section class="sp-hero">
-            <div class="sp-inner text-center">
-                <div class="sp-eyebrow">אירועים מיוחדים</div>
-                <h1>ימי גיבוש לעובדים</h1>
-                <p>
-                    מוציאים את הצוות מהשגרה — יום כיף וגיבוש על יאכטה פרטית אל
-                    מול הגלים. הדרך הטובה ביותר ללכד את העובדים!
-                </p>
-                <div class="sp-btns">
-                    <a href="/צור-קשר" class="sp-btn primary">הזמינו עכשיו</a>
-                    <a href="https://wa.me/972533403449" class="sp-btn wa"
-                        >WhatsApp</a
-                    >
-                </div>
-            </div>
-        </section>
+  <div class="hz-page" dir="rtl">
+    <!-- ══ HERO ══ -->
+    <section class="hz-hero">
+      <Image
+        src={cardImg}
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+        format="webp"
+        alt="קבוצת עובדים ביום גיבוש יושבים על סיפון סירה בהרצליה"
+        class="hz-hero-bg-img desktop-img"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </section>
 
-        <section class="sp-content">
-            <div class="sp-inner">
-                <h2>השקעה בעובדים שמשתלמת מיד</h2>
-                <p>
-                    כשצוות עובד קשה במשרד, מגיע לו לשחרר וליהנות. הפלגה לעובדים
-                    היא דרך מקסימה לגבש את הצוות, לעודד עבודת צוות באווירה קלילה
-                    ושונה לחלוטין. על הסיפון ניתן להרים כוסית, לעשות מינגלינג
-                    פתוח, לשחות בים וליהנות ממוזיקה מעולה וקייטרינג נהדר
-                    לבחירתכם. יציאה מושלמת שוברת חסמים והופכת כל קבוצת עובדים
-                    לצוות מגובש ומאוחד הרבה יותר!
-                </p>
-                <a href="/" class="back-link">← חזרה לדף הבית</a>
-            </div>
-        </section>
+    <!-- MOBILE HERO IMAGE (Separate from background) -->
+    <div class="hz-hero-mobile-wrap">
+      <Image
+        src={mobileImg}
+        widths={[400, 768]}
+        sizes="100vw"
+        format="webp"
+        alt="קבוצת עובדים ביום גיבוש יושבים על סיפון סירה בהרצליה"
+        class="mobile-hero-img"
+        loading="eager"
+        fetchpriority="high"
+      />
     </div>
+
+    <!-- CONTENT -->
+    <section class="hz-services">
+      <div class="hz-inner tz-content-box">
+        <div class="hz-section-header">
+          <h2>
+            ⚓ ימי גיבוש לעובדים עם "לידר" – מוציאים את הצוות מהמשרד אל הים
+            הפתוח!
+          </h2>
+          <p>
+            שכחו מעוד יום גיבוש רגיל בחדר בריח או במסעדה. רוצים באמת לאחד את
+            הצוות, לשבור שגרה ולתת לעובדים שלכם חוויה שהם ידברו עליה פינת הקפה
+            עוד חודשים קדימה? בואו לים!
+          </p>
+        </div>
+
+        <div class="bday-text-article">
+          <p>
+            אצלנו ב<span class="brand-leader">לידר הפלגות &amp; שייט</span>,
+            אנחנו מציעים לכם ימי גיבוש וכיף המשלבים אתגר, גיבוש חברתי, ופינוק
+            יוקרתי – הכל על רקע הגלים והאופק הפתוח.
+          </p>
+
+          <h3>📍 צי היאכטות שלנו – מהרצליה ועד חיפה</h3>
+          <p>
+            אנחנו גאים להציע לכם גמישות מקסימלית עם פריסה בשתי המרינות המובילות
+            בישראל: מרינה הרצליה ומרינה חיפה. לא משנה מה גודל החברה שלכם, יש לנו
+            את הכלי המושלם עבורכם! הצי שלנו כולל מגוון רחב של ספינות ויאכטות:
+          </p>
+          <ul class="bday-features-list">
+            <li><strong>קבוצות בוטיק:</strong> יאכטות לעד 21 משתתפים.</li>
+            <li><strong>קבוצות בינוניות:</strong> יאכטות לעד 30 משתתפים.</li>
+            <li>
+              <strong>קבוצות גדולות:</strong> יאכטות מרווחות לעד 40 משתתפים.
+            </li>
+            <li>
+              <strong>אירועי חברה ענקיים:</strong> ספינות ענק היכולות לארח עד 55 משתתפים!
+            </li>
+          </ul>
+        </div>
+
+        <div class="bday-break-img-wrapper">
+          <Image
+            src={img1}
+            alt="עובדים ביום גיבוש נהנים על סיפון יאכטה"
+            class="bday-break-img"
+          />
+        </div>
+
+        <div class="bday-text-article">
+          <h3>🥩 קולינריה בלב ים: על האש על הסיפון!</h3>
+          <p>
+            מה מחבר בין אנשים יותר טוב מאוכל טוב באוויר הפתוח? ב<span
+              class="brand-leader">לידר הפלגות &amp; שייט</span
+            > שדרגנו את החוויה: יש לכם אפשרות להכין בשרים על הגריל ממש על היאכטה!
+            תוכלו ליהנות מעל האש איכותי בלב ים, או לחלופין – להביא איתכם קייטרינג,
+            נשנושים ואוכל מהבית. המטבח שלנו מאובזר ונוח, ויעמוד לרשותכם לאורך כל ההפלגה.
+          </p>
+          <br />
+          <h3>⛵ עבודת צוות, מנהיגות ואדרנלין</h3>
+          <p>
+            הפלגה על יאכטת מפרשים היא לא רק "בטן-גב" (למרות שגם זה מותר!). השטת
+            יאכטה דורשת מנהיגות, תזמון מדויק ומעל הכל – עבודת צוות נהדרת.
+          </p>
+          <ul class="bday-features-list">
+            <li>
+              <strong>התנסות מעשית:</strong> העובדים יעברו הדרכת מפרשנות קצרה מפי
+              השייטים המנוסים שלנו ויתנסו בתפעול היאכטה.
+            </li>
+            <li>
+              <strong>תחרויות צוותים:</strong> קבוצה גדולה? נחלק אתכם למספר יאכטות
+              ונערוך תחרות שייט (רגאטה) מרתקת בין הצוותים, שדורשת חשיבה טקטית ודינמיקה
+              קבוצתית. שילוב מושלם של אתגר ימי וחוויה חברתית.
+            </li>
+          </ul>
+        </div>
+
+        <div class="bday-break-img-wrapper" style="max-width: 700px;">
+          <Image
+            src={midImg}
+            alt="קבוצת עובדות ביום גיבוש יושבים יחד על סיפון יאכטה בחיפה"
+            class="bday-break-img"
+            style="aspect-ratio: 1 / 1; max-height: 700px;"
+          />
+        </div>
+
+        <div class="bday-text-article">
+          <h3>🥂 הפינוקים הקטנים שעושים את ההבדל</h3>
+          <p>
+            אנחנו ב<span class="brand-leader">לידר הפלגות &amp; שייט</span> נדאג לכל
+            הפרטים הקטנים כדי שהעובדים שלכם ירגישו הכי VIP שיש:
+          </p>
+          <ul class="bday-features-list">
+            <li>
+              <strong>אבזור ונוחות מלאה:</strong> היאכטות שלנו ממוזגות, נקיות ומאובזרות.
+              בכל יאכטה תמצאו סלון מרווח, שני חדרי שינה (למי שצריך רגע לנוח), מטבח,
+              מקלחת ושירותים.
+            </li>
+            <li>
+              <strong>אווירת מסיבה:</strong> ביאכטות מותקנות מערכות סאונד מעולות –
+              פשוט חברו את הטלפון ותנו לדיג'יי של המשרד להרים את האווירה.
+            </li>
+            <li>
+              <strong>אקשן במים וצ'יל בסיפון:</strong> נעגון בלב ים כדי שתוכלו לקפוץ
+              למים, להשתולל על אבוב הגרירה שלנו, או סתם לתפוס צבע על מזרני השיזוף
+              בחרטום.
+            </li>
+            <li>
+              <strong>קבלת פנים חגיגית:</strong> נקשט את היאכטה לכבודכם בבלונים, ונפנק
+              אתכם בבקבוק שמפניה קפוא להרמת כוסית, לצד מים מינרליים ושתייה חמה חופשית.
+            </li>
+          </ul>
+        </div>
+
+        <div class="bday-break-img-wrapper">
+          <Image
+            src={botImg}
+            alt="קבוצת גברים יושבת על דופן של יאכטה בלב ים בהרצליה"
+            class="bday-break-img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ NEW GLOBAL CTA SECTION (GOLDEN FENCE) ══ -->
+    <FleetSelectionCta />
+  </div>
 </Layout>
 
 <style>
-    .service-page {
-        background: #f2f5fb;
-        min-height: 100vh;
-        font-family: "Rubik", sans-serif;
-    }
-    .sp-hero {
-        padding: 8rem 2rem 5rem;
-        background: linear-gradient(135deg, #08047e 0%, #0a5a8f 100%);
-        color: white;
-        text-align: center;
-    }
-    .sp-eyebrow {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #f0c040;
-        letter-spacing: 1px;
-        margin-bottom: 1rem;
-    }
-    .sp-hero h1 {
-        font-size: clamp(2.2rem, 5vw, 3.5rem);
-        font-weight: 800;
-        margin-bottom: 1rem;
-    }
-    .sp-hero p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto 2.5rem;
-        line-height: 1.6;
-    }
-    .sp-btns {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .sp-btn {
-        padding: 0.85rem 2rem;
-        border-radius: 12px;
-        font-weight: 700;
-        font-size: 1.05rem;
-        text-decoration: none;
-        transition: 0.2s;
-    }
-    .sp-btn.primary {
-        background: #d4a017;
-        color: #08047e;
-        box-shadow: 0 6px 20px rgba(212, 160, 23, 0.3);
-    }
-    .sp-btn.primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(212, 160, 23, 0.5);
-    }
-    .sp-btn.wa {
-        background: #25d366;
-        color: white;
-    }
-    .sp-btn.wa:hover {
-        background: #128c7e;
-        transform: translateY(-3px);
+  @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
+
+  .hz-page {
+    --navy: #08047e;
+    --sea: #0f7ab0;
+    --gold: #d4a017;
+    --gold-l: #f0c040;
+    --bg: #f2f5fb;
+    --white: #ffffff;
+    --text: #000000;
+    --text-m: #111111;
+    --text-l: #222222;
+    font-family: "Rubik", "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  /* ══ HERO ══ */
+  .hz-hero {
+    position: relative;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hz-hero-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    object-position: center;
+  }
+
+  .hz-hero-mobile-wrap {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .hz-hero {
+      display: none; /* Hide the full hero on mobile completely */
     }
 
-    .sp-content {
-        padding: 5rem 2rem;
-        text-align: center;
+    .hz-hero-mobile-wrap {
+      display: block;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      margin-top: -80px; /* Offset the Layout/page padding specifically just to touch the header nav */
+      margin-bottom: -30px; /* Pull the title closer to the image */
+      overflow: hidden;
+      position: relative;
     }
-    .sp-inner {
-        max-width: 800px;
-        margin: 0 auto;
+
+    .mobile-hero-img {
+      width: 100%;
+      height: auto;
+      min-height: 250px;
+      display: block;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: none;
     }
-    .sp-content h2 {
-        font-size: 2.2rem;
-        color: #1a1a2e;
-        margin-bottom: 1.5rem;
+  }
+
+  /* ══ SHARED ══ */
+  .hz-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+  }
+  .hz-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 768px) {
+    .hz-inner {
+      padding-top: 2rem;
     }
-    .sp-content p {
-        color: #3a3a5c;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 3rem;
+    .hz-section-header {
+      margin-bottom: 1.5rem;
     }
-    .back-link {
-        display: inline-block;
-        color: #0f7ab0;
-        font-weight: 600;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border: 1px solid #0f7ab0;
-        border-radius: 8px;
-        transition: 0.2s;
+  }
+  .hz-section-header h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 0.8rem;
+  }
+  .hz-section-header p {
+    font-size: 1.2rem;
+    color: var(--text-l);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .hz-services {
+    background: var(--bg);
+  }
+
+  /* ══ TEXT ARTICLE ══ */
+  .bday-text-article {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3.5rem 4rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(8, 4, 126, 0.05);
+    border: 1px solid rgba(8, 4, 126, 0.05);
+  }
+
+  .bday-text-article p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-m);
+    margin-bottom: 1.5rem;
+  }
+
+  .bday-text-article h3 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+    position: relative;
+    display: inline-block;
+  }
+  .bday-text-article h3::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  .bday-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .bday-features-list li {
+    font-size: 1.1rem;
+    color: var(--text-m);
+    margin-bottom: 1rem;
+    padding-right: 1.8rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .bday-features-list li::before {
+    content: "⚓";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 1rem;
+    color: var(--sea);
+  }
+  .bday-features-list strong {
+    color: var(--navy);
+  }
+
+  .bday-cta-wrapper {
+    margin-top: 4.5rem;
+    text-align: center;
+    background: linear-gradient(to bottom, transparent, rgba(8, 4, 126, 0.02));
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    border: 1px dashed rgba(8, 4, 126, 0.1);
+  }
+  .bday-cta-wrapper h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+  }
+  .bday-cta-wrapper p {
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+  }
+  .bday-cta-wrapper .hz-btn {
+    font-size: 1.2rem;
+    padding: 1.2rem 3rem;
+  }
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+
+  /* ══ BUTTONS (from hz-page) ══ */
+  .hz-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.9rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+  }
+
+  .hz-btn.premium-btn {
+    background: linear-gradient(135deg, var(--navy), #1a15a8);
+    color: var(--white);
+    box-shadow: 0 10px 30px rgba(8, 4, 126, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.5px;
+  }
+  .hz-btn.premium-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(8, 4, 126, 0.45);
+    background: linear-gradient(135deg, #0a069e, #1f1abf);
+  }
+
+  .bday-content-img {
+    width: 100%;
+    max-width: 600px;
+    margin: 3.5rem auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 8px 30px rgba(8, 4, 126, 0.1);
+  }
+
+  .bday-img-placeholder {
+    width: 100%;
+    max-width: 600px;
+    margin: 3.5rem auto;
+    aspect-ratio: 3 / 2;
+    background: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .bday-break-img-wrapper {
+    max-width: 1000px;
+    margin: 4rem auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(8, 4, 126, 0.15);
+  }
+
+  .bday-break-img {
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 16 / 9;
+  }
+
+  @media (max-width: 768px) {
+    .bday-text-article {
+      padding: 2.5rem 1.5rem;
     }
-    .back-link:hover {
-        background: #0f7ab0;
-        color: white;
+    .bday-img-placeholder,
+    .bday-content-img {
+      margin: 2rem auto;
     }
+    .bday-break-img-wrapper {
+      margin: 2.5rem -1.5rem;
+      border-radius: 0;
+    }
+    .bday-break-img {
+      aspect-ratio: 4 / 3;
+      max-height: 400px;
+    }
+  }
 </style>
