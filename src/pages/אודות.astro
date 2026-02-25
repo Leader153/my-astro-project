@@ -43,7 +43,10 @@ const experiences = [
 
 const bizDetails = [
   { label: "שם העוסק", value: "פלידר דניאל" },
-  { label: "כינוי העסק", value: "לידר" },
+  {
+    label: "כינוי העסק",
+    value: '<span class="brand-leader">לידר הפלגות &amp; שייט</span>',
+  },
   { label: "מספר עוסק מורשה", value: "304089212" },
   { label: "מען העסק", value: "שד' קרן קימת 7, דירה 6, קריית מוצקין" },
 ];
@@ -198,7 +201,7 @@ const bizDetails = [
               bizDetails.map((d) => (
                 <div class="biz-row">
                   <div class="biz-label">{d.label}</div>
-                  <div class="biz-value">{d.value}</div>
+                  <div class="biz-value" set:html={d.value} />
                 </div>
               ))
             }

@@ -77,7 +77,7 @@ const textSections = [
   {
     icon: "🥂",
     title: "הפלגה פרטית וחלומית",
-    text: "חברת לידר מזמינה אותכם להנות מהפלגה פרטית וחלומית. בהפלגה תצאו עם סקיפר מקצועי על אחת היאכטות שלנו ותוכלו להתפנק מהנופים, להשתזף בשמש, ללגום מהיין האיכותי, להנות מהמוזיקה שלכם ברקע.",
+    text: 'חברת <span class="brand-leader">לידר הפלגות &amp; שייט</span> מזמינה אותכם להנות מהפלגה פרטית וחלומית. בהפלגה תצאו עם סקיפר מקצועי על אחת היאכטות שלנו ותוכלו להתפנק מהנופים, להשתזף בשמש, ללגום מהיין האיכותי, להנות מהמוזיקה שלכם ברקע.',
   },
   {
     icon: "👥",
@@ -322,9 +322,10 @@ const textSections = [
         <div class="hz-mid-text" style="margin-top: 3rem;">
           <p class="hmt-main">
             <strong>הפלגה פרטית וחלומית</strong><br />
-            חברת לידר מזמינה אותכם להנות מהפלגה פרטית וחלומית. בהפלגה תצאו עם סקיפר
-            מקצועי על אחת היאכטות שלנו ותוכלו להתפנק מהנופים, להשתזף בשמש, ללגום מהיין
-            האיכותי, להנות מהמוזיקה שלכם ברקע.
+            חברת <span class="brand-leader">לידר הפלגות &amp; שייט</span> מזמינה אותכם
+            להנות מהפלגה פרטית וחלומית. בהפלגה תצאו עם סקיפר מקצועי על אחת היאכטות
+            שלנו ותוכלו להתפנק מהנופים, להשתזף בשמש, ללגום מהיין האיכותי, להנות מהמוזיקה
+            שלכם ברקע.
           </p>
         </div>
       </div>
@@ -345,7 +346,7 @@ const textSections = [
                 <div class="hz-about-icon">{sec.icon}</div>
                 <div>
                   <h3>{sec.title}</h3>
-                  <p>{sec.text}</p>
+                  <p set:html={sec.text} />
                 </div>
               </div>
             ))

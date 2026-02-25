@@ -1,0 +1,32 @@
+---
+import PremiumDualSwitch from "./PremiumDualSwitch.astro";
+
+interface Props {
+  ctaInstruction?: string;
+}
+
+const {
+  ctaInstruction = "נא להיכנס לעמוד יאכטות ולבחור את היאכטה המושלמת לקבוצה שלכם:",
+} = Astro.props;
+---
+
+<section class="global-gold-cta-section">
+  <h3>בואו תבחרו את היאכטה שהכי מתאימה לכם</h3>
+  <p class="big-yellow-text">
+    בחיפה או בהרצליה?<br />
+    כמה מפליגים?
+  </p>
+  <p class="strong-text">
+    {ctaInstruction}
+  </p>
+  <PremiumDualSwitch
+    href1="/haifa"
+    title1="יאכטות בחיפה"
+    subtitle1="מרינה חיפה"
+    icon1="⚓"
+    href2="/יאכטות-בהרצליה"
+    title2="יאכטות בהרצליה"
+    subtitle2="מרינה הרצליה"
+    icon2="⛵"
+  />
+</section>

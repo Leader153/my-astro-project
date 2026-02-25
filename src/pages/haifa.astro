@@ -8,462 +8,431 @@ import marinaImg from "../assets/sky.webp";
 import "../styles/haifa.css";
 
 const yachts = [
-    {
-        title: "יאכטה עד 11 מפליגים",
-        desc: "יאכטה קלאסית ואינטימית להפלגה חווייתית במימי המפרץ והכרמל עם סקיפר צמוד.",
-        tag: "עד 11 מפליגים",
-        color: "#0f7ab0",
-        alt: "יאכטה עד 11 מפליגים",
-        img: cardImg2,
-        href: "/יאכטה-עד-11-מפליגים",
-    },
-    {
-        title: "יאכטה עד 14 מפליגים",
-        desc: "יאכטה מרווחת להפלגה חופית יוקרתית. הבחירה המושלמת לקבוצה בינונית ולחגיגות.",
-        tag: "עד 14 מפליגים",
-        color: "#e91e8c",
-        alt: "יאכטה עד 14 מפליגים",
-        img: cardImg1,
-        href: "/יאכטה-עד-14-מפליגים",
-    },
-    {
-        title: "ספינת טייפון",
-        desc: "ספינה גדולה בחיפה, מתאימה לאירועים מרובי משתתפים, מסיבות חברה מול רקע הרי הכרמל.",
-        tag: "עד 30 מפליגים",
-        color: "#d4a017",
-        alt: "ספינת טייפון",
-        img: cardImg3,
-        href: "/ספינת-טייפון-עד-30-מפליגים",
-    },
-    {
-        title: "יאכטה קטמרן מפרשית",
-        desc: "חוויית הפלגה שקטה וחלקה על קטמרן מפרשית יציבה המציעה מקסימום רווח ויוקרה בים.",
-        tag: "מפרשית יוקרתית",
-        color: "#7c3aed",
-        alt: "יאכטה קטמרן מפרשית מפוארת",
-        img: cardImg1,
-        href: "/יאכטה-קטמרן-מפרשית-מפוארת",
-    },
-    {
-        title: "יאכטה קטמרן מנועית",
-        desc: "קטמרן ענקית המשלבת יציבות יחד עם עוצמת מנועים לפעילות מרגשת ומסיבות ריקודים.",
-        tag: "קטמרן מנועית",
-        color: "#08047e",
-        alt: "יאכטה קטמרן מנועית",
-        img: marinaImg,
-        href: "/יאכטה-קטמרן-מנועית",
-    },
-    {
-        title: "סירת מנוע מהירה",
-        desc: "אקשן ואדרנלין בים! סירת מנוע ספורטיבית ומהירה לחוויה מלאת אקסטרים ומהירות.",
-        tag: "אקסטרים",
-        color: "#1da8e8",
-        alt: "סירת מנוע מהירה",
-        img: cardImg2,
-        href: "/סירת-מנוע-מהירה",
-    },
-    {
-        title: "יאכטה טייפון עד 30 מפליגים",
-        desc: "יאכטה גדולה, מרווחת ומושלמת לאירועים, מסיבות חברה וימי הולדת גדולים.",
-        tag: "עד 30 מפליגים",
-        color: "#d4a017",
-        alt: "יאכטה טייפון",
-        img: cardImg3,
-        href: "/יאכטה-טייפון-עד-30-מפליגים",
-    },
-    {
-        title: "יאכטה קינג",
-        desc: "ספינת הדגל לאירועים ענקיים עד 40 איש. חתונות, מסיבות עובדים ופינוק אינסופי.",
-        tag: "עד 40 מפליגים",
-        color: "#08047e",
-        alt: "יאכטה קינג",
-        img: marinaImg,
-        href: "/יאכטה-קינג-עד-40-מפליגים",
-    },
-    {
-        title: "סירת מנוע מרגע",
-        desc: "פעילות ספורטיבית ואדרנלין מטורף, טיסות על פני הגלים מול הכרמל.",
-        tag: "עד 6 מפליגים",
-        color: "#ff5722",
-        alt: "סירת מנוע מרגע",
-        img: cardImg2,
-        href: "/סירת-מנוע-מרגע-עד-6-מפליגים",
-    },
+  {
+    title: "יאכטה עד 11 מפליגים",
+    desc: "יאכטה קלאסית ואינטימית להפלגה חווייתית במימי המפרץ והכרמל עם סקיפר צמוד.",
+    tag: "עד 11 מפליגים",
+    color: "#0f7ab0",
+    alt: "יאכטה עד 11 מפליגים",
+    img: cardImg2,
+    href: "/יאכטה-עד-11-מפליגים",
+  },
+  {
+    title: "יאכטה עד 14 מפליגים",
+    desc: "יאכטה מרווחת להפלגה חופית יוקרתית. הבחירה המושלמת לקבוצה בינונית ולחגיגות.",
+    tag: "עד 14 מפליגים",
+    color: "#e91e8c",
+    alt: "יאכטה עד 14 מפליגים",
+    img: cardImg1,
+    href: "/יאכטה-עד-14-מפליגים",
+  },
+  {
+    title: "ספינת טייפון",
+    desc: "ספינה גדולה בחיפה, מתאימה לאירועים מרובי משתתפים, מסיבות חברה מול רקע הרי הכרמל.",
+    tag: "עד 30 מפליגים",
+    color: "#d4a017",
+    alt: "ספינת טייפון",
+    img: cardImg3,
+    href: "/ספינת-טייפון-עד-30-מפליגים",
+  },
+  {
+    title: "יאכטה קטמרן מפרשית",
+    desc: "חוויית הפלגה שקטה וחלקה על קטמרן מפרשית יציבה המציעה מקסימום רווח ויוקרה בים.",
+    tag: "מפרשית יוקרתית",
+    color: "#7c3aed",
+    alt: "יאכטה קטמרן מפרשית מפוארת",
+    img: cardImg1,
+    href: "/יאכטה-קטמרן-מפרשית-מפוארת",
+  },
+  {
+    title: "יאכטה קטמרן מנועית",
+    desc: "קטמרן ענקית המשלבת יציבות יחד עם עוצמת מנועים לפעילות מרגשת ומסיבות ריקודים.",
+    tag: "קטמרן מנועית",
+    color: "#08047e",
+    alt: "יאכטה קטמרן מנועית",
+    img: marinaImg,
+    href: "/יאכטה-קטמרן-מנועית",
+  },
+  {
+    title: "סירת מנוע מהירה",
+    desc: "אקשן ואדרנלין בים! סירת מנוע ספורטיבית ומהירה לחוויה מלאת אקסטרים ומהירות.",
+    tag: "אקסטרים",
+    color: "#1da8e8",
+    alt: "סירת מנוע מהירה",
+    img: cardImg2,
+    href: "/סירת-מנוע-מהירה",
+  },
+  {
+    title: "יאכטה טייפון עד 30 מפליגים",
+    desc: "יאכטה גדולה, מרווחת ומושלמת לאירועים, מסיבות חברה וימי הולדת גדולים.",
+    tag: "עד 30 מפליגים",
+    color: "#d4a017",
+    alt: "יאכטה טייפון",
+    img: cardImg3,
+    href: "/יאכטה-טייפון-עד-30-מפליגים",
+  },
+  {
+    title: "יאכטה קינג",
+    desc: "ספינת הדגל לאירועים ענקיים עד 40 איש. חתונות, מסיבות עובדים ופינוק אינסופי.",
+    tag: "עד 40 מפליגים",
+    color: "#08047e",
+    alt: "יאכטה קינג",
+    img: marinaImg,
+    href: "/יאכטה-קינג-עד-40-מפליגים",
+  },
+  {
+    title: "סירת מנוע מרגע",
+    desc: "פעילות ספורטיבית ואדרנלין מטורף, טיסות על פני הגלים מול הכרמל.",
+    tag: "עד 6 מפליגים",
+    color: "#ff5722",
+    alt: "סירת מנוע מרגע",
+    img: cardImg2,
+    href: "/סירת-מנוע-מרגע-עד-6-מפליגים",
+  },
 ];
 
 const textSections = [
-    {
-        icon: "⚓",
-        title: "צי היאכטות המגוון שלנו בחיפה",
-        text: "אנו מציעים מגוון רחב של כלי שייט בחיפה - החל מיאכטות אינטימיות ורומנטיות, דרך יאכטות קטמרן ליציבות מירבית, ועד לספינת הקייפון הגדולה. כאן תמצאו את היאכטה שתמיד חלמתם עליה.",
-    },
-    {
-        icon: "🌊",
-        title: "שייט מול הרי הכרמל",
-        text: "הפלגה בחיפה מעניקה חוויה ייחודית בין נופי רכס הכרמל החופש הנושק לים, אל מול נמל חיפה הציורי. אוויר ים צלול וגלים שמלווים אתכם אל עבר האופק בחוויה של פעם בחיים.",
-    },
-    {
-        icon: "👨‍✈️",
-        title: "שירות אישי ומקצועי",
-        text: "צוות הסקיפרים המנוסים שלנו יעניק לכם שירות מלא ואדיב בחיוך גדול. אנו נדאג לכל פרט קטן בהפלגה שלכם, כך שתוכלו להתרווח, להתפנק ולצרוב בזיכרון חוויה קסומה. מחכים לכם!",
-    },
+  {
+    icon: "⚓",
+    title: "צי היאכטות המגוון שלנו בחיפה",
+    text: "אנו מציעים מגוון רחב של כלי שייט בחיפה - החל מיאכטות אינטימיות ורומנטיות, דרך יאכטות קטמרן ליציבות מירבית, ועד לספינת הקייפון הגדולה. כאן תמצאו את היאכטה שתמיד חלמתם עליה.",
+  },
+  {
+    icon: "🌊",
+    title: "שייט מול הרי הכרמל",
+    text: "הפלגה בחיפה מעניקה חוויה ייחודית בין נופי רכס הכרמל החופש הנושק לים, אל מול נמל חיפה הציורי. אוויר ים צלול וגלים שמלווים אתכם אל עבר האופק בחוויה של פעם בחיים.",
+  },
+  {
+    icon: "👨‍✈️",
+    title: "שירות אישי ומקצועי",
+    text: "צוות הסקיפרים המנוסים שלנו יעניק לכם שירות מלא ואדיב בחיוך גדול. אנו נדאג לכל פרט קטן בהפלגה שלכם, כך שתוכלו להתרווח, להתפנק ולצרוב בזיכרון חוויה קסומה. מחכים לכם!",
+  },
 ];
 ---
 
 <Layout
-    title="שייט בחיפה — תמצאו לכם את היאכטה שתמיד חלמתם | Leader"
-    description="שייט יאכטות בחיפה — יאכטת מפרש, קטמרן וספינת קייפון לזוגות, משפחות וקבוצות. הפלגות מול הרי הכרמל ומפרץ חיפה. הזמינו עכשיו!"
+  title="שייט בחיפה — תמצאו לכם את היאכטה שתמיד חלמתם | Leader"
+  description="שייט יאכטות בחיפה — יאכטת מפרש, קטמרן וספינת קייפון לזוגות, משפחות וקבוצות. הפלגות מול הרי הכרמל ומפרץ חיפה. הזמינו עכשיו!"
 >
-    <div class="haifa-page" dir="rtl">
-        <!-- ══ HERO ══ -->
-        <section class="hf-hero">
-            <div class="hf-hero-bg"></div>
-            <div class="hf-hero-inner">
-                <div class="hf-eyebrow">
-                    <span class="dot"></span>
-                    משטים בחיפה
-                </div>
-                <h1>שייט יאכטות בחיפה</h1>
-                <p>
-                    צי היאכטות והספינות שלנו מחכה לכם לחוויה בלתי נשכחת מול חופי
-                    חיפה. מגוון רחב של אפשרויות לזוגות, משפחות וקבוצות.
-                </p>
-                <div class="hf-hero-btns">
-                    <a href="#fleet" class="hf-btn primary">לצפייה בצי שלנו</a>
-                    <a
-                        href="https://wa.me/972533403449"
-                        target="_blank"
-                        rel="noopener"
-                        class="hf-btn wa"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            width="18"
-                            height="18"
-                            ><path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-                            ></path></svg
-                        >
-                        WhatsApp
-                    </a>
-                </div>
-            </div>
-        </section>
+  <div class="haifa-page" dir="rtl">
+    <!-- ══ HERO ══ -->
+    <section class="hf-hero">
+      <div class="hf-hero-bg"></div>
+      <div class="hf-hero-inner">
+        <div class="hf-eyebrow">
+          <span class="dot"></span>
+          משטים בחיפה
+        </div>
+        <h1>שייט יאכטות בחיפה</h1>
+        <p>
+          צי היאכטות והספינות שלנו מחכה לכם לחוויה בלתי נשכחת מול חופי חיפה.
+          מגוון רחב של אפשרויות לזוגות, משפחות וקבוצות.
+        </p>
+        <div class="hf-hero-btns">
+          <a href="#fleet" class="hf-btn primary">לצפייה בצי שלנו</a>
+          <a
+            href="https://wa.me/972533403449"
+            target="_blank"
+            rel="noopener"
+            class="hf-btn wa"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="18"
+              height="18"
+              ><path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              ></path></svg
+            >
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
 
-        <!-- ══ FLEET CARDS ══ -->
-        <section id="fleet" class="hf-fleet">
-            <div class="hf-inner">
-                <div class="hf-section-header">
-                    <div class="hf-eyebrow-sm">צי היאכטות</div>
-                    <h2>בחרו את היאכטה שלכם</h2>
-                    <p>
-                        יאכטות לחופשות, מסיבות ורגעים רומנטיים — איזה סגנון
-                        מתאים לכם?
-                    </p>
-                </div>
+    <!-- ══ FLEET CARDS ══ -->
+    <section id="fleet" class="hf-fleet">
+      <div class="hf-inner">
+        <div class="hf-section-header">
+          <div class="hf-eyebrow-sm">צי היאכטות</div>
+          <h2>בחרו את היאכטה שלכם</h2>
+          <p>יאכטות לחופשות, מסיבות ורגעים רומנטיים — איזה סגנון מתאים לכם?</p>
+        </div>
 
-                <div class="hf-grid">
-                    {
-                        yachts.slice(0, 3).map((y, i) => (
-                            <a
-                                href={y.href}
-                                class="hf-card"
-                                style={`--c:${y.color}; --i:${i}`}
-                            >
-                                <div class="hf-card-img">
-                                    <Image
-                                        src={y.img}
-                                        width={600}
-                                        height={400}
-                                        format="webp"
-                                        alt={y.alt}
-                                        class="hf-img"
-                                        loading={i < 2 ? "eager" : "lazy"}
-                                    />
-                                    <div
-                                        class="hf-badge"
-                                        style={`background:${y.color}`}
-                                    >
-                                        {y.tag}
-                                    </div>
-                                </div>
-                                <div class="hf-card-body">
-                                    <h3>{y.title}</h3>
-                                    <p>{y.desc}</p>
-                                    <span
-                                        class="hf-card-cta"
-                                        style={`color:${y.color}`}
-                                    >
-                                        הזמן עכשיו
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2.5"
-                                            width="14"
-                                            height="14"
-                                        >
-                                            <polyline points="15 18 9 12 15 6" />
-                                        </svg>
-                                    </span>
-                                </div>
-                                <div
-                                    class="hf-glow"
-                                    style={`background:${y.color}`}
-                                />
-                            </a>
-                        ))
-                    }
-                </div>
-
-                <div class="haifa-mid-text">
-                    <p class="hmt-main">
-                        <strong>נפגש במעגנת יאכטות</strong><br />
-                        ונעלה על יאכטת ההחלמות . נפליג על פני הספינות הענק שעוגנות
-                        בנמל<br />
-                        מרימים מפרשים ומפליגים על עבר הים הפתוח<br />
-                        על הרפתקאות הנפלאות
-                    </p>
-                </div>
-
-                <div class="hf-grid">
-                    {
-                        yachts.slice(3, 6).map((y, i) => (
-                            <a
-                                href={y.href}
-                                class="hf-card"
-                                style={`--c:${y.color}; --i:${i + 3}`}
-                            >
-                                <div class="hf-card-img">
-                                    <Image
-                                        src={y.img}
-                                        width={600}
-                                        height={400}
-                                        format="webp"
-                                        alt={y.alt}
-                                        class="hf-img"
-                                        loading="lazy"
-                                    />
-                                    <div
-                                        class="hf-badge"
-                                        style={`background:${y.color}`}
-                                    >
-                                        {y.tag}
-                                    </div>
-                                </div>
-                                <div class="hf-card-body">
-                                    <h3>{y.title}</h3>
-                                    <p>{y.desc}</p>
-                                    <span
-                                        class="hf-card-cta"
-                                        style={`color:${y.color}`}
-                                    >
-                                        הזמן עכשיו
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2.5"
-                                            width="14"
-                                            height="14"
-                                        >
-                                            <polyline points="15 18 9 12 15 6" />
-                                        </svg>
-                                    </span>
-                                </div>
-                                <div
-                                    class="hf-glow"
-                                    style={`background:${y.color}`}
-                                />
-                            </a>
-                        ))
-                    }
-                </div>
-
-                <div class="haifa-mid-text">
-                    <p class="hmt-main">
-                        <strong>תבחרו לכם יאכטה שהכי מתאימה</strong><br />
-                        לסוג האירוע , כמות מפליגים , ועדיפות אישית כמובן !<br />
-                        יאכטות עוגנות במקום קסום<br /><br />
-                        מרינה חיפה - מעגן שביט<br />
-                        בעמוד זה תוכלו למצוא לכם יאכטה<br />
-                        לכל מטרה.
-                    </p>
-                </div>
-
-                <div class="hf-grid">
-                    {
-                        yachts.slice(6).map((y, i) => (
-                            <a
-                                href={y.href}
-                                class="hf-card"
-                                style={`--c:${y.color}; --i:${i + 6}`}
-                            >
-                                <div class="hf-card-img">
-                                    <Image
-                                        src={y.img}
-                                        width={600}
-                                        height={400}
-                                        format="webp"
-                                        alt={y.alt}
-                                        class="hf-img"
-                                        loading="lazy"
-                                    />
-                                    <div
-                                        class="hf-badge"
-                                        style={`background:${y.color}`}
-                                    >
-                                        {y.tag}
-                                    </div>
-                                </div>
-                                <div class="hf-card-body">
-                                    <h3>{y.title}</h3>
-                                    <p>{y.desc}</p>
-                                    <span
-                                        class="hf-card-cta"
-                                        style={`color:${y.color}`}
-                                    >
-                                        הזמן עכשיו
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2.5"
-                                            width="14"
-                                            height="14"
-                                        >
-                                            <polyline points="15 18 9 12 15 6" />
-                                        </svg>
-                                    </span>
-                                </div>
-                                <div
-                                    class="hf-glow"
-                                    style={`background:${y.color}`}
-                                />
-                            </a>
-                        ))
-                    }
-                </div>
-
-                <div class="haifa-mid-text">
-                    <p class="hmt-main">
-                        <strong
-                            >תמצאו לכם בדיוק את אותה היאכטה שתמיד חלמתם...</strong
-                        ><br />
-                        מחכים לכם !<br />
-                        תתקשרו עכשיו ותקבעו יום ההפלגה<br />
-                        ---<br />
-                        לשירותכם דניאל - לידר הפלגות
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ══ TEXT SECTIONS ══ -->
-        <section class="hf-about">
-            <div class="hf-inner">
-                <div class="hf-section-header">
-                    <div class="hf-eyebrow-sm">למה להפליג איתנו?</div>
-                    <h2>שייט בחיפה מול הנוף הקסום של הכרמל וגלי הים</h2>
-                </div>
-
-                <div class="hf-about-grid">
-                    {
-                        textSections.map((sec, i) => (
-                            <div class="hf-about-card" style={`--i:${i}`}>
-                                <div class="hf-about-icon">{sec.icon}</div>
-                                <div>
-                                    <h3>{sec.title}</h3>
-                                    <p>{sec.text}</p>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
-        </section>
-
-        <!-- ══ SCENIC PHOTO ══ -->
-        <section class="hf-marina-photo">
-            <div class="hf-marina-wrap">
-                <Image
-                    src={marinaImg}
-                    widths={[768, 1280, 1920]}
-                    sizes="100vw"
+        <div class="hf-grid">
+          {
+            yachts.slice(0, 3).map((y, i) => (
+              <a
+                href={y.href}
+                class="hf-card"
+                style={`--c:${y.color}; --i:${i}`}
+              >
+                <div class="hf-card-img">
+                  <Image
+                    src={y.img}
+                    width={600}
+                    height={400}
                     format="webp"
-                    alt="שייט בחיפה, אווירה קסומה"
-                    class="hf-marina-img"
-                    loading="lazy"
-                />
-                <div class="hf-marina-overlay">
-                    <div class="hf-marina-text">
-                        <div class="hf-marina-eyebrow">📍 אזור ההפלגות</div>
-                        <h2>אגן מפרץ חיפה</h2>
-                        <p>
-                            הפלגות חווייתיות אל מול הרי הכרמל, הרחק מההמולה.
-                            אוויר הים, הרוח במפרשים ומנוחה אמיתית.
-                        </p>
-                        <a
-                            href="https://maps.google.com/?q=חיפה"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="hf-marina-map-btn">פתח במפה ↗</a
-                        >
-                    </div>
+                    alt={y.alt}
+                    class="hf-img"
+                    loading={i < 2 ? "eager" : "lazy"}
+                  />
+                  <div class="hf-badge" style={`background:${y.color}`}>
+                    {y.tag}
+                  </div>
                 </div>
-            </div>
-        </section>
+                <div class="hf-card-body">
+                  <h3>{y.title}</h3>
+                  <p>{y.desc}</p>
+                  <span class="hf-card-cta" style={`color:${y.color}`}>
+                    הזמן עכשיו
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      width="14"
+                      height="14"
+                    >
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="hf-glow" style={`background:${y.color}`} />
+              </a>
+            ))
+          }
+        </div>
 
-        <!-- ══ CTA ══ -->
-        <section class="hf-cta">
-            <div class="hf-cta-bg"></div>
-            <div class="hf-cta-inner">
-                <h2>מחכים לכם! תקבעו יום להפלגה עוד היום</h2>
-                <p>
-                    לשירותכם דניאל - לידר הפלגות. התקשרו עכשיו והבטיחו לעצמכם
-                    מקום.
-                </p>
-                <div class="hf-cta-btns">
-                    <a href="/צור-קשר" class="hf-btn primary large"
-                        >לפרטים והזמנה</a
-                    >
-                    <a href="tel:0533403449" class="hf-btn outline-light large"
-                        >053-340-3449</a
-                    >
+        <div class="haifa-mid-text">
+          <p class="hmt-main">
+            <strong>נפגש במעגנת יאכטות</strong><br />
+            ונעלה על יאכטת ההחלמות . נפליג על פני הספינות הענק שעוגנות בנמל<br
+            />
+            מרימים מפרשים ומפליגים על עבר הים הפתוח<br />
+            על הרפתקאות הנפלאות
+          </p>
+        </div>
+
+        <div class="hf-grid">
+          {
+            yachts.slice(3, 6).map((y, i) => (
+              <a
+                href={y.href}
+                class="hf-card"
+                style={`--c:${y.color}; --i:${i + 3}`}
+              >
+                <div class="hf-card-img">
+                  <Image
+                    src={y.img}
+                    width={600}
+                    height={400}
+                    format="webp"
+                    alt={y.alt}
+                    class="hf-img"
+                    loading="lazy"
+                  />
+                  <div class="hf-badge" style={`background:${y.color}`}>
+                    {y.tag}
+                  </div>
                 </div>
-            </div>
-        </section>
-    </div>
+                <div class="hf-card-body">
+                  <h3>{y.title}</h3>
+                  <p>{y.desc}</p>
+                  <span class="hf-card-cta" style={`color:${y.color}`}>
+                    הזמן עכשיו
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      width="14"
+                      height="14"
+                    >
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="hf-glow" style={`background:${y.color}`} />
+              </a>
+            ))
+          }
+        </div>
+
+        <div class="haifa-mid-text">
+          <p class="hmt-main">
+            <strong>תבחרו לכם יאכטה שהכי מתאימה</strong><br />
+            לסוג האירוע , כמות מפליגים , ועדיפות אישית כמובן !<br />
+            יאכטות עוגנות במקום קסום<br /><br />
+            מרינה חיפה - מעגן שביט<br />
+            בעמוד זה תוכלו למצוא לכם יאכטה<br />
+            לכל מטרה.
+          </p>
+        </div>
+
+        <div class="hf-grid">
+          {
+            yachts.slice(6).map((y, i) => (
+              <a
+                href={y.href}
+                class="hf-card"
+                style={`--c:${y.color}; --i:${i + 6}`}
+              >
+                <div class="hf-card-img">
+                  <Image
+                    src={y.img}
+                    width={600}
+                    height={400}
+                    format="webp"
+                    alt={y.alt}
+                    class="hf-img"
+                    loading="lazy"
+                  />
+                  <div class="hf-badge" style={`background:${y.color}`}>
+                    {y.tag}
+                  </div>
+                </div>
+                <div class="hf-card-body">
+                  <h3>{y.title}</h3>
+                  <p>{y.desc}</p>
+                  <span class="hf-card-cta" style={`color:${y.color}`}>
+                    הזמן עכשיו
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      width="14"
+                      height="14"
+                    >
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="hf-glow" style={`background:${y.color}`} />
+              </a>
+            ))
+          }
+        </div>
+
+        <div class="haifa-mid-text">
+          <p class="hmt-main">
+            <strong>תמצאו לכם בדיוק את אותה היאכטה שתמיד חלמתם...</strong><br />
+            מחכים לכם !<br />
+            תתקשרו עכשיו ותקבעו יום ההפלגה<br />
+            ---<br />
+            לשירותכם דניאל - <span class="brand-leader"
+              >לידר הפלגות &amp; שייט</span
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TEXT SECTIONS ══ -->
+    <section class="hf-about">
+      <div class="hf-inner">
+        <div class="hf-section-header">
+          <div class="hf-eyebrow-sm">למה להפליג איתנו?</div>
+          <h2>שייט בחיפה מול הנוף הקסום של הכרמל וגלי הים</h2>
+        </div>
+
+        <div class="hf-about-grid">
+          {
+            textSections.map((sec, i) => (
+              <div class="hf-about-card" style={`--i:${i}`}>
+                <div class="hf-about-icon">{sec.icon}</div>
+                <div>
+                  <h3>{sec.title}</h3>
+                  <p>{sec.text}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SCENIC PHOTO ══ -->
+    <section class="hf-marina-photo">
+      <div class="hf-marina-wrap">
+        <Image
+          src={marinaImg}
+          widths={[768, 1280, 1920]}
+          sizes="100vw"
+          format="webp"
+          alt="שייט בחיפה, אווירה קסומה"
+          class="hf-marina-img"
+          loading="lazy"
+        />
+        <div class="hf-marina-overlay">
+          <div class="hf-marina-text">
+            <div class="hf-marina-eyebrow">📍 אזור ההפלגות</div>
+            <h2>אגן מפרץ חיפה</h2>
+            <p>
+              הפלגות חווייתיות אל מול הרי הכרמל, הרחק מההמולה. אוויר הים, הרוח
+              במפרשים ומנוחה אמיתית.
+            </p>
+            <a
+              href="https://maps.google.com/?q=חיפה"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hf-marina-map-btn">פתח במפה ↗</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="hf-cta">
+      <div class="hf-cta-bg"></div>
+      <div class="hf-cta-inner">
+        <h2>מחכים לכם! תקבעו יום להפלגה עוד היום</h2>
+        <p>
+          לשירותכם דניאל - <span class="brand-leader"
+            >לידר הפלגות &amp; שייט</span
+          >. התקשרו עכשיו והבטיחו לעצמכם מקום.
+        </p>
+        <div class="hf-cta-btns">
+          <a href="/צור-קשר" class="hf-btn primary large">לפרטים והזמנה</a>
+          <a href="tel:0533403449" class="hf-btn outline-light large"
+            >053-340-3449</a
+          >
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
 
 <style>
-    .haifa-mid-text {
-        background: #ffffff;
-        border: 4px solid #d4a017; /* Gold border to map the homepage styling */
-        border-radius: 20px;
-        padding: 2.5rem 2rem;
-        max-width: 800px;
-        margin: 3rem auto;
-        box-shadow: 0 15px 45px rgba(212, 160, 23, 0.3);
-        text-align: center;
-    }
-    .hmt-main {
-        font-size: 1.15rem;
-        color: #000000;
-        font-weight: 500;
-        line-height: 1.8;
-        margin: 0;
-    }
-    .hmt-main strong {
-        color: #0f7ab0; /* Sea blue highlight for the first line */
-        font-size: 1.3rem;
-        font-weight: 900;
-        display: block;
-        margin-bottom: 0.5rem;
-    }
+  .haifa-mid-text {
+    background: #ffffff;
+    border: 4px solid #d4a017; /* Gold border to map the homepage styling */
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    max-width: 800px;
+    margin: 3rem auto;
+    box-shadow: 0 15px 45px rgba(212, 160, 23, 0.3);
+    text-align: center;
+  }
+  .hmt-main {
+    font-size: 1.15rem;
+    color: #000000;
+    font-weight: 500;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .hmt-main strong {
+    color: #0f7ab0; /* Sea blue highlight for the first line */
+    font-size: 1.3rem;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
 </style>

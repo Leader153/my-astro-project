@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PremiumSwitch from "../components/PremiumSwitch.astro";
+import PremiumDualSwitch from "../components/PremiumDualSwitch.astro";
 import { Image } from "astro:assets";
 import bannerImg from "../assets/wedding-couple-sailing-yacht-sunset-herzliya.webp";
 import romantic2Img from "../assets/wedding-couple-sailing-yacht-sunset-haifa.webp";
@@ -261,57 +261,23 @@ import brideImg from "../assets/romantic-couple-sunset-yacht-trip-herzliya.webp"
         </p>
       </div>
 
-      <div
-        class="dual-fleet-wrapper"
-        style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2rem auto 4rem;"
-      >
-        <!-- Right button → Herzliya -->
-        <!-- Text first (RTL = left side for arrow), Arrow pointing > -->
-        <a
-          href="/יאכטות-בהרצליה"
-          class="cta-btn"
-          style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;"
-        >
-          בהרצליה
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            width="22"
-            height="22"
-          >
-          </svg>
-        </a>
-
-        <!-- Left button → Haifa -->
-        <!-- Arrow first (RTL = right side), Arrow pointing opposite (<) -->
-        <a
-          href="/haifa"
-          class="cta-btn"
-          style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            width="22"
-            height="22"
-          >
-          </svg>
-          בחיפה
-        </a>
-      </div>
+      <PremiumDualSwitch
+        href1="/יאכטות-בהרצליה"
+        title1="בהרצליה"
+        subtitle1="הפלגה רומנטית במרינה הרצליה"
+        icon1="⚓"
+        href2="/haifa"
+        title2="בחיפה"
+        subtitle2="שייט זוגי במפרץ חיפה"
+        icon2="⛵"
+      />
     </div>
 
     <!-- ═══ PACKAGES SECTION ═══ -->
     <div class="packages-section">
       <div class="packages-inner">
         <p class="packages-lead">אשמח להציע לכם רעיונות לפעילות נוספת</p>
-        <h2 class="packages-title">💎  החבילות שלנו בהרצליה</h2>
+        <h2 class="packages-title">💎 החבילות שלנו בהרצליה</h2>
 
         <div class="packages-table">
           <!-- Header -->
