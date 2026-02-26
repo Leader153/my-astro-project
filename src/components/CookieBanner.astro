@@ -2,33 +2,32 @@
   <div class="content">
     <p>
       אנחנו משתמשים ב-Cookies כדי לתת לך חוויה טובה יותר באתר. 🍪
-      <a href="/privacy" class="link">מדיניות פרטיות</a>
+      <a href="/מדיניות-פרטיות" class="link">מדיניות פרטיות</a>
     </p>
     <button id="accept-cookies" class="btn">אישור</button>
   </div>
 </div>
 
 <script>
-  const banner = document.getElementById('cookie-banner');
-  const btn = document.getElementById('accept-cookies');
+  const banner = document.getElementById("cookie-banner");
+  const btn = document.getElementById("accept-cookies");
 
   // 1. ГЛАВНАЯ ПРОВЕРКА (Defensive Programming)
   // Если элементов нет на странице - скрипт просто остановится и не выдаст ошибку
   if (banner && btn) {
-      
-      const consent = localStorage.getItem('cookie_consent');
+    const consent = localStorage.getItem("cookie_consent");
 
-      if (!consent) {
-        setTimeout(() => {
-          // Теперь VS Code знает, что banner точно существует
-          banner.classList.remove("hidden");
-        }, 2000);
-      }
+    if (!consent) {
+      setTimeout(() => {
+        // Теперь VS Code знает, что banner точно существует
+        banner.classList.remove("hidden");
+      }, 2000);
+    }
 
-      btn.addEventListener("click", () => {
-        localStorage.setItem("cookie_consent", "true");
-        banner.classList.add("hidden");
-      });
+    btn.addEventListener("click", () => {
+      localStorage.setItem("cookie_consent", "true");
+      banner.classList.add("hidden");
+    });
   }
 </script>
 
