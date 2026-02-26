@@ -8,6 +8,7 @@ import familyImg from '../assets/large-family-celebration-yacht.webp';
 import corporateImg from '../assets/employees-teambuilding-group-on-boat-herzliya.webp';
 import cyprusImg from '../assets/sail-with-me.webp';
 import proposalImg from '../assets/romantic-marriage-proposal-yacht-sunset.webp';
+import fishingImg from '../assets/original-high-res.png';
 
 const services = [
   {
@@ -75,8 +76,10 @@ const services = [
     desc: 'חוויית דייג מהנה בלב ים, ציוד מקצועי עלינו — פשוט לבוא וליהנות',
     tag: 'אטרקציה',
     color: '#0ea5e9',
-    href: '/fishing',
+    href: '/דייג',
     alt: 'קבוצה בהפלגת דייג על יאכטה במרינה',
+    img: fishingImg,
+    imgStyle: 'object-position: right;',
   },
   {
     icon: '💆‍♀️',
@@ -319,6 +322,7 @@ const testimonials = [
                 alt={s.alt}
                 class="sc-img"
                 loading="lazy"
+                style={s.imgStyle}
               />
               <div class="sc-tag" style={`background:${s.color}; color:#fff`}>{s.tag}</div>
             </div>
