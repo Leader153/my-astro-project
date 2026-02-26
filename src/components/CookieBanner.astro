@@ -1,0 +1,88 @@
+<div id="cookie-banner" class="cookie-banner hidden" dir="rtl">
+  <div class="content">
+    <p>
+      אנחנו משתמשים ב-Cookies כדי לתת לך חוויה טובה יותר באתר. 🍪
+      <a href="/privacy" class="link">מדיניות פרטיות</a>
+    </p>
+    <button id="accept-cookies" class="btn">אישור</button>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-banner');
+  const btn = document.getElementById('accept-cookies');
+
+  // 1. ГЛАВНАЯ ПРОВЕРКА (Defensive Programming)
+  // Если элементов нет на странице - скрипт просто остановится и не выдаст ошибку
+  if (banner && btn) {
+      
+      const consent = localStorage.getItem('cookie_consent');
+
+      if (!consent) {
+        setTimeout(() => {
+          // Теперь VS Code знает, что banner точно существует
+          banner.classList.remove("hidden");
+        }, 2000);
+      }
+
+      btn.addEventListener("click", () => {
+        localStorage.setItem("cookie_consent", "true");
+        banner.classList.add("hidden");
+      });
+  }
+</script>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0a192f; /* Твой фирменный темно-синий */
+    color: white;
+    padding: 1rem;
+    z-index: 9999; /* Поверх всего */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Класс для скрытия */
+  .cookie-banner.hidden {
+    transform: translateY(100%); /* Уезжает вниз */
+  }
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .btn {
+    background: #ffd700; /* Золотой */
+    color: #0a192f;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .link {
+    color: #ffd700;
+    text-decoration: underline;
+    margin-right: 5px;
+  }
+
+  /* На мобильном - столбиком */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,141 +1,469 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import cardImg from "../assets/Birthday-party-on-the-yach.webp";
+import mobileImg from "../assets/group-friends-celebrating-yacht-party-haifa.webp";
+import img1 from "../assets/group-friends-toasting-drinks-yacht-haifa.webp";
+import midImg from "../assets/birthday-celebration-yacht-cake-herzliya.webp";
+import botImg from "../assets/friends-celebrating-yacht-party-haifa.webp";
+import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 ---
 
 <Layout
-    title="דייג חוויתי בהרצליה | Leader הפלגות"
-    description="יום דייג מהנה בים ללא צורך ברישיון. חווית דייג אמיתית מיאכטה עם סקיפר מנוסה וציוד מלא שכלול במחיר."
+  title="יום הולדת על יאכטה"
+  description="תחגגו יום הולדת שלא תשכחו לעולם — ביאכטה פרטית עם כל החבר'ים"
 >
-    <div class="service-page" dir="rtl">
-        <section class="sp-hero">
-            <div class="sp-inner text-center">
-                <div class="sp-eyebrow">מרינה הרצליה</div>
-                <h1>דייג חוויתי</h1>
-                <p>
-                    יום דייג מהנה בים — ללא צורך ברישיון דייג. הכל כלול: ציוד,
-                    הדרכה וסקיפר מנוסה שיקח אתכם לנקודות הטובות ביותר.
-                </p>
-                <div class="sp-btns">
-                    <a href="/צור-קשר" class="sp-btn primary">הזמינו עכשיו</a>
-                    <a href="https://wa.me/972533403449" class="sp-btn wa"
-                        >WhatsApp</a
-                    >
-                </div>
-            </div>
-        </section>
+  <div class="hz-page" dir="rtl">
+    <!-- ══ HERO ══ -->
+    <section class="hz-hero">
+      <Image
+        src={cardImg}
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+        format="webp"
+        alt="חגיגות יום הולדת על יאכטה בחיפה, קבוצת בנים בנות מרימים לי חיים"
+        class="hz-hero-bg-img desktop-img"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </section>
 
-        <section class="sp-content">
-            <div class="sp-inner">
-                <h2>תפסו את החוויה חזק</h2>
-                <p>
-                    חוויה מושלמת לאבא ובן, קבוצת חברים, או פשוט אוהבי ים שרוצים
-                    להתנסות בדיג במים פתוחים. אין צורך בניסיון קודם! אנו מספקים
-                    חכות, פיתיונות, ואת ההדרכה הנדרשת. הסקיפר המקצועי שלנו מכיר
-                    את נקודות הדייג והריפים העשירים בדגה בים התיכון, ויוודא
-                    שתיהנו מיום מלא אוקיינוס ופוטנציאל לתפוס דגים של ממש.
-                </p>
-                <a href="/hertzliya" class="back-link"
-                    >← חזרה לכל ההפלגות בהרצליה</a
-                >
-            </div>
-        </section>
+    <!-- MOBILE HERO IMAGE (Separate from background) -->
+    <div class="hz-hero-mobile-wrap">
+      <Image
+        src={mobileImg}
+        widths={[400, 768]}
+        sizes="100vw"
+        format="webp"
+        alt="קבוצת חברים חוגגת ומרימה כוסית על סיפון יאכטה בחיפה"
+        class="mobile-hero-img"
+        loading="eager"
+        fetchpriority="high"
+      />
     </div>
+
+    <!-- CONTENT -->
+    <section class="hz-services">
+      <div class="hz-inner tz-content-box">
+        <div class="hz-section-header">
+          <h2>⚓ יאכטה ליום הולדת : החגיגה המושלמת</h2>
+        </div>
+
+        <div class="bday-text-article">
+          <p>
+            בכל שנה מגיע התאריך הזה, ואיתו אותה השאלה ששוברת לנו את הראש: "איך
+            נחגוג את יום ההולדת השנה?". אנחנו תמיד מחפשים משהו מיוחד, שונה, כזה
+            שהחברים לא ישכחו. אנחנו רוצים להיות מוקפים באנשים שהכי קרובים אלינו,
+            אבל בדרך כלל, הפקת אירוע כזה מסתכמת בהמון תכנונים, ארגונים, ולא מעט
+            כאב ראש.
+          </p>
+          <p>
+            כאן אנחנו נכנסים לתמונה! מסיבת יום הולדת על יאכטה היא הפתרון
+            האולטימטיבי. אצלנו ב<span class="brand-leader"
+              >לידר הפלגות &amp; שייט</span
+            > השכרת יאכטות לא תצטרכו לשבור את הראש יותר. הדבר היחיד שאתם צריכים לעשות
+            הוא להגיע אלינו ארוזים עם בגדי ים, חברים אהובים, וים של מצב רוח.
+          </p>
+        </div>
+
+        <div class="bday-break-img-wrapper">
+          <Image
+            src={img1}
+            alt="קבוצת חברים צוחקים ומרימים כוסית על סיפון יאכטה בחיפה"
+            class="bday-break-img"
+          />
+        </div>
+
+        <div class="bday-text-article">
+          <h3>
+            למה לחגוג יום הולדת דווקא על היאכטות של <span class="brand-leader"
+              >לידר הפלגות &amp; שייט</span
+            >?
+          </h3>
+          <ul class="bday-features-list">
+            <li>
+              <strong>כי אנחנו דואגים להכל (ואתם באים ליהנות!):</strong> שכחו מלסחוב
+              ציוד או לתכנן כל פרט. בכל הפלגה על אחת היאכטות שלנו נדאג שתהיה לכם חוויה
+              בלתי נשכחת. נקשט עבורכם את היאכטה בבלונים חגיגיים, נדאג למערכת סאונד
+              פצצה עם מוזיקה טובה, ונפנק אתכם בשתייה קלה וחמה חופשית. מחפשים קצת אקשן?
+              על כל יאכטה ממתין לכם מזרון שיזוף בחרטום ואבוב לגרירה במי הים המרעננים!
+            </li>
+            <li>
+              <strong>לוקיישנים מנצחים בהרצליה ובחיפה:</strong> היאכטות של <span
+                class="brand-leader">לידר הפלגות &amp; שייט</span
+              > עוגנות בשתי המרינות הבולטות בישראל – מרינה הרצליה ומרינה חיפה. הרציפים
+              שלנו ממוקמים במיקומים מרכזיים עם גישה מהירה לטיילת ולמסעדות. בשתי המרינות
+              יש גישה נוחה וקרובה מאוד מחניון רחב ידיים, כך שלא תצטרכו להיסחב לחינם
+              עם אוכל ושתייה בחום הישראלי (פשוט חונים ועולים אל הסיפון!).
+            </li>
+            <li>
+              <strong>יאכטות ברמה של חמישה כוכבים:</strong> היאכטות שלנו מטופחות,
+              נקיות ומאובזרות במיוחד לצרכים שלכם. בכל יאכטה תמצאו מזגן מקפיא, שירותים
+              חשמליים, מקלחת עם מים חמים, ומטבח מאובזר הכולל מקרר גדול.
+            </li>
+            <li>
+              <strong>החברה המובילה לאירוח ימי:</strong> אנחנו ב<span
+                class="brand-leader">לידר הפלגות &amp; שייט</span
+              > חברה המתמחה באירוח קבוצות על יאכטות, והשמחה שלכם היא המקצוע שלנו.
+              צורת החשיבה שלנו שמה אתכם במרכז – אנחנו כאן כדי להקשיב ולהגשים בדיוק
+              את מה שאתם רוצים ביום ההולדת שלכם.
+            </li>
+            <li>
+              <strong>צוות עם נשמה ושירות דיגיטלי חכם:</strong> אנו מעסיקים סקיפרים
+              מנוסים שאוהבים את הים ואוהבים אנשים. האירוח זורם להם בעורקים, עם המון
+              סבלנות ואהבה. בנוסף, חוויית השירות שלנו נוחה ודיגיטלית – את אישורי ההזמנה,
+              הנחיות ההגעה, ותזכורות עם שם הסקיפר תקבלו אוטומטית לנייד טרם הפעילות,
+              כך שהכל יהיה ברור, שקוף ופשוט.
+            </li>
+          </ul>
+        </div>
+
+        <div class="bday-break-img-wrapper" style="max-width: 700px;">
+          <Image
+            src={midImg}
+            alt="חגיגת יום הולדת עם עוגה ושמפניה על יאכטה בהרצליה"
+            class="bday-break-img"
+            style="aspect-ratio: 1 / 1; max-height: 700px;"
+          />
+        </div>
+
+        <div class="bday-text-article">
+          <h3>מסיבת טבע בלב ים – בלי החול ובלי השכנים!</h3>
+          <p>
+            חושבים שיום הולדת על יאכטה זה עסק יקר? תתפלאו, אבל זו חוויה יוקרתית
+            במחיר משתלם ונגיש להפליא!
+          </p>
+          <p>
+            בכל מסיבת יום הולדת רגילה תמיד צצה בעיית הרעש – "לא להפריע לשכנים",
+            "תחלישו את המוזיקה". אצלנו ב<span class="brand-leader"
+              >לידר הפלגות &amp; שייט</span
+            > הבעיה הזו פשוט לא קיימת! בלב ים אתם נמצאים לבד, ויכולים לשים את המוזיקה
+            שלכם בפול ווליום. פשוט מתחברים למערכת שלנו (עם כבל AUX או בלוטות'), שמים
+            פלייליסט מספוטיפיי או יוטיוב, ועפים על החיים יחד עם החברים.
+          </p>
+          <p>
+            השילוב המושלם: מצד אחד אתם בים, נהנים מהבריזה ומהאוויר הפתוח, ומצד
+            שני – אתם לא סובלים מהצפיפות של החוף. אין צורך להיסחב עם צידניות (יש
+            מקרר!), לא צריך לחפש שירותים ציבוריים (יש שירותים צמודים ונקיים!),
+            ואפילו לא צריך לקשט – כי אנחנו עשינו את זה בשבילכם. בסוף השכשוך בים
+            תוכלו לשטוף את המלח במקלחת חמה ונעימה (עם מגבות נקיות בהזמנה מראש),
+            ולחזור הביתה רעננים, נקיים ובלי גרגר אחד של חול.
+          </p>
+        </div>
+
+        <div class="bday-break-img-wrapper">
+          <Image
+            src={botImg}
+            alt="קבוצת חברים מאושרים חוגגים יום הולדת ונהנים מבריזה על יאכטה בחיפה"
+            class="bday-break-img"
+          />
+        </div>
+
+        <div class="bday-text-article">
+          <h3>חוויה שמתאימה לכל גיל</h3>
+          <p>
+            אצלנו ב<span class="brand-leader">לידר הפלגות &amp; שייט</span> מתאימים
+            את סגנון יום ההולדת בדיוק לגיל שלכם:
+          </p>
+          <ul class="bday-features-list">
+            <li>
+              <strong>לילדים ולקטנים:</strong> נפיק חוויית פיראטים מלהיבה, בה ילד
+              או ילדת יום ההולדת יהפכו לקפטן צעיר (והאמיצים אפילו יקבלו תעודת פיראט
+              רשמית!).
+            </li>
+            <li>
+              <strong>לגדולים ולמבוגרים:</strong> נרים מסיבה עם אווירה משוחררת, אלכוהול
+              משובח (שאתם מביאים), ובריזה מחוזקת מהים שתרענן לכם את הנשמה.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ NEW GLOBAL CTA SECTION (GOLDEN FENCE) ══ -->
+    <FleetSelectionCta
+      ctaInstruction="נא להיכנס לעמוד יאכטות ולבחור את המתנה שלכם ליום ההולדת:"
+    />
+  </div>
 </Layout>
 
 <style>
-    .service-page {
-        background: #f2f5fb;
-        min-height: 100vh;
-        font-family: "Rubik", sans-serif;
-    }
-    .sp-hero {
-        padding: 8rem 2rem 5rem;
-        background: linear-gradient(135deg, #08047e 0%, #0a5a8f 100%);
-        color: white;
-        text-align: center;
-    }
-    .sp-eyebrow {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #f0c040;
-        letter-spacing: 1px;
-        margin-bottom: 1rem;
-    }
-    .sp-hero h1 {
-        font-size: clamp(2.2rem, 5vw, 3.5rem);
-        font-weight: 800;
-        margin-bottom: 1rem;
-    }
-    .sp-hero p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto 2.5rem;
-        line-height: 1.6;
-    }
-    .sp-btns {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .sp-btn {
-        padding: 0.85rem 2rem;
-        border-radius: 12px;
-        font-weight: 700;
-        font-size: 1.05rem;
-        text-decoration: none;
-        transition: 0.2s;
-    }
-    .sp-btn.primary {
-        background: #d4a017;
-        color: #08047e;
-        box-shadow: 0 6px 20px rgba(212, 160, 23, 0.3);
-    }
-    .sp-btn.primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(212, 160, 23, 0.5);
-    }
-    .sp-btn.wa {
-        background: #25d366;
-        color: white;
-    }
-    .sp-btn.wa:hover {
-        background: #128c7e;
-        transform: translateY(-3px);
+  @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
+
+  .hz-page {
+    --navy: #08047e;
+    --sea: #0f7ab0;
+    --gold: #d4a017;
+    --gold-l: #f0c040;
+    --bg: #f2f5fb;
+    --white: #ffffff;
+    --text: #000000;
+    --text-m: #111111;
+    --text-l: #222222;
+    font-family: "Rubik", "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+  }
+
+  /* ══ HERO ══ */
+  .hz-hero {
+    position: relative;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hz-hero-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    object-position: center;
+  }
+
+  .hz-hero-mobile-wrap {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .hz-hero {
+      display: none; /* Hide the full hero on mobile completely */
     }
 
-    .sp-content {
-        padding: 5rem 2rem;
-        text-align: center;
+    .hz-hero-mobile-wrap {
+      display: block;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      margin-top: -80px; /* Offset the Layout/page padding specifically just to touch the header nav */
+      margin-bottom: -30px; /* Pull the title closer to the image */
+      overflow: hidden;
+      position: relative;
     }
-    .sp-inner {
-        max-width: 800px;
-        margin: 0 auto;
+
+    .mobile-hero-img {
+      width: 100%;
+      height: auto;
+      min-height: 250px;
+      display: block;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: none;
     }
-    .sp-content h2 {
-        font-size: 2.2rem;
-        color: #1a1a2e;
-        margin-bottom: 1.5rem;
+  }
+
+  /* ══ SHARED ══ */
+  .hz-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+  }
+  .hz-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  @media (max-width: 768px) {
+    .hz-inner {
+      padding-top: 2rem;
     }
-    .sp-content p {
-        color: #3a3a5c;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 3rem;
+    .hz-section-header {
+      margin-bottom: 1.5rem;
     }
-    .back-link {
-        display: inline-block;
-        color: #0f7ab0;
-        font-weight: 600;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border: 1px solid #0f7ab0;
-        border-radius: 8px;
-        transition: 0.2s;
+  }
+  .hz-section-header h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 0.8rem;
+  }
+  .hz-section-header p {
+    font-size: 1.2rem;
+    color: var(--text-l);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .hz-services {
+    background: var(--bg);
+  }
+
+  /* ══ TEXT ARTICLE ══ */
+  .bday-text-article {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3.5rem 4rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(8, 4, 126, 0.05);
+    border: 1px solid rgba(8, 4, 126, 0.05);
+  }
+
+  .bday-text-article p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-m);
+    margin-bottom: 1.5rem;
+  }
+
+  .bday-text-article h3 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+    position: relative;
+    display: inline-block;
+  }
+  .bday-text-article h3::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  .bday-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .bday-features-list li {
+    font-size: 1.1rem;
+    color: var(--text-m);
+    margin-bottom: 1rem;
+    padding-right: 1.8rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .bday-features-list li::before {
+    content: "⚓";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 1rem;
+    color: var(--sea);
+  }
+  .bday-features-list strong {
+    color: var(--navy);
+  }
+
+  .bday-cta-wrapper {
+    margin-top: 4.5rem;
+    text-align: center;
+    background: linear-gradient(to bottom, transparent, rgba(8, 4, 126, 0.02));
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    border: 1px dashed rgba(8, 4, 126, 0.1);
+  }
+  .bday-cta-wrapper h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+  }
+  .bday-cta-wrapper p {
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+  }
+  .bday-cta-wrapper .hz-btn {
+    font-size: 1.2rem;
+    padding: 1.2rem 3rem;
+  }
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+
+  /* ══ BUTTONS (from hz-page) ══ */
+  .hz-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.9rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+  }
+
+  .hz-btn.premium-btn {
+    background: linear-gradient(135deg, var(--navy), #1a15a8);
+    color: var(--white);
+    box-shadow: 0 10px 30px rgba(8, 4, 126, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.5px;
+  }
+  .hz-btn.premium-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(8, 4, 126, 0.45);
+    background: linear-gradient(135deg, #0a069e, #1f1abf);
+  }
+
+  .bday-content-img {
+    width: 100%;
+    max-width: 600px;
+    margin: 3.5rem auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 8px 30px rgba(8, 4, 126, 0.1);
+  }
+
+  .bday-img-placeholder {
+    width: 100%;
+    max-width: 600px;
+    margin: 3.5rem auto;
+    aspect-ratio: 3 / 2;
+    background: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .bday-break-img-wrapper {
+    max-width: 1000px;
+    margin: 4rem auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(8, 4, 126, 0.15);
+  }
+
+  .bday-break-img {
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 16 / 9;
+  }
+
+  @media (max-width: 768px) {
+    .bday-text-article {
+      padding: 2.5rem 1.5rem;
     }
-    .back-link:hover {
-        background: #0f7ab0;
-        color: white;
+    .bday-img-placeholder,
+    .bday-content-img {
+      margin: 2rem auto;
     }
+    .bday-break-img-wrapper {
+      margin: 2.5rem -1.5rem;
+      border-radius: 0;
+    }
+    .bday-break-img {
+      aspect-ratio: 4 / 3;
+      max-height: 400px;
+    }
+  }
 </style>
