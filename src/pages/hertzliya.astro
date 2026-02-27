@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
 import cardImg from "../assets/Romantic cruise 2.webp";
+import dinnerCardImg from "../assets/couple-romantic-dinner.jpeg";
+import fishingCardImg from "../assets/original-high-res.png";
+import zimmerCardImg from "../assets/dinner-couple-cabin-herzelia.jpeg";
 import marinaImg from "../assets/marina-herzelia.webp";
 import marunaImg from "../assets/maruna-herzelia.webp";
 
@@ -15,6 +18,7 @@ const services = [
     color: "#059669",
     alt: "הפלגת קטמרן עד 21 איש במרינה הרצליה",
     href: "/קטמרן-עד-21-מפליגים",
+    img: cardImg,
   },
   {
     icon: "🥂",
@@ -24,6 +28,7 @@ const services = [
     color: "#e91e8c",
     alt: "שייט רומנטי במרינה הרצליה",
     href: "/שייט-רומנטי",
+    img: cardImg,
   },
   {
     icon: "🍽️",
@@ -32,7 +37,8 @@ const services = [
     tag: "רומנטי",
     color: "#e91e8c",
     alt: "זוג נהנה מארוחה רומנטית על גשר יאכטה מול מרינה הרצליה",
-    href: "/ארוחה-על-יאכטה",
+    href: "/ארוחה-על-יאכטה-בהרצליה",
+    img: dinnerCardImg,
   },
   {
     icon: "🎣",
@@ -42,6 +48,7 @@ const services = [
     color: "#0f7ab0",
     alt: "דייג חוויתי מיאכטה במרינה הרצליה ללא רישיון",
     href: "/דייג",
+    img: fishingCardImg,
   },
   {
     icon: "⛵",
@@ -51,6 +58,7 @@ const services = [
     color: "#7c3aed",
     alt: "הפלגה ביאכטה עם סקיפר מקצועי ליום אחד מהרצליה",
     href: "/הפלגת-סקיפר-ליום-אחד",
+    img: cardImg,
   },
   {
     icon: "🌙",
@@ -60,6 +68,7 @@ const services = [
     color: "#d4a017",
     alt: "לינת צימר על יאכטה פרטית בלילה מול מרינה הרצליה",
     href: "/צימר-על-הים",
+    img: zimmerCardImg,
   },
 ];
 
@@ -158,7 +167,7 @@ const textSections = [
               >
                 <div class="hz-card-img">
                   <Image
-                    src={cardImg}
+                    src={s.img}
                     width={600}
                     height={400}
                     format="webp"
@@ -226,7 +235,7 @@ const textSections = [
               >
                 <div class="hz-card-img">
                   <Image
-                    src={cardImg}
+                    src={s.img}
                     width={600}
                     height={400}
                     format="webp"
@@ -282,7 +291,7 @@ const textSections = [
               >
                 <div class="hz-card-img">
                   <Image
-                    src={cardImg}
+                    src={s.img}
                     width={600}
                     height={400}
                     format="webp"

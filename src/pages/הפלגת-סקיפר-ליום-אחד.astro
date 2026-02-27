@@ -1,141 +1,853 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import desktopHero from "../assets/skipper-girl-in-red.webp";
+import mobileHero from "../assets/paty-girls-with-skipper.webp";
+import img1 from "../assets/group-wearing-white-sitting-yacht-herzliya.webp";
+import img2 from "../assets/group-friends-sitting-yacht-deck-haifa.webp";
 ---
 
 <Layout
-    title="הפלגת סקיפר ליום אחד בהרצליה | Leader הפלגות"
-    description="יום שלם בים עם סקיפר מקצועי בהרצליה. צאו להשתזף, לשחות בעומק הים וליהנות במסיבה יאכטה מושלמת."
+  title="סקיפר ליום אחד בהרצליה | Leader הפלגות"
+  description="חוויה קבוצתית מרתקת עם סקיפר מקצועי על יאכטה פרטית. הדרכה, הגאי, על האש ופינוקי VIP — מחיפה ועד הרצליה."
 >
-    <div class="service-page" dir="rtl">
-        <section class="sp-hero">
-            <div class="sp-inner text-center">
-                <div class="sp-eyebrow">מרינה הרצליה</div>
-                <h1>הפלגת סקיפר ליום אחד</h1>
-                <p>
-                    יום שלם בים עם סקיפר מקצועי — שיזוף, נוף, מוזיקה ויין. חוויה
-                    מהסרטים לאורך חופי המרכז.
-                </p>
-                <div class="sp-btns">
-                    <a href="/צור-קשר" class="sp-btn primary">הזמינו עכשיו</a>
-                    <a href="https://wa.me/972533403449" class="sp-btn wa"
-                        >WhatsApp</a
-                    >
-                </div>
-            </div>
-        </section>
+  <div class="service-page" dir="rtl">
+    <section class="sp-hero">
+      <Image
+        src={desktopHero}
+        alt="הפלגת סקיפר ליום אחד על יאכטה בהרצליה"
+        format="webp"
+        quality={90}
+        loading="eager"
+        fetchpriority="high"
+        class="sp-hero-bg desktop-hero"
+      />
+      <Image
+        src={mobileHero}
+        alt="קבוצה נהנית מהפלגת סקיפר על יאכטה בהרצליה"
+        widths={[400, 768]}
+        sizes="100vw"
+        format="webp"
+        quality={90}
+        loading="eager"
+        fetchpriority="high"
+        class="sp-hero-bg mobile-hero"
+      />
+    </section>
 
-        <section class="sp-content">
-            <div class="sp-inner">
-                <h2>סקיפר צמוד רק בשבילכם</h2>
-                <p>
-                    תנו לנו להשיט את היאכטה בזמן שאתם מתמסרים לשמש, לגלים ולשקט.
-                    נצא ממרינה הרצליה להפלגה לאורך חופי ישראל. בדרך, נוכל לעצור
-                    את היאכטה בעומק בטוח, לתת לכם לשחות, להשתזף ולשתות משקאות
-                    צוננים. הפלגת יום היא אידאלית לקבוצות חברים, ימי כיף, או סתם
-                    כשמתחשק לקחת פסק זמן של יום שלם מהחיים האמיתיים.
-                </p>
-                <a href="/hertzliya" class="back-link"
-                    >← חזרה לכל ההפלגות בהרצליה</a
-                >
+    <section class="sp-content">
+      <!-- Начинается контейнер, ограничивающий ширину контента и картинок (sp-inner) -->
+      <div class="sp-inner">
+        <h1>⚓ סקיפר ליום אחד בקבוצה – לקחת את ההגה לידיים עם "לידר"</h1>
+        <p>
+          מכירים מישהו או מישהי שפשוט חיים ונושמים את הים? מחפשים את ההפתעה הכי
+          מקורית שיש ליום הולדת או אירוע מיוחד? בלידר השכרת יאכטות, אנחנו
+          מזמינים אתכם להעניק מתנה שאי אפשר לשכוח: חוויה קבוצתית מרתקת שבה חתן
+          או כלת השמחה יקבלו את הפיקוד ויהפכו לסקיפרים ליום אחד!
+        </p>
+
+        <h3>🧭 החוויה: מה זה אומר להיות סקיפר?</h3>
+        <p>
+          ההפלגה שלנו מלווה בסקיפר מקצועי ומנוסה מהצוות של "לידר". מעבר להפלגה
+          עצמה, הסקיפר שלנו יעביר לכם הדרכה מקיפה ומעשירה, ישתף אתכם בסודות הים,
+          וייתן לכם להתנסות בזמן אמת בתפעול המפרשים, ניווט היאכטה וכמובן – עמידה
+          מאחורי ההגה. בואו להרגיש את העוצמה של הים דרך הידיים שלכם!
+        </p>
+
+        <Image
+          src={img1}
+          alt="קבוצת חברים לבושים לבן יושבים על סיפון יאכטה בהרצליה"
+          format="webp"
+          width={600}
+          height={400}
+          loading="lazy"
+          class="sp-gallery-img"
+        />
+
+        <h3>📍 מחיפה ועד הרצליה – חגיגה בכל גודל</h3>
+        <ul class="sp-list">
+          <li>
+            כדי שכל החבר'ה יוכלו להצטרף להפלגה ולעודד את ה"קפטן" החדש, צי
+            היאכטות המפואר של לידר ממתין לכם בשני הלוקיישנים המובילים בישראל: <strong
+              >מרינה חיפה</strong
+            > ו<strong>מרינה הרצליה</strong>.
+          </li>
+          <li>
+            לא משנה כמה חברים אתם רוצים להביא לחגיגה – יש לנו את היאכטה המושלמת
+            עבורכם! הצי שלנו ערוך לאירוח של קבוצות בכל גודל, עם ספינות ויאכטות
+            המותאמות ל-21, 30, 40 ואפילו 55 משתתפים.
+          </li>
+        </ul>
+
+        <h3>🥩 השטתם את היאכטה? עכשיו עושים "על האש"!</h3>
+        <p>
+          עבודה בים עושה לאנשים תיאבון! אצלנו ב"לידר" יש לכם את האפשרות הייחודית
+          להביא בשרים ולהרים "על האש" מושלם על גריל שממוקם ממש על סיפון היאכטה!
+          המטבח שלנו מאובזר ועומד לרשותכם. (מעדיפים לא להתאמץ? אין בעיה, ניתן
+          להזמין דרכנו מראש בתוספת תשלום ארוחות בוקר, צהריים או ערב מפנקות
+          שיוגשו ישירות לסיפון).
+        </p>
+
+        <Image
+          src={img2}
+          alt="חברים נהנים על סיפון יאכטה בשייט בחיפה"
+          format="webp"
+          width={600}
+          height={400}
+          loading="lazy"
+          class="sp-gallery-img"
+        />
+
+        <h3>🥂 אנחנו נדאג להכל – הנוחות שלכם היא המשימה שלנו</h3>
+        <p>
+          אתם רק צריכים להגיע עם בגד ים ומצב רוח טוב – אנחנו כבר נדאג לכל היתר.
+          ב"לידר", אנחנו מאמינים שהנוחות שלכם היא המשימה שלנו (Your comfort Our
+          mission).
+        </p>
+
+        <h3>🎉 מה מחכה לכם ולחברים על הסיפון?</h3>
+        <ul class="sp-list">
+          <li>
+            <strong>פינוקי VIP:</strong> בקבוק שמפניה לפתיחת החגיגות, יין משובח, לבבות
+            שוקולד, מים מינרליים ושתייה חמה חופשית. (למי שחוגג אירוע רומנטי בתוך הקבוצה
+            – נדאג גם לקישוט של לב מעלי כותרת על המיטה!).
+          </li>
+          <li>
+            <strong>אקשן ומוזיקה:</strong> היאכטה תקושט בבלונים חגיגיים, ובסלון תמצאו
+            מערכת סאונד מתקדמת (רק תביאו את הפלייליסט שלכם). כשנעצור בלב ים תוכלו
+            ליהנות ממזרן שיזוף בחרטום וקפיצה למים עם אבוב טבילה חווייתי.
+          </li>
+          <li>
+            <strong>נוחות של מלון בוטיק:</strong> היאכטות שלנו ממוזגות לחלוטין וכוללות
+            סלון מרווח, שני חדרי שינה, מטבח מאובזר, מקלחת ושירותים נקיים.
+          </li>
+          <li>
+            <strong>תיעוד החוויה:</strong> רוצים תמונות למזכרת עם כובע הקפטן מאחורי
+            ההגה? יש אפשרות לצילום על ידי הסקיפר שלנו (אנא ציינו זאת מראש בעת ההזמנה).
+          </li>
+        </ul>
+
+        <h3>💰 מחירון סקיפר ליום אחד:</h3>
+        <ul class="sp-pricing">
+          <li>צרו איתנו קשר לקבלת הצעת מחיר מותאמת אישית למספר המשתתפים.</li>
+        </ul>
+
+        <p class="sp-closing">
+          חוויה קבוצתית בלתי נשכחת מחכה לכם עם לידר השכרת יאכטות. הזמינו עכשיו
+          ותנו לחבר או לחברה שלכם להפוך לקפטן ליום אחד!
+        </p>
+      </div>
+      <!-- Закрываем sp-inner (ИМЕННО ЗДЕСЬ) -->
+
+      <div class="services-grid">
+        <a href="/יאכטה-לי-ים" class="service-card" style="--c:#7c3aed; --i:0">
+          <div class="sc-img-wrap">
+            <Image
+              src={desktopHero}
+              width={600}
+              height={400}
+              format="webp"
+              alt="הפלגת סקיפר ליום אחד"
+              class="sc-img"
+              loading="lazy"
+            />
+            <div class="sc-tag" style="background:#7c3aed; color:#fff">
+              הרצליה
             </div>
-        </section>
-    </div>
+          </div>
+          <div class="sc-body">
+            <div class="sc-icon">⛵</div>
+            <h3>סקיפר ליום אחד</h3>
+            <p>
+              <strong>קבוצות:</strong> עד 55 משתתפים<br />
+              <strong>כולל:</strong> סקיפר מקצועי, הדרכה, שמפניה ואבזור VIP.<br
+              />
+              <span style="font-size: 0.85em; color: #000000;"
+                >אידאלי לימי הולדת, גיבוש וחגיגות</span
+              >
+            </p>
+            <div class="sc-arrow" style="color:#7c3aed">
+              קבלו פרטים
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                width="15"
+                height="15"><polyline points="15 18 9 12 15 6"></polyline></svg
+              >
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <a href="/hertzliya" class="back-link">← חזרה לכל ההפלגות בהרצליה</a>
+
+      <!-- ═══ FAQ SECTION ═══ -->
+      <div class="faq-wrapper">
+        <h2 class="faq-title">
+          ❓ שאלות ותשובות נפוצות – סקיפר ליום אחד עם "לידר"
+        </h2>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button
+              class="accordion-trigger"
+              aria-expanded="false"
+              aria-controls="faq-a0"
+            >
+              <span class="q-num">1</span>
+              <span class="q-text"
+                >האם היאכטה מתנדנדת בלילה? יש סיכוי למחלת ים?</span
+              >
+              <span class="q-chevron" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  width="18"
+                  height="18"><polyline points="6 9 12 15 18 9"></polyline></svg
+                >
+              </span>
+            </button>
+            <div class="accordion-body" id="faq-a0" hidden>
+              <div class="accordion-answer">
+                <div class="answer-bar"></div>
+                <p>
+                  ממש לא! במהלך הלילה היאכטה עוגנת בבטחה בתוך המרינה (בחיפה או
+                  בהרצליה), במקום שקט, יציב ומוגן מגלים. החוויה שקטה לחלוטין
+                  ומרגישה ממש כמו חדר מלון צף. ההפלגה עצמה, שבה נרגיש את תנועת
+                  הגלים, מתקיימת רק בבוקר לאחר שמתעוררים.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button
+              class="accordion-trigger"
+              aria-expanded="false"
+              aria-controls="faq-a1"
+            >
+              <span class="q-num">2</span>
+              <span class="q-text">מה חשוב להביא איתנו ללילה ביאכטה?</span>
+              <span class="q-chevron" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  width="18"
+                  height="18"><polyline points="6 9 12 15 18 9"></polyline></svg
+                >
+              </span>
+            </button>
+            <div class="accordion-body" id="faq-a1" hidden>
+              <div class="accordion-answer">
+                <div class="answer-bar"></div>
+                <p>
+                  בדיוק מה שהייתם מביאים לצימר רגיל או לבית מלון: בגדים נוחים
+                  לערב, כלי רחצה אישיים (מברשת שיניים וכו'), בגדי ים להפלגת
+                  הבוקר, ואם מתחשק לכם – אוכל ונשנושים שאתם אוהבים. אנחנו בלידר
+                  כבר נדאג לכל השאר: מגבות נקיות, מצעים מלטפים, מוצרי טיפוח
+                  במקלחת, שמפניה וקפה.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button
+              class="accordion-trigger"
+              aria-expanded="false"
+              aria-controls="faq-a2"
+            >
+              <span class="q-num">3</span>
+              <span class="q-text"
+                >רגע, הבנו שאפשר לעשות "על האש" על היאכטה. זה נכון?</span
+              >
+              <span class="q-chevron" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  width="18"
+                  height="18"><polyline points="6 9 12 15 18 9"></polyline></svg
+                >
+              </span>
+            </button>
+            <div class="accordion-body" id="faq-a2" hidden>
+              <div class="accordion-answer">
+                <div class="answer-bar"></div>
+                <p>
+                  בהחלט! זה אחד השדרוגים הכי שווים אצלנו. תוכלו להביא איתכם
+                  בשרים, דגים או ירקות, ולצלות אותם על הגריל שלנו באוויר הפתוח
+                  מול נוף המרינה המהפנט. המטבח של היאכטה מאובזר ועומד לרשותכם
+                  במלואו להכנת ארוחת הערב המושלמת שלכם.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button
+              class="accordion-trigger"
+              aria-expanded="false"
+              aria-controls="faq-a3"
+            >
+              <span class="q-num">4</span>
+              <span class="q-text">האם יש מקלחת ושירותים נוחים ביאכטה?</span>
+              <span class="q-chevron" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  width="18"
+                  height="18"><polyline points="6 9 12 15 18 9"></polyline></svg
+                >
+              </span>
+            </button>
+            <div class="accordion-body" id="faq-a3" hidden>
+              <div class="accordion-answer">
+                <div class="answer-bar"></div>
+                <p>
+                  ברור! היאכטות של לידר מאובזרות ברמת VIP מתוך מחשבה על הנוחות
+                  המקסימלית שלכם. תמצאו בהן שירותים חשמליים נקיים ומקלחת נוחה עם
+                  מים חמים, בדיוק כמו בבית.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button
+              class="accordion-trigger"
+              aria-expanded="false"
+              aria-controls="faq-a4"
+            >
+              <span class="q-num">5</span>
+              <span class="q-text">איך מעבירים את הערב ביאכטה?</span>
+              <span class="q-chevron" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  width="18"
+                  height="18"><polyline points="6 9 12 15 18 9"></polyline></svg
+                >
+              </span>
+            </button>
+            <div class="accordion-body" id="faq-a4" hidden>
+              <div class="accordion-answer">
+                <div class="answer-bar"></div>
+                <p>
+                  מעבר לרומנטיקה, לארוחה הטובה ולכוס השמפניה על הסיפון תחת כיפת
+                  השמיים – הדאגנו לכם גם לבידור בפנים! הסלון וחדר השינה ממוזגים,
+                  ותמצאו בהם טלוויזיה חכמה עם נטפליקס ומערכת סאונד מעולה
+                  (בלוטות'). תוכלו להעביר את הערב בבינג' מפנק מתחת לפוך או פשוט
+                  לשמוע את המוזיקה שאתם הכי אוהבים.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button
+              class="accordion-trigger"
+              aria-expanded="false"
+              aria-controls="faq-a5"
+            >
+              <span class="q-num">6</span>
+              <span class="q-text">מאיפה יוצאים ואיפה מחנים את הרכב?</span>
+              <span class="q-chevron" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  width="18"
+                  height="18"><polyline points="6 9 12 15 18 9"></polyline></svg
+                >
+              </span>
+            </button>
+            <div class="accordion-body" id="faq-a5" hidden>
+              <div class="accordion-answer">
+                <div class="answer-bar"></div>
+                <p>
+                  אנו מציעים את חווית "הצימר על המים" בשני הלוקיישנים המרכזיים
+                  שלנו: מרינה הרצליה התוססת ומרינה חיפה הפסטורלית. בשתי המרינות
+                  ישנם חניונים מסודרים, בטוחים ונוחים במרחק הליכה קצר מאוד
+                  מהרציף הפרטי שלנו.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button
+              class="accordion-trigger"
+              aria-expanded="false"
+              aria-controls="faq-a6"
+            >
+              <span class="q-num">7</span>
+              <span class="q-text"
+                >האם הצימר מתאים גם למשפחות או רק לזוגות?</span
+              >
+              <span class="q-chevron" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  width="18"
+                  height="18"><polyline points="6 9 12 15 18 9"></polyline></svg
+                >
+              </span>
+            </button>
+            <div class="accordion-body" id="faq-a6" hidden>
+              <div class="accordion-answer">
+                <div class="answer-bar"></div>
+                <p>
+                  החוויה הקלאסית והמבוקשת ביותר היא חופשה זוגית רומנטית. עם זאת,
+                  היאכטות שלנו מרווחות מספיק כדי לארח בנוחות גם זוג + עד 2
+                  ילדים, כך שזו יכולה להיות חוויית גיבוש משפחתית בלתי נשכחת
+                  ללילה אחד מיוחד!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
 
+<script>
+  document
+    .querySelectorAll<HTMLButtonElement>(".accordion-trigger")
+    .forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        const bodyId = btn.getAttribute("aria-controls")!;
+        const body = document.getElementById(bodyId)!;
+        const item = btn.closest(".accordion-item")!;
+
+        // close siblings
+        btn
+          .closest(".accordion")!
+          .querySelectorAll<HTMLButtonElement>(".accordion-trigger")
+          .forEach((b) => {
+            if (b !== btn) {
+              b.setAttribute("aria-expanded", "false");
+              b.closest(".accordion-item")!.classList.remove("open");
+              const sid = b.getAttribute("aria-controls")!;
+              const sb = document.getElementById(sid)!;
+              sb.hidden = true;
+              sb.style.maxHeight = "0";
+            }
+          });
+
+        if (expanded) {
+          btn.setAttribute("aria-expanded", "false");
+          item.classList.remove("open");
+          body.hidden = true;
+          body.style.maxHeight = "0";
+        } else {
+          btn.setAttribute("aria-expanded", "true");
+          item.classList.add("open");
+          body.hidden = false;
+          body.style.maxHeight = body.scrollHeight + "px";
+        }
+      });
+    });
+</script>
+
 <style>
-    .service-page {
-        background: #f2f5fb;
-        min-height: 100vh;
-        font-family: "Rubik", sans-serif;
+  .service-page {
+    background: #f2f5fb;
+    min-height: 100vh;
+    font-family: "Rubik", sans-serif;
+  }
+  .sp-hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .sp-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    z-index: 0;
+  }
+  .mobile-hero {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .desktop-hero {
+      display: none;
+    }
+    .mobile-hero {
+      display: block;
+      position: relative;
+      height: auto;
     }
     .sp-hero {
-        padding: 8rem 2rem 5rem;
-        background: linear-gradient(135deg, #08047e 0%, #0a5a8f 100%);
-        color: white;
-        text-align: center;
+      height: auto;
     }
-    .sp-eyebrow {
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #f0c040;
-        letter-spacing: 1px;
-        margin-bottom: 1rem;
-    }
-    .sp-hero h1 {
-        font-size: clamp(2.2rem, 5vw, 3.5rem);
-        font-weight: 800;
-        margin-bottom: 1rem;
-    }
-    .sp-hero p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto 2.5rem;
-        line-height: 1.6;
-    }
-    .sp-btns {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .sp-btn {
-        padding: 0.85rem 2rem;
-        border-radius: 12px;
-        font-weight: 700;
-        font-size: 1.05rem;
-        text-decoration: none;
-        transition: 0.2s;
-    }
-    .sp-btn.primary {
-        background: #d4a017;
-        color: #08047e;
-        box-shadow: 0 6px 20px rgba(212, 160, 23, 0.3);
-    }
-    .sp-btn.primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(212, 160, 23, 0.5);
-    }
-    .sp-btn.wa {
-        background: #25d366;
-        color: white;
-    }
-    .sp-btn.wa:hover {
-        background: #128c7e;
-        transform: translateY(-3px);
-    }
+  }
+  .sp-content {
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  .sp-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: right; /* Вернул из дублирующего блока sp-inner ниже в коде */
+  }
+  .sp-content h1 {
+    font-size: 2.2rem;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .sp-content h3 {
+    font-size: 1.6rem;
+    color: #08047e;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+  .sp-content p {
+    color: #000000;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .back-link {
+    display: inline-block;
+    color: #0f7ab0;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #0f7ab0;
+    border-radius: 8px;
+    transition: 0.2s;
+    margin-top: 2rem;
+  }
+  .back-link:hover {
+    background: #0f7ab0;
+    color: white;
+  }
 
-    .sp-content {
-        padding: 5rem 2rem;
-        text-align: center;
+  .sp-list,
+  .sp-pricing {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .sp-list li,
+  .sp-pricing li {
+    font-size: 1.1rem;
+    color: #000000;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-right: 1.5rem;
+  }
+
+  .sp-list li::before,
+  .sp-pricing li::before {
+    content: "⚓";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 1rem;
+    color: #0f7ab0;
+  }
+
+  /* ════════════ GALLERY IMAGES ════════════ */
+  .sp-gallery-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(8, 4, 126, 0.1);
+    margin: 2.5rem 0;
+  }
+
+  .sp-note {
+    font-size: 0.95rem !important;
+    color: #000000;
+    margin-top: -1rem;
+  }
+
+  .sp-closing {
+    font-weight: 600;
+    font-size: 1.25rem !important;
+    color: #08047e !important;
+    margin-top: 3rem;
+    text-align: center;
+    border-top: 2px dashed #e2e8f0;
+    padding-top: 2rem;
+  }
+
+  /* ════════════ SERVICES CARDS ════════════ */
+  .services-grid {
+    display: grid;
+    grid-template-columns: minmax(auto, 350px);
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-card {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 0;
+    text-decoration: none;
+    color: #000000;
+    box-shadow: 0 4px 20px rgba(8, 4, 126, 0.07);
+    border: 1px solid rgba(8, 4, 126, 0.05);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: calc(var(--i) * 0.08s);
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
     }
-    .sp-inner {
-        max-width: 800px;
-        margin: 0 auto;
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
-    .sp-content h2 {
-        font-size: 2.2rem;
-        color: #1a1a2e;
-        margin-bottom: 1.5rem;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(8, 4, 126, 0.16);
+  }
+
+  .sc-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    flex-shrink: 0;
+  }
+  .sc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .service-card:hover .sc-img {
+    transform: scale(1.06);
+  }
+
+  .sc-tag {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.28rem 0.7rem;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  .sc-body {
+    padding: 1.2rem 1.4rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    flex: 1;
+  }
+
+  .sc-icon {
+    font-size: 2rem;
+    transition: transform 0.3s;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .service-card:hover .sc-icon {
+    transform: scale(1.15) rotate(-5deg);
+  }
+
+  .sc-body h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    text-align: right;
+  }
+  .sc-body p {
+    font-size: 0.875rem;
+    color: #000000 !important;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+    text-align: right;
+    margin-bottom: 0 !important;
+  }
+
+  .sc-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin-top: auto;
+    transition: gap 0.2s;
+  }
+  .service-card:hover .sc-arrow {
+    gap: 0.55rem;
+  }
+
+  /* ════════════ FAQ SECTION ════════════ */
+  .faq-wrapper {
+    max-width: 800px;
+    margin: 4rem auto 0;
+    text-align: right;
+  }
+  .faq-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #08047e;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .accordion-item {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 28px rgba(8, 4, 126, 0.09);
+    overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+  .accordion-item.open {
+    box-shadow: 0 10px 36px rgba(8, 4, 126, 0.14);
+  }
+  .accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1.1rem 1.25rem;
+    border: none;
+    background: transparent;
+    text-align: right;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+  }
+  .accordion-trigger:hover {
+    background: #fafbff;
+  }
+  .q-num {
+    min-width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: rgba(8, 4, 126, 0.08);
+    color: #08047e;
+  }
+  .q-text {
+    flex: 1;
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: #000000;
+    text-align: right;
+    line-height: 1.4;
+  }
+  .q-chevron {
+    flex-shrink: 0;
+    color: #6b7280;
+    transition: transform 0.3s ease;
+    display: flex;
+  }
+  .accordion-item.open .q-chevron {
+    transform: rotate(180deg);
+  }
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .accordion-body:not([hidden]) {
+    max-height: 500px;
+  }
+  .accordion-answer {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1.25rem 1.25rem 1.25rem;
+  }
+  .answer-bar {
+    width: 3px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 100%;
+    opacity: 0.6;
+    background: #0f7ab0;
+  }
+  .accordion-answer p {
+    margin: 0;
+    font-size: 0.93rem;
+    color: #000000;
+    line-height: 1.75;
+  }
+  @media (max-width: 768px) {
+    .faq-wrapper {
+      margin-top: 3rem;
     }
-    .sp-content p {
-        color: #3a3a5c;
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 3rem;
+    .faq-title {
+      font-size: 1.25rem;
     }
-    .back-link {
-        display: inline-block;
-        color: #0f7ab0;
-        font-weight: 600;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border: 1px solid #0f7ab0;
-        border-radius: 8px;
-        transition: 0.2s;
+    .accordion-trigger {
+      padding: 1rem;
+      gap: 0.65rem;
     }
-    .back-link:hover {
-        background: #0f7ab0;
-        color: white;
+    .q-text {
+      font-size: 0.9rem;
     }
+  }
 </style>

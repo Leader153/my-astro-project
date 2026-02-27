@@ -166,14 +166,17 @@ import brideImg from "../assets/romantic-couple-sunset-yacht-trip-herzliya.webp"
             חגיגיים ופרחים – הכל מוכן לפני הגעתכם.
           </p>
         </div>
-        <div class="feature-card">
+        <a
+          href="/ארוחה-על-יאכטה-בהרצליה"
+          class="feature-card feature-card-link"
+        >
           <div class="feature-icon">🍽️</div>
           <h3>קולינריה בלב ים</h3>
           <p>
             ארוחות בוקר עשירות, ארוחות צהריים/ערב עם דג או בשר, מוגשות עם מפות
-            נקיות וכלים יוקרתיים. זמין גם בכשרות רבנות הרצליה / כשרות למהדרין.
+            נקיות וכלים יוקרתיים. 
           </p>
-        </div>
+        </a>
         <div class="feature-card">
           <div class="feature-icon">🍫</div>
           <h3>פינוקים מתוקים</h3>
@@ -660,6 +663,14 @@ import brideImg from "../assets/romantic-couple-sunset-yacht-trip-herzliya.webp"
     }
     .feature-card:hover {
       transform: translateY(-4px);
+    }
+    .feature-card-link {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+    .feature-card-link:hover {
+      box-shadow: 0 8px 30px rgba(192, 84, 122, 0.2);
     }
     .feature-icon {
       font-size: 2rem;
