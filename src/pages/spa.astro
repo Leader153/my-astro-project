@@ -1,115 +1,678 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import cardImg from "../assets/Romantic cruise 2.webp"; // Placeholder
+import heroImage from "../assets/Massage-and-dinner-for-couples-on-a-yacht.jpg";
+import img1 from "../assets/Massage-and-dinner-for-couples-on-a-yacht.jpg";
+import midImg from "../assets/romantic-dinner-couple-cabin-herzelia.jpeg";
+import botImg from "../assets/Massage-and-dinner-for-couples.jpeg";
+import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 ---
 
 <Layout
-    title="חבילת ספא על יאכטה"
-    description="חוויית פינוק מושלמת הכוללת טיפולי ספא מרגיעים מול נוף הים הפתוח"
+  title="חבילת ספא פלטיניום – ספא, הפלגה, עיסוי וארוחה זוגית ביאכטה פרטית"
+  description="חבילת ספא פלטיניום מפנקת: עיסוי זוגי ביאכטה, הפלגה חווייתית בים וארוחה זוגית עשירה. המתנה הרומנטית המושלמת לבן הזוג שלכם. הזמינו עכשיו!"
 >
-    <div class="service-page" dir="rtl">
-        <div class="container">
-            <h1>חבילת ספא על יאכטה</h1>
-            <p class="subtitle">
-                חוויית פינוק מושלמת הכוללת טיפולי ספא מרגיעים מול נוף הים הפתוח
-            </p>
+  <div class="spa-page" dir="rtl">
+    <!-- ══ HERO ══ -->
+    <section class="spa-hero">
+      <Image
+        src={heroImage}
+        alt="יאכטה פרטית לחבילת ספא פלטיניום עם הפלגה ועיסוי זוגי"
+        width={1920}
+        format="webp"
+        quality={90}
+        loading="eager"
+        fetchpriority="high"
+        class="hero-img"
+      />
+    </section>
 
-            <div class="image-wrapper">
-                <Image
-                    src={cardImg}
-                    alt="טיפול ספא מרגיע על סיפון יאכטה אקסקלוסיבית"
-                    width={800}
-                    height={500}
-                    class="main-img"
-                />
-            </div>
-
-            <div class="content">
-                <p>
-                    מגיע לכם פינוק אמיתי! הפלגה שלווה בים הפתוח בשילוב טיפולי
-                    ספא מקצועיים המבוצעים על ידי מעסה מוסמך.
-                </p>
-                <p>
-                    דרך מצוינת לשחרר לחצים, להעניק מתנה ייחודית, ולחזור הביתה
-                    רעננים וחדשים לגמרי.
-                </p>
-
-                <a
-                    href="https://wa.me/972533403449"
-                    target="_blank"
-                    rel="noopener"
-                    class="cta-btn">הזמינו עכשיו ב-WhatsApp</a
-                >
-            </div>
-        </div>
+    <!-- MOBILE HERO -->
+    <div class="spa-hero-mobile-wrap">
+      <Image
+        src={heroImage}
+        widths={[400, 768]}
+        sizes="100vw"
+        format="webp"
+        alt="חבילת ספא פלטיניום – הפלגה ועיסוי זוגי ביאכטה"
+        class="mobile-hero-img"
+        loading="eager"
+        fetchpriority="high"
+      />
     </div>
+
+    <!-- ══ INTRO ══ -->
+    <section class="spa-section">
+      <div class="spa-inner">
+        <div class="spa-section-header">
+          <h1>חבילת ספא פלטיניום ביאכטה</h1>
+          <p class="spa-section-sub">💍 ספא · הפלגה · עיסוי זוגי · ארוחה</p>
+        </div>
+        <div class="spa-text-article">
+          <p>
+            אם אתם מחפשים מתנה מפתיעה ומרגיעה במיוחד לבן הזוג שלכם – תנו לנו
+            להציע לכם את <strong>חבילת הפלטיניום המפנקת</strong> שלנו.
+          </p>
+          <p>
+            שילוב של <strong>ספא והפלגה חווייתית בים</strong>, עיסוי מפנק ומרגיע
+            וארוחה עשירה – מה צריך יותר מזה?
+          </p>
+          <p>
+            חבילת הפלטיניום שלנו היא חבילה של <strong>ארבע שעות</strong> הכוללת: עיסוי
+            של שעה וחצי (45 דקות לכל אחד מבני הזוג בנפרד בחדר חרטום של היאכטה), זמן
+            איכות לבד ביאכטה ויציאה להפלגה של שעה וחצי עם
+            <strong>ארוחה זוגית עשירה לבחירתכם.</strong>
+          </p>
+          <p class="spa-tagline">תנו לנו לפנק אתכם באירוח ספא מושלם 💫</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ BREAK IMAGE 1 ══ -->
+    <div class="spa-break-img-wrapper">
+      <Image
+        src={img1}
+        alt="זוג נהנה מחוויית ספא ביאכטה פרטית"
+        class="spa-break-img"
+        format="webp"
+      />
+    </div>
+
+    <!-- ══ WHAT'S INCLUDED ══ -->
+    <section class="spa-section spa-section--alt">
+      <div class="spa-inner">
+        <div class="spa-section-header">
+          <h2>מה אתם מקבלים בחבילה?</h2>
+          <p class="spa-section-sub">🎁 כל מה שצריך לחוויה בלתי נשכחת</p>
+        </div>
+
+        <div class="spa-gifts-grid">
+          <div class="spa-gift-card">
+            <div class="spa-gift-icon">🍷</div>
+            <h3>בקבוק יין</h3>
+            <p>בקבוק יין מובחר שיחכה לכם בעת עלייתכם ליאכטה</p>
+          </div>
+          <div class="spa-gift-card">
+            <div class="spa-gift-icon">🌹</div>
+            <h3>קישוט רומנטי</h3>
+            <p>לב מעלי כותרת על המיטה, סוכריות ואווירה מיוחדת לכבודכם</p>
+          </div>
+          <div class="spa-gift-card">
+            <div class="spa-gift-icon">☕</div>
+            <h3>שתייה חמה וקרה</h3>
+            <p>שתייה חמה וקלה חופשית לאורך כל החוויה</p>
+          </div>
+          <div class="spa-gift-card">
+            <div class="spa-gift-icon">📸</div>
+            <h3>צילום מקצועי</h3>
+            <p>תיעוד מקצועי של הרגעים המיוחדים (יש לציין בעת ההזמנה)</p>
+          </div>
+          <div class="spa-gift-card">
+            <div class="spa-gift-icon">🍽️</div>
+            <h3>ארוחה לבחירתכם</h3>
+            <p>אפשרות לארוחת בוקר, צהריים או ערב עשירה לבחירתכם</p>
+          </div>
+          <div class="spa-gift-card">
+            <div class="spa-gift-icon">⛵</div>
+            <h3>הפלגה זוגית</h3>
+            <p>שעה וחצי של הפלגה פרטית בלב ים בצמוד לארוחה</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ BREAK IMAGE 2 ══ -->
+    <div class="spa-break-img-wrapper" style="max-width: 700px;">
+      <Image
+        src={midImg}
+        alt="ביאכטה פרטית עם סלון ממוזג ואווירה מפנקת"
+        class="spa-break-img"
+        format="webp"
+        style="aspect-ratio: 1 / 1; max-height: 700px;"
+      />
+    </div>
+
+    <!-- ══ YACHT AMENITIES ══ -->
+    <section class="spa-section">
+      <div class="spa-inner">
+        <div class="spa-section-header">
+          <h2>מה יהיה לנו ביאכטה?</h2>
+          <p class="spa-section-sub">
+            ⚓ אבזור מלא · סלון · מוזיקה · ים של כיף
+          </p>
+        </div>
+        <div class="spa-text-article">
+          <p>
+            היאכטות שלנו <strong>מאובזרות וממוזגות</strong>. בכל יאכטה יש סלון,
+            שני חדרי שינה, מטבח מאובזר, מקלחת ושירותים.
+          </p>
+          <p>
+            אנחנו <strong>מקשטים את היאכטה לכבודכם</strong> כדי שתהיה לכם חוויה בלתי
+            נשכחת עם מוסיקה טובה, בלונים, שלטים של מזל-טוב, אבוב לטבילה בים, מזרון
+            שיזוף בחרטום היאכטה וכל מה שצריך כדי שיהיה לכם
+            <strong>ים של כיף</strong>.
+          </p>
+          <ul class="spa-features-list">
+            <li>
+              <strong>מוזיקה:</strong> מערכות סאונד למוזיקה עם אפשרות חיבור לכל סוג
+              מדיה שתביאו
+            </li>
+            <li>
+              <strong>בלונים ושלטים:</strong> קישוטי חגיגה, שלטי מזל-טוב ואווירה חגיגית
+            </li>
+            <li>
+              <strong>טבילה בים:</strong> אבוב לטבילה מרעננת ומזרון שיזוף בחרטום
+            </li>
+            <li>
+              <strong>פרטיות מלאה:</strong> זמן לבד ביאכטה לפני ואחרי ההפלגה
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ BREAK IMAGE 3 ══ -->
+    <div class="spa-break-img-wrapper">
+      <Image
+        src={botImg}
+        alt="זוג מבלה ביאכטה פרטית עם נוף לים"
+        class="spa-break-img"
+        format="webp"
+      />
+    </div>
+
+    <!-- ══ PRICING ══ -->
+    <section class="spa-section spa-section--alt">
+      <div class="spa-inner">
+        <div class="spa-section-header">
+          <h2>מחירון ספא פלטינום ביאכטה</h2>
+          <p class="spa-section-sub">💰 בחרו את החבילה המתאימה לכם</p>
+        </div>
+
+        <div class="spa-pricing-grid">
+          <!-- Package 1: Platinum -->
+          <div class="spa-pricing-card spa-pricing-card--featured">
+            <div class="spa-pkg-badge">⭐ מומלץ</div>
+            <div class="spa-pkg-icon">💎</div>
+            <h3>ספא פלטיניום</h3>
+            <div class="spa-pkg-duration">4 שעות</div>
+            <div class="spa-pkg-description">
+              <p>רבע שעה ראשונה: קבלת פנים והתארגנות</p>
+              <p>90 דקות עיסוי (45 כל אחד)</p>
+              <p>אחרי העיסוי: 45 דקות זמן פרטי ביאכטה</p>
+              <p>שעה וחצי האחרונות: הפלגה + ארוחה</p>
+            </div>
+            <div class="spa-pkg-pricing">
+              <div class="spa-price-row">
+                <span class="spa-price-label">אמצע שבוע</span>
+                <span class="spa-price-value">2,200 ₪</span>
+              </div>
+              <div class="spa-price-row spa-price-row--weekend">
+                <span class="spa-price-label">סוף שבוע וחגים</span>
+                <span class="spa-price-value">לפי בקשה</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Package 2: Gold -->
+          <div class="spa-pricing-card">
+            <div class="spa-pkg-icon">🥇</div>
+            <h3>ספא זהב</h3>
+            <div class="spa-pkg-duration">3 שעות</div>
+            <div class="spa-pkg-description">
+              <p>רבע שעה ראשונה: קבלת פנים והתארגנות</p>
+              <p>60 דקות עיסוי (30 כל אחד)</p>
+              <p>אחרי העיסוי: 15 דקות זמן פרטי ביאכטה</p>
+              <p>שעה וחצי האחרונות: הפלגה + ארוחה</p>
+            </div>
+            <div class="spa-pkg-pricing">
+              <div class="spa-price-row">
+                <span class="spa-price-label">אמצע שבוע</span>
+                <span class="spa-price-value">1,700 ₪</span>
+              </div>
+              <div class="spa-price-row spa-price-row--weekend">
+                <span class="spa-price-label">סוף שבוע וחגים</span>
+                <span class="spa-price-value">לפי בקשה</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Package 3: Silver -->
+          <div class="spa-pricing-card">
+            <div class="spa-pkg-icon">🥈</div>
+            <h3>ספא כסף</h3>
+            <div class="spa-pkg-duration">2.5 שעות</div>
+            <div class="spa-pkg-description">
+              <p>רבע שעה ראשונה: קבלת פנים והתארגנות</p>
+              <p>60 דקות עיסוי (30 כל אחד)</p>
+              <p>אחרי העיסוי: 15 דקות זמן פרטי ביאכטה</p>
+              <p>השעה האחרונה: הפלגה</p>
+            </div>
+            <div class="spa-pkg-pricing">
+              <div class="spa-price-row">
+                <span class="spa-price-label">אמצע שבוע בלבד**</span>
+                <span class="spa-price-value">1,400 ₪</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="spa-note">** ימי חול ואמצע שבוע בלבד</p>
+      </div>
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <FleetSelectionCta
+      ctaInstruction="נא להיכנס לעמוד יאכטות ולתאם את חבילת הספא שלכם:"
+    />
+  </div>
 </Layout>
 
 <style>
-    .service-page {
-        padding: 120px 20px 60px;
-        background: #f8fbff;
-        min-height: 100vh;
-        font-family: "Rubik", sans-serif;
+  @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
+
+  .spa-page {
+    --navy: #08047e;
+    --sea: #0f7ab0;
+    --gold: #d4a017;
+    --gold-l: #f0c040;
+    --bg: #f2f5fb;
+    --white: #ffffff;
+    --text: #000000;
+    --text-m: #111111;
+    --text-l: #222222;
+    font-family: "Rubik", "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    overflow-x: hidden;
+  }
+
+  /* ══ HERO ══ */
+  .spa-hero {
+    position: relative;
+    min-height: 75vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .spa-hero .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .spa-hero-overlay {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    background: linear-gradient(
+      to top,
+      rgba(8, 4, 126, 0.75) 0%,
+      transparent 100%
+    );
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+  }
+  .spa-hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .spa-hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+  }
+  .spa-hero-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: #fff;
+    margin: 0 0 0.5rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+  .spa-hero-content p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .spa-hero-mobile-wrap {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .spa-hero {
+      display: none;
     }
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: #ffffff;
-        border-radius: 20px;
-        padding: 3rem;
-        box-shadow: 0 10px 40px rgba(8, 4, 126, 0.06);
-        text-align: center;
-        border-top: 5px solid #f43f5e;
+    .spa-hero-mobile-wrap {
+      display: block;
+      width: 100%;
+      margin-top: -80px;
+      margin-bottom: -30px;
+      overflow: hidden;
     }
-    h1 {
-        font-size: 2.5rem;
-        color: #08047e;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
+    .mobile-hero-img {
+      width: 100%;
+      height: auto;
+      min-height: 250px;
+      display: block;
+      object-fit: cover;
     }
-    .subtitle {
-        font-size: 1.2rem;
-        color: #0f7ab0;
-        margin-bottom: 2rem;
-        font-weight: 500;
+  }
+
+  /* ══ SHARED ══ */
+  .spa-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+  }
+  .spa-section {
+    background: var(--bg);
+  }
+  .spa-section--alt {
+    background: #edf1f9;
+  }
+  .spa-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .spa-section-header h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    color: var(--navy);
+    margin: 0 0 0.5rem;
+  }
+  .spa-section-header h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 0.5rem;
+  }
+  .spa-section-sub {
+    font-size: 1.1rem;
+    color: var(--sea);
+    font-weight: 500;
+    margin: 0.2rem 0 0;
+  }
+
+  @media (max-width: 768px) {
+    .spa-inner {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
     }
-    .image-wrapper {
-        margin-bottom: 2rem;
-        border-radius: 15px;
-        overflow: hidden;
+    .spa-section-header {
+      margin-bottom: 1.5rem;
     }
-    .main-img {
-        width: 100%;
-        height: auto;
-        display: block;
-        aspect-ratio: 16/9;
-        object-fit: cover;
+  }
+
+  /* ══ TEXT ARTICLE ══ */
+  .spa-text-article {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3.5rem 4rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(8, 4, 126, 0.05);
+    border: 1px solid rgba(8, 4, 126, 0.05);
+  }
+  .spa-text-article p {
+    font-size: 1.15rem;
+    line-height: 1.85;
+    color: var(--text-m);
+    margin-bottom: 1.4rem;
+  }
+  .spa-tagline {
+    font-size: 1.25rem !important;
+    font-weight: 700;
+    color: var(--navy) !important;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0 !important;
+  }
+
+  .spa-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+  }
+  .spa-features-list li {
+    font-size: 1.1rem;
+    color: var(--text-m);
+    margin-bottom: 1rem;
+    padding-right: 1.8rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .spa-features-list li::before {
+    content: "✦";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 0.9rem;
+    color: var(--gold);
+  }
+  .spa-features-list strong {
+    color: var(--navy);
+  }
+
+  @media (max-width: 768px) {
+    .spa-text-article {
+      padding: 2rem 1.25rem;
     }
-    .content p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #000000;
-        margin-bottom: 1rem;
+  }
+
+  /* ══ GIFTS GRID ══ */
+  .spa-gifts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 900px) {
+    .spa-gifts-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
-    .cta-btn {
-        display: inline-block;
-        margin-top: 2rem;
-        padding: 1rem 2.5rem;
-        background: linear-gradient(135deg, #d4a017, #f0c040);
-        color: #08047e;
-        font-weight: 800;
-        font-size: 1.2rem;
-        border-radius: 12px;
-        text-decoration: none;
-        box-shadow: 0 8px 25px rgba(212, 160, 23, 0.4);
-        transition:
-            transform 0.2s,
-            box-shadow 0.2s;
+  }
+  @media (max-width: 550px) {
+    .spa-gifts-grid {
+      grid-template-columns: 1fr;
     }
-    .cta-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(212, 160, 23, 0.6);
+  }
+
+  .spa-gift-card {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 6px 24px rgba(8, 4, 126, 0.07);
+    border: 1px solid rgba(8, 4, 126, 0.06);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  .spa-gift-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(8, 4, 126, 0.13);
+  }
+  .spa-gift-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  .spa-gift-card h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 0.5rem;
+  }
+  .spa-gift-card p {
+    font-size: 0.95rem;
+    color: var(--text-l);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ══ BREAK IMAGES ══ */
+  .spa-break-img-wrapper {
+    max-width: 1000px;
+    margin: 4rem auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(8, 4, 126, 0.15);
+  }
+  .spa-break-img {
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 16 / 9;
+  }
+
+  @media (max-width: 768px) {
+    .spa-break-img-wrapper {
+      margin: 2.5rem -1.5rem;
+      border-radius: 0;
     }
+    .spa-break-img {
+      aspect-ratio: 4 / 3;
+      max-height: 400px;
+    }
+  }
+
+  /* ══ PRICING CARDS ══ */
+  .spa-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .spa-pricing-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+
+  .spa-pricing-card {
+    background: var(--white);
+    border-radius: 22px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 30px rgba(8, 4, 126, 0.08);
+    border: 1px solid rgba(8, 4, 126, 0.06);
+    position: relative;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    text-align: center;
+  }
+  .spa-pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(8, 4, 126, 0.14);
+  }
+
+  .spa-pricing-card--featured {
+    border: 2px solid var(--gold);
+    background: linear-gradient(160deg, #fff 60%, #fffbee 100%);
+    box-shadow: 0 12px 40px rgba(212, 160, 23, 0.2);
+  }
+
+  .spa-pkg-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.8rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .spa-pkg-icon {
+    font-size: 2.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .spa-pricing-card h3 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--navy);
+    margin: 0 0 0.4rem;
+  }
+
+  .spa-pkg-duration {
+    display: inline-block;
+    background: rgba(8, 4, 126, 0.07);
+    color: var(--navy);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.2rem 0.75rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+  }
+
+  .spa-pkg-description {
+    text-align: right;
+    margin-bottom: 1.5rem;
+    border-top: 1px solid rgba(8, 4, 126, 0.07);
+    padding-top: 1.2rem;
+  }
+  .spa-pkg-description p {
+    font-size: 0.93rem;
+    color: var(--text-l);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    padding-right: 1.4rem;
+    position: relative;
+  }
+  .spa-pkg-description p::before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: var(--sea);
+    font-weight: 700;
+  }
+
+  .spa-pkg-pricing {
+    border-top: 1px solid rgba(8, 4, 126, 0.07);
+    padding-top: 1.2rem;
+  }
+  .spa-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+  }
+  .spa-price-label {
+    font-size: 0.9rem;
+    color: var(--text-l);
+  }
+  .spa-price-value {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--navy);
+  }
+  .spa-price-row--weekend .spa-price-label {
+    color: var(--sea);
+    font-weight: 600;
+  }
+  .spa-price-row--weekend .spa-price-value {
+    color: var(--sea);
+    font-size: 1rem;
+  }
+
+  .spa-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-l);
+    opacity: 0.75;
+  }
 </style>

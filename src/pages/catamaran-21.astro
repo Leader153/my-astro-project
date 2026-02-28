@@ -1,136 +1,636 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import cardImg from "../assets/group-men-sitting-on-yacht-deck-herzliya.webp";
+import mobileImg from "../assets/group-men-sitting-on-yacht-deck-herzliya.webp";
+import img1 from "../assets/ספינת-טייפון-מושבים.png";
+import midImg from "../assets/צוות-טייפון.webp";
+import botImg from "../assets/family-fishing-trip-sailing-yacht-haifa.jpeg";
+import FleetSelectionCta from "../components/FleetSelectionCta.astro";
+import heroImage from "../assets/typhoon-ship.jpg";
+import PremiumSwitch from "../components/PremiumSwitch.astro";
 ---
 
 <Layout
-  title="קטמרן עד 21 מפליגים בהרצליה | Leader הפלגות"
-  description="יאכטת קטמרן ענקית ומרווחת להפלגות קבוצתיות גדולות, ימי הולדת ומסיבות מרובות משתתפים. מתאים לעד 21 איש במרינה הרצליה."
+  title="ספינת טייפון: יאכטה לאירועים בחיפה עד 30 מפליגים"
+  description="חוגגים אירוע? ⚓ ספינת טייפון בחיפה מושלמת למסיבות וימי הולדת עד 30 איש! שייט חוויתי 🐬, רחבת ריקודים, מנגל ופינוק מושלם 🥂."
 >
-  <div class="service-page" dir="rtl">
-    <section class="sp-hero">
-      <div class="sp-inner text-center">
-        <div class="sp-eyebrow">מרינה הרצליה</div>
-        <h1>קטמרן עד 21 מפליגים</h1>
-        <p>
-          יאכטת קטמרן ענקית ומרווחת להפלגות קבוצתיות גדולות, ימי הולדת ומסיבות
-          מרובות משתתפים
-        </p>
-        <div class="sp-btns">
-          <a href="/contact" class="sp-btn primary">הזמינו עכשיו</a>
-          <a href="https://wa.me/972533403449" class="sp-btn wa">WhatsApp</a>
-        </div>
-      </div>
+  <div class="hz-page" dir="rtl">
+    <!-- ══ HERO ══ -->
+    <section class="hz-hero">
+      <Image
+        src={heroImage}
+        alt="ספינת טייפון בחיפה"
+        width={1920}
+        format="webp"
+        quality={90}
+        loading="eager"
+        fetchpriority="high"
+        class="hero-img"
+      />
     </section>
+    <!-- MOBILE HERO IMAGE (Separate from background) -->
+    <div class="hz-hero-mobile-wrap">
+      <Image
+        src={heroImage}
+        widths={[400, 768]}
+        sizes="100vw"
+        format="webp"
+        alt="ספינת טייפון בחיפה"
+        class="mobile-hero-img"
+        loading="eager"
+        fetchpriority="high"
+        style="object-position: right;"
+      />
+    </div>
+    <!-- CONTENT -->
+    <section class="hz-services">
+      <div class="hz-inner tz-content-box">
+        <div class="hz-section-header">
+          <h2>⚓ ספינת טייפון – יאכטה לאירועים בחיפה עד 30 מפליגים</h2>
+          <p>
+            מסיבות, ימי הולדת, ימי גיבוש ואירועים פרטיים<br />
+            שייט חוויתי 🐬 עם רחבת ריקודים, מנגל ופינוק מושלם 🥂
+          </p>
+        </div>
 
-    <section class="sp-content">
-      <div class="sp-inner">
-        <h2>הפלגה קבוצתית על קטמרן</h2>
-        <p>
-          יאכטת הקטמרן שלנו מציעה מרחב ענק, יציבות מקסימלית בים וסביבה חגיגית
-          מיוחדת. זוהי הבחירה המושלמת לימי הולדת, מסיבות הפתעה, אירועי חברה וימי
-          גיבוש לעד 21 משתתפים. תיהנו ממערכת סאונד מתקדמת, אזורי שיזוף, ומספיק
-          מקום לכולם לרקוד ולשמוח מול נופי הים התיכון.
-        </p>
-        <a href="/herzliya" class="back-link">← חזרה לכל ההפלגות בהרצליה</a>
+        <div class="bday-text-article">
+          <h3>🎉 חוגגים אירוע? הטייפון הוא הבמה שלכם!</h3>
+          <p>
+            מחפשים אירוע שאף אחד לא ישכח? <strong>ספינת טייפון בחיפה</strong> היא
+            הבחירה המושלמת לכל מי שרוצה לחגוג בסטייל בלב ים. יום הולדת, מסיבת רווקות,
+            יום גיבוש קבוצתי או כל אירוע פרטי – אצלנו כל רגע הופך לחוויה שתישאר בזיכרון
+            לתמיד.
+          </p>
+          <p>
+            <strong>ספינת טייפון</strong> מכילה <strong>עד 30 מפליגים</strong> ומציעה
+            שייט חוויתי לאורך מפרץ חיפה. רחבת ריקודים, מנגל פחמים, מוזיקה, ים – כל
+            מה שצריך לאירוע מושלם כבר על הסיפון. פנקו את האורחים שלכם כמו שמגיע להם!
+          </p>
+        </div>
+
+        <div class="bday-break-img-wrapper">
+          <Image
+            src={img1}
+            alt="מסיבה על ספינת טייפון בחיפה"
+            class="bday-break-img"
+            format="webp"
+          />
+        </div>
+
+        <div class="bday-text-article">
+          <h3>🚢 על הסיפון – מרחב פינוק מושלם לאירוע</h3>
+          <p>
+            <strong>ספינת טייפון</strong> מחולקת למספר אזורים שתוכננו במיוחד כדי לשדרג
+            כל אירוע: מטבחון, מקרר, כיור, שירותים, חדר עם מיטה, מנוע עוצמתי וכמובן
+            הגה אמיתי של ספינה!
+          </p>
+          <ul class="bday-features-list">
+            <li>
+              <strong>אזור החרטום (קדימה):</strong> 6 מושבים נוחים במרחב מבודד ושקט.
+              המקום המושלם לצילומים דרמטיים מול הגלים ולרגעים אינטימיים בלב ים.
+            </li>
+            <li>
+              <strong>רחבת הריקודים ואזור הבילוי:</strong> שולחן ענק, מושבים נוחים
+              וגג צל על כל האזור – עם מקרר, <strong>מנגל פחמים</strong> ורחבה ענקית
+              לרקוד, לשמוח ולחגוג כמו שצריך!
+            </li>
+            <li>
+              <strong>אזור ירכתיים וצוות:</strong> הצוות המקצועי שלנו מנהל את ההשטה
+              הבטוחה כך שאתם מתפנים רק ליהנות.
+            </li>
+          </ul>
+
+          <br />
+          <h3>אוכל ושתיה – פינוק מושלם על הסיפון!</h3>
+          <p>
+            <strong>מביאים אוכל ושתיה מהבית?</strong> בכיף! ללא תוספת מחיר. הביאו
+            בשרים ופחמים ואנחנו נבשל לכם על המנגל – התפנו ליהנות מהשייט החוויתי בזמן
+            שהריח הנהדר עולה מהאש.
+          </p>
+          <p>
+            <strong>מעדיפים שנארגן הכל?</strong> תגידו מה אתם אוהבים ונדאג לתפריט
+            מפנק בהתאם לאירוע. מנות יפות, פינוקים ומשקאות – הכל מסודר עבורכם.
+          </p>
+        </div>
+
+        <div class="bday-break-img-wrapper" style="max-width: 700px;">
+          <Image
+            src={midImg}
+            alt="צוות הספינה"
+            class="bday-break-img"
+            format="webp"
+            style="aspect-ratio: 1 / 1; max-height: 700px;"
+          />
+        </div>
+
+        <div class="bday-text-article">
+          <h3>⚓ שייט חוויתי לאורך מפרץ חיפה</h3>
+          <p>
+            השייט מתבצע לאורך <strong>מפרץ חיפה</strong> הציורי – נוף עוצר נשימה לכל
+            עבר, עם עגינה מרגיעה ב<strong>מפרץ פולינום</strong>, במרחק של כ-35
+            דקות שייט מנקודת היציאה (פארק קישון). חוויה שאסור לפספס!
+          </p>
+
+          <br />
+          <h3>קפיצה לים – בונוס לאירוע!</h3>
+          <p>
+            רוצים לשדרג את האירוע? יש לנו סולם לירידה למים ומקפצה! בתנאי ים
+            מתאימים, הקבוצה יכולה להיכנס למים ולהפוך את האירוע לחוויה מושלמת
+            לחלוטין.
+          </p>
+          <ul class="bday-features-list">
+            <li>הרחצה על אחריות המתרחצים בלבד.</li>
+            <li>הירידה למים מותנית באישור הסקיפר.</li>
+            <li>הכניסה למים רק לאנשים שיודעים לשחות.</li>
+          </ul>
+
+          <br />
+          <h3>👨‍✈️ הצוות המקצועי שלנו</h3>
+          <p>
+            2–3 אנשי צוות מנוסים – מלחים שיודעים לפנק ולתת שירות מחייך, וסקיפרים
+            מורשים שמבטיחים שייט בטוח ומהנה. הצוות אינו נכלל בספירת 30 המפליגים,
+            כך שכל 30 המקומות הם שלכם!
+          </p>
+
+          <p
+            style="text-align: center; font-size: 1.4rem; color: var(--navy); margin-top: 2rem;"
+          >
+            <strong
+              >חוגגים אירוע? התקשרו להזמין עכשיו: 053-3403449 (דניאל)</strong
+            >
+          </p>
+        </div>
+
+        <div class="services-grid single-card" style="margin-top: 2rem;">
+          <a
+            href="/yacht-li-yam"
+            class="service-card"
+            style="--c:#0ea5e9; --i:0"
+          >
+            <div class="sc-img-wrap">
+              <Image
+                src={heroImage}
+                width={600}
+                height={400}
+                format="webp"
+                alt="ספינת טייפון בחיפה"
+                class="sc-img"
+                loading="lazy"
+                style="object-position: right;"
+              />
+              <div class="sc-tag" style="background:#0ea5e9; color:#fff">
+                חיפה
+              </div>
+            </div>
+            <div class="sc-body">
+              <h3>ספינת טייפון</h3>
+              <p>
+                <strong>מחירון:</strong><br />
+                שעתיים 2200 ₪<br />
+                3 שעות 2600 ₪<br />
+                עד 30 מפליגים<br />
+                <span style="font-size: 0.85em; opacity: 0.9;"
+                  >מחיר כולל גרילמן בהזמנה של 3 שעות</span
+                >
+              </p>
+              <div class="sc-arrow" style="color:#0ea5e9">
+                קבלו פרטים
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  width="15"
+                  height="15"
+                  ><polyline points="15 18 9 12 15 6"></polyline></svg
+                >
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <PremiumSwitch
+          href="/yacht-li-yam"
+          title="רוצים להזמין את ספינת הטייפון?"
+          subtitle="לחצו לעמוד היאכטות ותאמו הפלגה"
+        />
       </div>
     </section>
   </div>
+  <!-- ══ NEW GLOBAL CTA SECTION (GOLDEN FENCE) ══ -->
+  <FleetSelectionCta
+    ctaInstruction="נא להיכנס לעמוד יאכטות ולתאם את הפלגת הדייג שלכם:"
+  />
 </Layout>
 
 <style>
-  .service-page {
-    background: #f2f5fb;
-    min-height: 100vh;
-    font-family: "Rubik", sans-serif;
-  }
-  .sp-hero {
-    padding: 8rem 2rem 5rem;
-    background: linear-gradient(135deg, #08047e 0%, #0a5a8f 100%);
-    color: white;
-    text-align: center;
-  }
-  .sp-eyebrow {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #f0c040;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-  }
-  .sp-hero h1 {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    margin-bottom: 1rem;
-  }
-  .sp-hero p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.6;
-  }
-  .sp-btns {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .sp-btn {
-    padding: 0.85rem 2rem;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 1.05rem;
-    text-decoration: none;
-    transition: 0.2s;
-  }
-  .sp-btn.primary {
-    background: #d4a017;
-    color: #08047e;
-    box-shadow: 0 6px 20px rgba(212, 160, 23, 0.3);
-  }
-  .sp-btn.primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(212, 160, 23, 0.5);
-  }
-  .sp-btn.wa {
-    background: #25d366;
-    color: white;
-  }
-  .sp-btn.wa:hover {
-    background: #128c7e;
-    transform: translateY(-3px);
+  @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
+
+  .hz-page {
+    --navy: #08047e;
+    --sea: #0f7ab0;
+    --gold: #d4a017;
+    --gold-l: #f0c040;
+    --bg: #f2f5fb;
+    --white: #ffffff;
+    --text: #000000;
+    --text-m: #111111;
+    --text-l: #222222;
+    font-family: "Rubik", "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
   }
 
-  .sp-content {
-    padding: 5rem 2rem;
-    text-align: center;
+  /* ══ HERO ══ */
+  .hz-hero {
+    position: relative;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
   }
-  .sp-inner {
-    max-width: 800px;
+  .hz-hero-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    object-position: center;
+  }
+
+  .hz-hero-mobile-wrap {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .hz-hero {
+      display: none; /* Hide the full hero on mobile completely */
+    }
+
+    .hz-hero-mobile-wrap {
+      display: block;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      margin-top: -80px; /* Offset the Layout/page padding specifically just to touch the header nav */
+      margin-bottom: -30px; /* Pull the title closer to the image */
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mobile-hero-img {
+      width: 100%;
+      height: auto;
+      min-height: 250px;
+      display: block;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
+  /* ══ SHARED ══ */
+  .hz-inner {
+    max-width: 1120px;
     margin: 0 auto;
+    padding: 5rem 1.5rem;
   }
-  .sp-content h2 {
-    font-size: 2.2rem;
-    color: #1a1a2e;
-    margin-bottom: 1.5rem;
-  }
-  .sp-content p {
-    color: #3a3a5c;
-    font-size: 1.1rem;
-    line-height: 1.8;
+  .hz-section-header {
+    text-align: center;
     margin-bottom: 3rem;
   }
-  .back-link {
-    display: inline-block;
-    color: #0f7ab0;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 1px solid #0f7ab0;
-    border-radius: 8px;
-    transition: 0.2s;
+  @media (max-width: 768px) {
+    .hz-inner {
+      padding-top: 2rem;
+    }
+    .hz-section-header {
+      margin-bottom: 1.5rem;
+    }
   }
-  .back-link:hover {
-    background: #0f7ab0;
-    color: white;
+  .hz-section-header h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    color: var(--text);
+    margin: 0 0 0.8rem;
+  }
+  .hz-section-header p {
+    font-size: 1.2rem;
+    color: var(--text-l);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .hz-services {
+    background: var(--bg);
+  }
+
+  /* ══ TEXT ARTICLE ══ */
+  .bday-text-article {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 3.5rem 4rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(8, 4, 126, 0.05);
+    border: 1px solid rgba(8, 4, 126, 0.05);
+  }
+
+  .bday-text-article p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-m);
+    margin-bottom: 1.5rem;
+  }
+
+  .bday-text-article h3 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 2.5rem 0 1rem;
+    position: relative;
+    display: inline-block;
+  }
+  .bday-text-article h3::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  .bday-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .bday-features-list li {
+    font-size: 1.1rem;
+    color: var(--text-m);
+    margin-bottom: 1rem;
+    padding-right: 1.8rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .bday-features-list li::before {
+    content: "⚓";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    font-size: 1rem;
+    color: var(--sea);
+  }
+  .bday-features-list strong {
+    color: var(--navy);
+  }
+
+  .bday-cta-wrapper {
+    margin-top: 4.5rem;
+    text-align: center;
+    background: linear-gradient(to bottom, transparent, rgba(8, 4, 126, 0.02));
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    border: 1px dashed rgba(8, 4, 126, 0.1);
+  }
+  .bday-cta-wrapper h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+  }
+  .bday-cta-wrapper p {
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+  }
+  .bday-cta-wrapper .hz-btn {
+    font-size: 1.2rem;
+    padding: 1.2rem 3rem;
+  }
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+
+  /* ══ BUTTONS (from hz-page) ══ */
+  .hz-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.9rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+  }
+
+  .hz-btn.premium-btn {
+    background: linear-gradient(135deg, var(--navy), #1a15a8);
+    color: var(--white);
+    box-shadow: 0 10px 30px rgba(8, 4, 126, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 0.5px;
+  }
+  .hz-btn.premium-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(8, 4, 126, 0.45);
+    background: linear-gradient(135deg, #0a069e, #1f1abf);
+  }
+
+  .bday-content-img {
+    width: 100%;
+    max-width: 600px;
+    margin: 3.5rem auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 8px 30px rgba(8, 4, 126, 0.1);
+  }
+
+  .bday-img-placeholder {
+    width: 100%;
+    max-width: 600px;
+    margin: 3.5rem auto;
+    aspect-ratio: 3 / 2;
+    background: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .bday-break-img-wrapper {
+    max-width: 1000px;
+    margin: 4rem auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(8, 4, 126, 0.15);
+  }
+
+  .bday-break-img {
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 16 / 9;
+  }
+
+  @media (max-width: 768px) {
+    .bday-text-article {
+      padding: 2.5rem 1.5rem;
+    }
+    .bday-img-placeholder,
+    .bday-content-img {
+      margin: 2rem auto;
+    }
+    .bday-break-img-wrapper {
+      margin: 2.5rem -1.5rem;
+      border-radius: 0;
+    }
+    .bday-break-img {
+      aspect-ratio: 4 / 3;
+      max-height: 400px;
+    }
+  }
+
+  /* ════════════ SERVICES CARDS ════════════ */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+  .services-grid.single-card {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (max-width: 600px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .service-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+    border-radius: 20px;
+    padding: 0;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: 0 4px 20px rgba(8, 4, 126, 0.07);
+    border: 1px solid rgba(8, 4, 126, 0.05);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    animation: fadeUp 0.5s ease both;
+    animation-delay: calc(var(--i) * 0.08s);
+    display: flex;
+    flex-direction: column;
+  }
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(8, 4, 126, 0.16);
+  }
+
+  .sc-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    flex-shrink: 0;
+  }
+  .sc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .service-card:hover .sc-img {
+    transform: scale(1.06);
+  }
+
+  .sc-tag {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 0.28rem 0.7rem;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  .sc-body {
+    padding: 1.2rem 1.4rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    flex: 1;
+  }
+
+  .sc-icon {
+    font-size: 2rem;
+    transition: transform 0.3s;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .service-card:hover .sc-icon {
+    transform: scale(1.15) rotate(-5deg);
+  }
+
+  .sc-body h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+  }
+  .sc-body p {
+    font-size: 0.875rem;
+    color: #000000 !important;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+
+  .sc-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin-top: auto;
+    transition: gap 0.2s;
+  }
+  .service-card:hover .sc-arrow {
+    gap: 0.55rem;
   }
 </style>

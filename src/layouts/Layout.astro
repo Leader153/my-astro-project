@@ -3,133 +3,128 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import AccessibilityWidget from "../components/AccessibilityWidget.astro";
 import "../styles/global.css";
-import CookieBanner  from "../components/CookieBanner.astro";
-
+import CookieBanner from "../components/CookieBanner.astro";
 
 interface Props {
-	title: string;
-	description?: string;
-	ogImage?: string; // URL картинки для соцсетей (необязательно)
-	ogType?: string; // 'website' | 'article' — по умолчанию 'website'
+  title: string;
+  description?: string;
+  ogImage?: string; // URL картинки для соцсетей (необязательно)
+  ogType?: string; // 'website' | 'article' — по умолчанию 'website'
 }
 
 const {
-	title,
-	description = "הפלגות יאכטה פרטיות בחיפה ובהרצליה — שייט רומנטי, מסיבות, ימי גיבוש ואירועי חברה. 10+ שנות ניסיון, סקיפרים מוסמכים.",
-	ogImage = "/og-image.jpg",
-	ogType = "website",
+  title,
+  description = "הפלגות יאכטה פרטיות בחיפה ובהרצליה — שייט רומנטי, מסיבות, ימי גיבוש ואירועי חברה. 10+ שנות ניסיון, סקיפרים מוסמכים.",
+  ogImage = "/og-image.jpg",
+  ogType = "website",
 } = Astro.props;
 
-const siteUrl = "https://derechalhaosher.netlify.app";
+const siteUrl = "https://aflagot-haifa.com";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const ogImageAbsolute = ogImage.startsWith("http")
-	? ogImage
-	: `${siteUrl}${ogImage}`;
+  ? ogImage
+  : `${siteUrl}${ogImage}`;
 
 // Schema.org — LocalBusiness (общий для всего сайта)
 const schemaOrg = {
-	"@context": "https://schema.org",
-	"@type": "LocalBusiness",
-	name: "Leader הפלגות",
-	description:
-		"הפלגות יאכטה פרטיות בחיפה ובהרצליה — שייט רומנטי, מסיבות, ימי גיבוש ואירועי חברה.",
-	url: siteUrl,
-	telephone: "+972-53-340-3449",
-	image: ogImageAbsolute,
-	priceRange: "₪₪",
-	address: [
-		{
-			"@type": "PostalAddress",
-			streetAddress: "רחוב הדייגים 3",
-			addressLocality: "חיפה",
-			addressCountry: "IL",
-		},
-	],
-	geo: {
-		"@type": "GeoCoordinates",
-		latitude: 32.8156,
-		longitude: 35.0063,
-	},
-	openingHoursSpecification: {
-		"@type": "OpeningHoursSpecification",
-		dayOfWeek: [
-			"Sunday",
-			"Monday",
-			"Tuesday",
-			"Wednesday",
-			"Thursday",
-			"Friday",
-			"Saturday",
-		],
-		opens: "08:00",
-		closes: "22:00",
-	},
-	sameAs: ["https://wa.me/972533403449"],
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Leader הפלגות",
+  description:
+    "הפלגות יאכטה פרטיות בחיפה ובהרצליה — שייט רומנטי, מסיבות, ימי גיבוש ואירועי חברה.",
+  url: siteUrl,
+  telephone: "+972-53-340-3449",
+  image: ogImageAbsolute,
+  priceRange: "₪₪",
+  address: [
+    {
+      "@type": "PostalAddress",
+      streetAddress: "רחוב הדייגים 3",
+      addressLocality: "חיפה",
+      addressCountry: "IL",
+    },
+  ],
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 32.8156,
+    longitude: 35.0063,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ],
+    opens: "08:00",
+    closes: "22:00",
+  },
+  sameAs: ["https://wa.me/972533403449"],
 };
 ---
 
 <!doctype html>
 <html lang="he" dir="rtl">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
 
-		<!-- SEO Base -->
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<link rel="canonical" href={canonicalUrl} />
+    <!-- SEO Base -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
 
-		<!-- Open Graph -->
-		<meta property="og:type" content={ogType} />
-		<meta property="og:url" content={canonicalUrl} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:image" content={ogImageAbsolute} />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:locale" content="he_IL" />
-		<meta property="og:site_name" content="Leader הפלגות" />
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageAbsolute} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:site_name" content="Leader הפלגות" />
 
-		<!-- Twitter Card -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={ogImageAbsolute} />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbsolute} />
 
-		<!-- Schema.org JSON-LD -->
-		<script
-			type="application/ld+json"
-			set:html={JSON.stringify(schemaOrg)}
-		/>
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 
-		<!-- Google Analytics & Ads via Partytown -->
-		<script
-			type="text/partytown"
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-		></script>
-		<script type="text/partytown">
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
+    <!-- Google Analytics & Ads via Partytown -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-			gtag("config", "G-XXXXXXXXXX"); // Google Analytics
-			gtag("config", "AW-XXXXXXXXXX"); // Google Ads
-		</script>
-	</head>
-	<body>
-		<Navigation />
-		<main class="page-content">
-			<slot />
-		</main>
-		<Footer />
-		<AccessibilityWidget />
-		<CookieBanner />
-	</body>
+      gtag("config", "G-XXXXXXXXXX"); // Google Analytics
+      gtag("config", "AW-XXXXXXXXXX"); // Google Ads
+    </script>
+  </head>
+  <body>
+    <Navigation />
+    <main class="page-content">
+      <slot />
+    </main>
+    <Footer />
+    <AccessibilityWidget />
+    <CookieBanner />
+  </body>
 </html>

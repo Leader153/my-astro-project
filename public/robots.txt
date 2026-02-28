@@ -1,7 +1,7 @@
 User-agent: *
 Disallow: /
 
-# Sitemap: https://derechalhaosher.netlify.app/sitemap-index.xml
+Sitemap: https://aflagot-haifa.com/sitemap-index.xml
 
 
 # Строку Sitemap закомментировал (#) —
