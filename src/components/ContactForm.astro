@@ -1,0 +1,220 @@
+---
+// ContactForm.astro
+---
+mport "../styles/contact-page.css";
+---
+
+<div class="contact-page" dir="rtl">
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <div class="page-hero">
+      <div class="hero-waves">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">📞 זמינים 24/7</div>
+        <h1>צור קשר</h1>
+        <p class="hero-sub">
+          שריינו היום הפלגה יוקרתית על יאכטה פרטית — שירות VIP מובטח. התקשרו
+          והזמינו עכשיו!
+        </p>
+        <div class="hero-cta-row">
+          <a href="tel:0533403449" class="hero-btn primary">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="18"
+              height="18"
+              ><path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+              ></path></svg
+            >
+            053-340-3449
+          </a>
+          <a
+            href="https://wa.me/972533403449"
+            target="_blank"
+            rel="noopener"
+            class="hero-btn whatsapp"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="18"
+              height="18"
+              ><path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+              ></path></svg
+            >
+            ווטסאפ
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <!-- ═══════════════ TOP ROW: CONTACT INFO + FORM ═══════════════ -->
+      <div class="top-grid">
+        <!-- Contact Info Panel -->
+        <div class="info-panel">
+          <h2 class="panel-title">פרטי התקשרות</h2>
+
+          <div class="info-items">
+            <div class="info-item">
+              <div class="info-icon phone-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="22"
+                  height="22"
+                  ><path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                  ></path></svg
+                >
+              </div>
+              <div>
+                <div class="info-label">מספר טלפון</div>
+                <a href="tel:0533403449" class="info-value link">053-340-3449</a
+                >
+                <div class="info-sub">להזמנות, בירורים ושאלות</div>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon email-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="22"
+                  height="22"
+                  ><path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path><polyline points="22,6 12,13 2,6"></polyline></svg
+                >
+              </div>
+              <div>
+                <div class="info-label">אימייל</div>
+                <a
+                  href="mailto:danielflider78@gmail.com"
+                  class="info-value link">danielflider78@gmail.com</a
+                >
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon clock-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="22"
+                  height="22"
+                  ><circle cx="12" cy="12" r="10"></circle><polyline
+                    points="12 6 12 12 16 14"></polyline></svg
+                >
+              </div>
+              <div>
+                <div class="info-label">שעות פעילות</div>
+                <div class="info-value">עובדים כל ימי השבוע</div>
+                <div class="info-badge-green">24/7 זמינים</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div class="social-section">
+            <div class="social-label">עוקבים אחרינו</div>
+            <div class="social-row">
+              <a
+                href="https://www.facebook.com/leadership.haifa"
+                target="_blank"
+                rel="noopener"
+                class="social-btn fb"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="18"
+                  height="18"
+                  ><path
+                    d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                  ></path></svg
+                >
+                Facebook
+              </a>
+              <a
+                href="https://www.instagram.com/aflagot.haifa"
+                target="_blank"
+                rel="noopener"
+                class="social-btn ig"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  width="18"
+                  height="18"
+                  ><rect x="2" y="2" width="20" height="20" rx="5" ry="5"
+                  ></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"
+                  ></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"
+                  ></line></svg
+                >
+                Instagram
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw"
+                target="_blank"
+                rel="noopener"
+                class="social-btn yt"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="18"
+                  height="18"
+                  ><path
+                    d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"
+                  ></path></svg
+                >
+                YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const success = document.getElementById("form-success");
+  const btn = document.getElementById("submit-btn");
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (btn) {
+      btn.textContent = "⏳ שולח...";
+      (btn as HTMLButtonElement).disabled = true;
+    }
+    setTimeout(() => {
+      if (success) success.classList.add("visible");
+      form.reset();
+      if (btn) {
+        btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg> נשלח!`;
+        (btn as HTMLButtonElement).disabled = false;
+      }
+    }, 1200);
+  });
+</script>

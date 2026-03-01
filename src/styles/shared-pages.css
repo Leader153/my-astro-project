@@ -1,0 +1,95 @@
+
+/* ════════════════ SHARED PAGES BLOCKS ════════════════ */
+.page-hero {
+  position: relative;
+  background: linear-gradient(135deg, #05036a 0%, #08047e 45%, #0f7ab0 100%);
+  padding: 5rem 2rem 5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: #f2f5fb;
+  clip-path: ellipse(55% 64px at 50% 64px);
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: white;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.3);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 3.5rem 1.25rem 4rem;
+  }
+  .content-wrapper {
+    padding: 2rem 1rem 4rem;
+    gap: 1.5rem;
+  }
+}
+
+/* CTA BUTTONS */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 700;
+  font-size: 0.97rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.cta-btn.primary {
+  background: #ffffff;
+  color: #08047e;
+}
+.cta-btn.primary:hover {
+  background: #f0c040;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.cta-btn.whatsapp, .cta-btn.wa {
+  background: #25d366;
+  color: white;
+}
+.cta-btn.whatsapp:hover, .cta-btn.wa:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+}
+.cta-btn.email {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+.cta-btn.email:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
