@@ -1,26 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import cardImg from "../assets/group-men-sitting-on-yacht-deck-herzliya.webp";
-import mobileImg from "../assets/group-men-sitting-on-yacht-deck-herzliya.webp";
-import img1 from "../assets/ספינת-טייפון-מושבים.png";
-import midImg from "../assets/צוות-טייפון.webp";
-import botImg from "../assets/family-fishing-trip-sailing-yacht-haifa.jpeg";
+import mobileImg from "../assets/dolfin-catamara-herzelia.jpg";
+import img1 from "../assets/Dolfin.jpeg";
+import midImg from "../assets/catamaran21.jpg";
+import heroImage from "../assets/Dolfin.jpeg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
-import heroImage from "../assets/typhoon-ship.jpg";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
 ---
 
 <Layout
-  title="ספינת טייפון: יאכטה לאירועים בחיפה עד 30 מפליגים"
-  description="חוגגים אירוע? ⚓ ספינת טייפון בחיפה מושלמת למסיבות וימי הולדת עד 30 איש! שייט חוויתי 🐬, רחבת ריקודים, מנגל ופינוק מושלם 🥂."
+  title="יאכטה קטמרן דולפין | עד 21 מפליגים"
+  description="יאכטה קטמרן דולפין עד 21 מפליגים. מתאימה לשייט משפחות, חברים, מסיבות. יאכטה מרווחת עם ספסלים מרופדים."
 >
   <div class="hz-page" dir="rtl">
     <!-- ══ HERO ══ -->
     <section class="hz-hero">
       <Image
-        src={heroImage}
-        alt="ספינת טייפון בחיפה"
+        src={midImg}
+        alt="יאכטה קטמרן דולפין"
         width={1920}
         format="webp"
         quality={90}
@@ -36,88 +34,68 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         widths={[400, 768]}
         sizes="100vw"
         format="webp"
-        alt="ספינת טייפון בחיפה"
+        alt="יאכטה קטמרן דולפין"
         class="mobile-hero-img"
         loading="eager"
         fetchpriority="high"
-        style="object-position: right;"
+        style="object-position: center top;"
       />
     </div>
     <!-- CONTENT -->
     <section class="hz-services">
       <div class="hz-inner tz-content-box">
         <div class="hz-section-header">
-          <h2>⚓ ספינת טייפון – יאכטה לאירועים בחיפה עד 30 מפליגים</h2>
+          <h2>⚓ יאכטה קטמרן- דולפין - dolphin</h2>
           <p>
-            מסיבות, ימי הולדת, ימי גיבוש ואירועים פרטיים<br />
-            שייט חוויתי 🐬 עם רחבת ריקודים, מנגל ופינוק מושלם 🥂
+            יאכטה קטמרן עד 21 מפליגים (לא כולל צוות)<br />
+            מתאימה לשייט משפחות, חברים, מסיבות ...
           </p>
         </div>
 
         <div class="bday-text-article">
-          <h3>🎉 חוגגים אירוע? הטייפון הוא הבמה שלכם!</h3>
+          <h3>יאכטה מרווחת ונוחה לאירוע שלכם</h3>
           <p>
-            מחפשים אירוע שאף אחד לא ישכח? <strong>ספינת טייפון בחיפה</strong> היא
-            הבחירה המושלמת לכל מי שרוצה לחגוג בסטייל בלב ים. יום הולדת, מסיבת רווקות,
-            יום גיבוש קבוצתי או כל אירוע פרטי – אצלנו כל רגע הופך לחוויה שתישאר בזיכרון
-            לתמיד.
+            היאכטה היא קטמרן מרווחת באורך 12 מטר, יציבה ונוחה עם ספסלי ישיבה
+            מרופדים ויפים, ושולחן ענק מגודר מסביב.
           </p>
           <p>
-            <strong>ספינת טייפון</strong> מכילה <strong>עד 30 מפליגים</strong> ומציעה
-            שייט חוויתי לאורך מפרץ חיפה. רחבת ריקודים, מנגל פחמים, מוזיקה, ים – כל
-            מה שצריך לאירוע מושלם כבר על הסיפון. פנקו את האורחים שלכם כמו שמגיע להם!
+            על הסיפון תמצאו אווירה מקושטת וחגיגית הכוללת <strong
+              >שלט מזל טוב גדול, לוכדי חלומות לבנים, וכריות נוחות</strong
+            > המבטיחים פינוק מושלם לאורך כל ההפלגה.
           </p>
         </div>
 
         <div class="bday-break-img-wrapper">
           <Image
             src={img1}
-            alt="מסיבה על ספינת טייפון בחיפה"
+            alt="מסיבה על הקטמרן"
             class="bday-break-img"
             format="webp"
           />
         </div>
 
         <div class="bday-text-article">
-          <h3>🚢 על הסיפון – מרחב פינוק מושלם לאירוע</h3>
-          <p>
-            <strong>ספינת טייפון</strong> מחולקת למספר אזורים שתוכננו במיוחד כדי לשדרג
-            כל אירוע: מטבחון, מקרר, כיור, שירותים, חדר עם מיטה, מנוע עוצמתי וכמובן
-            הגה אמיתי של ספינה!
-          </p>
+          <h3>🎉 אבזור, מערכות ואטרקציות במים</h3>
           <ul class="bday-features-list">
             <li>
-              <strong>אזור החרטום (קדימה):</strong> 6 מושבים נוחים במרחב מבודד ושקט.
-              המקום המושלם לצילומים דרמטיים מול הגלים ולרגעים אינטימיים בלב ים.
+              <strong>מוזיקה ואווירה:</strong> מערכת הגברה איכותית עם חיבור בלוטוס,
+              ומיקרופונים שתוכלו לשיר ולחגוג.
             </li>
             <li>
-              <strong>רחבת הריקודים ואזור הבילוי:</strong> שולחן ענק, מושבים נוחים
-              וגג צל על כל האזור – עם מקרר, <strong>מנגל פחמים</strong> ורחבה ענקית
-              לרקוד, לשמוח ולחגוג כמו שצריך!
+              <strong>קפיצה למים:</strong> מזרן ים גדול, סאפ, חגורות ציפה וגלגלי הצלה
+              עומדים לרשותכם.
             </li>
             <li>
-              <strong>אזור ירכתיים וצוות:</strong> הצוות המקצועי שלנו מנהל את ההשטה
-              הבטוחה כך שאתם מתפנים רק ליהנות.
+              <strong>נוחות וציוד:</strong> היאכטה כוללת שירותים לנוחות המפליגים וביאכטה
+              יש צידניות לשמירת השתייה והאוכל שלכם.
             </li>
           </ul>
-
-          <br />
-          <h3>אוכל ושתיה – פינוק מושלם על הסיפון!</h3>
-          <p>
-            <strong>מביאים אוכל ושתיה מהבית?</strong> בכיף! ללא תוספת מחיר. הביאו
-            בשרים ופחמים ואנחנו נבשל לכם על המנגל – התפנו ליהנות מהשייט החוויתי בזמן
-            שהריח הנהדר עולה מהאש.
-          </p>
-          <p>
-            <strong>מעדיפים שנארגן הכל?</strong> תגידו מה אתם אוהבים ונדאג לתפריט
-            מפנק בהתאם לאירוע. מנות יפות, פינוקים ומשקאות – הכל מסודר עבורכם.
-          </p>
         </div>
 
         <div class="bday-break-img-wrapper" style="max-width: 700px;">
           <Image
             src={midImg}
-            alt="צוות הספינה"
+            alt="צוות הקטמרן דולפין"
             class="bday-break-img"
             format="webp"
             style="aspect-ratio: 1 / 1; max-height: 700px;"
@@ -125,33 +103,20 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         </div>
 
         <div class="bday-text-article">
-          <h3>⚓ שייט חוויתי לאורך מפרץ חיפה</h3>
+          <h3>👨‍✈️ צוות מקצועי לשירותכם</h3>
           <p>
-            השייט מתבצע לאורך <strong>מפרץ חיפה</strong> הציורי – נוף עוצר נשימה לכל
-            עבר, עם עגינה מרגיעה ב<strong>מפרץ פולינום</strong>, במרחק של כ-35
-            דקות שייט מנקודת היציאה (פארק קישון). חוויה שאסור לפספס!
+            שלושה אנשי צוות מסורים המלווים אתכם ונותנים שירות אישי במהלך השייט.
+            אנו נדאג שתרגישו הכי בנוח שאפשר.
           </p>
 
           <br />
-          <h3>קפיצה לים – בונוס לאירוע!</h3>
-          <p>
-            רוצים לשדרג את האירוע? יש לנו סולם לירידה למים ומקפצה! בתנאי ים
-            מתאימים, הקבוצה יכולה להיכנס למים ולהפוך את האירוע לחוויה מושלמת
-            לחלוטין.
-          </p>
+          <h3>מחירון שייט עם סקיפר – מחיר תקף לסוף שבוע</h3>
           <ul class="bday-features-list">
-            <li>הרחצה על אחריות המתרחצים בלבד.</li>
-            <li>הירידה למים מותנית באישור הסקיפר.</li>
-            <li>הכניסה למים רק לאנשים שיודעים לשחות.</li>
+            <li>⭐ <strong>מחיר 1850 ₪</strong> עבור 1 שעה הפלגה</li>
+            <li>💲 <strong>מחיר 2650 ₪</strong> עבור 2 שעתיים הפלגה</li>
+            <li>⚓ <strong>מחיר 3300 ₪</strong> עבור 3 שעות הפלגה</li>
           </ul>
-
-          <br />
-          <h3>👨‍✈️ הצוות המקצועי שלנו</h3>
-          <p>
-            2–3 אנשי צוות מנוסים – מלחים שיודעים לפנק ולתת שירות מחייך, וסקיפרים
-            מורשים שמבטיחים שייט בטוח ומהנה. הצוות אינו נכלל בספירת 30 המפליגים,
-            כך שכל 30 המקומות הם שלכם!
-          </p>
+          <p><strong> עד 21 מפליגים מאושרים!</strong></p>
 
           <p
             style="text-align: center; font-size: 1.4rem; color: var(--navy); margin-top: 2rem;"
@@ -174,24 +139,25 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
                 width={600}
                 height={400}
                 format="webp"
-                alt="ספינת טייפון בחיפה"
+                alt="יאכטה קטמרן דולפין"
                 class="sc-img"
                 loading="lazy"
                 style="object-position: right;"
               />
               <div class="sc-tag" style="background:#0ea5e9; color:#fff">
-                חיפה
+                הפלגת קטמרן
               </div>
             </div>
             <div class="sc-body">
-              <h3>ספינת טייפון</h3>
+              <h3>יאכטה קטמרן דולפין</h3>
               <p>
                 <strong>מחירון:</strong><br />
-                שעתיים 2200 ₪<br />
-                3 שעות 2600 ₪<br />
-                עד 30 מפליגים<br />
+                שעה 1850 ₪<br />
+                שעתיים 2650 ₪<br />
+                3 שעות 3300 ₪<br />
+                עד 21 מפליגים<br />
                 <span style="font-size: 0.85em; opacity: 0.9;"
-                  >מחיר כולל גרילמן בהזמנה של 3 שעות</span
+                  >מחיר תקף לסוף שבוע</span
                 >
               </p>
               <div class="sc-arrow" style="color:#0ea5e9">
@@ -213,7 +179,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
 
         <PremiumSwitch
           href="/yacht-li-yam"
-          title="רוצים להזמין את ספינת הטייפון?"
+          title="רוצים להזמין את יאכטת הקטמרן?"
           subtitle="לחצו לעמוד היאכטות ותאמו הפלגה"
         />
       </div>
@@ -221,7 +187,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
   </div>
   <!-- ══ NEW GLOBAL CTA SECTION (GOLDEN FENCE) ══ -->
   <FleetSelectionCta
-    ctaInstruction="נא להיכנס לעמוד יאכטות ולתאם את הפלגת הדייג שלכם:"
+    ctaInstruction="נא להיכנס לעמוד יאכטות ולתאם את ההפלגה שלכם:"
   />
 </Layout>
 
@@ -283,7 +249,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
 
     .mobile-hero-img {
       width: 100%;
-      height: auto;
+      height: 300px;
       min-height: 250px;
       display: block;
       object-fit: cover;
