@@ -1,41 +1,129 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Heroimg from "../assets/Joy-Be-Yacht.jpeg";
+import img1 from "../assets/Joy-right-side.jpeg";
+import FleetSelectionCta from "../components/FleetSelectionCta.astro";
+import PremiumSwitch from "../components/PremiumSwitch.astro";
 ---
 
 <Layout
-  title="יאכטה לואיז עד שישה מפליגים הרצליה | Leader הפלגות"
-  description="יאכטה לואיז הקטנה והמהממת, מתאימה לשייט זוגי או לקבוצה קטנה של עד 6 אנשים בהרצליה."
+  title="יאכטה לואיז עד 6 מפליגים הרצליה | Leader הפלגות"
+  description="יאכטה מפרשית לואיז (Louise) – יאכטה מתוקה ואינטימית, מושלמת להפלגות זוגיות ולקבוצות קטנות בהרצליה לעד 6 איש."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
-      <div class="sp-inner text-center">
-        <div class="sp-eyebrow">יאכטות בהרצליה</div>
-        <h1>יאכטה לואיז</h1>
-        <p>
-          מושלמת להפלגות זוגיות והצעות נישואין! עד 6 מפליגים בפרטיות מירבית למול
-          השקיעה או השמש היוקדת.
-        </p>
-        <div class="sp-btns">
-          <a href="/contact" class="sp-btn primary">הזמינו עכשיו</a>
-          <a href="https://wa.me/972533403449" class="sp-btn wa">WhatsApp</a>
-        </div>
-      </div>
+      <Image
+        src={Heroimg}
+        alt="יאכטה לואיז בהרצליה"
+        format="webp"
+        quality={90}
+        loading="eager"
+        fetchpriority="high"
+        class="sp-hero-bg desktop-hero"
+      />
+      <Image
+        src={Heroimg}
+        alt="יאכטה לואיז בהרצליה"
+        widths={[400, 768]}
+        sizes="100vw"
+        format="webp"
+        quality={90}
+        loading="eager"
+        fetchpriority="high"
+        class="sp-hero-bg mobile-hero"
+        style="object-position: 50% 50%;"
+      />
     </section>
 
     <section class="sp-content">
       <div class="sp-inner">
-        <h2>בוטיק ורומנטיקה נטו</h2>
+        <h1>⚓ יאכטה מפרשית לואיז – LOUISE</h1>
+        <p>יאכטה מתוקה ואינטימית, מושלמת להפלגות זוגיות ולקבוצות קטנות.</p>
+
+        <h3>✨ בחירה קלאסית לפעילות בים</h3>
         <p>
-          יאכטת לואיז נוצרה במיוחד בשביל אותם רגעים שאתם רוצים שקט ובוטיק. היא
-          יכולה לקחת עד 6 מפליגים אבל לרוב מזמינים אותה באופן מיוחד זוגות
-          רומנטיים להצעות נישואין, מסיבות רווקות קטנטנות, ושייט שליו להפגת
-          מתחים. לואיז מפנקת, מסוגננת ויש עליה את כל הנוחות שתרצו עם שירות צמוד
-          ויחס איש על הים התיכון של חופי הרצליה.
+          יאכטה מפרשית שנבנתה על ידי יצרנית היאכטות הצרפתית <strong
+            >Beneteau</strong
+          >, הדגם הוא <strong>Oceanis 331</strong>. אורך היאכטה 33.1 פיט (כ-10.5
+          מטר).
         </p>
-        <a href="/yachts-herzliya" class="back-link"
-          >← חזרה לצי היאכטות בהרצליה</a
-        >
+        <p>
+          כמות האנשים המותרת להפלגה היא עד 11 מפליגים מלבד הסקיפר, אך אנחנו
+          ממליצים לעלות עליה עד כ-8 אנשים. בתוך היאכטה יש שני חדרי שינה,
+          שירותים, מקלחת עם מים חמים, מטבח מאובזר וסלון.
+        </p>
+
+        <Image
+          src={img1}
+          alt="יאכטה לואיז מהצד"
+          class="sp-gallery-img is-square"
+          format="webp"
+        />
+
+        <p class="sp-closing">
+          רוצים להפליג? יאכטה לואיז מחכה לכם!<br />
+          התקשרו להזמין עכשיו: 053-3403449
+        </p>
       </div>
+
+      <div class="services-grid">
+        <a
+          href="https://wa.me/972533403449"
+          class="service-card"
+          style="--c:#d4a017; --i:0"
+          target="_blank"
+        >
+          <div class="sc-img-wrap">
+            <Image
+              src={Heroimg}
+              width={600}
+              height={400}
+              format="webp"
+              alt="יאכטה לואיז"
+              class="sc-img"
+              loading="lazy"
+              style="object-position: center;"
+            />
+            <div class="sc-tag" style="background:#d4a017; color:#fff">
+              הרצליה
+            </div>
+          </div>
+          <div class="sc-body">
+            <div class="sc-icon">⛵</div>
+            <h3>מחירון יאכטה לואיז</h3>
+            <p>
+              <strong>לשייט חופי בארץ:</strong><br />
+              1 שעה הפלגה: 1050 ₪<br />
+              שעתיים הפלגה: 1530 ₪<br />
+              3 שעות הפלגה: 1850 ₪<br />
+              👑 עד 11 מפליגים מאושרים<br />
+              <span style="font-size: 0.85em; opacity: 0.9;"
+                >* המחיר תקף לסוף שבוע (עם סקיפר)</span
+              >
+            </p>
+            <div class="sc-arrow" style="color:#d4a017">
+              להזמנה בוואטסאפ
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                width="15"
+                height="15"><polyline points="15 18 9 12 15 6"></polyline></svg
+              >
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <PremiumSwitch
+        href="/yachts-herzliya"
+        title="בחזרה ליאכטות הרצליה"
+        subtitle="לצפייה בצי שלנו ולבחירת היאכטה המושלמת"
+      />
     </section>
   </div>
+  <FleetSelectionCta ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות:" />
 </Layout>

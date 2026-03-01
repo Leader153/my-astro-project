@@ -11,6 +11,8 @@ import marunaImg from "../assets/maruna-herzelia.webp";
 import skiperImg from "../assets/skipper-for-a-day-learning-to-steer-yacht.jpeg";
 import catamaranimg from "../assets/Dolfin.jpeg";
 import leaderYacht from "../assets/leaderYacht.jpeg";
+import JoiBeImg from "../assets/Joy-Be-Yacht.jpeg";
+import LeacatImg from "../assets/birthday-celebration-yacht-cake-herzliya.webp";
 import "../styles/catalog-page.css";
 
 const services = [
@@ -83,6 +85,26 @@ const services = [
     alt: "לינת צימר על יאכטה פרטית בלילה מול מרינה הרצליה",
     href: "/sea-cabin",
     img: zimmerCardImg,
+  },
+  {
+    icon: "⛵",
+    title: "הצעת נישואין על יאכטה",
+    desc: "הפקה מושלמת להצעת נישואין מרגשת בלב ים. כולל עיצוב רומנטי, שטיח אדום, וצילום מקצועי",
+    tag: "מרגש",
+    color: "#e11d48",
+    alt: "הצעת נישואין מרגשת על יאכטה במרינה הרצליה",
+    href: "/yacht-joy-b",
+    img: JoiBeImg,
+  },
+  {
+    icon: "⛵",
+    title: "מסיבת יום הולדת",
+    desc: "חגיגת יום הולדת מטורפת על יאכטה עם כל החברים, מוזיקה מעולה, בלונים ושתייה עם אווירה מחשמלת",
+    tag: "מסיבה",
+    color: "#f59e0b",
+    alt: "חגיגת יום הולדת על יאכטה במרינה הרצליה",
+    href: "/birthday",
+    img: LeacatImg,
   },
 ];
 
@@ -241,7 +263,7 @@ const textSections = [
 
         <div class="hz-grid">
           {
-            services.slice(3).map((s, i) => (
+            services.slice(3, 6).map((s, i) => (
               <a
                 href={s.href}
                 class="hz-card"
@@ -293,6 +315,53 @@ const textSections = [
             להיכנס. כך שמצד אחד אתם בלב העניינים ומצד שני תקבלו פרטיות יוקרתית. כל
             אירוח אצלנו כולל בקבוק שמפניה גדול, מוזיקה מגוונת ואווירה ייחודית.
           </p>
+        </div>
+
+        <div class="hz-grid">
+          {
+            services.slice(6).map((s, i) => (
+              <a
+                href={s.href}
+                class="hz-card"
+                style={`--c:${s.color}; --i:${i + 6}`}
+              >
+                <div class="hz-card-img">
+                  <Image
+                    src={s.img}
+                    width={600}
+                    height={400}
+                    format="webp"
+                    alt={s.alt}
+                    class="hz-img"
+                    loading="lazy"
+                  />
+                  <div class="hz-badge" style={`background:${s.color}`}>
+                    {s.tag}
+                  </div>
+                </div>
+                <div class="hz-card-body">
+                  <div class="hz-card-icon">{s.icon}</div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                  <span class="hz-card-cta" style={`color:${s.color}`}>
+                    לפרטים
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      width="14"
+                      height="14"
+                    >
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </span>
+                </div>
+                <div class="hz-glow" style={`background:${s.color}`} />
+              </a>
+            ))
+          }
         </div>
 
         <div class="hz-mid-text" style="margin-top: 3rem;">
