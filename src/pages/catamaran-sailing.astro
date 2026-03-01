@@ -1,5 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Heroimg from "../assets/Joy-Be-Yacht.jpeg";
+import img1 from "../assets/Joy-right-side.jpeg";
+import midImg from "../assets/JoyBeDeck.jpg";
+import botImg from "../assets/kokpit.jpg";
+import FleetSelectionCta from "../components/FleetSelectionCta.astro";
+import PremiumSwitch from "../components/PremiumSwitch.astro";
 ---
 
 <Layout
@@ -8,23 +15,38 @@ import Layout from "../layouts/Layout.astro";
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
-      <div class="sp-inner text-center">
-        <div class="sp-eyebrow">שייט בחיפה</div>
-        <h1>יאכטה קטמרן מפרשית מפוארת</h1>
-        <p>
-          חוויית הפלגה שקטה וחלקה על קטמרן מפרשית יציבה המציעה מקסימום רווח
-          ויוקרה אמיתית בים.
-        </p>
-        <div class="sp-btns">
-          <a href="/contact" class="sp-btn primary">הזמינו עכשיו</a>
-          <a href="https://wa.me/972533403449" class="sp-btn wa">WhatsApp</a>
-        </div>
-      </div>
+      <Image
+        src={Heroimg}
+        alt="יאכטה קטמרן מפוארת"
+        format="webp"
+        quality={90}
+        loading="eager"
+        fetchpriority="high"
+        class="sp-hero-bg desktop-hero"
+      />
+      <Image
+        src={Heroimg}
+        alt="יאכטה קטמרן מפוארת"
+        widths={[400, 768]}
+        sizes="100vw"
+        format="webp"
+        quality={90}
+        loading="eager"
+        fetchpriority="high"
+        class="sp-hero-bg mobile-hero"
+        style="object-position: 50% 50%;"
+      />
     </section>
 
     <section class="sp-content">
       <div class="sp-inner">
-        <h2>שקט של מפרש ויוקרה של קטמרן</h2>
+        <h1>יאכטה קטמרן מפרשית מפוארת מדגם Lagoon 40</h1>
+        <p>
+          חוויית הפלגה שקטה וחלקה על קטמרן מפרשית יציבה המציעה מקסימום רווח
+          ויוקרה אמיתית בים.
+        </p>
+
+        <h3>✨ שקט של מפרש ויוקרה של קטמרן</h3>
         <p>
           ליאכטות קטמרן מסוג מפרשית יש קסם מיוחד - הן מרחפות על המים ביציבות
           חסרת פשרות בשל שני הבידונים הענקיים שלהן. כשהמפרש עולה והמנועים
@@ -32,8 +54,114 @@ import Layout from "../layouts/Layout.astro";
           בכל מה שצריך להפלגת שיא עם החברים או המשפחה, ואזורי שיזוף קדמיים
           מרגשים שישאירו טעם של עוד.
         </p>
-        <a href="/haifa" class="back-link">← חזרה לכל ההפלגות בחיפה</a>
+        <p>
+          יאכטה קטמרן מפרשית בעלת שני בידונים של חברת Lagoon הצרפתית<br />
+          <strong>שנת יצור:</strong> 2020<br />
+          <strong>אורך קטמרן:</strong> 12 מטר<br />
+          הדגם כולל 4 קבינות שינה ו- 4 שירותים ומקלחות.
+        </p>
+
+        <Image
+          src={img1}
+          alt="יאכטה קטמרן מבחוץ"
+          class="sp-gallery-img is-square"
+          format="webp"
+        />
+
+        <h3>💎 אידיאלית למשפחות וחגיגות</h3>
+        <p>
+          ספינה נוחה ומפנקת ומותאמת במיוחד להפלגות משפחתיות והפלגות חברים.
+          מושלמת לאירועים וחגיגות.
+        </p>
+        <p>
+          הרשת הקדמית והסיפון האחורי מרווחים ונוחים ומעניקים מרחב אידיאלי
+          להתרווחות תחת קרני השמש, ואידיאלית לקבוצות של עד 14 מפליגים.
+        </p>
+
+        <Image
+          src={midImg}
+          alt="סיפון אלגנטי ויציב"
+          class="sp-gallery-img is-square"
+          format="webp"
+        />
+
+        <h3>⭐ חוויה של פעם בחיים</h3>
+        <p>
+          השילוב של סיפון ענק, יציבות מקסימלית ותנאי מלון אמיתיים על הים, הופכים
+          כל הפלגה על הקטמרן שלנו לחוויה עוצרת נשימה.
+        </p>
+
+        <Image
+          src={botImg}
+          alt="מבט נוסף על הקוקפיט"
+          class="sp-gallery-img is-square"
+          format="webp"
+        />
+
+        <p class="sp-closing">
+          רוצים להפליג? הקטמרן המפוארת מחכה לכם!<br />
+          התקשרו להזמין עכשיו: 053-3403449
+        </p>
       </div>
+
+      <div class="services-grid">
+        <a
+          href="https://wa.me/972533403449"
+          class="service-card"
+          style="--c:#d4a017; --i:0"
+          target="_blank"
+        >
+          <div class="sc-img-wrap">
+            <Image
+              src={Heroimg}
+              width={600}
+              height={400}
+              format="webp"
+              alt="קטמרן"
+              class="sc-img"
+              loading="lazy"
+              style="object-position: center;"
+            />
+            <div class="sc-tag" style="background:#d4a017; color:#fff">
+              חיפה
+            </div>
+          </div>
+          <div class="sc-body">
+            <div class="sc-icon">⛵</div>
+            <h3>מחירון יאכטה קטמרן מפרשית</h3>
+            <p>
+              <strong>מחיר שייט עם סקיפר:</strong><br />
+              שעתיים הפלגה: 2550 ₪<br />
+              3 שעות הפלגה: 3500 ₪<br />
+              👑 עד 14 מפליגים מאושרים<br />
+              <span style="font-size: 0.85em; opacity: 0.9;"
+                >* המחיר תקף לסוף שבוע</span
+              >
+            </p>
+            <div class="sc-arrow" style="color:#d4a017">
+              להזמנה בוואטסאפ
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                width="15"
+                height="15"><polyline points="15 18 9 12 15 6"></polyline></svg
+              >
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <PremiumSwitch
+        href="/haifa"
+        title="בחזרה ליאכטות חיפה"
+        subtitle="לצפייה בצי שלנו ולבחירת היאכטה המושלמת"
+      />
     </section>
   </div>
+  <FleetSelectionCta
+    ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות בחיפה:"
+  />
 </Layout>
