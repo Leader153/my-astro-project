@@ -9,9 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/sitemap": "^3.7.0",
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "prettier-plugin-astro": "^0.14.1"

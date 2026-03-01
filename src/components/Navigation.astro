@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import headerBg from '../assets/sky.webp';
 
 // Main nav links and their dropdowns
 const mainLinks = [
@@ -53,17 +52,7 @@ const mainLinks = [
 ---
 
 <header class="main-header" id="main-header" dir="rtl">
-  <!-- Background image (only visible when scrolled to top) -->
-  <Image
-    src={headerBg}
-    widths={[768, 1280, 1920]}
-    sizes="100vw"
-    format="webp"
-    alt="שמיים כחולים"
-    class="header-bg-img"
-    loading="eager"
-    fetchpriority="high"
-  />
+  <!-- Transparent header background on top, becomes glass on scroll -->
 
   <!-- Glass overlay -->
   <div class="header-glass"></div>
@@ -331,17 +320,7 @@ const mainLinks = [
     overflow: visible; /* allow dropdowns */
   }
 
-  /* Background sky image */
-  .header-bg-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    z-index: 0;
-    transition: opacity 0.4s ease;
-  }
+
 
   /* Glass overlay — tints darker on scroll */
   .header-glass {
@@ -358,12 +337,10 @@ const mainLinks = [
     transition: background 0.35s ease;
   }
 
-  /* Scrolled state: more opaque, smaller, stronger shadow */
   .main-header.scrolled {
     height: 60px;
     box-shadow: 0 4px 30px rgba(8,4,126,0.35);
   }
-  .main-header.scrolled .header-bg-img { opacity: 0.6; }
   .main-header.scrolled .header-glass {
     background: linear-gradient(to left,
       rgba(8,4,126,0.82) 0%,

@@ -1,0 +1,433 @@
+/* ═══════════════════════════════════════════
+   SECONDARY PAGES STYLES (sp-*)
+═══════════════════════════════════════════ */
+.service-page {
+  background: #f2f5fb;
+  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+}
+.sp-hero {
+  position: relative;
+  height: 75vh;
+  min-height: 500px; /* Добавим минимальную высоту, чтобы на очень широких мониторах она не схлопнулась слишком сильно */
+  overflow: hidden;
+}
+.sp-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: 0;
+}
+.mobile-hero {
+  display: none;
+}
+@media (max-width: 768px) {
+  .desktop-hero {
+    display: none;
+  }
+  .mobile-hero {
+    display: block;
+    position: relative;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .sp-hero {
+    height: auto;
+  }
+}
+.sp-content {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .sp-content {
+    padding: 2rem 1.5rem;
+  }
+}
+.sp-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: right;
+}
+.sp-content h1 {
+  font-size: 2.2rem;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.sp-content h3 {
+  font-size: 1.6rem;
+  color: #08047e;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+.sp-content p {
+  color: #000000;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.back-link {
+  display: inline-block;
+  color: #0f7ab0;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid #0f7ab0;
+  border-radius: 8px;
+  transition: 0.2s;
+  margin-top: 2rem;
+}
+.back-link:hover {
+  background: #0f7ab0;
+  color: white;
+}
+
+.sp-list,
+.sp-pricing {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.sp-list li,
+.sp-pricing li {
+  font-size: 1.1rem;
+  color: #000000;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.sp-list li::before,
+.sp-pricing li::before {
+  content: "⚓";
+
+  position: absolute;
+  right: 0;
+  top: 2px;
+  font-size: 1rem;
+  color: #0f7ab0;
+}
+
+/* ════════════ GALLERY IMAGES ════════════ */
+.sp-gallery-img {
+  display: block;
+  width: 100%;
+  height: auto; /* Позволяет свойству aspect-ratio управлять высотой */
+  aspect-ratio: 3 / 2; /* По умолчанию (горизонтальное) */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(8, 4, 126, 0.1);
+  margin: 2.5rem 0;
+}
+
+/* Модификаторы для разных пропорций */
+.sp-gallery-img.is-square {
+  aspect-ratio: 1 / 1;
+}
+
+.sp-gallery-img.is-vertical {
+  aspect-ratio: 3 / 4;
+  max-width: 450px; /* Вертикальные фото лучше делать чуть ýже, чтобы они не занимали весь экран */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sp-gallery-img.is-widescreen {
+  aspect-ratio: 16 / 9;
+}
+
+.sp-gallery-img.is-wide {
+  width: 100vw;
+  max-width: 1000px;
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* ════ ФОКУС ИЗОБРАЖЕНИЙ (object-position) ════ */
+/* Используй эти классы, чтобы выбрать, какая часть фото будет видна при обрезке */
+.pos-top {
+  object-position: top;
+}
+.pos-bottom {
+  object-position: bottom;
+}
+.pos-left {
+  object-position: left;
+}
+.pos-right {
+  object-position: right;
+}
+.pos-center {
+  object-position: center;
+}
+
+.sp-note {
+  font-size: 0.95rem !important;
+  color: #000000;
+  margin-top: -1rem;
+}
+
+.sp-closing {
+  font-weight: 600;
+  font-size: 1.25rem !important;
+  color: #08047e !important;
+  margin-top: 3rem;
+  text-align: center;
+  border-top: 2px dashed #e2e8f0;
+  padding-top: 2rem;
+}
+
+/* ════════════ SERVICES CARDS (Optional in SP) ════════════ */
+.services-grid {
+  display: grid;
+  grid-template-columns: minmax(auto, 350px);
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 0;
+  text-decoration: none;
+  color: #000000;
+  box-shadow: 0 4px 20px rgba(8, 4, 126, 0.07);
+  border: 1px solid rgba(8, 4, 126, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: fadeUp 0.5s ease both;
+  animation-delay: calc(var(--i) * 0.08s);
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(8, 4, 126, 0.16);
+}
+
+.sc-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  flex-shrink: 0;
+}
+.sc-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.service-card:hover .sc-img {
+  transform: scale(1.06);
+}
+
+.sc-tag {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.28rem 0.7rem;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.sc-body {
+  padding: 1.2rem 1.4rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.sc-icon {
+  font-size: 2rem;
+  transition: transform 0.3s;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.service-card:hover .sc-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.sc-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  text-align: right;
+}
+.sc-body p {
+  font-size: 0.875rem;
+  color: #000000 !important;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  text-align: right;
+  margin-bottom: 0 !important;
+}
+
+.sc-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-top: auto;
+  transition: gap 0.2s;
+}
+.service-card:hover .sc-arrow {
+  gap: 0.55rem;
+}
+
+/* ════════════ FAQ SECTION ════════════ */
+.faq-wrapper {
+  max-width: 800px;
+  margin: 4rem auto 0;
+  text-align: right;
+}
+.faq-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #08047e;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.accordion-item {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 28px rgba(8, 4, 126, 0.09);
+  overflow: hidden;
+  transition: box-shadow 0.25s;
+}
+.accordion-item.open {
+  box-shadow: 0 10px 36px rgba(8, 4, 126, 0.14);
+}
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.1rem 1.25rem;
+  border: none;
+  background: transparent;
+  text-align: right;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.accordion-trigger:hover {
+  background: #fafbff;
+}
+.q-num {
+  min-width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(8, 4, 126, 0.08);
+  color: #08047e;
+}
+.q-text {
+  flex: 1;
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: #000000;
+  text-align: right;
+  line-height: 1.4;
+}
+.q-chevron {
+  flex-shrink: 0;
+  color: #6b7280;
+  transition: transform 0.3s ease;
+  display: flex;
+}
+.accordion-item.open .q-chevron {
+  transform: rotate(180deg);
+}
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.accordion-body:not([hidden]) {
+  max-height: 500px;
+}
+.accordion-answer {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1.25rem 1.25rem 1.25rem;
+}
+.answer-bar {
+  width: 3px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  align-self: stretch;
+  min-height: 100%;
+  opacity: 0.6;
+  background: #0f7ab0;
+}
+.accordion-answer p {
+  margin: 0;
+  font-size: 0.93rem;
+  color: #000000;
+  line-height: 1.75;
+}
+@media (max-width: 768px) {
+  .faq-wrapper {
+    margin-top: 3rem;
+  }
+  .faq-title {
+    font-size: 1.25rem;
+  }
+  .accordion-trigger {
+    padding: 1rem;
+    gap: 0.65rem;
+  }
+  .q-text {
+    font-size: 0.9rem;
+  }
+}

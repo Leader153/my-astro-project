@@ -1,0 +1,142 @@
+/* ═══════════════════════════════════════════
+   GLOBAL HZ-CARD STYLES
+═══════════════════════════════════════════ */
+.hz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 768px) {
+  .hz-grid {
+    grid-template-columns: 1fr;
+  }
+  .hz-card-body h3 {
+    font-size: 1.15rem;
+  }
+  .hz-card-body p {
+    font-size: 1.15rem;
+  }
+}
+
+.hz-card {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #000000;
+  box-shadow: 0 4px 20px rgba(8, 4, 126, 0.07);
+  border: 1px solid rgba(8, 4, 126, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: fadeUp 0.5s ease both;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hz-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 50px rgba(8, 4, 126, 0.15);
+}
+.hz-card:hover .hz-glow {
+  opacity: 0.06;
+}
+
+.hz-card-img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  flex-shrink: 0;
+}
+.hz-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.hz-card:hover .hz-img {
+  transform: scale(1.06);
+}
+
+.hz-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: white;
+  padding: 0.28rem 0.7rem;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.hz-card-body {
+  padding: 1.2rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+.hz-card-icon {
+  font-size: 1.9rem;
+  transition: transform 0.3s;
+}
+.hz-card:hover .hz-card-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+.hz-card-body h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111111; /* Changed from var(--text) for global support */
+  margin: 0;
+}
+.hz-card-body p {
+  font-size: 1.05rem;
+  color: #222222; /* Changed from var(--text-l) for global support */
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.hz-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-top: 0.3rem;
+  transition: gap 0.2s;
+}
+.hz-card:hover .hz-card-cta {
+  gap: 0.55rem;
+}
+
+.hz-glow {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}

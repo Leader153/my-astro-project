@@ -13,230 +13,189 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
   title="הפלגה לקפריסין ביאכטה פרטית: חופשת החלומות שלכם"
   description="חולמים על חופשה מושלמת?⚓הפלגה לקפריסין ביאכטה פרטית. שייט בוטיק לחול עם משפחה וחברים בשיא הפינוק"
 >
-  <div class="hz-page" dir="rtl">
+  <div class="service-page" dir="rtl">
     <!-- ══ HERO ══ -->
-    <section class="hz-hero">
+    <section class="sp-hero">
       <Image
         src={cardImg}
         widths={[768, 1280, 1920]}
         sizes="100vw"
         format="webp"
         alt="יאכטה מפרשית מפליגה בים הכחול הפתוח בדרך לקפריסין"
-        class="hz-hero-bg-img desktop-img"
+        class="sp-hero-bg desktop-hero"
         loading="eager"
         fetchpriority="high"
       />
-    </section>
-
-    <!-- MOBILE HERO IMAGE (Separate from background) -->
-    <div class="hz-hero-mobile-wrap">
+      <!-- MOBILE HERO IMAGE -->
       <Image
         src={mobileImg}
         widths={[400, 768]}
         sizes="100vw"
         format="webp"
         alt="יאכטה מפרשית מפליגה בים הכחול הפתוח בדרך לקפריסין"
-        class="mobile-hero-img"
+        class="sp-hero-bg mobile-hero"
         loading="eager"
         fetchpriority="high"
       />
-    </div>
+    </section>
 
     <!-- CONTENT -->
-    <section class="hz-services">
-      <div class="hz-inner tz-content-box">
-       <div class="hz-section-header">
-          <h2>⚓ הפלגה ביאכטה פרטית לקפריסין: חופשת החלומות שלכם</h2>
-          <p>
-            חולמים על חופשה מושלמת? שייט בוטיק לחו"ל בשיא הפינוק.<br />
-            מתאים למשפחות עם ילדים בכל הגילאים, חוויה קסומה לכל המשפחה וחברים
-          </p>
-        </div>
+    <section class="sp-content">
+      <div class="sp-inner">
+        <h1>⚓ הפלגה ביאכטה פרטית לקפריסין: חופשת החלומות שלכם</h1>
+        <p>
+          חולמים על חופשה מושלמת? שייט בוטיק לחו"ל בשיא הפינוק.<br />
+          מתאים למשפחות עם ילדים בכל הגילאים, חוויה קסומה לכל המשפחה וחברים
+        </p>
 
-        <div class="bday-text-article">
-          <h3>הפלגה שייט לקפריסין. מי בא איתנו?</h3>
-          <p>
-            הרפתקה ימית מחכה לכם!!! דייג חוויתי לאורך המסלול.<br />
-            בקפריסין - פאבים ובידור לאורך הטיילת, סופלקי חם, פירות ים ודגים, טברנות
-            ביתיות בהן נוכל ליהנות מצלילי בוזוקי ושירה יוונית אותנטית. כאופציה, טיול
-            להרי הטרודוס.
-          </p>
-<div class="bday-text-article">
-          <h3>👨‍✈️ איתכם על ההגה – סקיפר מקצועי<br> (דור שלישי בים)</h3>
-          <p>
-            איתכם על היאכטה יהיה סקיפר מקצועי ומנוסה, ימאי בדור שלישי, בעל
-            ניסיון רב של שנים בים (כמובן בעל רישיון משיט 40 ו-60). מעבר
-            למקצועיות, תקבלו יחס חם ואוהב, תחושה של משפחה, כיף והרבה אנרגיות
-            טובות!
-          </p>
-          <p
-            style="text-align: center; font-size: 1.4rem; color: var(--navy); margin-top: 2rem;"
+        <h3>הפלגה שייט לקפריסין. מי בא איתנו?</h3>
+        <p>
+          הרפתקה ימית מחכה לכם!!! דייג חוויתי לאורך המסלול.<br />
+          בקפריסין - פאבים ובידור לאורך הטיילת, סופלקי חם, פירות ים ודגים, טברנות
+          ביתיות בהן נוכל ליהנות מצלילי בוזוקי ושירה יוונית אותנטית. כאופציה, טיול
+          להרי הטרודוס.
+        </p>
+
+        <h3>👨‍✈️ איתכם על ההגה – סקיפר מקצועי (דור שלישי בים)</h3>
+        <p>
+          איתכם על היאכטה יהיה סקיפר מקצועי ומנוסה, ימאי בדור שלישי, בעל ניסיון
+          רב של שנים בים (כמובן בעל רישיון משיט 40 ו-60). מעבר למקצועיות, תקבלו
+          יחס חם ואוהב, תחושה של משפחה, כיף והרבה אנרגיות טובות!
+        </p>
+
+        <p
+          class="sp-closing"
+          style="margin-top: 2rem; border-top: none; padding-top: 0;"
+        >
+          התקשרו להזמין עכשיו! מספר המקומות מוגבל: 053-3403449 (דניאל)
+        </p>
+
+        <p>
+          וכמובן... לגונה הכחולה, מפרץ מוגן בסלעים ליד העיר פאפוס. מתאים למשפחות
+          עם ילדים, לחובבי הרפתקאות, או למי שרוצה להוציא רישיון משיט 60!
+        </p>
+
+        <h3>מה כוללת החבילה שלנו? תאריכים מתוכננים: 17/04/26 עד 21/04/26</h3>
+        <ul class="sp-list">
+          <li>
+            <strong>השכרת יאכטה:</strong> ל-4 לילות ו-5 ימים מלאים בחוויות.
+          </li>
+          <li>
+            <strong>שירות סקיפר מקצועי:</strong> שידאג לבטיחות, ניווט ואווירה טובה.
+          </li>
+          <li>
+            <strong>כל ההוצאות התפעוליות:</strong> ביטוח חובה ליאכטה, הוצאות דלק מלאות.
+          </li>
+          <li><strong>תקשורת:</strong> טלפון לווייני לחירום וזמינות.</li>
+          <li>
+            <strong>סידורי נמל:</strong> הוצאות נמל, סידורי יציאה וכניסה מישראל וקפריסין,
+            כולל הוצאות עגינה בקפריסין.
+          </li>
+        </ul>
+        <p>
+          <strong>שימו לב – החבילה אינה כוללת:</strong> אוכל לדרך, הוצאות יבשתיות
+          בקפריסין (השכרת רכב, טברנות ובילויים), ודמי נמל בסך 120 שקלים למפליג.
+        </p>
+
+        <Image
+          src={img1}
+          alt="תשוט איתי לקפריסין הקסומה"
+          class="sp-gallery-img"
+        />
+
+        <h3>מחירון השכרת יאכטות להפלגה לקפריסין:</h3>
+        <ul class="sp-list">
+          <li>
+            <strong>יאכטה Odelia:</strong> עד 8 מפליגים כולל סקיפר. מחיר: 16,900 ₪
+            המתחלקים בין המפליגים.
+          </li>
+          <li>
+            <strong>יאכטה Yami:</strong> עד 8 מפליגים כולל סקיפר. מחיר: 17,900 ₪ המתחלקים
+            בין המפליגים.
+          </li>
+          <li>
+            <strong>יאכטה L-Yam:</strong> עד 8 מפליגים כולל סקיפר. מחיר: 19,900 ₪
+            המתחלקים בין המפליגים.
+          </li>
+          <li>
+            <strong>יאכטה Aya:</strong> עד 11 מפליגים כולל סקיפר. מחיר: 19,900 ₪ המתחלקים
+            בין המפליגים. (שימו לב: להפלגה לחו"ל בכושר שייט עד 11, תוכלו לקחת 8 אורחים
+            ו-3 אנשי צוות).
+          </li>
+          <li>
+            <strong>יאכטה Sea-u / Fair-wind:</strong> עד 10 מפליגים כולל סקיפר. מחיר:
+            24,900 ₪ המתחלקים בין המפליגים.
+          </li>
+        </ul>
+        <p class="sp-note">
+          * המחירים נכונים במידה ואתם חוזרים לארץ עם אותה הפלגה. אם ברצונכם
+          להישאר בקפריסין או להמשיך הלאה, ע"פ חוקי השייט חובה לתגבר את הצוות (2
+          אנשים + סקיפר) להחזרת היאכטה בעלות של 5,000 ₪.
+        </p>
+
+        <h3>🏠 נוחות של צמר במים – הכל כבר בפנים</h3>
+        <p>
+          היאכטות שלנו בעלות מרחב פנימי שמתאים לשהייה נוחה כמו בצימר מפנק לאורך
+          כל ההפלגה, כולל ללינה בקפריסין. אין שום צורך להזמין בית מלון! ביאכטה
+          יש הכול, והיא הופכת לבית הנוח שלכם לכל ימי החופשה.
+        </p>
+
+        <Image
+          src={midImg}
+          alt="סירה קטנה מפליגה במים צלולים ליד גשר סלע טבעי"
+          class="sp-gallery-img is-square"
+        />
+
+        <h3>היום הגדול הגיע! (יומן מסע קצר)</h3>
+        <p>
+          ההתרגשות בשיאה… נגיע בבוקר למרינה בחיפה/הרצליה. על היאכטה יחכה לנו
+          הסקיפר שלנו, ולאחר התארגנות קצרה, תדרוך והחתמת דרכונים, נצא לדרך.
+        </p>
+        <p>
+          נפליג במשך יממה עד ללרנקה או לימסול. בדרך יהיה לנו מספיק זמן לתרגל
+          ניווט, החזקת הגה, בישולים ונימוסי אכילה ושתייה בהפלגה. ננסה לדוג בדרך,
+          נשתתף במשמרות יום ולילה, ולקראת ההגעה נתרגל כניסה אמיתית למרינה במדינה
+          זרה.
+        </p>
+        <p>
+          בקפריסין נבלה עד כלות הכוחות בטברנות, נטייל לאורך החופים, ואולי אפילו
+          נגיע להרי הטרודוס. בהפלגה חזרה מזרחה, כולנו נהיה כבר יורדי ים מנוסים
+          ונפגין את מיומנות העבודה בצוות שרכשנו!
+        </p>
+
+        <h3>קפריסין מחכה לכם...</h3>
+        <p>
+          קפריסין היא למעשה אחותה הקטנה של יוון. התרבות, האוכל והאווירה
+          הים-תיכונית מזמינים. בערים כמו לרנקה תוכלו למצוא טיילת דקלים ארוכה
+          ותוססת, אגם מלח עם להקות פלמינגו (בחורף), וקרבה נוחה לעיר העתיקה.
+          המרינה של לרנקה היא שער הכניסה הרשמי לאי ומספקת שירות קל ונוח. פאפוס
+          ולימסול מציעות עתיקות היסטוריות ותרבות לילה מדהימה. פשוט כיף טהור!
+        </p>
+
+        <Image
+          src={botImg}
+          alt="140 מיילים ימיים מקפריסין לישראל"
+          class="sp-gallery-img is-square"
+        />
+
+        <h3>🎓 חולמים להיות סקיפרים? (לומדים תוך כדי הפלגה)</h3>
+        <p>
+          חולמים ללמוד להשיט יאכטה באמת? אצלנו תוכלו להגשים את החלום ולקבל את כל
+          הידע והניסיון הרלוונטי בהפעלה, ניהול ותמרון יאכטה, תוך כדי מסע מרתק
+          לקפריסין בסביבה אמיתית של ים פתוח!
+        </p>
+        <p>
+          ההפלגה מתאימה במיוחד לתלמידי סקיפרים שצריכים <strong
+            >"זמן ים" (סטאז')</strong
           >
-            <strong
-              >התקשרו להזמין עכשיו! מספר המקומות מוגבל: 053-3403449 (דניאל)</strong
-            >
-          </p>
-        </div>
+          לרישיון משיט 60 (שייט בינלאומי). במהלך השייט נתרגל יחד עבודת צוות, גיבוש
+          קבוצתי, ניווט אסטרונומי וימי, וכמובן - תרגול כניסה למרינה זרה.
+        </p>
 
-          <p>
-            וכמובן... לגונה הכחולה, מפרץ מוגן בסלעים ליד העיר פאפוס. מתאים
-            למשפחות עם ילדים, לחובבי הרפתקאות, או למי שרוצה להוציא רישיון משיט
-            60!
-          </p>
-
-          <br />
-          <h3>מה כוללת החבילה שלנו? תאריכים מתוכננים: 17/04/26 עד 21/04/26</h3>
-          <ul class="bday-features-list">
-            <li>
-              <strong>השכרת יאכטה:</strong> ל-4 לילות ו-5 ימים מלאים בחוויות.
-            </li>
-            <li>
-              <strong>שירות סקיפר מקצועי:</strong> שידאג לבטיחות, ניווט ואווירה טובה.
-            </li>
-            <li>
-              <strong>כל ההוצאות התפעוליות:</strong> ביטוח חובה ליאכטה, הוצאות דלק
-              מלאות.
-            </li>
-            <li><strong>תקשורת:</strong> טלפון לווייני לחירום וזמינות.</li>
-            <li>
-              <strong>סידורי נמל:</strong> הוצאות נמל, סידורי יציאה וכניסה מישראל
-              וקפריסין, כולל הוצאות עגינה בקפריסין.
-            </li>
-          </ul>
-          <p>
-            <strong>שימו לב – החבילה אינה כוללת:</strong> אוכל לדרך, הוצאות יבשתיות
-            בקפריסין (השכרת רכב, טברנות ובילויים), ודמי נמל בסך 120 שקלים למפליג.
-          </p>
-        </div>
-
-        <div class="bday-break-img-wrapper">
-          <Image
-            src={img1}
-            alt="תשוט איתי לקפריסין הקסומה"
-            class="bday-break-img"
-          />
-        </div>
-
-        <div class="bday-text-article">
-          <h3>מחירון השכרת יאכטות להפלגה לקפריסין:</h3>
-          <ul class="bday-features-list">
-            <li>
-              <strong>יאכטה Odelia:</strong> עד 8 מפליגים כולל סקיפר. מחיר: 16,900
-              ₪ המתחלקים בין המפליגים.
-            </li>
-            <li>
-              <strong>יאכטה Yami:</strong> עד 8 מפליגים כולל סקיפר. מחיר: 17,900 ₪
-              המתחלקים בין המפליגים.
-            </li>
-            <li>
-              <strong>יאכטה L-Yam:</strong> עד 8 מפליגים כולל סקיפר. מחיר: 19,900
-              ₪ המתחלקים בין המפליגים.
-            </li>
-            <li>
-              <strong>יאכטה Aya:</strong> עד 11 מפליגים כולל סקיפר. מחיר: 19,900 ₪
-              המתחלקים בין המפליגים. (שימו לב: להפלגה לחו"ל בכושר שייט עד 11, תוכלו
-              לקחת 8 אורחים ו-3 אנשי צוות).
-            </li>
-            <li>
-              <strong>יאכטה Sea-u / Fair-wind:</strong> עד 10 מפליגים כולל סקיפר.
-              מחיר: 24,900 ₪ המתחלקים בין המפליגים.
-            </li>
-          </ul>
-          <p>
-            <em
-              >* המחירים נכונים במידה ואתם חוזרים לארץ עם אותה הפלגה. אם ברצונכם
-              להישאר בקפריסין או להמשיך הלאה, ע"פ חוקי השייט חובה לתגבר את הצוות
-              (2 אנשים + סקיפר) להחזרת היאכטה בעלות של 5,000 ₪.</em
-            >
-          </p>
-
-          <br />
-          <h3>🏠 נוחות של צמר במים – הכל כבר בפנים</h3>
-          <p>
-            היאכטות שלנו בעלות מרחב פנימי שמתאים לשהייה נוחה כמו בצימר מפנק
-            לאורך כל ההפלגה, כולל ללינה בקפריסין. אין שום צורך להזמין בית מלון!
-            ביאכטה יש הכול, והיא הופכת לבית הנוח שלכם לכל ימי החופשה.
-          </p>
-        </div>
-
-        <div class="bday-break-img-wrapper" style="max-width: 700px;">
-          <Image
-            src={midImg}
-            alt="סירה קטנה מפליגה במים צלולים ליד גשר סלע טבעי"
-            class="bday-break-img"
-            style="aspect-ratio: 1 / 1; max-height: 700px;"
-          />
-        </div>
-
-        <div class="bday-text-article">
-          <h3>היום הגדול הגיע! (יומן מסע קצר)</h3>
-          <p>
-            ההתרגשות בשיאה… נגיע בבוקר למרינה בחיפה/הרצליה. על היאכטה יחכה לנו
-            הסקיפר שלנו, ולאחר התארגנות קצרה, תדרוך והחתמת דרכונים, נצא לדרך.
-          </p>
-          <p>
-            נפליג במשך יממה עד ללרנקה או לימסול. בדרך יהיה לנו מספיק זמן לתרגל
-            ניווט, החזקת הגה, בישולים ונימוסי אכילה ושתייה בהפלגה. ננסה לדוג
-            בדרך, נשתתף במשמרות יום ולילה, ולקראת ההגעה נתרגל כניסה אמיתית
-            למרינה במדינה זרה.
-          </p>
-          <p>
-            בקפריסין נבלה עד כלות הכוחות בטברנות, נטייל לאורך החופים, ואולי
-            אפילו נגיע להרי הטרודוס. בהפלגה חזרה מזרחה, כולנו נהיה כבר יורדי ים
-            מנוסים ונפגין את מיומנות העבודה בצוות שרכשנו!
-          </p>
-
-          <br />
-          <h3>קפריסין מחכה לכם...</h3>
-          <p>
-            קפריסין היא למעשה אחותה הקטנה של יוון. התרבות, האוכל והאווירה
-            הים-תיכונית מזמינים. בערים כמו לרנקה תוכלו למצוא טיילת דקלים ארוכה
-            ותוססת, אגם מלח עם להקות פלמינגו (בחורף), וקרבה נוחה לעיר העתיקה.
-            המרינה של לרנקה היא שער הכניסה הרשמי לאי ומספקת שירות קל ונוח. פאפוס
-            ולימסול מציעות עתיקות היסטוריות ותרבות לילה מדהימה. פשוט כיף טהור!
-          </p>
-        </div>
-
-        <div class="bday-break-img-wrapper" style="max-width: 700px;">
-          <Image
-            src={botImg}
-            alt="140 מיילים ימיים מקפריסין לישראל"
-            class="bday-break-img"
-            style="aspect-ratio: 1 / 1; max-height: 700px;"
-          />
-        </div>
-
-        <div class="bday-text-article">
-          <h3>🎓 חולמים להיות סקיפרים? (לומדים תוך כדי הפלגה)</h3>
-          <p>
-            חולמים ללמוד להשיט יאכטה באמת? אצלנו תוכלו להגשים את החלום ולקבל את
-            כל הידע והניסיון הרלוונטי בהפעלה, ניהול ותמרון יאכטה, תוך כדי מסע
-            מרתק לקפריסין בסביבה אמיתית של ים פתוח!
-          </p>
-          <p>
-            ההפלגה מתאימה במיוחד לתלמידי סקיפרים שצריכים <strong
-              >"זמן ים" (סטאז')</strong
-            >
-            לרישיון משיט 60 (שייט בינלאומי). במהלך השייט נתרגל יחד עבודת צוות, גיבוש
-            קבוצתי, ניווט אסטרונומי וימי, וכמובן - תרגול כניסה למרינה זרה.
-          </p>
-
-          <br />
-          <h3>👨‍✈️ איתכם על ההגה – סקיפר מקצועי (דור שלישי בים)</h3>
-          <p>
-            איתכם על היאכטה יהיה סקיפר מקצועי ומנוסה, ימאי בדור שלישי, בעל
-            ניסיון רב של שנים בים (כמובן בעל רישיון משיט 40 ו-60). מעבר
-            למקצועיות, תקבלו יחס חם ואוהב, תחושה של משפחה, כיף והרבה אנרגיות
-            טובות!
-          </p>
-          <p
-            style="text-align: center; font-size: 1.4rem; color: var(--navy); margin-top: 2rem;"
-          >
-            <strong
-              >צור קשר עכשיו! מספר המקומות מוגבל: 053-3403449 (דניאל)</strong
-            >
-          </p>
-        </div>
+        <p class="sp-closing">
+          חולמים על קפריסין?<br />
+          צור קשר עכשיו! מספר המקומות מוגבל: 053-3403449 (דניאל)
+        </p>
       </div>
     </section>
 
@@ -244,285 +203,3 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
     <FleetSelectionCta />
   </div>
 </Layout>
-
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
-
-  .hz-page {
-    --navy: #08047e;
-    --sea: #0f7ab0;
-    --gold: #d4a017;
-    --gold-l: #f0c040;
-    --bg: #f2f5fb;
-    --white: #ffffff;
-    --text: #000000;
-    --text-m: #111111;
-    --text-l: #222222;
-    font-family: "Rubik", "Segoe UI", Arial, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-  }
-
-  /* ══ HERO ══ */
-  .hz-hero {
-    position: relative;
-    min-height: 75vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-  .hz-hero-bg-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    object-position: center;
-  }
-
-  .hz-hero-mobile-wrap {
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    .hz-hero {
-      display: none; /* Hide the full hero on mobile completely */
-    }
-
-    .hz-hero-mobile-wrap {
-      display: block;
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      margin-right: calc(-50vw + 50%);
-      margin-top: -80px; /* Offset the Layout/page padding specifically just to touch the header nav */
-      margin-bottom: -30px; /* Pull the title closer to the image */
-      overflow: hidden;
-      position: relative;
-    }
-
-    .mobile-hero-img {
-      width: 100%;
-      height: auto;
-      min-height: 250px;
-      display: block;
-      object-fit: cover;
-      object-position: center 0%; /* Moves the image content downwards */
-      border-radius: 0;
-      box-shadow: none;
-    }
-  }
-
-  /* ══ SHARED ══ */
-  .hz-inner {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 5rem 1.5rem;
-  }
-  .hz-section-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  @media (max-width: 768px) {
-    .hz-inner {
-      padding-top: 2rem;
-    }
-    .hz-section-header {
-      margin-bottom: 1.5rem;
-    }
-  }
-  .hz-section-header h2 {
-    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-    font-weight: 800;
-    color: var(--text);
-    margin: 0 0 0.8rem;
-  }
-  .hz-section-header p {
-    font-size: 1.2rem;
-    color: var(--text-l);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
-
-  .hz-services {
-    background: var(--bg);
-  }
-
-  /* ══ TEXT ARTICLE ══ */
-  .bday-text-article {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--white);
-    padding: 3.5rem 4rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(8, 4, 126, 0.05);
-    border: 1px solid rgba(8, 4, 126, 0.05);
-  }
-
-  .bday-text-article p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    color: var(--text-m);
-    margin-bottom: 1.5rem;
-  }
-
-  .bday-text-article h3 {
-    font-size: 1.7rem;
-    font-weight: 800;
-    color: var(--text);
-    margin: 2.5rem 0 1rem;
-    position: relative;
-    display: inline-block;
-  }
-  .bday-text-article h3::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    right: 0;
-    width: 40px;
-    height: 3px;
-    background: var(--gold);
-    border-radius: 2px;
-  }
-
-  .bday-features-list {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
-  .bday-features-list li {
-    font-size: 1.1rem;
-    color: var(--text-m);
-    margin-bottom: 1rem;
-    padding-right: 1.8rem;
-    position: relative;
-    line-height: 1.6;
-  }
-  .bday-features-list li::before {
-    content: "⚓";
-    position: absolute;
-    right: 0;
-    top: 2px;
-    font-size: 1rem;
-    color: var(--sea);
-  }
-  .bday-features-list strong {
-    color: var(--navy);
-  }
-
-  .bday-cta-wrapper {
-    margin-top: 4.5rem;
-    text-align: center;
-    background: linear-gradient(to bottom, transparent, rgba(8, 4, 126, 0.02));
-    padding: 3rem 2rem;
-    border-radius: 24px;
-    border: 1px dashed rgba(8, 4, 126, 0.1);
-  }
-  .bday-cta-wrapper h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.8rem;
-  }
-  .bday-cta-wrapper p {
-    margin-bottom: 0.5rem;
-    font-size: 1.15rem;
-  }
-  .bday-cta-wrapper .hz-btn {
-    font-size: 1.2rem;
-    padding: 1.2rem 3rem;
-  }
-  .mt-4 {
-    margin-top: 1.5rem;
-  }
-
-  /* ══ BUTTONS (from hz-page) ══ */
-  .hz-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.9rem 1.9rem;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    cursor: pointer;
-  }
-
-  .hz-btn.premium-btn {
-    background: linear-gradient(135deg, var(--navy), #1a15a8);
-    color: var(--white);
-    box-shadow: 0 10px 30px rgba(8, 4, 126, 0.3);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    letter-spacing: 0.5px;
-  }
-  .hz-btn.premium-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(8, 4, 126, 0.45);
-    background: linear-gradient(135deg, #0a069e, #1f1abf);
-  }
-
-  .bday-content-img {
-    width: 100%;
-    max-width: 600px;
-    margin: 3.5rem auto;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    border-radius: 20px;
-    display: block;
-    box-shadow: 0 8px 30px rgba(8, 4, 126, 0.1);
-  }
-
-  .bday-img-placeholder {
-    width: 100%;
-    max-width: 600px;
-    margin: 3.5rem auto;
-    aspect-ratio: 3 / 2;
-    background: #f1f5f9;
-    border: 2px dashed #cbd5e1;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #94a3b8;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-
-  .bday-break-img-wrapper {
-    max-width: 1000px;
-    margin: 4rem auto;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(8, 4, 126, 0.15);
-  }
-
-  .bday-break-img {
-    width: 100%;
-    height: auto;
-    max-height: 550px;
-    object-fit: cover;
-    display: block;
-    aspect-ratio: 16 / 9;
-  }
-
-  @media (max-width: 768px) {
-    .bday-text-article {
-      padding: 2.5rem 1.5rem;
-    }
-    .bday-img-placeholder,
-    .bday-content-img {
-      margin: 2rem auto;
-    }
-    .bday-break-img-wrapper {
-      margin: 2.5rem -1.5rem;
-      border-radius: 0;
-    }
-    .bday-break-img {
-      aspect-ratio: 4 / 3;
-      max-height: 400px;
-    }
-  }
-</style>
