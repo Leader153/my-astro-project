@@ -8,8 +8,7 @@ import LeaImg from "../assets/LeaCatamaran.png";
 import catamaranimg from "../assets/Dolfin.jpeg";
 import Bagiraimg from "../assets/Bagira-Yacht.jpeg";
 import LiYamImg from "../assets/Lee-Yam-Yacht.png";
-
-
+import PremiumSwitch from "../components/PremiumSwitch.astro";
 
 // Array of 8 yachts
 const yachts = [
@@ -47,7 +46,7 @@ const yachts = [
   },
   {
     name: "לאה - יאכטה קטמרן מפרשית",
-    desc:"יאכטה קטמרן מפרשית מפוארת במיוחד",
+    desc: "יאכטה קטמרן מפרשית מפוארת במיוחד",
     capacity: "עד 14 מפליגים",
     img: LeaImg,
     tag: "למשפחות",
@@ -160,7 +159,11 @@ const yachts = [
           }
         </div>
         <div class="text-center" style="margin-top: 4rem;">
-          <a href="/herzliya" class="back-link">← חזרה לכל ההפלגות בהרצליה</a>
+          <PremiumSwitch
+            href="/herzliya"
+            title="ההפלגות שלנו בהרצליה"
+            subtitle="לצפייה בכל אפשרויות השייט המפנקות שיש לנו להציע"
+          />
         </div>
       </div>
     </section>

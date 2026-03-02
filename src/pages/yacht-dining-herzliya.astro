@@ -5,6 +5,7 @@ import romanticDinner from "../assets/couple-romantic-dinner-table-yacht.jpeg";
 import mobileDinnerI from "../assets/couple-romantic-dinner.jpeg";
 import roomImg from "../assets/ארוחת-בוקר-חדשה.jpg";
 import salonImg from "../assets/dinner-table-yacht.jpg";
+import PremiumSwitch from "../components/PremiumSwitch.astro";
 ---
 
 <Layout
@@ -37,20 +38,22 @@ import salonImg from "../assets/dinner-table-yacht.jpg";
 
     <section class="sp-content">
       <div class="sp-inner">
-        <h1>🥂 ארוחה רומנטית על יאכטה בהרצליה – <br>חוויה קולינרית בים</h1>
+        <h1>🥂 ארוחה רומנטית על יאכטה בהרצליה – <br />חוויה קולינרית בים</h1>
         <p class="sp-service-note">
           (שימו לב: שירות הארוחות המפנק שלנו ניתן כתוספת בלעדית להשכרת היאכטה
           ואינו נמכר בנפרד).
         </p>
 
         <p>
-          <strong>חולמים על ארוחה רומנטית?</strong> דמיינו את הרגע הזה: אתם יושבים יחד בירכתי היאכטה של <strong
-            >לידר (Leader)</strong
-          >, השמש מתחילה לרדת, ואתם נהנים מ<strong>בריזת ים</strong> מלטפת. השולחן מולכם ערוך בצורה
-          רומנטית ומוקפדת עם <strong>אוכל משובח</strong>. יין צונן כבר נמזג לכוסות שלכם, וברקע מתנגנת 
-          הזמרת שאתם הכי אוהבים. הסקיפר האדיב והדיסקרטי שלנו מעניק לכם <strong>פינוק מושלם</strong>, 
-          מגיש את המנות ישירות לסיפון, ואז חוזר לעמדתו ומשאיר אתכם ליהנות 
-          מהרגע במסגרת <strong>שייט קולינרי</strong> בלתי נשכח.
+          <strong>חולמים על ארוחה רומנטית?</strong> דמיינו את הרגע הזה: אתם יושבים
+          יחד בירכתי היאכטה של <span class="brand-leader">לידר (Leader)</span>,
+          השמש מתחילה לרדת, ואתם נהנים מ<strong>בריזת ים</strong> מלטפת. השולחן מולכם
+          ערוך בצורה רומנטית ומוקפדת עם <strong>אוכל משובח</strong>. יין צונן
+          כבר נמזג לכוסות שלכם, וברקע מתנגנת הזמרת שאתם הכי אוהבים. הסקיפר האדיב
+          והדיסקרטי שלנו מעניק לכם <strong>פינוק מושלם</strong>, מגיש את המנות
+          ישירות לסיפון, ואז חוזר לעמדתו ומשאיר אתכם ליהנות מהרגע במסגרת <strong
+            >שייט קולינרי</strong
+          > בלתי נשכח.
           <strong>רק אתם, הים, והטעמים המשובחים.</strong>
         </p>
 
@@ -70,7 +73,10 @@ import salonImg from "../assets/dinner-table-yacht.jpg";
           ארוחה רומנטית על יאכטה היא חוויה שונה לחלוטין מכל בילוי במסעדה שגרתית.
           למה? כי כאן, כל החוויה מותאמת בדיוק לקצב ולרצונות שלכם. אין מלצרים
           שרצים סביבכם, אין שולחנות צפופים, ואין רעש של סועדים אחרים.
-          <strong>בלידר השכרת יאכטות, הנוחות שלכם היא המשימה שלנו.</strong>
+          <strong
+            >ב<span class="brand-leader">לידר השכרת יאכטות</span>, הנוחות שלכם
+            היא המשימה שלנו.</strong
+          >
         </p>
         <p>
           אתם אוכלים בקצב שלכם, נהנים משייט זוגי חווייתי ופרטי לחלוטין. התעייפתם
@@ -143,7 +149,9 @@ import salonImg from "../assets/dinner-table-yacht.jpg";
           </table>
         </div>
 
-        <h3>⛵ צי היאכטות של לידר – לכל מטרה</h3>
+        <h3>
+          ⛵ צי היאכטות של <span class="brand-leader">לידר</span> – לכל מטרה
+        </h3>
         <p>
           הארוחות הרומנטיות מתאימות במיוחד לזוגות או קבוצות קטנות ואינטימיות (עד
           6 אנשים). עם זאת, חשוב שתדעו שהצי המפואר שלנו בחיפה ובהרצליה כולל גם
@@ -202,7 +210,11 @@ import salonImg from "../assets/dinner-table-yacht.jpg";
         </a>
       </div>
 
-      <a href="/herzliya" class="back-link">← חזרה לכל ההפלגות בהרצליה</a>
+      <PremiumSwitch
+        href="/yachts-herzliya"
+        title="היאכטות שלנו בהרצליה"
+        subtitle="לצפייה בצי שלנו ולבחירת היאכטה המושלמת"
+      />
     </section>
   </div>
 </Layout>

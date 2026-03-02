@@ -30,7 +30,7 @@ body {
    BRAND HIGHLIGHT
 ═══════════════════════════════════════════ */
 .brand-leader {
-  color: #08047e; /* Dark blue from --navy */
+  color: inherit;
   font-weight: 800;
   padding: 0 0.3em;
   border: 1.5px solid #d4a017; /* Gold from --gold */

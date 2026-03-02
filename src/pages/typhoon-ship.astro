@@ -6,11 +6,12 @@ import img1 from "../assets/ספינת-טייפון-מושבים.png";
 import midImg2 from "../assets/צוות-טייפון.webp";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="ספינת טייפון: יאכטה לאירועים בחיפה עד 30 מפליגים"
-  description="חוגגים אירוע? ⚓ ספינת טייפון בחיפה מושלמת למסיבות וימי הולדת עד 30 איש! שייט חוויתי 🐬, רחבת ריקודים, מנגל ופינוק מושלם 🥂."
+  title="ספינת טייפון (עד 30 איש): יאכטה לאירועים בחיפה | Leader הפלגות"
+  description="השכרת ספינת טייפון במפרץ חיפה לאירועים ומסיבות עד 30 מפליגים. החל מ-1,200 ₪ לשעה. רחבת ריקודים, מנגל וצוות מקצועי. מושלם ליום הולדת וגיבוש."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -156,17 +157,33 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">🚢</div>
             <h3>ספינת טייפון</h3>
-            <p>
-              <strong>מחירון:</strong><br />
-              שעתיים 2200 ₪<br />
-              3 שעות 2600 ₪<br />
-              עד 30 מפליגים<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >מחיר כולל גרילמן בהזמנה של 3 שעות</span
-              >
+            <p><strong>מחירון השכרת טייפון:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 1,200 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 2,200 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 2,650 ₪</li>
+              <li>👑 מתאים לעד 30 מפליגים</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>צוות מקצועי ומסור (מלחים וסקיפר)</li>
+              <li>רחבת ריקודים ומערכת שמע</li>
+              <li>אפשרות להביא אוכל, בשרים ושתייה ולצלות על המנגל</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
+            <ul class="pricing-list">
+              <li>שירות גרילמן (על האש) ללא תוספת תשלום! 🍖</li>
+            </ul>
+
+            <p class="pricing-note">
+              * כל המחירים הם לספינה במלואה<br />
+              * המחיר לא כולל בקבוק שמפניה<br />
+              * מחיר כולל מע"מ, תקף לסוף שבוע
             </p>
             <div class="sc-arrow" style="color:#0ea5e9">
-              קבלו פרטים
+              להזמנה בוואטסאפ
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -190,5 +207,48 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
   </div>
   <FleetSelectionCta
     ctaInstruction="נא להיכנס לעמוד יאכטות ולתאם את הפלגת הדייג שלכם:"
+  />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "ספינת טייפון בני גלים בחיפה",
+      description:
+        "השכרת ספינת טייפון במפרץ חיפה למסיבות ואירועים עד 30 מפליגים, כולל רחבת ריקודים ומנגל פחמים.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "1200",
+        highPrice: "2650",
+        offerCount: "3",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "1200",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/typhoon-ship",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "2200",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/typhoon-ship",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "2650",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/typhoon-ship",
+          },
+        ],
+      },
+    })}
   />
 </Layout>

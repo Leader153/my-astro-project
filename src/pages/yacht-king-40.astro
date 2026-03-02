@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import heroImage from "../assets/king.png";
-import img1 from "../assets/king.png";
+import img1 from "../assets/king-yacht-Dolfin.png";
 import midImg2 from "../assets/king.png";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
@@ -60,7 +60,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={img1}
           alt="מסיבה על ספינת קינג בחיפה"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2;"
           format="webp"
         />
 
@@ -100,7 +101,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={midImg2}
           alt="צוות הספינה"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2;"
           format="webp"
         />
 

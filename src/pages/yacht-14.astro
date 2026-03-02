@@ -7,11 +7,12 @@ import midImg from "../assets/Seayou-girl-on-hartom.png";
 import botImg from "../assets/Farwind-peple.png";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="יאכטה Sea-u עד 14 מפליגים חיפה | Leader הפלגות"
-  description="הפלגות חופיות יוקרתיות על יאכטהSea-u מרווחת עד 14 איש בחיפה. אידאלי לחגיגות וימי הולדת בים התיכון."
+  title="יאכטה סי יו (עד 14 איש): שייט ואירועים בחיפה | Leader הפלגות"
+  description="השכרת יאכטה Sea-u במפרץ חיפה ל-14 מפליגים. החל מ-1,300 ₪ לשעה. מושלם לחגיגות, ימי הולדת משפחתיים. כולל סקיפר, בלונים ופינוקים לכל הקבוצה."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -142,16 +143,31 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">⛵</div>
             <h3>מחירון יאכטה Sea-u</h3>
-            <p>
-              <strong>לשייט חופי בארץ (מחיר שייט עם סקיפר):</strong><br />
-              1 שעה הפלגה: 850 ₪<br />
-              שעתיים הפלגה: 1600 ₪<br />
-              3 שעות הפלגה: 2200 ₪<br />
-              👑 עד 14 מפליגים מאושרים<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >* המחיר תקף לסוף שבוע</span
-              >
-            </p>
+            <p><strong>לשייט חופי בארץ (מחיר שייט עם סקיפר):</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>1 שעה הפלגה:</strong> 1,300 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 1,790 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 2,550 ₪</li>
+              <li>👑 עד 14 מפליגים מאושרים</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>שלט מזל טוב</li>
+              <li>בלונים בתוך היאכטה</li>
+              <li>מוזיקה (רמקול בלוטוס)</li>
+              <li>שתייה מים</li>
+              <li>ביטוח לכל משתתף</li>
+              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
+            <ul class="pricing-list">
+              <li>בקבוק שמפניה במתנה 🥂</li>
+              <li>ירידה לים עם אבוב 🌊</li>
+            </ul>
+
+            <p class="pricing-note">* המחיר תקף לסוף שבוע</p>
             <div class="sc-arrow" style="color:#0ea5e9">
               להזמנה בוואטסאפ
               <svg
@@ -177,5 +193,48 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
   </div>
   <FleetSelectionCta
     ctaInstruction="נא להמשיך להזמנה או לצפות בעוד הפלגות בחיפה:"
+  />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "יאכטה סי יו הפלגה בחיפה",
+      description:
+        "השכרת יאכטה Sea-u במפרץ חיפה עד 14 מפליגים, כולל סקיפר, בלונים, רמקול ושתייה.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "1300",
+        highPrice: "2550",
+        offerCount: "3",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "1300",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-14",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "1790",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-14",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "2550",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-14",
+          },
+        ],
+      },
+    })}
   />
 </Layout>

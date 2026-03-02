@@ -1,0 +1,54 @@
+/* ═══════════════════════════════════════════
+   PRICING CARD STYLES
+   Reusable styles for pricing lists on yacht pages
+═══════════════════════════════════════════ */
+
+.pricing-section {
+  background: var(--bg); /* or any suitable background */
+  font-family: inherit;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-title {
+  margin: 0 0 10px 0;
+  color: #0ea5e9;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.pricing-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.pricing-list li {
+  margin-bottom: 0.4rem;
+  position: relative;
+  padding-right: 1.2rem;
+}
+
+.pricing-list li::before {
+  content: "✓";
+  position: absolute;
+  right: 0;
+  color: #0ea5e9;
+  font-weight: bold;
+}
+
+.pricing-list.no-bullets li {
+  padding-right: 0;
+}
+
+.pricing-list.no-bullets li::before {
+  content: none;
+}
+
+.pricing-note {
+  font-size: 0.85em;
+  opacity: 0.9;
+  color: #666;
+  margin-top: 20px;
+}
