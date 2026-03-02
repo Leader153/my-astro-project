@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import mobileImg from "../assets/dolfin-catamara-herzelia.jpg";
-import img1 from "../assets/Dolfin.jpeg";
+import img1 from "../assets/Dolfin-peple.jpeg";
 import midImg from "../assets/catamaran21.jpg";
 import heroImage from "../assets/Dolfin.jpeg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
@@ -60,7 +60,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={img1}
           alt="מסיבה על הקטמרן"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
           format="webp"
         />
 
@@ -83,7 +84,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={midImg}
           alt="צוות הקטמרן דולפין"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
           format="webp"
         />
 
@@ -150,8 +152,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
       </div>
 
       <PremiumSwitch
-        href="/yacht-li-yam"
-        title="רוצים להזמין את יאכטת הקטמרן?"
+        href="/yachts-herzliya"
+        title="חזרה לעמוד יאכטות הרצליה "
         subtitle="לחצו לעמוד היאכטות ותאמו הפלגה"
       />
     </section>

@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Heroimg from "../assets/LeaCatamaran.png";
 import img1 from "../assets/LeaCatamaran.png";
-import midImg from "../assets/JoyBeDeck.jpg";
-import botImg from "../assets/kokpit.jpg";
+import midImg from "../assets/lea-back.png";
+import botImg from "../assets/Lea-up.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
 ---
@@ -64,7 +64,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={img1}
           alt="יאכטה קטמרן מבחוץ"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
           format="webp"
         />
 
@@ -81,7 +82,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={midImg}
           alt="סיפון אלגנטי ויציב"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
           format="webp"
         />
 
@@ -94,7 +96,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={botImg}
           alt="מבט נוסף על הקוקפיט"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
           format="webp"
         />
 

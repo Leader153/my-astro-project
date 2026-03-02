@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Heroimg from "../assets/Yami.png";
-import img1 from "../assets/Yami.png";
-import midImg from "../assets/Yami.png";
-import botImg from "../assets/Yami.png";
+import img1 from "../assets/Yami-peple.jpg";
+import midImg from "../assets/Yami-spinaker.jpg";
+import botImg from "../assets/Yami-kopit.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
 ---
@@ -60,7 +60,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={img1}
           alt="יאכטה יאמי"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
           format="webp"
         />
 
@@ -69,8 +70,19 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           יאכטה יאמי (תוצרת: <strong>Bavaria 40 fit</strong>) מיועדת לעד 12
           מפליגים כולל סקיפר לשייט חופי בארץ, ועד 8 מפליגים לשייט בינלאומי.
         </p>
+
+        <Image
+          src={midImg}
+          alt="סיפון יאכטה יאמי"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
+          format="webp"
+        />
+
         <ul class="sp-list">
-          <li><strong>3 קבינות זוגיות:</strong> לפרטיות מוחלטת ונוחות בים.</li>
+          <li>
+            <strong>3 קבינות זוגיות:</strong> לפרטיות מוחלטת ונוחות בים.
+          </li>
           <li>
             <strong>שירותים ומקלחות:</strong> 2 שירותים חשמליים, 2 מקלחות אישיות +
             מקלחת חיצונית בקוקפיט להתרעננות מהים.
@@ -84,13 +96,6 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
             שמע איכותית עם רמקולים בסלון ובקוקפיט.
           </li>
         </ul>
-
-        <Image
-          src={midImg}
-          alt="סיפון יאכטה יאמי"
-          class="sp-gallery-img is-square"
-          format="webp"
-        />
 
         <h3>⭐ על הסיפון</h3>
         <p>
@@ -106,7 +111,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={botImg}
           alt="קוקפיט יאכטה יאמי"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
           format="webp"
         />
 

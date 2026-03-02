@@ -1,8 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import Heroimg from "../assets/Joy-Be-Yacht.jpeg";
-import img1 from "../assets/Joy-right-side.jpeg";
+import Heroimg from "../assets/louse-hero.png";
+import img1 from "../assets/Louse.jpg";
+import midImg from "../assets/louse-salon.png";
+import botImg from "../assets/louse-hartom.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
 ---
@@ -56,7 +58,29 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
 
         <Image
           src={img1}
-          alt="יאכטה לואיז מהצד"
+          alt="יאכטה לואיז בים"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
+          format="webp"
+        />
+
+        <h3>💎 פינוק ונוחות</h3>
+        <p>
+          סלון מרווח ומואר המאפשר שהייה נעימה. מושלם לבילוי זוגי או עם חברים
+          קרובים. מקום מפנק לחוויה באווירה אחרת.
+        </p>
+
+        <Image
+          src={midImg}
+          alt="סלון יאכטה לואיז"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
+          format="webp"
+        />
+
+        <Image
+          src={botImg}
+          alt="חרטום יאכטה לואיז"
           class="sp-gallery-img is-square"
           format="webp"
         />

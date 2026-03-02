@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Heroimg from "../assets/Bagira-Yacht.jpeg";
-import img1 from "../assets/Joy-right-side.jpeg";
-import midImg from "../assets/JoyBeDeck.jpg";
-import botImg from "../assets/kokpit.jpg";
+import img1 from "../assets/Bagira-kokpit.jpg";
+import midImg from "../assets/Bagira-salon.jpg";
+import botImg from "../assets/Bagira-piple.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
 ---
@@ -67,7 +67,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={img1}
           alt="יאכטה בגירה מהצד"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
           format="webp"
         />
 
@@ -83,7 +84,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={midImg}
           alt="סיפון יאכטה בגירה"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
           format="webp"
         />
 
@@ -102,7 +104,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <Image
           src={botImg}
           alt="קוקפיט יאכטה בגירה"
-          class="sp-gallery-img is-square"
+          class="sp-gallery-img"
+          style="aspect-ratio: 3/2; object-fit: cover;"
           format="webp"
         />
 
