@@ -7,11 +7,12 @@ import midImg from "../assets/ochen-polinom.jpg";
 import botImg from "../assets/ochen-sun.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="יאכטה קטמרן מנועית Ocean חיפה | Leader הפלגות"
-  description="הפלגות ביאכטת קטמרן מנועית Ocean בחיפה. 70 מטר רבוע של יוקרה, עוצמת מנועים רבת כוח, יציבות ומרחב אירוח מקסימלי לעד 13 מפליגים."
+  title="יאכטה קטמרן מנועית Ocean (עד 13 איש) חיפה | Leader הפלגות"
+  description="הלפגות ביאכטת קטמרן מנועית Ocean במפרץ חיפה ל-13 מפליגים. החל מ-2,100 ₪ לשעה. מושלם לחגיגות. כולל סקיפר, בלונים ואבוב. מרחב אירוח מקסימלי ועוצמת מנועים."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -160,12 +161,31 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">🚤</div>
             <h3>קטמרן מנועית Ocean</h3>
-            <p>
-              <strong>החבילה כוללת:</strong><br />
-              סקיפר מקצועי ומפעיל.<br />
-              👑 עד 13 אנשים (לא כולל צוות).<br />
-              מטבח מאובזר, 4 קבינות ממוזגות, מערכת סאונד בבלוטות', אבובים וגלגלי ים.
-            </p>
+            <p><strong>מחירון השכרת קטמרן מנועית:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 2,100 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 2,200 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 2,650 ₪</li>
+              <li>כל שעה נוספת: 990 ₪</li>
+              <li>👑 עד 13 מפליגים מאושרים (לא כולל צוות)</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>שלט מזל טוב</li>
+              <li>בלונים בתוך היאכטה</li>
+              <li>מוזיקה (רמקול בלוטוס)</li>
+              <li>שתייה מים</li>
+              <li>ביטוח לכל משתתף</li>
+              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
+            <ul class="pricing-list">
+              <li>ירידה לים עם אבוב 🌊</li>
+            </ul>
+
+            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
             <div class="sc-arrow" style="color:#d4a017">
               להזמנה בוואטסאפ
               <svg
@@ -191,5 +211,48 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
   </div>
   <FleetSelectionCta
     ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות בחיפה:"
+  />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "יאכטה קטמרן מנועית Ocean חיפה",
+      description:
+        "השכרת יאכטת קטמרן מנועית אושן במפרץ חיפה עד 13 מפליגים, כולל סקיפר, בלונים שירידה לים עם אבוב.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "2100",
+        highPrice: "2650",
+        offerCount: "3",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "2100",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-motor",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "2200",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-motor",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "2650",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-motor",
+          },
+        ],
+      },
+    })}
   />
 </Layout>

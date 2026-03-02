@@ -7,11 +7,12 @@ import midImg from "../assets/lea-back.png";
 import botImg from "../assets/Lea-up.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="יאכטה קטמרן מפרשית מפוארת חיפה | Leader הפלגות"
-  description="יאכטת קטמרן מפרשית יוקרתית בחיפה. שייט חלק, יציב ומרגש בים התיכון על גבי הבד הטבוע הייחודי של קטמרן."
+  title="יאכטה קטמרן מפרשית (עד 14 איש): חוויית שייט בחיפה | Leader הפלגות"
+  description="השכרת יאכטת קטמרן מפרשית במפרץ חיפה ל-14 מפליגים. החל מ-2,390 ₪ לשעה. מושלם לחגיגות. כולל סקיפר, בלונים ואבוב. מקסימום רווח ויוקרה בים."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -132,15 +133,31 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">⛵</div>
             <h3>מחירון יאכטה קטמרן מפרשית</h3>
-            <p>
-              <strong>מחיר שייט עם סקיפר:</strong><br />
-              שעתיים הפלגה: 2550 ₪<br />
-              3 שעות הפלגה: 3500 ₪<br />
-              👑 עד 14 מפליגים מאושרים<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >* המחיר תקף לסוף שבוע</span
-              >
-            </p>
+            <p><strong>מחירון השכרת קטמרן מפרשית:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 2,390 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 2,700 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 3,690 ₪</li>
+              <li>כל שעה נוספת: 990 ₪</li>
+              <li>👑 עד 14 מפליגים מאושרים</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>שלט מזל טוב</li>
+              <li>בלונים בתוך היאכטה</li>
+              <li>מוזיקה (רמקול בלוטוס)</li>
+              <li>שתייה מים</li>
+              <li>ביטוח לכל משתתף</li>
+              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
+            <ul class="pricing-list">
+              <li>ירידה לים עם אבוב 🌊</li>
+            </ul>
+
+            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
             <div class="sc-arrow" style="color:#d4a017">
               להזמנה בוואטסאפ
               <svg
@@ -166,5 +183,48 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
   </div>
   <FleetSelectionCta
     ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות בחיפה:"
+  />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "יאכטה קטמרן מפרשית חיפה",
+      description:
+        "השכרת יאכטת קטמרן מפרשית במפרץ חיפה עד 14 מפליגים, כולל סקיפר, ירידה לים עם אבוב, בלונים ומוזיקה.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "2390",
+        highPrice: "3690",
+        offerCount: "3",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "2390",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-sailing",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "2700",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-sailing",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "3690",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-sailing",
+          },
+        ],
+      },
+    })}
   />
 </Layout>

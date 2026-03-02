@@ -7,11 +7,12 @@ import midImg from "../assets/lea-back.png";
 import botImg from "../assets/Lea-up.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="יאכטה קטמרן מפרשית מפוארת | Leader הפלגות"
-  description="יאכטת קטמרן מפרשית יוקרתית בהרצליה. שייט חלק, יציב ומרגש בים התיכון על גבי הבד הטבוע הייחודי של קטמרן."
+  title="לאה - יאכטה קטמרן מפרשית (עד 14 איש) בהרצליה | Leader הפלגות"
+  description="השכרת יאכטה לאה קטמרן מפרשית בהרצליה ל-14 מפליגים. החל מ-2,490 ₪ לשעה. מושלם לחגיגות ומשפחות. כולל סקיפר, בלונים ואבוב. שייט מפואר ויציב בים."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -126,21 +127,37 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
               style="object-position: center;"
             />
             <div class="sc-tag" style="background:#d4a017; color:#fff">
-              חיפה
+              הרצליה
             </div>
           </div>
           <div class="sc-body">
             <div class="sc-icon">⛵</div>
-            <h3>מחירון יאכטה קטמרן מפרשית</h3>
-            <p>
-              <strong>מחיר שייט עם סקיפר:</strong><br />
-              שעתיים הפלגה: 2550 ₪<br />
-              3 שעות הפלגה: 3500 ₪<br />
-              👑 עד 14 מפליגים מאושרים<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >* המחיר תקף לסוף שבוע</span
-              >
-            </p>
+            <h3>מחירון לאה - יאכטה קטמרן מפרשית</h3>
+            <p><strong>מחירון השכרת קטמרן מפרשית:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 2,490 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 3,100 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 4,090 ₪</li>
+              <li>כל שעה נוספת: 990 ₪</li>
+              <li>👑 עד 14 מפליגים מאושרים</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>שלט מזל טוב</li>
+              <li>בלונים בתוך היאכטה</li>
+              <li>מוזיקה (רמקול בלוטוס)</li>
+              <li>שתייה מים</li>
+              <li>ביטוח לכל משתתף</li>
+              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
+            <ul class="pricing-list">
+              <li>ירידה לים עם אבוב 🌊</li>
+            </ul>
+
+            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
             <div class="sc-arrow" style="color:#d4a017">
               להזמנה בוואטסאפ
               <svg
@@ -158,13 +175,56 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
       </div>
 
       <PremiumSwitch
-        href="/haifa"
-        title="בחזרה ליאכטות חיפה"
+        href="/yachts-herzliya"
+        title="בחזרה ליאכטות הרצליה"
         subtitle="לצפייה בצי שלנו ולבחירת היאכטה המושלמת"
       />
     </section>
   </div>
   <FleetSelectionCta
-    ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות בחיפה:"
+    ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות בהרצליה:"
+  />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "לאה יאכטה קטמרן מפרשית הרצליה",
+      description:
+        "השכרת יאכטה קטמרן מפרשית לאה במרינה הרצליה עד 14 מפליגים, כולל סקיפר, ירידה לים עם אבוב, בלונים ומוזיקה.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "2490",
+        highPrice: "4090",
+        offerCount: "3",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "2490",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-Lea",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "3100",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-Lea",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "4090",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-Lea",
+          },
+        ],
+      },
+    })}
   />
 </Layout>

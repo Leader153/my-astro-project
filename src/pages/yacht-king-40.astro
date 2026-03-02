@@ -6,11 +6,12 @@ import img1 from "../assets/king-yacht-Dolfin.png";
 import midImg2 from "../assets/king.png";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="ספינת קינג: יאכטה לאירועים בחיפה עד 40 מפליגים"
-  description="חוגגים אירוע? ⚓ ספינת קינג בחיפה מושלמת למסיבות וימי הולדת עד 40 איש! שייט חוויתי 🐬, רחבת ריקודים, מנגל ופינוק מושלם 🥂."
+  title="ספינת קינג (עד 40 איש): יאכטה לאירועים בחיפה | Leader הפלגות"
+  description="השכרת ספינת קינג במפרץ חיפה לאירועים ומסיבות ענק עד 40 מפליגים. החל מ-1,990 ₪ לשעה. אוכל, מוזיקה, מנגל וצוות מקצועי לחוויה מושלמת."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -170,19 +171,34 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">🚢</div>
             <h3>ספינת קינג</h3>
-            <p>
-              <strong>מחירון:</strong><br />
-              שעה אחת 1990 ₪<br />
-              שעתיים 3290 ₪<br />
-              3 שעות 4400 ₪<br />
-              כל שעה נוספת 990 ₪<br />
-              עד 40 מפליגים<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >בהזמנה של שלוש שעות כולל גרילמן , מנגל ורחבת ריקודים</span
-              >
+            <p><strong>מחירון השכרת קינג:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 1,990 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 3,290 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 4,400 ₪</li>
+              <li>כל שעה נוספת: 990 ₪</li>
+              <li>👑 מתאים לעד 40 מפליגים</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>צוות מקצועי ומסור (מלחים וסקיפר)</li>
+              <li>רחבת ריקודים ומערכת שמע</li>
+              <li>אפשרות להביא אוכל, בשרים ושתייה ולצלות על המנגל</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
+            <ul class="pricing-list">
+              <li>שירות גרילמן (על האש) ללא תוספת תשלום! 🍖</li>
+            </ul>
+
+            <p class="pricing-note">
+              * כל המחירים הם לספינה במלואה<br />
+              * המחיר לא כולל בקבוק שמפניה<br />
+              * מחיר כולל מע"מ, תקף לסוף שבוע
             </p>
             <div class="sc-arrow" style="color:#0ea5e9">
-              קבלו פרטים
+              להזמנה בוואטסאפ
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -198,7 +214,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
       </div>
 
       <PremiumSwitch
-        href="/yachts-haifa"
+        href="/haifa"
         title="רוצים להזמין את ספינת הקינג?"
         subtitle="לחצו לעמוד צפה בצי היאכטות בחיפה"
       />
@@ -206,5 +222,48 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
   </div>
   <FleetSelectionCta
     ctaInstruction="נא להיכנס לעמוד יאכטות ולתאם את ההפלגה שלכם:"
+  />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "ספינת קינג הפלגה בחיפה",
+      description:
+        "השכרת ספינת קינג במפרץ חיפה למסיבות ואירועים עד 40 מפליגים, כולל רחבת ריקודים ומנגל פחמים.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "1990",
+        highPrice: "4400",
+        offerCount: "3",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "1990",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-king-40",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "3290",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-king-40",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "4400",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-king-40",
+          },
+        ],
+      },
+    })}
   />
 </Layout>

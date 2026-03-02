@@ -5,11 +5,12 @@ import Heroimg from "../assets/Marga-bot.png";
 import img1 from "../assets/margafish.png";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="סירת מנוע מרגע עד 6 מפליגים חיפה | Leader הפלגות"
-  description="הפלגות ספורטיביות לחובבי אקסטרים בחיפה בסירת מנוע פרטית. מיראז' עד 6 מפליגים מחיפה, גלים ומהירות חסרת גבולות."
+  title="סירת מנוע מרגע (עד 6 איש): אקסטרים בחיפה | Leader הפלגות"
+  description="השכרת סירת מנוע מהירה במפרץ חיפה לעד 6 מפליגים. החל מ-1,290 ₪ לשעה. מושלם לחובבי אדרנלין ואקסטרים. כולל מוזיקה, סקיפר, וירידה לאבוב בהזמנת שעתיים."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -98,14 +99,29 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">🚤</div>
             <h3>סירת מרגע אקסטרים למנוע</h3>
-            <p>
-              <strong>לשייט חופי מהיר בחיפה:</strong><br />
-              סירה ספורטיבית במיוחד.<br />
-              👑 עד 6 חברים שרוצים ריגוש.<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >* לתיאום מחיר ותאריך צרו קשר</span
-              >
-            </p>
+            <p><strong>מחירון השכרת סירת אקסטרים:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 1,290 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 1,390 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 1,890 ₪</li>
+              <li>כל שעה נוספת: 990 ₪</li>
+              <li>👑 מתאים לעד 6 מפליגים</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>מוזיקה (רמקול בלוטוס)</li>
+              <li>שתייה מים</li>
+              <li>ביטוח לכל משתתף</li>
+              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של שעתיים:</h4>
+            <ul class="pricing-list">
+              <li>ירידה לים עם אבוב 🌊</li>
+            </ul>
+
+            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
             <div class="sc-arrow" style="color:#d4a017">
               להזמנה בוואטסאפ
               <svg
@@ -131,5 +147,48 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
   </div>
   <FleetSelectionCta
     ctaInstruction="נא להמשיך להזמנה או לצפות בעוד סירות בחיפה:"
+  />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "סירת מנוע מרגע חיפה",
+      description:
+        "השכרת סירת מנוע מהירה באקסטרים במפרץ חיפה עד 6 מפליגים, כולל סקיפר מקצועי, מוזיקה וירידה לאבוב.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "1290",
+        highPrice: "1890",
+        offerCount: "3",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "1290",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/motorboat-6",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "1390",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/motorboat-6",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "1890",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/motorboat-6",
+          },
+        ],
+      },
+    })}
   />
 </Layout>
