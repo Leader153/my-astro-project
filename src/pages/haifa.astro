@@ -6,6 +6,13 @@ import cardImg2 from "../assets/Romantic cruise 2.webp";
 import cardImg3 from "../assets/Louse.jpeg";
 import typhoonImg from "../assets/typhoon-ship.jpg";
 import marinaImg from "../assets/sky.webp";
+import KingImg from "../assets/king.png";
+import MargaImg from "../assets/Marga-bot.png";
+import YamiImg from "../assets/Yami.png";
+import SeuImg from "../assets/Seu.png";
+import LeaImg from "../assets/LeaCatamaran.png";
+import OchenImg from "../assets/Ochen.png";
+import margafishImg from "../assets/margafish.png";
 import "../styles/catalog-page.css";
 
 const yachts = [
@@ -15,7 +22,7 @@ const yachts = [
     tag: "עד 11 מפליגים",
     color: "#0f7ab0",
     alt: "יאכטה עד 11 מפליגים",
-    img: cardImg2,
+    img: YamiImg,
     href: "/yacht-11",
   },
   {
@@ -24,7 +31,7 @@ const yachts = [
     tag: "עד 14 מפליגים",
     color: "#e91e8c",
     alt: "יאכטה עד 14 מפליגים",
-    img: cardImg1,
+    img: SeuImg,
     href: "/yacht-14",
   },
   {
@@ -49,7 +56,7 @@ const yachts = [
     tag: "מפרשית יוקרתית",
     color: "#7c3aed",
     alt: "יאכטה קטמרן מפרשית מפוארת",
-    img: cardImg1,
+    img: LeaImg,
     href: "/catamaran-sailing",
   },
   {
@@ -58,17 +65,17 @@ const yachts = [
     tag: "קטמרן מנועית",
     color: "#08047e",
     alt: "יאכטה קטמרן מנועית",
-    img: marinaImg,
+    img: OchenImg,
     href: "/catamaran-motor",
   },
   {
-    title: "סירת מנוע מהירה",
-    desc: "אקשן ואדרנלין בים! סירת מנוע ספורטיבית ומהירה לחוויה מלאת אקסטרים ומהירות.",
-    tag: "אקסטרים",
+    title: "סירת דייג",
+    desc: "פעילות דיג מקצועית בים הפתוח! סירה נוחה ומאובזרת במיוחד לחובבי דייג בחיפה.",
+    tag: "דייג",
     color: "#1da8e8",
-    alt: "סירת מנוע מהירה",
-    img: cardImg2,
-    href: "/motorboat-fast",
+    alt: "סירת דייג",
+    img: margafishImg,
+    href: "/motorboat-6",
   },
   {
     title: "יאכטה טייפון עד 30 מפליגים",
@@ -76,16 +83,22 @@ const yachts = [
     tag: "עד 30 מפליגים",
     color: "#d4a017",
     alt: "יאכטה טייפון",
-    img: cardImg3,
-    href: "/יאכטה-טייפון-עד-30-מפליגים",
+    img: typhoonImg,
+    href: "/typhoon-ship",
   },
   {
-    title: "יאכטה קינג",
-    desc: "ספינת הדגל לאירועים ענקיים עד 40 איש. חתונות, מסיבות עובדים ופינוק אינסופי.",
+    title: "ספינת קינג",
+    desc: "",
+    descLines: [
+      "מסיבות, ימי הולדת ואירועים עד 40 מפליגים",
+      "שעה אחת 1990 ₪ | שעתיים 3290 ₪",
+      "3 שעות 4400 ₪",
+      "בהזמנה של שלוש שעות כולל גרילמן, מנגל ורחבת ריקודים",
+    ],
     tag: "עד 40 מפליגים",
     color: "#08047e",
-    alt: "יאכטה קינג",
-    img: marinaImg,
+    alt: "ספינת קינג",
+    img: KingImg,
     href: "/yacht-king-40",
   },
   {
@@ -94,7 +107,7 @@ const yachts = [
     tag: "עד 6 מפליגים",
     color: "#ff5722",
     alt: "סירת מנוע מרגע",
-    img: cardImg2,
+    img: MargaImg,
     href: "/motorboat-6",
   },
 ];
@@ -262,7 +275,17 @@ const textSections = [
                 </div>
                 <div class="hz-card-body">
                   <h3>{y.title}</h3>
-                  <p>{y.desc}</p>
+                  {y.descLines ? (
+                    <p>
+                      {y.descLines.map((line) => (
+                        <span style="display:block; margin-bottom: 0.2rem;">
+                          {line}
+                        </span>
+                      ))}
+                    </p>
+                  ) : (
+                    <p>{y.desc}</p>
+                  )}
                   <span class="hz-card-cta" style={`color:${y.color}`}>
                     הזמן עכשיו
                     <svg
@@ -319,7 +342,17 @@ const textSections = [
                 </div>
                 <div class="hz-card-body">
                   <h3>{y.title}</h3>
-                  <p>{y.desc}</p>
+                  {y.descLines ? (
+                    <p>
+                      {y.descLines.map((line) => (
+                        <span style="display:block; margin-bottom: 0.2rem;">
+                          {line}
+                        </span>
+                      ))}
+                    </p>
+                  ) : (
+                    <p>{y.desc}</p>
+                  )}
                   <span class="hz-card-cta" style={`color:${y.color}`}>
                     הזמן עכשיו
                     <svg

@@ -3,9 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import louseImg from "../assets/Louse.jpeg";
 import JoiBeImg from "../assets/Joy-Be-Yacht.jpeg";
-import romanticImg from "../assets/Romantic cruise.webp";
-import marinaImg from "../assets/marina-herzelia.webp";
+import redbotimg from "../assets/redbot.png";
+import LeaImg from "../assets/LeaCatamaran.png";
 import catamaranimg from "../assets/Dolfin.jpeg";
+import Bagiraimg from "../assets/Bagira-Yacht.jpeg";
+import LiYamImg from "../assets/Lee-Yam-Yacht.png";
+
+
 
 // Array of 8 yachts
 const yachts = [
@@ -21,36 +25,36 @@ const yachts = [
     name: "יאכטה לי ים",
     capacity: "עד 13 מפליגים",
     desc: "עיצוב קלאסי ומרחבים נוחים לשייט קסום ופרטי לחלוטין מול החופים.",
-    img: louseImg,
+    img: LiYamImg,
     tag: "קלאסית",
     href: "/yacht-li-yam",
   },
   {
     name: "יאכטה בגירה",
     capacity: "עד 10 מפליגים",
-    desc: "ספינה אינטימית ונהדרת לאירועי יוקרה מצומצמים, עד עשרה אנשים בלבד.",
-    img: romanticImg,
-    tag: "פופולרי",
+    desc: "יאכטה נהדרת לאירועי יוקרה מצומצמים.",
+    img: Bagiraimg,
+    tag: "פופולרית",
     href: "/yacht-bagira",
   },
   {
     name: "יאכטה לואיז",
     capacity: "עד 6 מפליגים",
     desc: "יאכטת בוטיק קטנה וחמימה להצעות נישואין, ימי נישואין ורומנטיקה.",
-    img: marinaImg,
+    img: louseImg,
     tag: "רומנטי",
     href: "/yacht-louise",
   },
   {
-    name: "",
-    desc: "יאכטה קלאסית לשייט זוגי או משפחתי יציב, קפיצות למים והרבה רוגע.",
-    capacity: "  משפחות וקבוצות",
-    img: JoiBeImg,
+    name: "לאה - יאכטה קטמרן מפרשית",
+    desc:"יאכטה קטמרן מפרשית מפוארת במיוחד",
+    capacity: "עד 14 מפליגים",
+    img: LeaImg,
     tag: "למשפחות",
-    href: "/yacht-dolphin",
+    href: "/catamaran-Lea",
   },
   {
-    name: "קטמרן ענקית",
+    name: "דולפין",
     capacity: "עד 21 מפליגים",
     desc: "ספינת קטמרן ענקית, מרווחת ויציבה למסיבות וגיבושים. גולת הכותרת לחוגגים.",
     img: catamaranimg,
@@ -61,9 +65,9 @@ const yachts = [
     name: "סירת מנוע אחמית",
     capacity: "עד 9 מפליגים",
     desc: "סירת מנוע מהירה לאדרנלין ואקסטרים על הגלים! שייט ספורטיבי.",
-    img: romanticImg,
+    img: redbotimg,
     tag: "אקסטרים",
-    href: "/motorboat-ahmit",
+    href: "/yachts-herzliya",
   },
 ];
 ---
