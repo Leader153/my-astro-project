@@ -1169,17 +1169,22 @@ const coupleYachts = [
         ],
       },
       offers: {
-        "@type": "Offer",
+        "@type": "AggregateOffer",
         priceCurrency: "ILS",
-        price: "550",
-        priceValidUntil: "2026-12-31",
+        lowPrice: "550",
+        highPrice: "1850",
         availability: "https://schema.org/InStock",
-        url: "https://aflagot-haifa.com/romantic-sailing",
       },
       provider: {
         "@type": "TravelAgency",
-        name: "לידר הפלגות",
         "@id": "https://aflagot-haifa.com/",
+        name: "Leader שייט & הפלגות",
+        legalName: "לידר",
+        alternateName: [
+          "Leader Haflagot",
+          "לידר הפלגות שייט",
+          "Leader Yachting",
+        ],
         url: "https://aflagot-haifa.com/",
         telephone: "+972533403449",
         address: [

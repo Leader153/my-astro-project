@@ -227,11 +227,19 @@ const yachts = [
   set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "יאכטות להשכרה בהרצליה – לידר הפלגות",
+    name: "יאכטות להשכרה בהרצליה – Leader שייט & הפלגות",
     description:
       "צי יאכטות מגוון ומפואר במרינה הרצליה. מקטמרן ענקית ל-21 איש ועד יאכטות אינטימיות לזוגות.",
     url: "https://aflagot-haifa.com/yachts-herzliya",
     image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "ILS",
+      lowPrice: "670",
+      highPrice: "4090",
+      offerCount: "7",
+      availability: "https://schema.org/InStock",
+    },
     itemListElement: [
       {
         "@type": "ListItem",
@@ -270,6 +278,34 @@ const yachts = [
         url: "https://aflagot-haifa.com/catamaran-21",
       },
     ],
+    provider: {
+      "@type": "TravelAgency",
+      "@id": "https://aflagot-haifa.com/",
+      name: "Leader שייט & הפלגות",
+      legalName: "לידר",
+      alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
+      url: "https://aflagot-haifa.com/",
+      telephone: "+972533403449",
+      address: [
+        {
+          "@type": "PostalAddress",
+          streetAddress: "מרינה הרצליה",
+          addressLocality: "הרצליה",
+          addressCountry: "IL",
+        },
+        {
+          "@type": "PostalAddress",
+          streetAddress: "מעגן שביט, פארק קישון",
+          addressLocality: "חיפה",
+          addressCountry: "IL",
+        },
+      ],
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
   })}
 />
 

@@ -196,7 +196,9 @@ const textSections = [
             rel="noopener"
             class="hz-btn wa"
           >
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               width="18"
@@ -260,7 +262,9 @@ const textSections = [
                   )}
                   <span class="hz-card-cta" style={`color:${y.color}`}>
                     הזמן עכשיו
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -325,7 +329,9 @@ const textSections = [
                   )}
                   <span class="hz-card-cta" style={`color:${y.color}`}>
                     הזמן עכשיו
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -391,7 +397,9 @@ const textSections = [
                   )}
                   <span class="hz-card-cta" style={`color:${y.color}`}>
                     הזמן עכשיו
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -503,11 +511,21 @@ const textSections = [
   set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "TouristAttraction",
-    name: "לידר",
+    name: "Leader שייט & הפלגות",
+    legalName: "לידר",
+    alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
     description:
       "השכרת יאכטות, הפלגות בחיפה, מסיבות בים ואירועי בוטיק מול נופי הר כרמל.",
     url: "https://aflagot-haifa.com/haifa",
-    image: "https://aflagot-haifa.com/images/default-social.jpg",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "ILS",
+      lowPrice: "1100",
+      highPrice: "4400",
+      offerCount: "9",
+      availability: "https://schema.org/InStock",
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "מעגן שביט, פארק קישון",
@@ -518,8 +536,31 @@ const textSections = [
     telephone: "+972533403449",
     provider: {
       "@type": "TravelAgency",
-      name: "Leader הפלגות",
+      "@id": "https://aflagot-haifa.com/",
+      name: "Leader שייט & הפלגות",
+      legalName: "לידר",
+      alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
       url: "https://aflagot-haifa.com/",
+      telephone: "+972533403449",
+      address: [
+        {
+          "@type": "PostalAddress",
+          streetAddress: "מעגן שביט, פארק קישון",
+          addressLocality: "חיפה",
+          addressCountry: "IL",
+        },
+        {
+          "@type": "PostalAddress",
+          streetAddress: "מרינה הרצליה",
+          addressLocality: "הרצליה",
+          addressCountry: "IL",
+        },
+      ],
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
     },
   })}
 />

@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  // site: 'https://aflagot-haifa.com', // Раскомментируй, когда привяжешь домен
+  site: "https://aflagot-haifa.com",
   integrations: [
     partytown({
       config: {

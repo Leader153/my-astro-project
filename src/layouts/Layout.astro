@@ -39,22 +39,31 @@ const schemaOrg = {
   address: [
     {
       "@type": "PostalAddress",
-      streetAddress: "רחוב הדייגים 3",
-      addressLocality: "חיפה",
+      streetAddress: "הדייגים 3, חיפה",
+      addressLocality: "מעגן שביט, פארק קישון",
       addressCountry: "IL",
     },
     {
       "@type": "PostalAddress",
       streetAddress: "יורדי ים 1, הרצליה",
-      addressLocality: "הרצליה",
+      addressLocality: "מרינה הרצליה",
       addressCountry: "IL",
     },
   ],
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 32.8156,
-    longitude: 35.0063,
-  },
+  geo: [
+    {
+      "@type": "GeoCoordinates",
+      name: "מעגן שביט, פארק קישון – חיפה",
+      latitude: 32.8069,
+      longitude: 35.0322,
+    },
+    {
+      "@type": "GeoCoordinates",
+      name: "מרינה הרצליה",
+      latitude: 32.1641,
+      longitude: 34.7985,
+    },
+  ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: [
@@ -69,7 +78,11 @@ const schemaOrg = {
     opens: "08:00",
     closes: "22:00",
   },
-  sameAs: ["https://wa.me/972533403449"],
+  sameAs: [
+    "https://www.facebook.com/leadership.haifa",
+    "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+    "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+  ],
 };
 ---
 

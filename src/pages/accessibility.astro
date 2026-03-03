@@ -14,7 +14,9 @@ import Layout from "../layouts/Layout.astro";
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="accessibility-icon-wrap">
-          <svg aria-hidden="true" class="accessibility-icon"
+          <svg
+            aria-hidden="true"
+            class="accessibility-icon"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
@@ -62,7 +64,9 @@ import Layout from "../layouts/Layout.astro";
         <div class="items-grid">
           <div class="acc-item">
             <div class="item-icon browsers-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -81,7 +85,9 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="acc-item">
             <div class="item-icon devices-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -99,7 +105,9 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="acc-item">
             <div class="item-icon keyboard-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -119,7 +127,9 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="acc-item">
             <div class="item-icon vision-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -138,7 +148,9 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="acc-item">
             <div class="item-icon hearing-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -155,7 +167,9 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="acc-item">
             <div class="item-icon plugin-icon">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -256,7 +270,9 @@ import Layout from "../layouts/Layout.astro";
       <!-- Contact Card -->
       <div class="contact-card">
         <div class="contact-icon">
-          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -273,7 +289,9 @@ import Layout from "../layouts/Layout.astro";
             נגישות? פנו אלינו ונטפל בהקדם. התקשרו להזמין הפלגה!
           </p>
           <a href="mailto:danielflider78@gmail.com" class="contact-btn">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -292,4 +310,30 @@ import Layout from "../layouts/Layout.astro";
   </div>
 </Layout>
 
-
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "הצהרת נגישות – Leader שייט & הפלגות",
+    description:
+      "הצהרת הנגישות של אתר לידר הפלגות. האתר מונגש לפי תקן WCAG 2.0 AA.",
+    url: "https://aflagot-haifa.com/accessibility",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    inLanguage: "he",
+    publisher: {
+      "@type": "TravelAgency",
+      "@id": "https://aflagot-haifa.com/",
+      name: "Leader שייט & הפלגות",
+      legalName: "לידר",
+      url: "https://aflagot-haifa.com/",
+      telephone: "+972533403449",
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
+  })}
+/>

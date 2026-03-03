@@ -11,7 +11,7 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 
 <Layout
   title="יום הולדת על יאכטה"
-  description="תחגגו יום הולדת שלא תשכחו לעולם — ביאכטה פרטית עם כל החבר'ים"
+  description="תחגגו יום הולדת שלא תשכחו לעולם — ביאכטה פרטית עם כל החבריי"
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -179,15 +179,18 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
       audienceType: "חברים ומשפחה",
     },
     offers: {
-      "@type": "Offer",
+      "@type": "AggregateOffer",
       priceCurrency: "ILS",
+      lowPrice: "550",
+      highPrice: "1850",
       availability: "https://schema.org/InStock",
-      url: "https://aflagot-haifa.com/birthday",
     },
     provider: {
       "@type": "TravelAgency",
-      name: "לידר הפלגות",
       "@id": "https://aflagot-haifa.com/",
+      name: "Leader שייט & הפלגות",
+      legalName: "לידר",
+      alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
       url: "https://aflagot-haifa.com/",
       telephone: "+972533403449",
       address: [

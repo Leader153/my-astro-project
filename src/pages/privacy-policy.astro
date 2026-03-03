@@ -124,7 +124,9 @@ const sections = [
       </div>
       <div class="hero-content">
         <div class="hero-icon-wrap">
-          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -144,7 +146,9 @@ const sections = [
         </p>
         <div class="hero-meta">
           <span class="meta-badge">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -164,7 +168,9 @@ const sections = [
             עודכן לאחרונה: מאי 2024
           </span>
           <span class="meta-badge">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -184,7 +190,9 @@ const sections = [
       <!-- Table of Contents -->
       <nav class="toc-card" aria-label="תוכן עניינים">
         <div class="toc-header">
-          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -253,7 +261,9 @@ const sections = [
       <div class="contact-card" id="contact">
         <div class="contact-left">
           <div class="contact-icon-wrap">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -274,7 +284,9 @@ const sections = [
           </div>
         </div>
         <a href="mailto:danielflider78@gmail.com" class="contact-btn">
-          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -297,6 +309,34 @@ const sections = [
     </div>
   </div>
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "מדיניות פרטיות – Leader שייט & הפלגות",
+    description: "מדיניות הפרטיות של לידר הפלגות. הפרטיות שלכם בטוחה איתנו.",
+    url: "https://aflagot-haifa.com/privacy-policy",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    inLanguage: "he",
+    dateModified: "2024-05-01",
+    publisher: {
+      "@type": "TravelAgency",
+      "@id": "https://aflagot-haifa.com/",
+      name: "Leader שייט & הפלגות",
+      legalName: "לידר",
+      url: "https://aflagot-haifa.com/",
+      telephone: "+972533403449",
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
+  })}
+/>
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap");
