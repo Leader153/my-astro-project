@@ -174,8 +174,8 @@ const textSections = [
 ---
 
 <Layout
-  title="יאכטות מפוארות להשכרה בסטנדרט הגבוה בחיפה"
-  description="מחפשים את היאכטה המושלמת? ⚓ הכירו את צי היאכטות המפוארות שלנו! יאכטות מאובזרות לשייט רומנטי, מסיבות ואירועים 🐬 בשיא הפינוק 🥂. !"
+  title="הפלגה בחיפה - השכרת יאכטות וספינות בנמל חיפה ⚓ | Leader הפלגות"
+  description="מחפשים יאכטה בחיפה? ⚓ הכירו את צי היאכטות המפוארות שלנו! הפלגות למשפחות, מסיבות רווקות ואירועים רומנטיים בים התיכון מול הרי הכרמל. התקשרו להזמנת שייט מושלם!"
 >
   <div class="hz-page" dir="rtl">
     <!-- ══ HERO ══ -->
@@ -503,3 +503,30 @@ const textSections = [
     </section>
   </div>
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: "לידר",
+    description:
+      "השכרת יאכטות, הפלגות בחיפה, מסיבות בים ואירועי בוטיק מול נופי הר כרמל.",
+    url: "https://aflagot-haifa.com/haifa",
+    image: "https://aflagot-haifa.com/images/default-social.jpg",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "מעגן שביט, פארק קישון",
+      addressLocality: "חיפה",
+      addressRegion: "מחוז חיפה",
+      addressCountry: "IL",
+    },
+    telephone: "+972533403449",
+    provider: {
+      "@type": "TravelAgency",
+      name: "Leader הפלגות",
+      url: "https://aflagot-haifa.com/",
+    },
+  })}
+/>

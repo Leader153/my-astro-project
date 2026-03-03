@@ -7,11 +7,12 @@ import midImg from "../assets/catamaran21.jpg";
 import heroImage from "../assets/Dolfin.jpeg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="יאכטה קטמרן דולפין | עד 21 מפליגים"
-  description="יאכטה קטמרן דולפין עד 21 מפליגים. מתאימה לשייט משפחות, חברים, מסיבות. יאכטה מרווחת עם ספסלים מרופדים."
+  title="יאכטה קטמרן דולפין (עד 21 איש) הרצליה | Leader הפלגות"
+  description="השכרת יאכטה קטמרן דולפין במרינה הרצליה לעד 21 מפליגים. החל מ-1,990 ₪ לשעה. יאכטה מרווחת וסופר-יציבה למסיבות ומשפחות. כולל סקיפר מקצועי ומוזיקה."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -125,16 +126,29 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">⛵</div>
             <h3>יאכטה קטמרן דולפין</h3>
-            <p>
-              <strong>מחירון שייט עם סקיפר:</strong><br />
-              1 שעה הפלגה: 1850 ₪<br />
-              שעתיים הפלגה: 2650 ₪<br />
-              3 שעות הפלגה: 3300 ₪<br />
-              👑 עד 21 מפליגים מאושרים<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >* המחיר תקף לסוף שבוע</span
-              >
-            </p>
+            <p><strong>מחירון השכרת קטמרן דולפין:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 1,990 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 2,550 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 3,590 ₪</li>
+              <li>כל שעה נוספת: 990 ₪</li>
+              <li>👑 מתאים לעד 21 מפליגים (לא כולל צוות)</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>שלט מזל טוב</li>
+              <li>מוזיקה (רמקול בלוטוס)</li>
+              <li>ביטוח לכל משתתף</li>
+              <li>שירות של סקיפר וצוות מקצועי לאורך כל הדרך</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של שעתיים:</h4>
+            <ul class="pricing-list">
+              <li>ירידה לים עם אבוב 🌊</li>
+            </ul>
+
+            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
             <div class="sc-arrow" style="color:#0ea5e9">
               להזמנה בוואטסאפ
               <svg
@@ -160,5 +174,48 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
   </div>
   <FleetSelectionCta
     ctaInstruction="נא להיכנס לעמוד יאכטות ולתאם את ההפלגה שלכם:"
+  />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "יאכטה קטמרן דולפין הרצליה",
+      description:
+        "השכרת יאכטת קטמרן דולפין במרינה הרצליה לענק ולמסיבות עד 21 מפליגים. כוללת צוות מקצועי וירידה לים עם אבוב.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "1990",
+        highPrice: "3590",
+        offerCount: "3",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "1990",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-21",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "2550",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-21",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "3590",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/catamaran-21",
+          },
+        ],
+      },
+    })}
   />
 </Layout>

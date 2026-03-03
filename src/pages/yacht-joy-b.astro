@@ -7,11 +7,12 @@ import midImg from "../assets/JoyBeDeck.jpg";
 import botImg from "../assets/kokpit.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="יאכטה ג'וי בי עד 13 מפליגים הרצליה | Leader הפלגות"
-  description="הפלגות חווייתיות לחברות ומשפחות על יאכטה ג'וי בי (Joy B) מרווחת ומפנקת בהרצליה לעד 13 איש."
+  title="יאכטה ג'וי בי (עד 13 איש) הרצליה | Leader הפלגות"
+  description="השכרת יאכטה ג'וי בי (Joy B) מרווחת ומפנקת במרינה הרצליה לעד 13 איש. החל מ-910 ₪ לשעה. מושלמת למשפחות וחגיגות. כולל סקיפר מקצועי, מוזיקה ובלונים."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -134,16 +135,33 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">⛵</div>
             <h3>מחירון יאכטה ג'וי בי</h3>
-            <p>
-              <strong>לשייט חופי בארץ:</strong><br />
-              1 שעה הפלגה: 1050 ₪<br />
-              שעתיים הפלגה: 1530 ₪<br />
-              3 שעות הפלגה: 1850 ₪<br />
-              👑 עד 13 מפליגים מאושרים<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >* המחיר למטה תקף לסוף שבוע (עם סקיפר)</span
-              >
-            </p>
+            <p><strong>מחירון השכרת יאכטה ג'וי בי:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 910 ₪</li>
+              <li><strong>שעה וחצי הפלגה:</strong> 1,090 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 1,350 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 1,860 ₪</li>
+              <li>כל שעה נוספת: 510 ₪</li>
+              <li>👑 עד 13 מפליגים מאושרים (עם סקיפר)</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>שלט מזל טוב</li>
+              <li>בלונים בתוך היאכטה</li>
+              <li>מוזיקה (רמקול בלוטוס)</li>
+              <li>שתייה מים</li>
+              <li>בקבוק שמפניה 🥂</li>
+              <li>ביטוח לכל משתתף</li>
+              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של שעתיים:</h4>
+            <ul class="pricing-list">
+              <li>ירידה לים עם אבוב 🌊</li>
+            </ul>
+
+            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
             <div class="sc-arrow" style="color:#d4a017">
               להזמנה בוואטסאפ
               <svg
@@ -168,4 +186,54 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
     </section>
   </div>
   <FleetSelectionCta ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות:" />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "יאכטה ג'וי בי הרצליה",
+      description:
+        "השכרת יאכטה מפרשית ג'וי בי במרינה הרצליה לעד 13 מפליגים. כוללת צוות מקצועי, בלונים, מוזיקה וירידה לאבוב.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "910",
+        highPrice: "1860",
+        offerCount: "4",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "910",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-joy-b",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה וחצי",
+            price: "1090",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-joy-b",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "1350",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-joy-b",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "1860",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-joy-b",
+          },
+        ],
+      },
+    })}
+  />
 </Layout>

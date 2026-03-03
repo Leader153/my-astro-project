@@ -7,11 +7,12 @@ import midImg from "../assets/Bagira-salon.jpg";
 import botImg from "../assets/Bagira-piple.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="יאכטה בגירה עד 12 מפליגים הרצליה | Leader הפלגות"
-  description="יאכטה בגירה (Bagira) – הפלגות זוגיות וקבוצתיות מפנקות על יאכטה חדשה ומרווחת בהרצליה לעד 12 מפליגים."
+  title="יאכטה בגירה (עד 12 איש) הרצליה | Leader הפלגות"
+  description="השכרת יאכטה בגירה (Bagira) במרינה הרצליה לעד 12 איש. החל מ-760 ₪ לשעה. מושלמת לאירועי יוקרה. כולל סקיפר, שמפניה, בלונים ואבוב."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -140,16 +141,33 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">⛵</div>
             <h3>מחירון יאכטה בגירה</h3>
-            <p>
-              <strong>לשייט חופי בארץ:</strong><br />
-              1 שעה הפלגה: 1050 ₪<br />
-              שעתיים הפלגה: 1530 ₪<br />
-              3 שעות הפלגה: 1850 ₪<br />
-              👑 עד 12 מפליגים מאושרים<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >* המחיר תקף לסוף שבוע (עם סקיפר)</span
-              >
-            </p>
+            <p><strong>מחירון השכרת יאכטה בגירה:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 760 ₪</li>
+              <li><strong>שעה וחצי הפלגה:</strong> 930 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 1,190 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 1,580 ₪</li>
+              <li>כל שעה נוספת: 390 ₪</li>
+              <li>👑 עד 12 מפליגים מאושרים (עם סקיפר)</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>שלט מזל טוב</li>
+              <li>בלונים בתוך היאכטה</li>
+              <li>מוזיקה (רמקול בלוטוס)</li>
+              <li>שתייה מים</li>
+              <li>בקבוק שמפניה 🥂</li>
+              <li>ביטוח לכל משתתף</li>
+              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של שעתיים:</h4>
+            <ul class="pricing-list">
+              <li>ירידה לים עם אבוב 🌊</li>
+            </ul>
+
+            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
             <div class="sc-arrow" style="color:#d4a017">
               להזמנה בוואטסאפ
               <svg
@@ -174,4 +192,54 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
     </section>
   </div>
   <FleetSelectionCta ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות:" />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "יאכטה בגירה הרצליה",
+      description:
+        "השכרת יאכטה מפרשית בגירה במרינה הרצליה לעד 12 מפליגים. אירועי יוקרה, כולל בלונים, שמפניה, ואבוב.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "760",
+        highPrice: "1580",
+        offerCount: "4",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "760",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-bagira",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה וחצי",
+            price: "930",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-bagira",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "1190",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-bagira",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "1580",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-bagira",
+          },
+        ],
+      },
+    })}
+  />
 </Layout>

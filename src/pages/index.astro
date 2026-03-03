@@ -141,8 +141,9 @@ const testimonials = [
 ];
 ---
 
-<Layout title="שייט ביאכטה , הפלגה בחיפה , הרצליה"
-description="מחפשים חוויה שעולה על כל דמיון? ⚓ שייט ביאכטה פרטית מחכה לכם! הפלגות בוטיק לזוגות ולאירועים מיוחדים, נוף ים קסום 🐬 ופינוק מושלם 🥂. התקשרו והזמינו!">
+<Layout 
+  title="השכרת יאכטות בהרצליה וחיפה - הפלגות בוטיק | Leader הפלגות"
+  description="מחפשים יאכטה להשכרה? Leader הפלגות מציעה שייט ביאכטה פרטית בחיפה ובהרצליה לאירועים, מסיבות, ימי הולדת והפלגות רומנטיות. שירות יוקרתי ומחירים הוגנים. היכנסו עכשיו!">
 <div class="home-page" dir="rtl">
 
   <!-- ══════════════════════════════════════
@@ -504,6 +505,35 @@ description="מחפשים חוויה שעולה על כל דמיון? ⚓ שיי
   </section>
 
 </div>
+
+<!-- Schema.org Data API -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "לידר",
+  "image": "https://aflagot-haifa.com/images/default-social.jpg",
+  "description": "השכרת יאכטות פרטיות להפלגות בוטיק בחיפה והרצליה. שירות יוקרתי כולל סקיפר.",
+  "@id": "https://aflagot-haifa.com/",
+  "url": "https://aflagot-haifa.com/",
+  "telephone": "+972533403449",
+  "priceRange": "$$",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "מרינה הרצליה",
+      "addressLocality": "הרצליה",
+      "addressCountry": "IL"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "מעגן שביט, פארק קישון",
+      "addressLocality": "חיפה",
+      "addressCountry": "IL"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/aflagothaifa",
+    "https://www.instagram.com/aflagothaifa"
+  ]
+})} />
 </Layout>
-
-

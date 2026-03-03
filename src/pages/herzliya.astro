@@ -143,8 +143,8 @@ const textSections = [
 ---
 
 <Layout
-  title="יאכטות הרצליה🐬 - שייט לזוג - הפלגה בהרצליה - יום גיבוש - ⚓"
-  description="חולמים על שייט במרינה הרצליה? ⚓ בואו לחגוג על יאכטה פרטית! הפלגות בוטיק יוקרתיות לזוגות ואירועים, בריזה מהים 🐬 ופינוק מושלם 🥂. התקשרו והזמינו עכשיו!"
+  title="הפלגה בהרצליה - השכרת יאכטות ואירועי בוטיק בים ⚓ | Leader הפלגות"
+  description="חולמים על שייט והפלגה במרינה הרצליה? בואו לחגוג על יאכטה פרטית! הפלגות בוטיק יוקרתיות לזוגות, ימי הולדת וגיבוש. צי היאכטות הגדול והמפנק ביותר בשרון."
 >
   <div class="hz-page" dir="rtl">
     <!-- ══ HERO ══ -->
@@ -452,3 +452,30 @@ const textSections = [
     </section>
   </div>
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: "לידר",
+    description:
+      "השכרת יאכטות, הפלגות במרינה הרצליה, שייט זוגי ואירועי בוטיק בלב הים.",
+    url: "https://aflagot-haifa.com/herzliya",
+    image: "https://aflagot-haifa.com/images/default-social.jpg",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "מרינה הרצליה",
+      addressLocality: "הרצליה",
+      addressRegion: "מחוז תל אביב",
+      addressCountry: "IL",
+    },
+    telephone: "+972533403449",
+    provider: {
+      "@type": "TravelAgency",
+      name: "Leader הפלגות",
+      url: "https://aflagot-haifa.com/",
+    },
+  })}
+/>

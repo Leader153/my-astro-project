@@ -7,11 +7,12 @@ import midImg from "../assets/Liam-Back.jpg";
 import botImg from "../assets/Liam-group.jpeg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="יאכטה לי-ים (Lee-Yam) עד 13 מפליגים הרצליה | Leader הפלגות"
-  description="הפלגות חווייתיות לחברות ומשפחות על יאכטה לי-ים (Lee-Yam) מרווחת ומפנקת בהרצליה לעד 13 איש."
+  title="יאכטה לי-ים (עד 13 איש) הרצליה | Leader הפלגות"
+  description="השכרת יאכטה לי-ים (Lee-Yam) במרינה הרצליה לעד 13 איש. החל מ-860 ₪ לשעה. מושלמת למשפחות ויש אפשרות לדייג. כולל סקיפר מקצועי, שמפניה, בלונים ואבוב."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -130,15 +131,43 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">⛵</div>
             <h3>מחירון יאכטה לי-ים</h3>
-            <p>
-              <strong>לשייט חופי בארץ:</strong><br />
-              1 שעה הפלגה: 1050 ₪<br />
-              שעתיים הפלגה: 1530 ₪<br />
-              3 שעות הפלגה: 1850 ₪<br />
-              👑 עד 13 מפליגים מאושרים<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >* המחיר תקף לסוף שבוע (עם סקיפר)</span
-              >
+            <p><strong>מחירון השכרת יאכטה לי-ים:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 860 ₪</li>
+              <li><strong>שעה וחצי הפלגה:</strong> 1,030 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 1,290 ₪</li>
+              <li>כל שעה נוספת: 450 ₪</li>
+              <li>👑 עד 13 מפליגים מאושרים (עם סקיפר)</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>שלט מזל טוב</li>
+              <li>בלונים בתוך היאכטה</li>
+              <li>מוזיקה (רמקול בלוטוס)</li>
+              <li>שתייה מים</li>
+              <li>בקבוק שמפניה 🥂</li>
+              <li>ביטוח לכל משתתף</li>
+              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של שעתיים:</h4>
+            <ul class="pricing-list">
+              <li>ירידה לים עם אבוב 🌊</li>
+            </ul>
+
+            <h4 class="pricing-title" style="margin-top: 1rem; color:#d4a017;">
+              תוספת דייג - 150 ₪:
+            </h4>
+            <ul class="pricing-list">
+              <li>דייג מתאים לעד 8 דייגים (חכות, פיתיונות, רישיון יומי).</li>
+              <li>
+                נדרש ת"ז ושם מלא לכל מקבל חכה לצורך פתיחת רישיון כחוק בישראל.
+              </li>
+            </ul>
+
+            <p class="pricing-note">
+              * המחיר (ללא דייג) הוא להפלגת שייט בסוף שבוע
             </p>
             <div class="sc-arrow" style="color:#d4a017">
               להזמנה בוואטסאפ
@@ -164,4 +193,47 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
     </section>
   </div>
   <FleetSelectionCta ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות:" />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "יאכטה לי-ים הרצליה",
+      description:
+        "השכרת יאכטה מפרשית לי-ים במרינה הרצליה לעד 13 מפליגים. כוללת אפשרות לשרות דייג מקצועי. כולל בלונים, שמפניה, ואבוב.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "860",
+        highPrice: "1290",
+        offerCount: "3",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "860",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-li-yam",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה וחצי",
+            price: "1030",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-li-yam",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "1290",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-li-yam",
+          },
+        ],
+      },
+    })}
+  />
 </Layout>

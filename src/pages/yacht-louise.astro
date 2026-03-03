@@ -7,11 +7,12 @@ import midImg from "../assets/louse-salon.png";
 import botImg from "../assets/louse-hartom.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import "../styles/pricing-card.css";
 ---
 
 <Layout
-  title="יאכטה לואיז עד 6 מפליגים הרצליה | Leader הפלגות"
-  description="יאכטה מפרשית לואיז (Louise) – יאכטה מתוקה ואינטימית, מושלמת להפלגות זוגיות ולקבוצות קטנות בהרצליה לעד 6 איש."
+  title="יאכטה לואיז (עד 6 איש) הרצליה | Leader הפלגות"
+  description="השכרת יאכטה בוטיק חמימה לואיז (Louise) במרינה הרצליה לעז 6 איש. החל מ-670 ₪ לשעה. מושלמת לרומנטיקה. כולל שמפניה, בלונים ואבוב."
 >
   <div class="service-page" dir="rtl">
     <section class="sp-hero">
@@ -116,16 +117,33 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           <div class="sc-body">
             <div class="sc-icon">⛵</div>
             <h3>מחירון יאכטה לואיז</h3>
-            <p>
-              <strong>לשייט חופי בארץ:</strong><br />
-              1 שעה הפלגה: 1050 ₪<br />
-              שעתיים הפלגה: 1530 ₪<br />
-              3 שעות הפלגה: 1850 ₪<br />
-              👑 עד 11 מפליגים מאושרים<br />
-              <span style="font-size: 0.85em; opacity: 0.9;"
-                >* המחיר תקף לסוף שבוע (עם סקיפר)</span
-              >
-            </p>
+            <p><strong>מחירון השכרת יאכטה לואיז:</strong></p>
+            <ul class="pricing-list no-bullets">
+              <li><strong>שעה הפלגה:</strong> 670 ₪</li>
+              <li><strong>שעה וחצי הפלגה:</strong> 840 ₪</li>
+              <li><strong>שעתיים הפלגה:</strong> 1,100 ₪</li>
+              <li><strong>3 שעות הפלגה:</strong> 1,450 ₪</li>
+              <li>כל שעה נוספת: 350 ₪</li>
+              <li>👑 עד 6 מפליגים מאושרים (עם סקיפר)</li>
+            </ul>
+
+            <h4 class="pricing-title">המחיר כולל:</h4>
+            <ul class="pricing-list">
+              <li>שלט מזל טוב</li>
+              <li>בלונים בתוך היאכטה</li>
+              <li>מוזיקה (רמקול בלוטוס)</li>
+              <li>שתייה מים</li>
+              <li>בקבוק שמפניה 🥂</li>
+              <li>ביטוח לכל משתתף</li>
+              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+            </ul>
+
+            <h4 class="pricing-title">בהזמנה של שעתיים:</h4>
+            <ul class="pricing-list">
+              <li>ירידה לים עם אבוב 🌊</li>
+            </ul>
+
+            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
             <div class="sc-arrow" style="color:#d4a017">
               להזמנה בוואטסאפ
               <svg
@@ -150,4 +168,54 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
     </section>
   </div>
   <FleetSelectionCta ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות:" />
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: "יאכטה לואיז הרצליה",
+      description:
+        "השכרת יאכטה בוטיק לואיז במרינה הרצליה לעד 6 מפליגים. רומנטיקה ויוקרה, כולל בלונים, שמפניה, ואבוב.",
+      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "ILS",
+        lowPrice: "670",
+        highPrice: "1450",
+        offerCount: "4",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה אחת",
+            price: "670",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-louise",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעה וחצי",
+            price: "840",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-louise",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה לשעתיים",
+            price: "1100",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-louise",
+          },
+          {
+            "@type": "Offer",
+            name: "הפלגה ל-3 שעות",
+            price: "1450",
+            priceCurrency: "ILS",
+            url: "https://aflagot-haifa.com/yacht-louise",
+          },
+        ],
+      },
+    })}
+  />
 </Layout>
