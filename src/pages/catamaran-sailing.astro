@@ -114,6 +114,7 @@ import "../styles/pricing-card.css";
           class="service-card"
           style="--c:#d4a017; --i:0"
           target="_blank"
+          rel="noopener"
         >
           <div class="sc-img-wrap">
             <Image
@@ -160,7 +161,9 @@ import "../styles/pricing-card.css";
             <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
             <div class="sc-arrow" style="color:#d4a017">
               להזמנה בוואטסאפ
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -193,7 +196,26 @@ import "../styles/pricing-card.css";
       name: "יאכטה קטמרן מפרשית חיפה",
       description:
         "השכרת יאכטת קטמרן מפרשית במפרץ חיפה עד 14 מפליגים, כולל סקיפר, ירידה לים עם אבוב, בלונים ומוזיקה.",
-      brand: { "@type": "Brand", name: "Leader הפלגות" },
+      image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+      brand: { "@type": "Brand", name: "Leader שייט & הפלגות" },
+      seller: {
+        "@type": "TravelAgency",
+        "@id": "https://aflagot-haifa.com/",
+        name: "Leader שייט & הפלגות",
+        legalName: "לידר",
+        alternateName: [
+          "Leader Haflagot",
+          "לידר הפלגות שייט",
+          "Leader Yachting",
+        ],
+        telephone: "+972533403449",
+        url: "https://aflagot-haifa.com/",
+        sameAs: [
+          "https://www.facebook.com/leadership.haifa",
+          "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+          "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+        ],
+      },
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "ILS",

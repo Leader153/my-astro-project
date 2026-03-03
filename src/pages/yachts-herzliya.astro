@@ -399,3 +399,82 @@ const yachts = [
     color: white;
   }
 </style>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "יאכטות להשכרה בהרצליה",
+    description:
+      "רשימת יאכטות להשכרה במרינה הרצליה – מבחר יאכטות מפרשיות וקטמרן לכל אירוע.",
+    url: "https://aflagot-haifa.com/yachts-herzliya",
+    numberOfItems: 7,
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "ILS",
+      lowPrice: "670",
+      highPrice: "4090",
+      availability: "https://schema.org/InStock",
+    },
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        url: "https://aflagot-haifa.com/yacht-joy-b",
+        name: "יאכטה ג'וי בי – עד 13 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        url: "https://aflagot-haifa.com/yacht-li-yam",
+        name: "יאכטה לי-ים – עד 13 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        url: "https://aflagot-haifa.com/yacht-bagira",
+        name: "יאכטה בגירה – עד 12 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        url: "https://aflagot-haifa.com/yacht-louise",
+        name: "יאכטה לואיז – עד 6 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
+        url: "https://aflagot-haifa.com/catamaran-21",
+        name: "קטמרן דולפין – עד 21 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 6,
+        url: "https://aflagot-haifa.com/catamaran-Lea",
+        name: "קטמרן לאה – עד 14 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 7,
+        url: "https://aflagot-haifa.com/sea-cabin",
+        name: "צימר על המים – לינה ביאכטה",
+      },
+    ],
+    provider: {
+      "@type": "TravelAgency",
+      "@id": "https://aflagot-haifa.com/",
+      name: "Leader שייט & הפלגות",
+      legalName: "לידר",
+      alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
+      telephone: "+972533403449",
+      url: "https://aflagot-haifa.com/",
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
+  })}
+/>
