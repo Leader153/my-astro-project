@@ -203,3 +203,39 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
     <FleetSelectionCta />
   </div>
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: "הפלגה לקפריסין ביאכטה פרטית",
+    description:
+      "הפלגה לקפריסין ביאכטה פרטית — 4 לילות ו-5 ימים. מחיפה והרצליה לקפריסין עם סקיפר מקצועי.",
+    url: "https://aflagot-haifa.com/cyprus-cruise",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    touristType: {
+      "@type": "Audience",
+      audienceType: "משפחות וחובבי הרפתקאות",
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "ILS",
+      lowPrice: "16900",
+      highPrice: "24900",
+      availability: "https://schema.org/InStock",
+    },
+    provider: {
+      "@type": "TravelAgency",
+      name: "לידר הפלגות",
+      "@id": "https://aflagot-haifa.com/",
+      telephone: "+972533403449",
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
+  })}
+/>

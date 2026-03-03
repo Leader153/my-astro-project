@@ -167,3 +167,35 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
     ctaInstruction="צפו בצי היאכטות שלנו ותבחרו את היאכטה לקבוצה שלכם:"
   />
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: "הפלגה קבוצתית ומשפחתית על יאכטה",
+    description:
+      "הפלגות לקבוצות ומשפחות ביאכטה פרטית בחיפה ובהרצליה. מיום הולדת ועד גיבוש — לכל גיל ולכל מטרה.",
+    url: "https://aflagot-haifa.com/group-sailing",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    touristType: { "@type": "Audience", audienceType: "משפחות וקבוצות" },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "ILS",
+      availability: "https://schema.org/InStock",
+      url: "https://aflagot-haifa.com/group-sailing",
+    },
+    provider: {
+      "@type": "TravelAgency",
+      name: "לידר הפלגות",
+      "@id": "https://aflagot-haifa.com/",
+      telephone: "+972533403449",
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
+  })}
+/>

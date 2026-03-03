@@ -147,3 +147,36 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
     <FleetSelectionCta />
   </div>
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: "הצעת נישואין על יאכטה פרטית",
+    description:
+      "הצעת נישואין בלתי נשכחת על יאכטה בחיפה או הרצליה. תפאורה רומנטית, שמפניה, מוזיקה — הרגע המושלם לומר כן.",
+    url: "https://aflagot-haifa.com/marriage-proposal",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    touristType: { "@type": "Audience", audienceType: "זוגות" },
+    offers: {
+      "@type": "Offer",
+      price: "600",
+      priceCurrency: "ILS",
+      availability: "https://schema.org/InStock",
+      url: "https://aflagot-haifa.com/marriage-proposal",
+    },
+    provider: {
+      "@type": "TravelAgency",
+      name: "לידר הפלגות",
+      "@id": "https://aflagot-haifa.com/",
+      telephone: "+972533403449",
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
+  })}
+/>

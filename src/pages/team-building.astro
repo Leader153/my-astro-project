@@ -150,3 +150,35 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
     <FleetSelectionCta />
   </div>
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: "ימי גיבוש לעובדים על יאכטה",
+    description:
+      "ימי גיבוש לעובדים ביאכטה פרטית! אווירה ייחודית בים לגיבוש עמוק ומלא הנאה לחברות וצוותים.",
+    url: "https://aflagot-haifa.com/team-building",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    touristType: { "@type": "Audience", audienceType: "צוותי עסקים וחברות" },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "ILS",
+      availability: "https://schema.org/InStock",
+      url: "https://aflagot-haifa.com/team-building",
+    },
+    provider: {
+      "@type": "TravelAgency",
+      name: "לידר הפלגות",
+      "@id": "https://aflagot-haifa.com/",
+      telephone: "+972533403449",
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
+  })}
+/>

@@ -159,7 +159,9 @@ const yachts = [
                     class="hz-card-icon"
                     style="font-size: 1rem; color: #0f7ab0; font-weight: bold; display: flex; align-items: center; gap: 0.5rem; margin-top: 0;"
                   >
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -188,7 +190,9 @@ const yachts = [
                   )}
                   <span class="hz-card-cta" style={`color:#0f7ab0`}>
                     לפרטים
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -216,6 +220,58 @@ const yachts = [
     </section>
   </div>
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "יאכטות להשכרה בהרצליה – לידר הפלגות",
+    description:
+      "צי יאכטות מגוון ומפואר במרינה הרצליה. מקטמרן ענקית ל-21 איש ועד יאכטות אינטימיות לזוגות.",
+    url: "https://aflagot-haifa.com/yachts-herzliya",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "יאכטה ג'וי בי – עד 13 מפליגים",
+        url: "https://aflagot-haifa.com/yacht-joy-b",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "יאכטה לי ים – עד 13 מפליגים",
+        url: "https://aflagot-haifa.com/yacht-li-yam",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "יאכטה בגירה – עד 12 מפליגים",
+        url: "https://aflagot-haifa.com/yacht-bagira",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: "יאכטה לואיז – עד 6 מפליגים",
+        url: "https://aflagot-haifa.com/yacht-louise",
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
+        name: "קטמרן לאה – עד 14 מפליגים",
+        url: "https://aflagot-haifa.com/catamaran-Lea",
+      },
+      {
+        "@type": "ListItem",
+        position: 6,
+        name: "קטמרן דולפין – עד 21 מפליגים",
+        url: "https://aflagot-haifa.com/catamaran-21",
+      },
+    ],
+  })}
+/>
 
 <style>
   .yachts-page {

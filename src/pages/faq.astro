@@ -185,7 +185,9 @@ const categories = [
       </div>
       <div class="hero-content">
         <div class="hero-icon-wrap">
-          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -212,7 +214,9 @@ const categories = [
 
         <!-- Search bar -->
         <div class="search-wrap">
-          <svg aria-hidden="true" class="search-icon"
+          <svg
+            aria-hidden="true"
+            class="search-icon"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
@@ -312,7 +316,9 @@ const categories = [
                       </span>
                       <span class="q-text">{item.q}</span>
                       <span class="q-chevron" aria-hidden="true">
-                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        <svg
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -356,7 +362,9 @@ const categories = [
         </div>
         <div class="still-actions">
           <a href="tel:0533403449" class="still-btn phone">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               width="17"
@@ -373,7 +381,9 @@ const categories = [
             rel="noopener"
             class="still-btn wa"
           >
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               width="17"
@@ -389,6 +399,51 @@ const categories = [
     </div><!-- /content-wrapper -->
   </div>
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    url: "https://aflagot-haifa.com/faq",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "איך מבצעים הזמנה?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "מתקשרים או שולחים הודעה בווטסאפ למספר 053-340-3449. נתאם יחד את כל הפרטים ותקבלו אישור הזמנה מפורט.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "כמה עולה הפלגה?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "המחיר תלוי בסוג היאכטה, מספר המשתתפים ומשך ההפלגה. יש לנו יאכטות לכל תקציב. צרו קשר לקבלת הצעת מחיר.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "האם ההפלגות בטוחות?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "בהחלט! היאכטות שלנו עוברות בדיקות תקופתיות. כל הפלגה מלווה בסקיפר מוסמך ומנוסה עם ציוד הצלה מלא.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "מה מדיניות הביטול?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "ביטול בכל עת — דמי ניהול 150 ₪. ביטול עד 14 ימים לפני — 40% מהעסקה. ביטול תוך 48 שעות — אין החזר.",
+        },
+      },
+    ],
+  })}
+/>
 
 <script>
   /* ════════════════════════════════════════
@@ -514,5 +569,3 @@ const categories = [
     applySearch("");
   });
 </script>
-
-

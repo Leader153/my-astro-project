@@ -55,8 +55,8 @@ const coupleYachts = [
 ---
 
 <Layout
-  title="שייט רומנטי | לי-ים השכרת יאכטות"
-  description="שייט רומנטי ביאכטה פרטית מהרצליה – חוויה זוגית בלתי נשכחת לאירועים מיוחדים: הצעות נישואין, יום נישואין, יום הולדת ופינוק זוגי. עם סקיפר, יין ושקיעה."
+  title="שייט רומנטי ביאכטה פרטית: הפלגה זוגית מול השקיעה | Leader הפלגות"
+  description="מחפשים חוויה זוגית בלתי נשכחת? ⚓ שייט רומנטי ביאכטה פרטית מחכה לכם! מושלם להצעות נישואין, ימי הולדת או פינוק זוגי 🥂. התקשרו!"
 >
   <div class="service-page" dir="rtl">
     <!-- ═══ HERO BANNER ═══ -->
@@ -1132,4 +1132,76 @@ const coupleYachts = [
       margin-top: 2.5rem;
     }
   </style>
+
+  <!-- Schema.org Data API -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "TouristTrip",
+      name: "שייט רומנטי ביאכטה פרטית",
+      description:
+        "שייט רומנטי ביאכטה פרטית מהרצליה וחיפה – חוויה זוגית בלתי נשכחת לאירועים מיוחדים: הצעות נישואין, יום נישואין, יום הולדת ופינוק זוגי. עם סקיפר, יין ושקיעה.",
+      url: "https://aflagot-haifa.com/romantic-sailing",
+      image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+      touristType: {
+        "@type": "Audience",
+        audienceType: "זוגות",
+      },
+      itinerary: {
+        "@type": "ItemList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "יציאה ממרינה הרצליה או חיפה",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "הפלגה רומנטית מול השקיעה עם סקיפר מקצועי",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "יין, שמפניה ופינוקים על הסיפון",
+          },
+        ],
+      },
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "ILS",
+        price: "550",
+        priceValidUntil: "2026-12-31",
+        availability: "https://schema.org/InStock",
+        url: "https://aflagot-haifa.com/romantic-sailing",
+      },
+      provider: {
+        "@type": "TravelAgency",
+        name: "לידר הפלגות",
+        "@id": "https://aflagot-haifa.com/",
+        url: "https://aflagot-haifa.com/",
+        telephone: "+972533403449",
+        address: [
+          {
+            "@type": "PostalAddress",
+            streetAddress: "מרינה הרצליה",
+            addressLocality: "הרצליה",
+            addressCountry: "IL",
+          },
+          {
+            "@type": "PostalAddress",
+            streetAddress: "מעגן שביט, פארק קישון",
+            addressLocality: "חיפה",
+            addressCountry: "IL",
+          },
+        ],
+        sameAs: [
+          "https://www.facebook.com/leadership.haifa",
+          "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+          "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+        ],
+      },
+    })}
+  />
 </Layout>

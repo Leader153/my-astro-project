@@ -55,8 +55,8 @@ const bizDetails = [
 ---
 
 <Layout
-  title="אודות - Leader הפלגות חיפה"
-  description="הכירו את Leader הפלגות — מאז 2011 מפליגים עם לקוחות בחיפה ובהרצליה. הסיפור שלנו, הערכים, הצוות והסיבה שמאות לקוחות חוזרים אלינו שוב ושוב."
+  title="אודות - Leader הפלגות בחיפה והרצליה"
+  description="הכירו את Leader הפלגות! ⚓ מאז 2011 אנו מעניקים חוויות ים בלתי נשכחות 🐬. צוות מקצועי, יאכטות יוקרה ואלפי לקוחות מרוצים 🥂. דברו איתנו!"
 >
   <div class="about-page" dir="rtl">
     <!-- ══════════════════ HERO ══════════════════ -->
@@ -78,7 +78,9 @@ const bizDetails = [
           הים שווה אלף מילים
         </p>
         <div class="hero-scroll-hint" aria-hidden="true">
-          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -175,7 +177,9 @@ const bizDetails = [
         <div class="biz-card">
           <div class="biz-header">
             <div class="biz-shield">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -218,7 +222,9 @@ const bizDetails = [
             <p>דברו איתנו ונבנה יחד את ההפלגה המושלמת עבורכם</p>
             <div class="cta-actions">
               <a href="tel:0533403449" class="cta-btn primary">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   width="18"
@@ -235,7 +241,9 @@ const bizDetails = [
                 rel="noopener"
                 class="cta-btn whatsapp"
               >
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   width="18"
@@ -247,7 +255,9 @@ const bizDetails = [
                 WhatsApp
               </a>
               <a href="mailto:danielflider78@gmail.com" class="cta-btn email">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -268,4 +278,40 @@ const bizDetails = [
   </div>
 </Layout>
 
-
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    name: "לידר הפלגות",
+    legalName: "לידר דניאל",
+    taxID: "314589272",
+    url: "https://aflagot-haifa.com/about",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    description:
+      "לידר הפלגות מתמחים בארגון הפלגות בלתי נשכחות והשכרת יאכטות בחיפה ובהרצליה מאז 2011.",
+    foundingDate: "2011",
+    telephone: "+972533403449",
+    email: "danielflider78@gmail.com",
+    address: [
+      {
+        "@type": "PostalAddress",
+        streetAddress: "מרינה הרצליה",
+        addressLocality: "הרצליה",
+        addressCountry: "IL",
+      },
+      {
+        "@type": "PostalAddress",
+        streetAddress: "מעגן שביט, פארק קישון",
+        addressLocality: "חיפה",
+        addressCountry: "IL",
+      },
+    ],
+    sameAs: [
+      "https://www.facebook.com/leadership.haifa",
+      "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+      "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+    ],
+  })}
+/>

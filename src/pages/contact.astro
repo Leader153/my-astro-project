@@ -22,7 +22,9 @@ import Layout from "../layouts/Layout.astro";
         </p>
         <div class="hero-cta-row">
           <a href="tel:0533403449" class="hero-btn primary">
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               width="18"
@@ -39,7 +41,9 @@ import Layout from "../layouts/Layout.astro";
             rel="noopener"
             class="hero-btn whatsapp"
           >
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               width="18"
@@ -64,7 +68,9 @@ import Layout from "../layouts/Layout.astro";
           <div class="info-items">
             <div class="info-item">
               <div class="info-icon phone-icon">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   width="22"
@@ -84,7 +90,9 @@ import Layout from "../layouts/Layout.astro";
 
             <div class="info-item">
               <div class="info-icon email-icon">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -107,7 +115,9 @@ import Layout from "../layouts/Layout.astro";
 
             <div class="info-item">
               <div class="info-icon clock-icon">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -136,7 +146,9 @@ import Layout from "../layouts/Layout.astro";
                 rel="noopener"
                 class="social-btn fb"
               >
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   width="18"
@@ -153,7 +165,9 @@ import Layout from "../layouts/Layout.astro";
                 rel="noopener"
                 class="social-btn ig"
               >
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -173,7 +187,9 @@ import Layout from "../layouts/Layout.astro";
                 rel="noopener"
                 class="social-btn yt"
               >
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   width="18"
@@ -264,7 +280,9 @@ import Layout from "../layouts/Layout.astro";
                 rows="3"></textarea>
             </div>
             <button type="submit" class="submit-btn" id="submit-btn">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -296,7 +314,9 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
             <div class="location-address">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -337,7 +357,9 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
             <div class="location-address">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -462,7 +484,9 @@ import Layout from "../layouts/Layout.astro";
             rel="noopener"
             class="wa-btn"
           >
-            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               width="18"
@@ -500,6 +524,43 @@ import Layout from "../layouts/Layout.astro";
     }, 1200);
   });
 </script>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "לידר הפלגות",
+    "@id": "https://aflagot-haifa.com/",
+    url: "https://aflagot-haifa.com/contact",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    description:
+      "הפלגות יוקרתיות ביאכטה פרטית בחיפה ובהרצליה. צרו קשר לשריון הפלגה.",
+    telephone: "+972533403449",
+    email: "danielflider78@gmail.com",
+    openingHours: "Mo-Su 00:00-23:59",
+    address: [
+      {
+        "@type": "PostalAddress",
+        streetAddress: "מרינה הרצליה",
+        addressLocality: "הרצליה",
+        addressCountry: "IL",
+      },
+      {
+        "@type": "PostalAddress",
+        streetAddress: "מעגן שביט, פארק קישון",
+        addressLocality: "חיפה",
+        addressCountry: "IL",
+      },
+    ],
+    sameAs: [
+      "https://www.facebook.com/leadership.haifa",
+      "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+      "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+    ],
+  })}
+/>
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap");

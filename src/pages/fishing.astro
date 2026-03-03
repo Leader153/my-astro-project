@@ -181,7 +181,9 @@ import heroImage from "../assets/original-high-res.png";
               </p>
               <div class="sc-arrow" style="color:#0ea5e9">
                 קבלו פרטים
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -227,7 +229,9 @@ import heroImage from "../assets/original-high-res.png";
               </p>
               <div class="sc-arrow" style="color:#0f7ab0">
                 קבלו פרטים
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -249,3 +253,36 @@ import heroImage from "../assets/original-high-res.png";
     />
   </div>
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: "הפלגת דייג על יאכטה פרטית",
+    description:
+      "הפלגת דייג קבוצתית מחיפה והרצליה עם ציוד מקצועי, סקיפר מנוסה ואפשרות BBQ על הסיפון. ללא צורך ברישיון.",
+    url: "https://aflagot-haifa.com/fishing",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    touristType: { "@type": "Audience", audienceType: "חובבי דייג וקבוצות" },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "ILS",
+      lowPrice: "1150",
+      highPrice: "1890",
+      availability: "https://schema.org/InStock",
+    },
+    provider: {
+      "@type": "TravelAgency",
+      name: "לידר הפלגות",
+      "@id": "https://aflagot-haifa.com/",
+      telephone: "+972533403449",
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
+  })}
+/>

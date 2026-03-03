@@ -162,3 +162,53 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
     />
   </div>
 </Layout>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: "יום הולדת על יאכטה פרטית",
+    description:
+      "תחגגו יום הולדת שלא תשכחו לעולם — ביאכטה פרטית עם כל החברים. בלונים, מוזיקה, ים וכיף בחיפה ובהרצליה.",
+    url: "https://aflagot-haifa.com/birthday",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    touristType: {
+      "@type": "Audience",
+      audienceType: "חברים ומשפחה",
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "ILS",
+      availability: "https://schema.org/InStock",
+      url: "https://aflagot-haifa.com/birthday",
+    },
+    provider: {
+      "@type": "TravelAgency",
+      name: "לידר הפלגות",
+      "@id": "https://aflagot-haifa.com/",
+      url: "https://aflagot-haifa.com/",
+      telephone: "+972533403449",
+      address: [
+        {
+          "@type": "PostalAddress",
+          streetAddress: "מרינה הרצליה",
+          addressLocality: "הרצליה",
+          addressCountry: "IL",
+        },
+        {
+          "@type": "PostalAddress",
+          streetAddress: "מעגן שביט, פארק קישון",
+          addressLocality: "חיפה",
+          addressCountry: "IL",
+        },
+      ],
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
+  })}
+/>

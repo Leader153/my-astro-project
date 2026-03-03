@@ -174,7 +174,9 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
             </p>
             <div class="sc-arrow" style="color:#0ea5e9">
               קבלו פרטים
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -211,7 +213,9 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
                 >האם היאכטה מתנדנדת בלילה? יש סיכוי למחלת ים?</span
               >
               <span class="q-chevron" aria-hidden="true">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -243,7 +247,9 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
               <span class="q-num">2</span>
               <span class="q-text">מה חשוב להביא איתנו ללילה ביאכטה?</span>
               <span class="q-chevron" aria-hidden="true">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -278,7 +284,9 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
                 >רגע, הבנו שאפשר לעשות "על האש" על היאכטה. זה נכון?</span
               >
               <span class="q-chevron" aria-hidden="true">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -310,7 +318,9 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
               <span class="q-num">4</span>
               <span class="q-text">האם יש מקלחת ושירותים נוחים ביאכטה?</span>
               <span class="q-chevron" aria-hidden="true">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -341,7 +351,9 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
               <span class="q-num">5</span>
               <span class="q-text">איך מעבירים את הערב ביאכטה?</span>
               <span class="q-chevron" aria-hidden="true">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -374,7 +386,9 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
               <span class="q-num">6</span>
               <span class="q-text">מאיפה יוצאים ואיפה מחנים את הרכב?</span>
               <span class="q-chevron" aria-hidden="true">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -408,7 +422,9 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
                 >האם הצימר מתאים גם למשפחות או רק לזוגות?</span
               >
               <span class="q-chevron" aria-hidden="true">
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -462,7 +478,9 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
             </p>
             <div class="sc-arrow" style="color:#f43f5e">
               קבלו פרטים
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -517,3 +535,35 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
       });
     });
 </script>
+
+<!-- Schema.org Data API -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    name: "צימר על המים – לינה ביאכטה פרטית",
+    description:
+      "לינה יוקרתית ביאכטה פרטית במרינה הרצליה. ארוחת בוקר, הפלגת בוקר, שמפניה ונוף פנורמי — בוטיק מלון צף.",
+    url: "https://aflagot-haifa.com/sea-cabin",
+    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+    priceRange: "2200 ₪",
+    telephone: "+972533403449",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "מרינה הרצליה",
+      addressLocality: "הרצליה",
+      addressCountry: "IL",
+    },
+    provider: {
+      "@type": "TravelAgency",
+      name: "לידר הפלגות",
+      "@id": "https://aflagot-haifa.com/",
+      sameAs: [
+        "https://www.facebook.com/leadership.haifa",
+        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
+        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
+      ],
+    },
+  })}
+/>
