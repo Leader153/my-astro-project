@@ -22,8 +22,7 @@ import Layout from "../layouts/Layout.astro";
         </p>
         <div class="hero-cta-row">
           <a href="tel:0533403449" class="hero-btn primary">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               width="18"
@@ -40,8 +39,7 @@ import Layout from "../layouts/Layout.astro";
             rel="noopener"
             class="hero-btn whatsapp"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               width="18"
@@ -66,8 +64,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="info-items">
             <div class="info-item">
               <div class="info-icon phone-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   width="22"
@@ -87,8 +84,7 @@ import Layout from "../layouts/Layout.astro";
 
             <div class="info-item">
               <div class="info-icon email-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -111,8 +107,7 @@ import Layout from "../layouts/Layout.astro";
 
             <div class="info-item">
               <div class="info-icon clock-icon">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -141,8 +136,7 @@ import Layout from "../layouts/Layout.astro";
                 rel="noopener"
                 class="social-btn fb"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   width="18"
@@ -159,8 +153,7 @@ import Layout from "../layouts/Layout.astro";
                 rel="noopener"
                 class="social-btn ig"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -180,8 +173,7 @@ import Layout from "../layouts/Layout.astro";
                 rel="noopener"
                 class="social-btn yt"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   width="18"
@@ -272,8 +264,7 @@ import Layout from "../layouts/Layout.astro";
                 rows="3"></textarea>
             </div>
             <button type="submit" class="submit-btn" id="submit-btn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -305,8 +296,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
             <div class="location-address">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -347,8 +337,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
             <div class="location-address">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -473,8 +462,7 @@ import Layout from "../layouts/Layout.astro";
             rel="noopener"
             class="wa-btn"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
               width="18"
@@ -506,7 +494,7 @@ import Layout from "../layouts/Layout.astro";
       if (success) success.classList.add("visible");
       form.reset();
       if (btn) {
-        btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg> נשלח!`;
+        btn.innerHTML = `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg> נשלח!`;
         (btn as HTMLButtonElement).disabled = false;
       }
     }, 1200);
