@@ -11,7 +11,7 @@ import corporateImg from '../assets/employees-teambuilding-group-on-boat-herzliy
 import cyprusImg from '../assets/sail-with-me.webp';
 import proposalImg from '../assets/romantic-marriage-proposal-yacht-sunset.webp';
 import fishingImg from '../assets/original-high-res.png';
-import spaImg from '../assets/Massage-and-dinner-for-couples-on-a-yacht.jpg';
+import skiperImg from '../assets/skipper-for-a-day-learning-to-steer-yacht.jpeg';
 
 const services = [
   {
@@ -85,14 +85,14 @@ const services = [
     imgStyle: 'object-position: right;',
   },
   {
-    icon: '💆‍♀️',
-    title: 'חבילת ספא על יאכטה',
-    desc: 'חוויית פינוק מושלמת הכוללת טיפולי ספא מרגיעים מול נוף הים הפתוח',
-    tag: 'פינוק',
-    color: '#f43f5e',
-    href: '/spa',
-    alt: 'טיפול ספא מרגיע על סיפון יאכטה אקסקלוסיבית',
-    img: spaImg,
+    icon: '⛵',
+    title: 'הפלגת סקיפר ליום אחד',
+    desc: 'יום שלם בים עם סקיפר מקצועי — שיזוף, נוף, מוזיקה ויין. חוויה מהסרטים',
+    tag: 'פופולרי',
+    color: '#7c3aed',
+    href: '/skipper-day-cruise',
+    alt: 'הפלגה ביאכטה עם סקיפר מקצועי ליום אחד',
+    img: skiperImg,
   },
   {
     icon: '🌍',
@@ -249,13 +249,13 @@ const testimonials = [
       <div class="mid-text-blocks">
         <div class="mt-block">
           <div>
-            <h3 style="font-size: 1.1rem; color: var(--sea); margin: 0 0 0.5rem; font-weight: 900;">הכול מתחיל בבחירה מסוימת</h3>
+            <span style="display:block; font-size: 1.1rem; color: var(--sea); margin: 0 0 0.5rem; font-weight: 900;">הכול מתחיל בבחירה מסוימת</span>
             <p>האירוע ביאכטה שתשנה את הרגע ותהפוך את הרגעים המרגשים ביותר בחייכם למשהו מיוחד !</p>
           </div>
         </div>
         <div class="mt-block">
           <div>
-            <h3 style="font-size: 1.1rem; color: var(--sea); margin: 0 0 0.5rem; font-weight: 900;">אצלנו תוכלו למצוא</h3>
+            <span style="display:block; font-size: 1.1rem; color: var(--sea); margin: 0 0 0.5rem; font-weight: 900;">אצלנו תוכלו למצוא</span>
             <p>
               השכרת יאכטה — מגוון של יאכטות<br/>
               וספינות לאירועים שלכם<br/>
@@ -267,7 +267,7 @@ const testimonials = [
         </div>
         <div class="mt-block">
           <div>
-            <h3 style="font-size: 1.1rem; color: var(--sea); margin: 0 0 0.5rem; font-weight: 900;">ניתן להזמין מבחר מנות</h3>
+            <span style="display:block; font-size: 1.1rem; color: var(--sea); margin: 0 0 0.5rem; font-weight: 900;">ניתן להזמין מבחר מנות</span>
             <p>
               מהתפריט שלנו<br/>
               או להביא איתכם בחיפה או בהרצליה
@@ -389,7 +389,7 @@ const testimonials = [
           <div class="loc-emoji">🌊</div>
           <h3>הרצליה</h3>
           <p>מרינה הרצליה<br/>רציף E מול שער A — קניון ארנה</p>
-          <a href="https://maps.google.com/?q=מרינה+הרצליה" target="_blank" rel="noopener" class="loc-map-btn">פתח במפה ↗</a>
+          <a href="https://maps.google.com/?q=32.162443,34.796172" target="_blank" rel="noopener" class="loc-map-btn">פתח במפה ↗</a>
         </div>
         <div class="loc-divider" aria-hidden="true">
           <span>+</span>
@@ -398,7 +398,7 @@ const testimonials = [
           <div class="loc-emoji">⚓</div>
           <h3>חיפה</h3>
           <p>פארק קישון – מעגנת שביט<br/>רחוב הדייגים 3</p>
-          <a href="https://maps.google.com/?q=פארק+קישון+מעגנת+שביט+חיפה" target="_blank" rel="noopener" class="loc-map-btn">פתח במפה ↗</a>
+          <a href="https://maps.google.com/?q=32.8069075,35.0322383" target="_blank" rel="noopener" class="loc-map-btn">פתח במפה ↗</a>
         </div>
       </div>
     </div>
@@ -521,18 +521,34 @@ const testimonials = [
   "url": "https://aflagot-haifa.com/",
   "telephone": "+972533403449",
   "priceRange": "$$",
-  "address": [
+  "location": [
     {
-      "@type": "PostalAddress",
-      "streetAddress": "מרינה הרצליה",
-      "addressLocality": "הרצליה",
-      "addressCountry": "IL"
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "מרינה הרצליה",
+        "addressLocality": "הרצליה",
+        "addressCountry": "IL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.162443,
+        "longitude": 34.796172
+      }
     },
     {
-      "@type": "PostalAddress",
-      "streetAddress": "מעגן שביט, פארק קישון",
-      "addressLocality": "חיפה",
-      "addressCountry": "IL"
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "מעגן שביט, פארק קישון",
+        "addressLocality": "חיפה",
+        "addressCountry": "IL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.8069075,
+        "longitude": 35.0322383
+      }
     }
   ],
   "sameAs": [

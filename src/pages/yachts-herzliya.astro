@@ -118,7 +118,7 @@ const yachts = [
     <section class="yp-hero">
       <div class="yp-inner text-center">
         <div class="yp-eyebrow">מרינה הרצליה</div>
-        <h1>היאכטות שלנו בהרצליה</h1>
+        <h1>השכרת יאכטות בהרצליה - הצי המפואר שלנו</h1>
         <p>
           צי יאכטות מגוון ומפואר — מקטמרן ענקית ל-21 איש ועד יאכטות אינטימיות
           לזוגות. בחרו את היאכטה המושלמת עבורכם.
@@ -176,7 +176,7 @@ const yachts = [
                     </svg>
                     {yacht.capacity}
                   </div>
-                  <h3>{yacht.name}</h3>
+                  <h2>{yacht.name}</h2>
                   {yacht.descLines ? (
                     <p>
                       {yacht.descLines.map((line) => (
@@ -220,94 +220,6 @@ const yachts = [
     </section>
   </div>
 </Layout>
-
-<!-- Schema.org Data API -->
-<script
-  type="application/ld+json"
-  set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "יאכטות להשכרה בהרצליה – Leader שייט & הפלגות",
-    description:
-      "צי יאכטות מגוון ומפואר במרינה הרצליה. מקטמרן ענקית ל-21 איש ועד יאכטות אינטימיות לזוגות.",
-    url: "https://aflagot-haifa.com/yachts-herzliya",
-    image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "ILS",
-      lowPrice: "670",
-      highPrice: "4090",
-      offerCount: "7",
-      availability: "https://schema.org/InStock",
-    },
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "יאכטה ג'וי בי – עד 13 מפליגים",
-        url: "https://aflagot-haifa.com/yacht-joy-b",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "יאכטה לי ים – עד 13 מפליגים",
-        url: "https://aflagot-haifa.com/yacht-li-yam",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "יאכטה בגירה – עד 12 מפליגים",
-        url: "https://aflagot-haifa.com/yacht-bagira",
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        name: "יאכטה לואיז – עד 6 מפליגים",
-        url: "https://aflagot-haifa.com/yacht-louise",
-      },
-      {
-        "@type": "ListItem",
-        position: 5,
-        name: "קטמרן לאה – עד 14 מפליגים",
-        url: "https://aflagot-haifa.com/catamaran-Lea",
-      },
-      {
-        "@type": "ListItem",
-        position: 6,
-        name: "קטמרן דולפין – עד 21 מפליגים",
-        url: "https://aflagot-haifa.com/catamaran-21",
-      },
-    ],
-    provider: {
-      "@type": "TravelAgency",
-      "@id": "https://aflagot-haifa.com/",
-      name: "Leader שייט & הפלגות",
-      legalName: "לידר",
-      alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
-      url: "https://aflagot-haifa.com/",
-      telephone: "+972533403449",
-      address: [
-        {
-          "@type": "PostalAddress",
-          streetAddress: "מרינה הרצליה",
-          addressLocality: "הרצליה",
-          addressCountry: "IL",
-        },
-        {
-          "@type": "PostalAddress",
-          streetAddress: "מעגן שביט, פארק קישון",
-          addressLocality: "חיפה",
-          addressCountry: "IL",
-        },
-      ],
-      sameAs: [
-        "https://www.facebook.com/leadership.haifa",
-        "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
-        "https://www.youtube.com/channel/UCzEOzFcGu8zSeFtFrif4cYw",
-      ],
-    },
-  })}
-/>
 
 <style>
   .yachts-page {

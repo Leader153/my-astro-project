@@ -39,7 +39,7 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 
     <section class="sp-content">
       <div class="sp-inner">
-        <h1>⚓ יאכטה ליום הולדת : החגיגה המושלמת</h1>
+        <h1>השכרת יאכטה ליום הולדת - החגיגה המושלמת בים</h1>
 
         <p>
           בכל שנה מגיע התאריך הזה, ואיתו אותה השאלה ששוברת לנו את הראש: "איך
@@ -62,11 +62,11 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
           class="sp-gallery-img"
         />
 
-        <h3>
+        <h2>
           למה לחגוג יום הולדת דווקא על היאכטות של <span class="brand-leader"
             >לידר הפלגות &amp; שייט</span
           >?
-        </h3>
+        </h2>
         <ul class="sp-list">
           <li>
             <strong>כי אנחנו דואגים להכל (ואתם באים ליהנות!):</strong> שכחו מלסחוב
@@ -110,7 +110,7 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
           class="sp-gallery-img"
         />
 
-        <h3>מסיבת טבע בלב ים – בלי החול ובלי השכנים!</h3>
+        <h2>מסיבת טבע בלב ים – בלי החול ובלי השכנים!</h2>
         <p>
           חושבים שיום הולדת על יאכטה זה עסק יקר? תתפלאו, אבל זו חוויה יוקרתית
           במחיר משתלם ונגיש להפליא!
@@ -138,7 +138,7 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
           class="sp-gallery-img"
         />
 
-        <h3>חוויה שמתאימה לכל גיל</h3>
+        <h2>חוויה שמתאימה לכל גיל</h2>
         <p>
           אצלנו ב<span class="brand-leader">לידר הפלגות &amp; שייט</span> מתאימים
           את סגנון יום ההולדת בדיוק לגיל שלכם:
@@ -193,18 +193,34 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
       alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
       url: "https://aflagot-haifa.com/",
       telephone: "+972533403449",
-      address: [
+      location: [
         {
-          "@type": "PostalAddress",
-          streetAddress: "מרינה הרצליה",
-          addressLocality: "הרצליה",
-          addressCountry: "IL",
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "מרינה הרצליה",
+            addressLocality: "הרצליה",
+            addressCountry: "IL",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 32.162443,
+            longitude: 34.796172,
+          },
         },
         {
-          "@type": "PostalAddress",
-          streetAddress: "מעגן שביט, פארק קישון",
-          addressLocality: "חיפה",
-          addressCountry: "IL",
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "מעגן שביט, פארק קישון",
+            addressLocality: "חיפה",
+            addressCountry: "IL",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 32.8069075,
+            longitude: 35.0322383,
+          },
         },
       ],
       sameAs: [

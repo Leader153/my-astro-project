@@ -171,8 +171,8 @@ const textSections = [
 ---
 
 <Layout
-  title="הפלגה בחיפה - השכרת יאכטות וספינות בנמל חיפה ⚓ | Leader הפלגות"
-  description="מחפשים יאכטה בחיפה? ⚓ הכירו את צי היאכטות המפוארות שלנו! הפלגות למשפחות, מסיבות רווקות ואירועים רומנטיים בים התיכון מול הרי הכרמל. התקשרו להזמנת שייט מושלם!"
+  title="הפלגה בחיפה - השכרת יאכטות וספינות יוקרה בנמל ⚓ | Leader הפלגות"
+  description="מחפשים יאכטה בחיפה? ⚓ הכירו את צי היאכטות המפוארות שלנו! הפלגות יוקרה למשפחות, מסיבות רווקות ואירועים רומנטיים בים התיכון מול הרי הכרמל. התקשרו להזמנת שייט מושלם!"
 >
   <div class="hz-page" dir="rtl">
     <!-- ══ HERO ══ -->
@@ -181,9 +181,9 @@ const textSections = [
       <div class="hz-hero-inner">
         <div class="hz-eyebrow">
           <span class="dot"></span>
-          משטים בחיפה
+          הפלגות בחיפה
         </div>
-        <h1>שייט יאכטות בחיפה</h1>
+        <h1>השכרת יאכטות בחיפה - שייט והפלגות יוקרה</h1>
         <p>
           צי היאכטות והספינות שלנו מחכה לכם לחוויה בלתי נשכחת מול חופי חיפה.
           מגוון רחב של אפשרויות לזוגות, משפחות וקבוצות.
@@ -217,9 +217,12 @@ const textSections = [
     <section id="fleet" class="hz-services">
       <div class="hz-inner">
         <div class="hz-section-header">
-          <div class="hz-eyebrow-sm">צי היאכטות</div>
-          <h2>בחרו את היאכטה שלכם</h2>
-          <p>יאכטות לחופשות, מסיבות ורגעים רומנטיים — איזה סגנון מתאים לכם?</p>
+          <div class="hz-eyebrow-sm">צי היאכטות והספינות</div>
+          <h2>השכרת יאכטה בחיפה מתוך הצי המפואר שלנו</h2>
+          <p>
+            יאכטות לחופשות, ספינות למסיבות וסירות לאקסטרים — איזה סגנון מתאים
+            לכם?
+          </p>
         </div>
 
         <div class="hz-grid">
@@ -476,7 +479,7 @@ const textSections = [
           במפרשים ומנוחה אמיתית.
         </p>
         <a
-          href="https://maps.google.com/?q=חיפה"
+          href="https://maps.google.com/?q=32.8069075,35.0322383"
           target="_blank"
           rel="noopener noreferrer"
           class="hz-btn primary">פתח במפה ↗</a
@@ -510,12 +513,10 @@ const textSections = [
   type="application/ld+json"
   set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "TouristAttraction",
-    name: "Leader שייט & הפלגות",
-    legalName: "לידר",
-    alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
+    "@type": "ItemList",
+    name: "יאכטות וספינות להשכרה בחיפה – Leader שייט & הפלגות",
     description:
-      "השכרת יאכטות, הפלגות בחיפה, מסיבות בים ואירועי בוטיק מול נופי הר כרמל.",
+      "צי יאכטות וספינות מפואר במעגן שביט בחיפה. השכרת יאכטות, הפלגות מסיבות בים ואירועי יוקרה מול נופי הר כרמל.",
     url: "https://aflagot-haifa.com/haifa",
     image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
     offers: {
@@ -526,36 +527,58 @@ const textSections = [
       offerCount: "9",
       availability: "https://schema.org/InStock",
     },
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "מעגן שביט, פארק קישון",
-      addressLocality: "חיפה",
-      addressRegion: "מחוז חיפה",
-      addressCountry: "IL",
-    },
-    telephone: "+972533403449",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        url: "https://aflagot-haifa.com/yacht-11",
+        name: "יאכטה יאמי – עד 11 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        url: "https://aflagot-haifa.com/yacht-14",
+        name: "יאכטה סי יו – עד 14 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        url: "https://aflagot-haifa.com/typhoon-ship",
+        name: "ספינת טייפון – עד 30 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        url: "https://aflagot-haifa.com/catamaran-sailing",
+        name: "יאכטה קטמרן מפרשית – עד 14 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 5,
+        url: "https://aflagot-haifa.com/catamaran-motor",
+        name: "יאכטה קטמרן מנועית – עד 13 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 6,
+        url: "https://aflagot-haifa.com/motorboat-6",
+        name: "סירת מרגע – עד 6 מפליגים",
+      },
+      {
+        "@type": "ListItem",
+        position: 7,
+        url: "https://aflagot-haifa.com/yacht-king-40",
+        name: "ספינת קינג – עד 40 מפליגים",
+      },
+    ],
     provider: {
       "@type": "TravelAgency",
       "@id": "https://aflagot-haifa.com/",
       name: "Leader שייט & הפלגות",
       legalName: "לידר",
       alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
-      url: "https://aflagot-haifa.com/",
       telephone: "+972533403449",
-      address: [
-        {
-          "@type": "PostalAddress",
-          streetAddress: "מעגן שביט, פארק קישון",
-          addressLocality: "חיפה",
-          addressCountry: "IL",
-        },
-        {
-          "@type": "PostalAddress",
-          streetAddress: "מרינה הרצליה",
-          addressLocality: "הרצליה",
-          addressCountry: "IL",
-        },
-      ],
+      url: "https://aflagot-haifa.com/",
       sameAs: [
         "https://www.facebook.com/leadership.haifa",
         "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",

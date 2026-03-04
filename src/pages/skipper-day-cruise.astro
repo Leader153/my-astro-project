@@ -5,7 +5,7 @@ import desktopHero from "../assets/skipper-for-a-day-learning-to-steer-yacht.jpe
 import mobileHero from "../assets/skipper-for-a-day-learning-to-steer-yacht.jpeg";
 import img1 from "../assets/skipper-for-day.jpg";
 import img2 from "../assets/skipper-for-a-day.jpg";
-import PremiumSwitch from "../components/PremiumSwitch.astro";
+import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 ---
 
 <Layout
@@ -39,7 +39,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
     <section class="sp-content">
       <!-- Начинается контейнер, ограничивающий ширину контента и картинок (sp-inner) -->
       <div class="sp-inner">
-        <h1>⚓ סקיפר ליום אחד בקבוצה – לקחת את ההגה לידיים</h1>
+        <h1>השכרת יאכטה לסקיפר ליום אחד – לקחת את ההגה לידיים בקבוצה</h1>
         <p>
           מכירים מישהו או מישהי שפשוט חיים ונושמים את הים? מחפשים את ההפתעה הכי
           מקורית שיש ליום הולדת או אירוע מיוחד? ב<span class="brand-leader"
@@ -48,7 +48,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           שבה חתן או כלת השמחה יקבלו את הפיקוד ויהפכו לסקיפרים ליום אחד!
         </p>
 
-        <h3>🧭 החוויה: מה זה אומר להיות סקיפר?</h3>
+        <h2>🧭 החוויה: מה זה אומר להיות סקיפר?</h2>
         <p>
           ההפלגה שלנו מלווה בסקיפר מקצועי ומנוסה מהצוות של <span
             class="brand-leader">"לידר"</span
@@ -63,12 +63,13 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           alt="סקיפר ליום אחד"
           format="webp"
           width={600}
-          height={400}
+          height={600}
           loading="lazy"
           class="sp-gallery-img"
+          style="aspect-ratio: 1/1; object-fit: cover;"
         />
 
-        <h3>📍 מחיפה ועד הרצליה – חגיגה בכל גודל</h3>
+        <h2>📍 מחיפה ועד הרצליה – חגיגה בכל גודל</h2>
         <ul class="sp-list">
           <li>
             כדי שכל החבר'ה יוכלו להצטרף להפלגה ולעודד את ה"קפטן" החדש, צי
@@ -89,19 +90,20 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           alt="סקיפר ליום אחד לומדים להיות סקיפר"
           format="webp"
           width={600}
-          height={400}
+          height={600}
           loading="lazy"
           class="sp-gallery-img"
+          style="aspect-ratio: 1/1; object-fit: cover;"
         />
 
-        <h3>🥂 אנחנו נדאג להכל – הנוחות שלכם היא המשימה שלנו</h3>
+        <h2>🥂 אנחנו נדאג להכל – הנוחות שלכם היא המשימה שלנו</h2>
         <p>
           אתם רק צריכים להגיע עם בגד ים ומצב רוח טוב – אנחנו כבר נדאג לכל היתר.
           ב<span class="brand-leader">"לידר"</span>, אנחנו מאמינים שהנוחות שלכם
           היא המשימה שלנו (Your comfort Our mission).
         </p>
 
-        <h3>🎉 מה מחכה לכם ולחברים על הסיפון?</h3>
+        <h2>🎉 מה מחכה לכם ולחברים על הסיפון?</h2>
         <ul class="sp-list">
           <li>
             <strong>פינוקי VIP:</strong> בקבוק שמפניה לפתיחת החגיגות, יין משובח, לבבות
@@ -123,7 +125,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           </li>
         </ul>
 
-        <h3>💰 מחירון סקיפר ליום אחד:</h3>
+        <h2>💰 מחירון סקיפר ליום אחד:</h2>
         <ul class="sp-pricing">
           <li>צרו איתנו קשר לקבלת הצעת מחיר מותאמת אישית למספר המשתתפים.</li>
         </ul>
@@ -137,7 +139,13 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
       <!-- Закрываем sp-inner (ИМЕННО ЗДЕСЬ) -->
 
       <div class="services-grid">
-        <a href="/yacht-li-yam" class="service-card" style="--c:#7c3aed; --i:0">
+        <a
+          href="https://wa.me/972533403449"
+          class="service-card"
+          style="--c:#0ea5e9; --i:0"
+          target="_blank"
+          rel="noopener"
+        >
           <div class="sc-img-wrap">
             <Image
               src={desktopHero}
@@ -148,8 +156,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
               class="sc-img"
               loading="lazy"
             />
-            <div class="sc-tag" style="background:#7c3aed; color:#fff">
-              הרצליה
+            <div class="sc-tag" style="background:#0ea5e9; color:#fff">
+              WhatsApp
             </div>
           </div>
           <div class="sc-body">
@@ -163,8 +171,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
                 >אידאלי לימי הולדת, גיבוש וחגיגות</span
               >
             </p>
-            <div class="sc-arrow" style="color:#7c3aed">
-              קבלו פרטים
+            <div class="sc-arrow" style="color:#0ea5e9">
+              להזמנה בוואטסאפ
               <svg
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -180,11 +188,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         </a>
       </div>
 
-      <PremiumSwitch
-        href="/yachts-herzliya"
-        title="היאכטות שלנו בהרצליה"
-        subtitle="לצפייה בצי שלנו ולבחירת היאכטה המושלמת"
-      />
+      <FleetSelectionCta />
 
       <!-- ═══ FAQ SECTION ═══ -->
       <div class="faq-wrapper">
@@ -513,6 +517,36 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
       legalName: "לידר",
       alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
       telephone: "+972533403449",
+      location: [
+        {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "מרינה הרצליה",
+            addressLocality: "הרצליה",
+            addressCountry: "IL",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 32.162443,
+            longitude: 34.796172,
+          },
+        },
+        {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "מעגן שביט, פארק קישון",
+            addressLocality: "חיפה",
+            addressCountry: "IL",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 32.8069075,
+            longitude: 35.0322383,
+          },
+        },
+      ],
       sameAs: [
         "https://www.facebook.com/leadership.haifa",
         "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",

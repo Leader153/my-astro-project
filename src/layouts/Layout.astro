@@ -125,7 +125,7 @@ const schemaOrg = {
     <script
       type="text/partytown"
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+      src="https://www.googletagmanager.com/gtag/js?id=G-S72RCPM0G2"></script>
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -133,11 +133,52 @@ const schemaOrg = {
       }
       gtag("js", new Date());
 
-      gtag("config", "G-XXXXXXXXXX"); // Google Analytics
-      gtag("config", "AW-XXXXXXXXXX"); // Google Ads
+      gtag("config", "G-S72RCPM0G2"); // Google Analytics
+      gtag("config", "AW-16769482607"); // Google Ads
+    </script>
+
+    <!-- Google Tag Manager (GTM) -->
+    <script type="text/partytown">
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-ML2RKBS");
+
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PDP6ZZXF");
     </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-ML2RKBS"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PDP6ZZXF"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
     <Navigation />
     <main class="page-content">
       <slot />

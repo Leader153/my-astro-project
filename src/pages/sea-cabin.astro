@@ -41,7 +41,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
     <section class="sp-content">
       <!-- Начинается контейнер, ограничивающий ширину контента и картинок (sp-inner) -->
       <div class="sp-inner">
-        <h1>⚓ צימר על המים – חופשת בוטיק צפה שטרם הכרתם!</h1>
+        <h1>השכרת יאכטה לצימר על המים – לינה וחופשת בוטיק צפה</h1>
         <p>
           מחפשים חופשה שונה, מרגשת וייחודית שוברת שגרה? עזבו את בתי המלון
           הסטנדרטיים! "צימר על המים" של <span class="brand-leader"
@@ -50,7 +50,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           בוקר קסומה ומרעננת אל עבר האופק.
         </p>
 
-        <h3>📍 לבחירתכם: מרינה חיפה או מרינה הרצליה</h3>
+        <h2>📍 לבחירתכם: מרינה חיפה או מרינה הרצליה</h2>
         <p>
           הצי המפואר של <span class="brand-leader">לידר</span> מחכה לכם בשני הלוקיישנים
           המבוקשים בישראל. בין אם תבחרו בנוף האורבני והתוסס של הרצליה או ברומנטיקה
@@ -68,7 +68,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           class="sp-gallery-img"
         />
 
-        <h3>🌙 מה מחכה לכם בחבילה? (לו"ז של פינוק)</h3>
+        <h2>🌙 מה מחכה לכם בחבילה? (לו"ז של פינוק)</h2>
         <ul class="sp-list">
           <li>
             <strong>הגעה אל תוך הלילה:</strong> החוויה מתחילה כחצי שעה לאחר השקיעה.
@@ -110,7 +110,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           class="sp-gallery-img"
         />
 
-        <h3>👨‍👩‍👧‍👦 למי החבילה מתאימה?</h3>
+        <h2>👨‍👩‍👧‍👦 למי החבילה מתאימה?</h2>
         <p>
           <strong>לזוגות:</strong> המחפשים חוויה רומנטית, אינטימית ומקורית לחגוג אהבה,
           יום נישואין או יום הולדת.
@@ -125,7 +125,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           על אינטימיות ופרטיות מושלמת).
         </p>
 
-        <h3>💰 מחירון הצימר (תקף למזמינים עד סוף מרץ 2026):</h3>
+        <h2>💰 מחירון הצימר (תקף למזמינים עד סוף מרץ 2026):</h2>
         <ul class="sp-pricing">
           <li>מחיר חבילת צימר על המים (זוגית): <strong>2,200 ₪</strong></li>
           <li>תוספת לילד (עד 2 ילדים): <strong>200 ₪</strong> לילד</li>
@@ -561,6 +561,36 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
       legalName: "לידר",
       alternateName: ["Leader Haflagot", "לידר הפלגות שייט", "Leader Yachting"],
       telephone: "+972533403449",
+      location: [
+        {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "מרינה הרצליה",
+            addressLocality: "הרצליה",
+            addressCountry: "IL",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 32.162443,
+            longitude: 34.796172,
+          },
+        },
+        {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "מעגן שביט, פארק קישון",
+            addressLocality: "חיפה",
+            addressCountry: "IL",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: 32.8069075,
+            longitude: 35.0322383,
+          },
+        },
+      ],
       sameAs: [
         "https://www.facebook.com/leadership.haifa",
         "https://www.instagram.com/leader.aflagot?igsh=YnAzcThrbDExd2o5",
