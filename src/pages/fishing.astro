@@ -1,8 +1,6 @@
----
+﻿---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import cardImg from "../assets/group-men-sitting-on-yacht-deck-herzliya.webp";
-import mobileImg from "../assets/group-men-sitting-on-yacht-deck-herzliya.webp";
 import img1 from "../assets/group-of-fishermen-marina-herzelia.jpg";
 import midImg from "../assets/man-holding-large-fish-yacht-haifa.jpeg";
 import botImg from "../assets/family-fishing-trip-sailing-yacht-haifa.jpeg";
@@ -258,6 +256,7 @@ import heroImage from "../assets/original-high-res.png";
 
 <!-- Schema.org Data API -->
 <script
+  is:inline
   type="application/ld+json"
   set:html={JSON.stringify({
     "@context": "https://schema.org",

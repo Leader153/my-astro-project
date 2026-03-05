@@ -1,7 +1,6 @@
----
+﻿---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import heroImage from "../assets/original-high-res.png";
 import romanticDinnerImg from "../assets/romantic-dinner-couple-cabin-herzelia.jpeg";
 import mobileDinnerImg from "../assets/dinner-couple-cabin-herzelia.jpeg";
 import roomImg from "../assets/לי-ים-חדר-חרטום.jpg";
@@ -552,6 +551,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
 
 <!-- Schema.org Data API -->
 <script
+  is:inline
   type="application/ld+json"
   set:html={JSON.stringify({
     "@context": "https://schema.org",

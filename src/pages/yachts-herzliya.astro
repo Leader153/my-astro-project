@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import louseImg from "../assets/Louse.jpeg";
@@ -313,8 +313,7 @@ const yachts = [
 </style>
 
 <!-- Schema.org Data API -->
-<script
-  type="application/ld+json"
+<script is:inline type="application/ld+json"
   set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "ItemList",

@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import cardImg from "../assets/large-family-celebration-yacht.webp";
@@ -169,8 +169,7 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 </Layout>
 
 <!-- Schema.org Data API -->
-<script
-  type="application/ld+json"
+<script is:inline type="application/ld+json"
   set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "TouristTrip",

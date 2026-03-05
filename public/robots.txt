@@ -1,8 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
 
 Sitemap: https://aflagot-haifa.com/sitemap-index.xml
-
-
-# Строку Sitemap закомментировал (#) —
-# Allow: / она не нужна пока сайт закрыт.

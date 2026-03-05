@@ -1,4 +1,4 @@
----
+﻿---
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import AccessibilityWidget from "../components/AccessibilityWidget.astro";
@@ -119,14 +119,13 @@ const schemaOrg = {
     <meta name="twitter:image" content={ogImageAbsolute} />
 
     <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
 
     <!-- Google Analytics & Ads via Partytown -->
-    <script
-      type="text/partytown"
+    <script is:inline type="text/partytown"
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-S72RCPM0G2"></script>
-    <script type="text/partytown">
+    <script is:inline type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -138,7 +137,7 @@ const schemaOrg = {
     </script>
 
     <!-- Google Tag Manager (GTM) -->
-    <script type="text/partytown">
+    <script is:inline type="text/partytown">
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });

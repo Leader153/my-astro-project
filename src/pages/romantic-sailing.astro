@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "../layouts/Layout.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
@@ -336,7 +336,7 @@ const coupleYachts = [
         style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;"
       >
         {
-          coupleYachts.map((yacht, i) => (
+          coupleYachts.map((yacht) => (
             <a
               href={yacht.href}
               style="text-decoration: none; color: inherit; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.2s; display: flex; flex-direction: column;"
@@ -1145,6 +1145,7 @@ const coupleYachts = [
 
     <!-- Schema.org Data API -->
     <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify({
         "@context": "https://schema.org",
