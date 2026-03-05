@@ -257,7 +257,15 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
           </div>
         </div>
 
-        <p class="spa-note">** ימי חול ואמצע שבוע בלבד</p>
+        <div class="spa-warning-component">
+          <div class="swc-icon">⚠️</div>
+          <div class="swc-text">
+            <strong>שימו לב:</strong> מוצר זה זמין רק במרינה <strong
+              >הרצליה!</strong
+            ><br />
+            ** החבילה במחירים המיוחדים זמינה בימי חול ואמצע שבוע בלבד.
+          </div>
+        </div>
       </div>
     </section>
 
@@ -739,5 +747,31 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
     font-size: 0.9rem;
     color: var(--text-l);
     opacity: 0.75;
+  }
+
+  /* ══ WARNING COMPONENT ══ */
+  .spa-warning-component {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #fff9e6;
+    border: 2px solid #ffd43b;
+    color: #856404;
+    padding: 1.25rem 1.75rem;
+    border-radius: 12px;
+    margin: 3rem auto 0;
+    max-width: 600px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    box-shadow: 0 4px 15px rgba(255, 212, 59, 0.15);
+  }
+  .swc-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .swc-text strong {
+    color: #664d03;
+    display: inline-block;
+    margin-bottom: 0.2rem;
   }
 </style>

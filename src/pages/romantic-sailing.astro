@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import { Image } from "astro:assets";
 import bannerImg from "../assets/wedding-couple-sailing-yacht-sunset-herzliya.webp";
 import romantic2Img from "../assets/wedding-couple-sailing-yacht-sunset-haifa.webp";
@@ -12,6 +13,7 @@ import JoiBeImg from "../assets/Joy-Be-Yacht.jpeg";
 import LiYamImg from "../assets/Lee-Yam-Yacht.png";
 import Bagiraimg from "../assets/Bagira-Yacht.jpeg";
 import louseImg from "../assets/Louse.jpeg";
+import YamiImg from "../assets/Yami.png";
 
 const coupleYachts = [
   {
@@ -50,6 +52,14 @@ const coupleYachts = [
     extraHour: "300",
     img: louseImg,
     href: "/yacht-louise",
+  },
+  {
+    name: "יאכטה יאמי (חיפה)",
+    price1: "1090",
+    price2: "1250",
+    extraHour: "550",
+    img: YamiImg,
+    href: "/yacht-11",
   },
 ];
 ---
@@ -328,9 +338,7 @@ const coupleYachts = [
         {
           coupleYachts.map((yacht, i) => (
             <a
-              href="https://wa.me/972533403449"
-              target="_blank"
-              rel="noopener"
+              href={yacht.href}
               style="text-decoration: none; color: inherit; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.2s; display: flex; flex-direction: column;"
               class="couple-card"
             >
@@ -395,8 +403,8 @@ const coupleYachts = [
                   </ul>
                 </div>
 
-                <div style="margin-top: auto; padding-top: 1.5rem; text-align: left; font-weight: 800; color: #d4a017; display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem; font-size: 1.05rem;">
-                  להזמנה בוואטסאפ
+                <div style="margin-top: auto; padding-top: 1.5rem; text-align: left; font-weight: 800; color: #0ea5e9; display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem; font-size: 1.05rem;">
+                  לעמוד היאכטה
                   <svg
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
@@ -534,6 +542,16 @@ const coupleYachts = [
             <div class="pkg-cell pkg-price">600 ₪</div>
           </a>
         </div>
+
+        <div class="spa-warning-component">
+          <div class="swc-icon">⚠️</div>
+          <div class="swc-text">
+            <strong>שימו לב:</strong> חבילות אלו זמינות רק במרינה <strong
+              >הרצליה!</strong
+            >
+          </div>
+        </div>
+
         <div class="packages-cta">
           <a
             href="https://wa.me/972533403449"
@@ -541,6 +559,10 @@ const coupleYachts = [
             rel="noopener"
             class="cta-btn">💬 לפרטים והזמנה ב-WhatsApp</a
           >
+        </div>
+
+        <div style="margin-top: 4rem;">
+          <FleetSelectionCta />
         </div>
       </div>
     </div>
@@ -1228,4 +1250,33 @@ const coupleYachts = [
       })}
     />
   </div>
+
+  <style>
+    /* ══ WARNING COMPONENT ══ */
+    .spa-warning-component {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background-color: #fff9e6;
+      border: 2px solid #ffd43b;
+      color: #856404;
+      padding: 1.25rem 1.75rem;
+      border-radius: 12px;
+      margin: 3rem auto 0;
+      max-width: 600px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      box-shadow: 0 4px 15px rgba(255, 212, 59, 0.15);
+      text-align: right;
+    }
+    .swc-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+    .swc-text strong {
+      color: #664d03;
+      display: inline-block;
+      margin-bottom: 0.2rem;
+    }
+  </style>
 </Layout>

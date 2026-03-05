@@ -152,22 +152,32 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
         <h2>
           ⛵ צי היאכטות של <span class="brand-leader">לידר</span> – לכל מטרה
         </h2>
-        <p>
-          הארוחות הרומנטיות מתאימות במיוחד לזוגות או קבוצות קטנות ואינטימיות (עד
-          6 אנשים). עם זאת, חשוב שתדעו שהצי המפואר שלנו בחיפה ובהרצליה כולל גם
-          יאכטות ענק המותאמות לאירוח קבוצות של 21, 30, 40 ואפילו 55 משתתפים, עם
-          פתרונות קייטרינג מותאמים אישית לאירועים גדולים, ימי הולדת וימי גיבוש!
-        </p>
 
         <p class="sp-closing">
           רגעים שלא תשכחו לעולם מחכים לכם על סיפון היאכטה.<br />
           הזמינו עכשיו ותיהנו מפינוק קולינרי ורומנטי בלב ים!
         </p>
+
+        <div class="spa-warning-component">
+          <div class="swc-icon">⚠️</div>
+          <div class="swc-text">
+            <strong>שימו לב:</strong> מוצר זה זמין רק במרינה <strong
+              >הרצליה!</strong
+            ><br />
+            **
+          </div>
+        </div>
       </div>
       <!-- Закрываем sp-inner (ИМЕННО ЗДЕСЬ) -->
 
       <div class="services-grid">
-        <a href="/yacht-li-yam" class="service-card" style="--c:#0ea5e9; --i:0">
+        <a
+          href="https://wa.me/972533403449"
+          target="_blank"
+          rel="noopener"
+          class="service-card"
+          style="--c:#e84393; --i:0"
+        >
           <div class="sc-img-wrap">
             <Image
               src={mobileDinnerI}
@@ -183,6 +193,48 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
             </div>
           </div>
           <div class="sc-body">
+            <div class="sc-icon">🍽️</div>
+            <h3>ארוחה רומנטית ביאכטה</h3>
+            <p>
+              <strong>חוויה קולינרית:</strong> בלב ים<br />
+              <strong>מחיר:</strong> מגוון תפריטים<br />
+              <strong>כולל:</strong> שירות VIP, פרטיות מלאה, ונוף לשקיעה.<br />
+              <span style="font-size: 0.85em; color: #000000;"
+                >פינוק זוגי בלתי נשכח</span
+              >
+            </p>
+            <div class="sc-arrow" style="color:#25D366">
+              להזמנה בוואטסאפ
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                width="15"
+                height="15"><polyline points="15 18 9 12 15 6"></polyline></svg
+              >
+            </div>
+          </div>
+        </a>
+
+        <a href="/sea-cabin" class="service-card" style="--c:#0ea5e9; --i:1">
+          <div class="sc-img-wrap">
+            <Image
+              src={roomImg}
+              width={600}
+              height={400}
+              format="webp"
+              alt="חדר שינה מפנק ויוקרתי ביאכטה"
+              class="sc-img"
+              loading="lazy"
+            />
+            <div class="sc-tag" style="background:#0ea5e9; color:#fff">
+              צימר על המים
+            </div>
+          </div>
+          <div class="sc-body">
             <div class="sc-icon">⚓</div>
             <h3>צימר על המים</h3>
             <p>
@@ -195,7 +247,7 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
               >
             </p>
             <div class="sc-arrow" style="color:#0ea5e9">
-              קבלו פרטים
+              לעמוד החבילה
               <svg
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -291,3 +343,31 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
     },
   })}
 />
+
+<style>
+  /* ══ WARNING COMPONENT ══ */
+  .spa-warning-component {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #fff9e6;
+    border: 2px solid #ffd43b;
+    color: #856404;
+    padding: 1.25rem 1.75rem;
+    border-radius: 12px;
+    margin: 3rem auto 0;
+    max-width: 600px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    box-shadow: 0 4px 15px rgba(255, 212, 59, 0.15);
+  }
+  .swc-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .swc-text strong {
+    color: #664d03;
+    display: inline-block;
+    margin-bottom: 0.2rem;
+  }
+</style>

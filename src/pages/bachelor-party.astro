@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PremiumSwitch from "../components/PremiumSwitch.astro";
+import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import { Image } from "astro:assets";
 import cardImg from "../assets/large-group-bachelorette-party-yacht-haifa.webp";
 import mobileBannerImg from "../assets/paty-girls-with-skipper.webp";
@@ -206,12 +206,8 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
         >
       </div>
 
-      <div class="premium-switch-spacing">
-        <PremiumSwitch
-          href="/our-fleet"
-          title="צי היאכטות שלנו"
-          subtitle="לצפייה בצי שלנו ולבחירת היאכטה המושלמת"
-        />
+      <div class="premium-switch-spacing" style="margin-top: 3rem;">
+        <FleetSelectionCta />
       </div>
     </div>
   </div>

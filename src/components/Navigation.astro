@@ -20,20 +20,6 @@ const mainLinks = [
     ]
   },
   { 
-    href: '/haifa',      
-    label: 'שייט בחיפה',  
-    icon: '⚓',
-    subLinks: [
-      { href: '/haifa',              label: 'כל ההפלגות בחיפה', icon: '⚓' },
-      { href: '/yacht-11',           label: 'יאכטה עד 11',      icon: '⛵' },
-      { href: '/yacht-14',           label: 'יאכטה עד 14',      icon: '⛵' },
-      { href: '/typhoon-ship',       label: 'ספינת טייפון',      icon: '🚢' },
-      { href: '/catamaran-sailing',  label: 'קטמרן מפרשית',      icon: '⛵' },
-      { href: '/catamaran-motor',    label: 'קטמרן מנועית',      icon: '🛥️' },
-      { href: '/motorboat-6',     label: 'סירת מנוע מרגע',    icon: '🚤' }
-    ]
-  },
-  { 
     href: '/herzliya',  
     label: 'שייט בהרצליה',
     icon: '🌊',
@@ -46,6 +32,20 @@ const mainLinks = [
       { href: '/fishing',            label: 'דייג חוויתי',     icon: '🎣' },
       { href: '/skipper-day-cruise', label: 'סקיפר ליום אחד',     icon: '⛵' },
       { href: '/sea-cabin',          label: 'צימר על הים',     icon: '🌙' },
+    ]
+  },
+  { 
+    href: '/haifa',      
+    label: 'שייט בחיפה',  
+    icon: '⚓',
+    subLinks: [
+      { href: '/haifa',              label: 'כל ההפלגות בחיפה', icon: '⚓' },
+      { href: '/yacht-11',           label: 'יאכטה עד 11',      icon: '⛵' },
+      { href: '/yacht-14',           label: 'יאכטה עד 14',      icon: '⛵' },
+      { href: '/typhoon-ship',       label: 'ספינת טייפון',      icon: '🚢' },
+      { href: '/catamaran-sailing',  label: 'קטמרן מפרשית',      icon: '⛵' },
+      { href: '/catamaran-motor',    label: 'קטמרן מנועית',      icon: '🛥️' },
+      { href: '/motorboat-6',     label: 'סירת מנוע מרגע',    icon: '🚤' }
     ]
   },
 ];
@@ -608,9 +608,9 @@ const mainLinks = [
     align-items: center;
     gap: 0.85rem;
     padding: 0.9rem 1.5rem;
-    color: #ffffff;
+    color: #ffd700;
     text-decoration: none;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     font-weight: 600;
     transition: background 0.2s, color 0.2s, padding 0.2s;
     border-right: 3px solid transparent;
@@ -807,9 +807,9 @@ const mainLinks = [
     border: none;
     cursor: pointer;
     font-family: inherit;
-    /* явно белый — браузер по умолчанию ставит чёрный на <button> */
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 1rem;
+    /* явно яркий желтый — браузер по умолчанию ставит чёрный на <button> */
+    color: #ffd700;
+    font-size: 1.15rem;
     font-weight: 600;
     text-align: right;
     -webkit-appearance: none;
@@ -840,9 +840,9 @@ const mainLinks = [
     gap: 0.65rem;
     padding: 0.65rem 0.6rem;
     border-radius: 10px;
-    font-size: 0.88rem;
+    font-size: 1rem;
     font-weight: 500;
-    color: rgba(255,255,255,0.72);
+    color: white;
     text-decoration: none;
     transition: background 0.2s, color 0.2s;
   }

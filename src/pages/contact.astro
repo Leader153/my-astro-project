@@ -249,13 +249,11 @@ import Layout from "../layouts/Layout.astro";
                 <input type="date" id="date" name="date" />
               </div>
               <div class="field-group">
-                <label for="guests">מספר משתתפים</label>
-                <select id="guests" name="guests">
+                <label for="city">עיר *</label>
+                <select id="city" name="city" required>
                   <option value="">בחרו...</option>
-                  <option>עד 12 אנשים</option>
-                  <option>עד 15 אנשים</option>
-                  <option>עד 28 אנשים</option>
-                  <option>עד 55 אנשים</option>
+                  <option value="חיפה">חיפה</option>
+                  <option value="הרצליה">הרצליה</option>
                 </select>
               </div>
             </div>
@@ -298,6 +296,53 @@ import Layout from "../layouts/Layout.astro";
               ✅ תודה! קיבלנו את פרטיכם ונחזור אליכם בקרוב.
             </div>
           </form>
+          <script>
+            document
+              .getElementById("contact-form")
+              ?.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const name =
+                  (
+                    document.getElementById("fname") as HTMLInputElement
+                  )?.value.trim() ?? "";
+                const phone =
+                  (
+                    document.getElementById("phone") as HTMLInputElement
+                  )?.value.trim() ?? "";
+                const email =
+                  (
+                    document.getElementById("email") as HTMLInputElement
+                  )?.value.trim() ?? "";
+                const date =
+                  (document.getElementById("date") as HTMLInputElement)
+                    ?.value ?? "";
+                const city =
+                  (document.getElementById("city") as HTMLSelectElement)
+                    ?.value ?? "";
+                const event =
+                  (document.getElementById("event") as HTMLSelectElement)
+                    ?.value ?? "";
+                const message =
+                  (
+                    document.getElementById("message") as HTMLTextAreaElement
+                  )?.value.trim() ?? "";
+
+                let text = "שלום, אני מעוניין/ת בהפלגה \n";
+                if (name) text += "שם: " + name + "\n";
+                if (phone) text += "טלפון: " + phone + "\n";
+                if (email) text += "אימייל: " + email + "\n";
+                if (city) text += "עיר: " + city + "\n";
+                if (date) text += "תאריך: " + date + "\n";
+                if (event) text += "סוג אירוע: " + event + "\n";
+                if (message) text += "הערות: " + message;
+
+                const encoded = encodeURIComponent(text);
+                window.open(
+                  "https://wa.me/972533403449?text=" + encoded,
+                  "_blank",
+                );
+              });
+          </script>
         </div>
       </div>
 

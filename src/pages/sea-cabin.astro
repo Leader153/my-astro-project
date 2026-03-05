@@ -141,11 +141,26 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
           מושלמת מחכה לכם ב<span class="brand-leader">לידר השכרת יאכטות</span>.
           הזמינו עכשיו ותיהנו מרגעים שלווים ובלתי נשכחים.
         </p>
+
+        <div class="spa-warning-component">
+          <div class="swc-icon">⚠️</div>
+          <div class="swc-text">
+            <strong>שימו לב:</strong> מוצר זה זמין רק במרינה <strong
+              >הרצליה!</strong
+            >
+          </div>
+        </div>
       </div>
       <!-- Закрываем sp-inner (ИМЕННО ЗДЕСЬ) -->
 
       <div class="services-grid">
-        <a href="/yacht-li-yam" class="service-card" style="--c:#0ea5e9; --i:0">
+        <a
+          href="https://wa.me/972533403449"
+          target="_blank"
+          rel="noopener"
+          class="service-card"
+          style="--c:#25D366; --i:0"
+        >
           <div class="sc-img-wrap">
             <Image
               src={mobileDinnerImg}
@@ -172,8 +187,8 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
                 >ניתן לשדרג לשעות נוספות מוקדמות לפני השקיעה</span
               >
             </p>
-            <div class="sc-arrow" style="color:#0ea5e9">
-              קבלו פרטים
+            <div class="sc-arrow" style="color:#25D366">
+              להזמנה בוואטסאפ
               <svg
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -599,3 +614,31 @@ import PremiumSwitch from "../components/PremiumSwitch.astro";
     },
   })}
 />
+
+<style>
+  /* ══ WARNING COMPONENT ══ */
+  .spa-warning-component {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #fff9e6;
+    border: 2px solid #ffd43b;
+    color: #856404;
+    padding: 1.25rem 1.75rem;
+    border-radius: 12px;
+    margin: 3rem auto 0;
+    max-width: 600px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    box-shadow: 0 4px 15px rgba(255, 212, 59, 0.15);
+  }
+  .swc-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .swc-text strong {
+    color: #664d03;
+    display: inline-block;
+    margin-bottom: 0.2rem;
+  }
+</style>
