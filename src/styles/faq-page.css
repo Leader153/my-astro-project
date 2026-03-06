@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap");
-
 /* ═══════════ VARS ═══════════ */
 .faq-page {
   --navy: #08047e;
@@ -420,8 +418,6 @@
 
 /* ═══════════ RESPONSIVE ═══════════ */
 @media (max-width: 640px) {
-  
-  
   .cat-tabs {
     gap: 0.4rem;
   }

@@ -600,7 +600,9 @@ import Layout from "../layouts/Layout.astro";
 </script>
 
 <!-- Schema.org Data API -->
-<script is:inline type="application/ld+json"
+<script
+  is:inline
+  type="application/ld+json"
   set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -654,8 +656,6 @@ import Layout from "../layouts/Layout.astro";
 />
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap");
-
   /* ────────────────────────────── VARIABLES ────────────────────────────── */
   .contact-page {
     --navy: #08047e;

@@ -277,7 +277,9 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 </Layout>
 
 <!-- Schema.org Data API -->
-<script is:inline type="application/ld+json"
+<script
+  is:inline
+  type="application/ld+json"
   set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "TouristTrip",
@@ -341,8 +343,6 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 />
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap");
-
   .spa-page {
     --navy: #08047e;
     --sea: #0f7ab0;

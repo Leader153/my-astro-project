@@ -96,6 +96,14 @@ const schemaOrg = {
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Google Fonts preload (Non-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- SEO Base -->
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -119,10 +127,16 @@ const schemaOrg = {
     <meta name="twitter:image" content={ogImageAbsolute} />
 
     <!-- Schema.org JSON-LD -->
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(schemaOrg)}
+    />
 
     <!-- Google Analytics & Ads via Partytown -->
-    <script is:inline type="text/partytown"
+    <script
+      is:inline
+      type="text/partytown"
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-S72RCPM0G2"></script>
     <script is:inline type="text/partytown">
