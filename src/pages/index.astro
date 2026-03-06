@@ -222,12 +222,14 @@ const testimonials = [
             <div class="sc-img-wrap">
               <Image
                 src={s.img || cardImg}
+                widths={[400, 600, 800]}
+                sizes="(max-width: 600px) 400px, (max-width: 1000px) 600px, 800px"
                 width={600}
                 height={400}
                 format="webp"
                 alt={s.alt}
                 class="sc-img"
-                loading={i < 3 ? 'eager' : 'lazy'}
+                loading="lazy"
               />
               <div class="sc-tag" style={`background:${s.color}; color:#fff`}>{s.tag}</div>
             </div>
@@ -283,6 +285,8 @@ const testimonials = [
             <div class="sc-img-wrap">
               <Image
                 src={s.img || cardImg}
+                widths={[400, 600, 800]}
+                sizes="(max-width: 600px) 400px, (max-width: 1000px) 600px, 800px"
                 width={600}
                 height={400}
                 format="webp"
@@ -324,6 +328,8 @@ const testimonials = [
             <div class="sc-img-wrap">
               <Image
                 src={s.img || cardImg}
+                widths={[400, 600, 800]}
+                sizes="(max-width: 600px) 400px, (max-width: 1000px) 600px, 800px"
                 width={600}
                 height={400}
                 format="webp"
