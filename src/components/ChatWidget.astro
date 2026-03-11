@@ -375,8 +375,37 @@
     const sendBtn = document.getElementById("chat-send");
     const messagesContainer = document.getElementById("chat-messages");
 
-    // Инициализация памяти чата (история сообщений для Gemini)
+    // Инициализация памяти чата (история сообщений для Gemini) из sessionStorage
+    const SESSION_STORAGE_KEY = "leader_chat_history";
     let chatHistory: Array<{ role: string; parts: string }> = [];
+
+    try {
+      const savedHistory = sessionStorage.getItem(SESSION_STORAGE_KEY);
+      if (savedHistory) {
+        const parsedHistory = JSON.parse(savedHistory);
+        if (parsedHistory && parsedHistory.length > 0) {
+          chatHistory = parsedHistory;
+          // Очищаем дефолтное приветствие
+          if (messagesContainer) messagesContainer.innerHTML = '';
+          // Планируем восстановление UI после объявления функций (чтобы использовать addMessage)
+          setTimeout(() => {
+            chatHistory.forEach(msg => {
+              addMessage(msg.parts, msg.role === 'user', false);
+            });
+            // Прокручиваем вниз без анимации
+            if (messagesContainer) {
+              messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+          }, 0);
+        }
+      }
+    } catch (e) {
+      console.error("Failed to load chat history:", e);
+    }
+
+    const saveHistory = () => {
+      sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(chatHistory));
+    };
 
     // Toggle chat panel
     const toggleChat = () => {
@@ -392,11 +421,12 @@
     });
 
     // Add message to UI
-    const addMessage = (text: string, isUser = false) => {
+    const addMessage = (text: string, isUser = false, autoScroll = true) => {
       if (!messagesContainer) return;
 
       const msgDiv = document.createElement("div");
       msgDiv.className = `chat-message ${isUser ? "user-message" : "bot-message"}`;
+      if (!isUser) msgDiv.setAttribute("dir", "rtl");
 
       // Экранируем HTML-теги для безопасности
       let formattedText = text
@@ -410,9 +440,10 @@
         "<strong>$1</strong>",
       );
       // Поддержка Markdown: ссылки [Текст](https://...) или [Текст](/yacht)
+      // Теперь поддерживает одинарные скобки внутри ссылки!
       formattedText = formattedText.replace(
-        /\[([^\]]+)\]\(([^)]+)\)/g,
-        '<a href="$2" target="_blank" style="color: inherit; text-decoration: underline; font-weight: bold;">$1</a>',
+        /\[([^\]]+)\]\(((?:[^)(]+|\([^)(]*\))+)\)/g,
+        '<a href="$2" style="color: inherit; text-decoration: underline; font-weight: bold;">$1</a>',
       );
       // Поддержка Markdown: переносы строк \n в <br>
       formattedText = formattedText.replace(/\n/g, "<br>");
@@ -420,7 +451,9 @@
       msgDiv.innerHTML = formattedText;
 
       messagesContainer.appendChild(msgDiv);
-      scrollToBottom();
+      if (autoScroll) {
+        scrollToBottom(msgDiv);
+      }
     };
 
     // Add typing indicator
@@ -434,7 +467,7 @@
         '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
 
       messagesContainer.appendChild(typingDiv);
-      scrollToBottom();
+      scrollToBottom(typingDiv);
       return typingDiv;
     };
 
@@ -444,10 +477,22 @@
       }
     };
 
-    const scrollToBottom = () => {
-      if (messagesContainer) {
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-      }
+    const scrollToBottom = (elementToScrollTo?: HTMLElement) => {
+      if (!messagesContainer) return;
+
+      setTimeout(() => {
+        if (elementToScrollTo) {
+          // Если сообщение высокое (занимает больше 70% высоты чата)
+          const isTall = elementToScrollTo.clientHeight > (messagesContainer.clientHeight * 0.7);
+          
+          elementToScrollTo.scrollIntoView({ 
+            behavior: "smooth", 
+            block: isTall ? "start" : "end" 
+          });
+        } else {
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+      }, 50);
     };
 
     // Send message to backend
@@ -472,13 +517,16 @@
             ? "http://localhost:3000/api/chat"
             : "/api/chat";
 
+        // Применяем логику Sliding Window (отправляем не всю историю, а только последние 6 сообщений)
+        const slidingWindowContext = chatHistory.slice(-6);
+
         const response = await fetch(apiUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
           },
-          body: JSON.stringify({ message: text, history: chatHistory }),
+          body: JSON.stringify({ message: text, history: slidingWindowContext }),
         });
 
         if (!response.ok) {
@@ -498,6 +546,7 @@
         // Обновляем память чата после успешного ответа
         chatHistory.push({ role: "user", parts: text });
         chatHistory.push({ role: "model", parts: botReply });
+        saveHistory();
       } catch (error) {
         console.error("Chat error:", error);
         removeTypingIndicator(typingIndicator);

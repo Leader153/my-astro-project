@@ -57,9 +57,11 @@ app.post("/api/chat", async (req, res) => {
     const questionVector = embeddingResult.embedding.values;
 
     // ШАГ 2: Ищем в базе Qdrant 3 самых релевантных куска текста (ближайшие векторы)
+    // Поиск выполняется ИСКЛЮЧИТЕЛЬНО по последнему вопросу пользователя (questionVector)
     const searchResults = await qdrantClient.search(COLLECTION_NAME, {
       vector: questionVector,
       limit: 3, // Берем топ 3 совпадения
+      score_threshold: 0.75, // Порог релевантности для качества ответов
       with_payload: true, // Нам нужен сам текст, а не только векторы
     });
 
