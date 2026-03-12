@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import Heroimg from "../assets/Joy-Be-Yacht.jpeg";
@@ -7,6 +7,7 @@ import midImg from "../assets/JoyBeDeck.jpg";
 import botImg from "../assets/kokpit.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import CloudinaryVideo from "../components/CloudinaryVideo.astro";
 import "../styles/pricing-card.css";
 ---
 
@@ -108,6 +109,15 @@ import "../styles/pricing-card.css";
           רוצים להפליג? יאכטה ג'וי בי מחכה לכם!<br />
           התקשרו להזמין עכשיו: 053-3403449
         </p>
+
+        <CloudinaryVideo
+          name="Yacht JoyBe Herzliya"
+          description="יאכטה מפרשית עד 13 משתתפים מהרצליה"
+          uploadDate="2026-03-12"
+          posterUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20240318-WA0007_1_gexpta.jpg"
+          videoUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20240318-WA0007_1_gexpta.mp4"
+          isVertical={true}
+        />
       </div>
 
       <div class="services-grid">
@@ -190,7 +200,9 @@ import "../styles/pricing-card.css";
   <FleetSelectionCta ctaInstruction="נא להמשיך להזמנה או לצפות בעוד יאכטות:" />
 
   <!-- Schema.org Data API -->
-  <script is:inline type="application/ld+json"
+  <script
+    is:inline
+    type="application/ld+json"
     set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Product",
