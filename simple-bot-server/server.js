@@ -49,19 +49,28 @@ app.post("/api/chat", async (req, res) => {
       parts: [{ text: String(msg.parts) }],
     }));
 
-    // ШАГ 1: Превращаем вопрос клиента в вектор (эмбеддинг)
+    // ШАГ 1: Создаем "умный" запрос для Qdrant (объединяем историю и текущий вопрос)
+    let queryForQdrant = userMessage;
+    if (chatHistory.length > 0) {
+      // Берем последние 2 сообщения из истории, чтобы добавить контекст (например, имя яхты)
+      const lastMessages = chatHistory.slice(-2).map((msg) => msg.parts).join(" | ");
+      queryForQdrant = `${lastMessages} | ${userMessage}`;
+    }
+
+    console.log(`🧠 [Контекст для поиска]: ${queryForQdrant}`);
+
     const embeddingModel = genAI.getGenerativeModel({
       model: "gemini-embedding-001",
     });
-    const embeddingResult = await embeddingModel.embedContent(userMessage);
+    const embeddingResult = await embeddingModel.embedContent(queryForQdrant);
     const questionVector = embeddingResult.embedding.values;
 
     // ШАГ 2: Ищем в базе Qdrant 3 самых релевантных куска текста (ближайшие векторы)
-    // Поиск выполняется ИСКЛЮЧИТЕЛЬНО по последнему вопросу пользователя (questionVector)
+    // Поиск выполняется с учетом контекста (queryForQdrant)
     const searchResults = await qdrantClient.search(COLLECTION_NAME, {
       vector: questionVector,
       limit: 3, // Берем топ 3 совпадения
-      score_threshold: 0.75, // Порог релевантности для качества ответов
+      score_threshold: 0.50, // Порог релевантности для качества ответов
       with_payload: true, // Нам нужен сам текст, а не только векторы
     });
 
