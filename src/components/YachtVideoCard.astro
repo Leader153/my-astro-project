@@ -4,27 +4,21 @@
  *
  * ИСПОЛЬЗОВАНИЕ:
  * <YachtVideoCard
+ *   id="yacht-x" // <-- ВАЖНО: Уникальный ID для якорной ссылки
  *   videoUrl="..."
  *   posterUrl="..."
  *   videoName="..."
  *   videoDescription="..."
  *   uploadDate="2026-03-12"
- *   tagText="הרצליה"
- *   tagColor="#d4a017"
- *   icon="⛵"
- *   title="מחירון יאכטה X"
- *   note="* מחיר כולל מע"מ"
- *   whatsappNumber="972533403449"
- *   ragHint="..."
- * >
- *   <!-- Сюда вставляй <ul class="pricing-list"> и <h4 class="pricing-title"> -->
- *   <ul class="pricing-list no-bullets">...</ul>
- * </YachtVideoCard>
+ *   ...
+ * />
  */
 
 import CloudinaryVideo from "./CloudinaryVideo.astro";
 
 interface Props {
+  /** Уникальный ID для якорной ссылки (например: "yacht-atlantis-45") */
+  id: string;
   /** URL видеофайла (mp4) */
   videoUrl: string;
   /** URL постера/превью видео */
@@ -54,6 +48,7 @@ interface Props {
 }
 
 const {
+  id,
   videoUrl,
   posterUrl,
   videoName,
@@ -68,16 +63,32 @@ const {
   whatsappLabel = "להזמנה בוואטסאפ",
   ragHint,
 } = Astro.props;
+
+// Преобразуем дату в полный формат ISO 8601, если она передана
+const isoUploadDate = uploadDate ? new Date(uploadDate).toISOString() : undefined;
+
+// --- НОВЫЙ БЛОК ДЛЯ ССЫЛКИ WHATSAPP ---
+// 1. Получаем полный URL текущей страницы
+const pageUrl = Astro.url.href.split('#')[0]; // Убираем существующий хэш, если есть
+
+// 2. Создаем прямую ссылку на эту карточку
+const cardLink = `${pageUrl}#${id}`;
+
+// 3. Создаем текст сообщения для WhatsApp
+const messageText = `Здравствуйте! Меня интересует "${title}".\n\nПодробнее здесь: ${cardLink}`;
+
+// 4. Кодируем текст для URL и формируем финальную ссылку
+const encodedMessage = encodeURIComponent(messageText);
+const whatsappUrl = `https://wa.me/send?phone=${whatsappNumber}&text=${encodedMessage}`;
+// --- КОНЕЦ НОВОГО БЛОКА ---
 ---
 
 {/* Скрытый RAG-хинт — подхватывается парсером бота, невидим пользователям */}
-{ragHint && (
-  <div style="display:none" aria-hidden="true">{ragHint}</div>
-)}
+{ragHint && <div style="display:none" aria-hidden="true">{ragHint}</div>}
 
-<div class="yvc-wrapper">
+{/* Добавляем `id` к главному оберточному элементу */}
+<div class="yvc-wrapper" id={id}>
   <div class="yvc-card service-card" style={`--c:${tagColor}; --i:0`}>
-
     {/* ── Верхняя часть: видео + тег ── */}
     <div class="sc-img-wrap yvc-img-wrap">
       <div class="yvc-video-wrap">
@@ -86,7 +97,7 @@ const {
           posterUrl={posterUrl}
           name={videoName}
           description={videoDescription}
-          uploadDate={uploadDate}
+          uploadDate={isoUploadDate}
           isVertical={true}
         />
       </div>
@@ -105,8 +116,9 @@ const {
 
       {note && <p class="pricing-note">{note}</p>}
 
+      {/* Обновляем href для ссылки WhatsApp */}
       <a
-        href={`https://wa.me/${whatsappNumber}`}
+        href={whatsappUrl}
         class="sc-arrow yvc-wa-link"
         style="color:#25D366"
         target="_blank"
@@ -125,12 +137,11 @@ const {
         >
       </a>
     </div>
-
   </div>
 </div>
 
 <style>
-  /* ── Обёртка — центрирует карточку как services-grid ── */
+  /* Стили остаются без изменений */
   .yvc-wrapper {
     display: grid;
     grid-template-columns: minmax(auto, 350px);
@@ -138,20 +149,15 @@ const {
     margin-top: 3rem;
     margin-bottom: 2rem;
   }
-
-  /* ── Переопределяем горизонтальный aspect-ratio из глобального CSS ── */
   .yvc-img-wrap {
     aspect-ratio: 9 / 16 !important;
     height: auto !important;
   }
-
-  /* ── Видео заполняет всю область карточки ── */
   .yvc-video-wrap {
     width: 100%;
     height: 100%;
     overflow: hidden;
   }
-
   .yvc-video-wrap :global(.cloudinary-video-facade) {
     margin: 0;
     max-width: 100%;
@@ -160,8 +166,6 @@ const {
     height: 100%;
     aspect-ratio: unset;
   }
-
-  /* ── Кнопка WhatsApp как ссылка ── */
   .yvc-wa-link {
     text-decoration: none;
     cursor: pointer;
