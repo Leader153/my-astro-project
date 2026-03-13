@@ -1,0 +1,169 @@
+---
+/**
+ * YachtVideoCard — универсальная карточка яхты с вертикальным видео и прайс-листом.
+ *
+ * ИСПОЛЬЗОВАНИЕ:
+ * <YachtVideoCard
+ *   videoUrl="..."
+ *   posterUrl="..."
+ *   videoName="..."
+ *   videoDescription="..."
+ *   uploadDate="2026-03-12"
+ *   tagText="הרצליה"
+ *   tagColor="#d4a017"
+ *   icon="⛵"
+ *   title="מחירון יאכטה X"
+ *   note="* מחיר כולל מע"מ"
+ *   whatsappNumber="972533403449"
+ *   ragHint="..."
+ * >
+ *   <!-- Сюда вставляй <ul class="pricing-list"> и <h4 class="pricing-title"> -->
+ *   <ul class="pricing-list no-bullets">...</ul>
+ * </YachtVideoCard>
+ */
+
+import CloudinaryVideo from "./CloudinaryVideo.astro";
+
+interface Props {
+  /** URL видеофайла (mp4) */
+  videoUrl: string;
+  /** URL постера/превью видео */
+  posterUrl: string;
+  /** Название видео для Schema.org */
+  videoName: string;
+  /** Описание видео для Schema.org */
+  videoDescription: string;
+  /** Дата загрузки (YYYY-MM-DD) */
+  uploadDate?: string;
+  /** Текст тега (например: "הרצליה" или "חיפה") */
+  tagText: string;
+  /** Цвет тега и акцента карточки (hex) */
+  tagColor?: string;
+  /** Emoji-иконка в шапке карточки */
+  icon?: string;
+  /** Заголовок карточки */
+  title: string;
+  /** Маленькая сноска внизу (например: про НДС) */
+  note?: string;
+  /** Номер WhatsApp (без +, например: 972533403449) */
+  whatsappNumber: string;
+  /** Текст кнопки WhatsApp */
+  whatsappLabel?: string;
+  /** Скрытый RAG-хинт для бота — невидим на странице */
+  ragHint?: string;
+}
+
+const {
+  videoUrl,
+  posterUrl,
+  videoName,
+  videoDescription,
+  uploadDate,
+  tagText,
+  tagColor = "#0f7ab0",
+  icon = "⛵",
+  title,
+  note,
+  whatsappNumber,
+  whatsappLabel = "להזמנה בוואטסאפ",
+  ragHint,
+} = Astro.props;
+---
+
+{/* Скрытый RAG-хинт — подхватывается парсером бота, невидим пользователям */}
+{ragHint && (
+  <div style="display:none" aria-hidden="true">{ragHint}</div>
+)}
+
+<div class="yvc-wrapper">
+  <div class="yvc-card service-card" style={`--c:${tagColor}; --i:0`}>
+
+    {/* ── Верхняя часть: видео + тег ── */}
+    <div class="sc-img-wrap yvc-img-wrap">
+      <div class="yvc-video-wrap">
+        <CloudinaryVideo
+          videoUrl={videoUrl}
+          posterUrl={posterUrl}
+          name={videoName}
+          description={videoDescription}
+          uploadDate={uploadDate}
+          isVertical={true}
+        />
+      </div>
+      <div class="sc-tag" style={`background:${tagColor}; color:#fff`}>
+        {tagText}
+      </div>
+    </div>
+
+    {/* ── Тело карточки: иконка + заголовок + контент + кнопка ── */}
+    <div class="sc-body">
+      <div class="sc-icon">{icon}</div>
+      <h3>{title}</h3>
+
+      {/* Прайс-лист и всё остальное — передаётся со страницы через slot */}
+      <slot />
+
+      {note && <p class="pricing-note">{note}</p>}
+
+      <a
+        href={`https://wa.me/${whatsappNumber}`}
+        class="sc-arrow yvc-wa-link"
+        style="color:#25D366"
+        target="_blank"
+        rel="noopener"
+      >
+        {whatsappLabel}
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          width="15"
+          height="15"><polyline points="15 18 9 12 15 6"></polyline></svg
+        >
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  /* ── Обёртка — центрирует карточку как services-grid ── */
+  .yvc-wrapper {
+    display: grid;
+    grid-template-columns: minmax(auto, 350px);
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  /* ── Переопределяем горизонтальный aspect-ratio из глобального CSS ── */
+  .yvc-img-wrap {
+    aspect-ratio: 9 / 16 !important;
+    height: auto !important;
+  }
+
+  /* ── Видео заполняет всю область карточки ── */
+  .yvc-video-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .yvc-video-wrap :global(.cloudinary-video-facade) {
+    margin: 0;
+    max-width: 100%;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: unset;
+  }
+
+  /* ── Кнопка WhatsApp как ссылка ── */
+  .yvc-wa-link {
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
