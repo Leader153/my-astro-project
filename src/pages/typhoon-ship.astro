@@ -6,6 +6,8 @@ import img1 from "../assets/ספינת-טייפון-מושבים.png";
 import midImg2 from "../assets/צוות-טייפון.webp";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import YachtVideoCard from "../components/YachtVideoCard.astro";
+const isoUploadDate = new Date("2026-03-12").toISOString();
 import "../styles/pricing-card.css";
 ---
 
@@ -137,73 +139,54 @@ import "../styles/pricing-card.css";
         </p>
       </div>
 
-      <div class="services-grid">
-        <a
-          href="https://wa.me/972533403449"
-          target="_blank"
-          rel="noopener"
-          class="service-card"
-          style="--c:#0ea5e9; --i:0"
-        >
-          <div class="sc-img-wrap">
-            <Image
-              src={heroImage}
-              width={600}
-              height={400}
-              format="webp"
-              alt="ספינת טייפון בחיפה"
-              class="sc-img"
-              loading="lazy"
-              style="object-position: right;"
-            />
-            <div class="sc-tag" style="background:#0ea5e9; color:#fff">
-              חיפה
-            </div>
-          </div>
-          <div class="sc-body">
-            <div class="sc-icon">🚢</div>
-            <h3>ספינת טייפון</h3>
-            <p><strong>מחירון השכרת טייפון:</strong></p>
-            <ul class="pricing-list no-bullets">
-              <li><strong>שעה הפלגה:</strong> 1,200 ₪</li>
-              <li><strong>שעתיים הפלגה:</strong> 2,200 ₪</li>
-              <li><strong>3 שעות הפלגה:</strong> 2,650 ₪</li>
-              <li>👑 מתאים לעד 30 מפליגים</li>
-            </ul>
+      <YachtVideoCard
+  id="ship-typhoon-haifa"
+  videoUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250707-WA0013_qgcvco.mp4"
+  posterUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250707-WA0013_qgcvco.jpg"
+  videoName="Typhoon Ship Haifa"
+  videoDescription="ספינת טייפון לאירועים עד 30 משתתפים מחיפה"
+  uploadDate={isoUploadDate}
+  tagText="חיפה"
+  tagColor="#0ea5e9"
+  icon="🚢"
+  title="מחירון ספינת טייפון"
+  note="* המחיר לא כולל שמפניה | * מחיר כולל מע&quot;מ, תקף לסוף שבוע"
+  whatsappNumber="972533403449"
+  ragHint="[מידע לבוט על ספינת טייפון] שם: ספינת טייפון. מיקום: חיפה. סוג: ספינת אירועים. קיבולת: עד 30 מפליגים. מחירון מקוצר: שעה 1,200₪, שעתיים 2,200₪, 3 שעות 2,650₪. המחיר הוא לספינה במלואה וכולל: צוות מקצועי (סקיפר ומלחים), רחבת ריקודים, מערכת שמע, אפשרות להביא אוכל/בשרים ולצלות על מנגל פחמים שיש בספינה. בהפלגה של 3 שעות: שירות גרילמן (על האש) ללא תוספת תשלום. הערה חשובה: המחיר אינו כולל שמפניה. כאשר לקוח שואל על ספינה זו, שלח לו את הקישור הישיר לדף: /typhoon-ship. ציין שיש שם וידאו, תמונות ומחירון מלא."
+>
+  <p><strong>מחירון השכרת טייפון:</strong></p>
+  <ul class="pricing-list no-bullets">
+    <li><strong>שעה הפלגה:</strong> 1,200 ₪</li>
+    <li><strong>שעתיים הפלגה:</strong> 2,200 ₪</li>
+    <li><strong>3 שעות הפלגה:</strong> 2,650 ₪</li>
+    <li>👑 מתאים לעד 30 מפליגים</li>
+  </ul>
 
-            <h4 class="pricing-title">המחיר כולל:</h4>
-            <ul class="pricing-list">
-              <li>צוות מקצועי ומסור (מלחים וסקיפר)</li>
-              <li>רחבת ריקודים ומערכת שמע</li>
-              <li>אפשרות להביא אוכל, בשרים ושתייה ולצלות על המנגל</li>
-            </ul>
+  <h4 class="pricing-title">המחיר כולל:</h4>
+  <ul class="pricing-list">
+    <li>צוות מקצועי ומסור (מלחים וסקיפר)</li>
+    <li>רחבת ריקודים ומערכת שמע</li>
+    <li>אפשרות להביא אוכל, בשרים ושתייה ולצלות על המנגל</li>
+  </ul>
 
-            <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
-            <ul class="pricing-list">
-              <li>שירות גרילמן (על האש) ללא תוספת תשלום! 🍖</li>
-            </ul>
+  <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
+  <ul class="pricing-list">
+    <li>שירות גרילמן (על האש) ללא תוספת תשלום! 🍖</li>
+  </ul>
+</YachtVideoCard>
+  <style is:global>
+  /* Теперь ID точно совпадает с тем, что в YachtVideoCard */
+  #ship-typhoon-haifa .yvc-img-wrap {
+    aspect-ratio: 3 / 2 !important; 
+    height: auto !important;
+  }
 
-            <p class="pricing-note">
-              * כל המחירים הם לספינה במלואה<br />
-              * המחיר לא כולל בקבוק שמפניה<br />
-              * מחיר כולל מע"מ, תקף לסוף שבוע
-            </p>
-            <div class="sc-arrow" style="color:#25D366">
-              להזמנה בוואטסאפ
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                width="15"
-                height="15"><polyline points="15 18 9 12 15 6"></polyline></svg
-              >
-            </div>
-          </div>
-        </a>
-      </div>
+  /* Чтобы видео красиво заполняло новую горизонтальную область и не сплющивалось */
+  #ship-typhoon-haifa .cloudinary-video-facade,
+  #ship-typhoon-haifa .cloudinary-video-facade video {
+    object-fit: cover !important; 
+  }
+</style>
 
       <PremiumSwitch
         href="/haifa"
@@ -217,7 +200,7 @@ import "../styles/pricing-card.css";
   />
 
   <!-- Schema.org Data API -->
-  <script is:inline type="application/ld+json"
+ <script is:inline type="application/ld+json"
     set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Product",
@@ -304,6 +287,15 @@ import "../styles/pricing-card.css";
           },
         ],
       },
+      subjectOf: {
+        "@type": "VideoObject",
+        name: "ספינת טייפון בני גלים בחיפה",
+        description: "ספינת טייפון לאירועים עד 30 משתתפים מחיפה",
+        thumbnailUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250707-WA0013_qgcvco.jpg",
+        contentUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250707-WA0013_qgcvco.mp4",
+        uploadDate: isoUploadDate,
+        embedUrl: "https://aflagot-haifa.com/typhoon-ship"
+      }
     })}
   />
 </Layout>

@@ -7,6 +7,8 @@ import midImg from "../assets/lea-back.png";
 import botImg from "../assets/Lea-up.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import YachtVideoCard from "../components/YachtVideoCard.astro";
+const isoUploadDate = new Date("2026-03-14").toISOString();
 import "../styles/pricing-card.css";
 ---
 
@@ -116,66 +118,48 @@ import "../styles/pricing-card.css";
           target="_blank"
           rel="noopener"
         >
-          <div class="sc-img-wrap">
-            <Image
-              src={Heroimg}
-              width={600}
-              height={400}
-              format="webp"
-              alt="קטמרן"
-              class="sc-img"
-              loading="lazy"
-              style="object-position: center;"
-            />
-            <div class="sc-tag" style="background:#d4a017; color:#fff">
-              הרצליה
-            </div>
-          </div>
-          <div class="sc-body">
-            <div class="sc-icon">⛵</div>
-            <h3>מחירון לאה - יאכטה קטמרן מפרשית</h3>
-            <p><strong>מחירון השכרת קטמרן מפרשית:</strong></p>
-            <ul class="pricing-list no-bullets">
-              <li><strong>שעה הפלגה:</strong> 2,490 ₪</li>
-              <li><strong>שעתיים הפלגה:</strong> 3,100 ₪</li>
-              <li><strong>3 שעות הפלגה:</strong> 4,090 ₪</li>
-              <li>כל שעה נוספת: 990 ₪</li>
-              <li>👑 עד 14 מפליגים מאושרים</li>
-            </ul>
-
-            <h4 class="pricing-title">המחיר כולל:</h4>
-            <ul class="pricing-list">
-              <li>שלט מזל טוב</li>
-              <li>בלונים בתוך היאכטה</li>
-              <li>מוזיקה (רמקול בלוטוס)</li>
-              <li>שתייה מים</li>
-              <li>ביטוח לכל משתתף</li>
-              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
-            </ul>
-
-            <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
-            <ul class="pricing-list">
-              <li>ירידה לים עם אבוב 🌊</li>
-            </ul>
-
-            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
-            <div class="sc-arrow" style="color:#25D366">
-              להזמנה בוואטסאפ
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                width="15"
-                height="15"><polyline points="15 18 9 12 15 6"></polyline></svg
-              >
-            </div>
-          </div>
+         
         </a>
       </div>
+<YachtVideoCard
+  id="catamaran-lea"
+  videoUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250512-WA0021_r5asfo.mp4"
+  posterUrl="https://res.cloudinary.com/dmbdadurw/video/upload/so_1,f_auto,q_auto/VID-20250512-WA0021_r5asfo.jpg"
+  videoName="Catamaran Lea Lagoon 40 Herzliya"
+  videoDescription="יאכטה קטמרן מפרשית לאה עד 14 משתתפים מהרצליה"
+  uploadDate={isoUploadDate}
+  tagText="הרצליה"
+  tagColor="#d4a017"
+  icon="⛵"
+  title="מחירון לאה - יאכטה קטמרן מפרשית"
+  note="* מחיר כולל מע&quot;מ, תקף לסוף שבוע"
+  whatsappNumber="972533403449"
+  ragHint="[מידע לבוט על קטמרן לאה] שם: קטמרן לאה (Lagoon 40). מיקום: הרצליה. סוג: קטמרן מפרשית. קיבולת: עד 14 מפליגים. מחירון מקוצר: שעה 2,490₪, שעתיים 3,100₪, 3 שעות 4,090₪, שעה נוספת 990₪. המחיר כולל: סקיפר, שתייה מים, בלונים, שלט מזל טוב, מוזיקה (בלוטוס), ביטוח. בהפלגה של 3 שעות: ירידה לים עם אבוב. כאשר לקוח שואל על יאכטה זו, שלח לו את הקישור הישיר לדף: /catamaran-Lea. ציין שיש שם וידאו, תמונות ומחירון מלא."
+>
+  <p><strong>מחירון השכרת קטמרן מפרשית:</strong></p>
+  <ul class="pricing-list no-bullets">
+    <li><strong>שעה הפלגה:</strong> 2,490 ₪</li>
+    <li><strong>שעתיים הפלגה:</strong> 3,100 ₪</li>
+    <li><strong>3 שעות הפלגה:</strong> 4,090 ₪</li>
+    <li>כל שעה נוספת: 990 ₪</li>
+    <li>👑 עד 14 מפליגים מאושרים</li>
+  </ul>
 
+  <h4 class="pricing-title">המחיר כולל:</h4>
+  <ul class="pricing-list">
+    <li>שלט מזל טוב</li>
+    <li>בלונים בתוך היאכטה</li>
+    <li>מוזיקה (רמקול בלוטוס)</li>
+    <li>שתייה מים</li>
+    <li>ביטוח לכל משתתף</li>
+    <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+  </ul>
+
+  <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
+  <ul class="pricing-list">
+    <li>ירידה לים עם אבוב 🌊</li>
+  </ul>
+</YachtVideoCard>
       <PremiumSwitch
         href="/yachts-herzliya"
         title="בחזרה ליאכטות הרצליה"
@@ -245,6 +229,15 @@ import "../styles/pricing-card.css";
           },
         ],
       },
+      subjectOf: {
+        "@type": "VideoObject",
+        name: "לאה יאכטה קטמרן מפרשית הרצליה",
+        description: "יאכטה קטמרן מפרשית לאה עד 14 משתתפים מהרצליה",
+        thumbnailUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250512-WA0021_r5asfo.jpg",
+        contentUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250512-WA0021_r5asfo.mp4",
+        uploadDate: isoUploadDate,
+        embedUrl: "https://aflagot-haifa.com/catamaran-Lea"
+      }
     })}
   />
 </Layout>

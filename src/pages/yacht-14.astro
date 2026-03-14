@@ -7,6 +7,8 @@ import midImg from "../assets/Seayou-girl-on-hartom.png";
 import botImg from "../assets/Farwind-peple.png";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import YachtVideoCard from "../components/YachtVideoCard.astro";
+const isoUploadDate = new Date("2026-03-12").toISOString();
 import "../styles/pricing-card.css";
 ---
 
@@ -118,74 +120,46 @@ import "../styles/pricing-card.css";
         </p>
       </div>
 
-      <div class="services-grid">
-        <a
-          href="https://wa.me/972533403449"
-          class="service-card"
-          style="--c:#0ea5e9; --i:0"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="sc-img-wrap">
-            <Image
-              src={Heroimg}
-              width={600}
-              height={400}
-              format="webp"
-              alt="יאכטה Sea-u"
-              class="sc-img"
-              loading="lazy"
-              style="object-position: center;"
-            />
-            <div class="sc-tag" style="background:#0ea5e9; color:#fff">
-              חיפה
-            </div>
-          </div>
-          <div class="sc-body">
-            <div class="sc-icon">⛵</div>
-            <h3>מחירון יאכטה Sea-u</h3>
-            <p><strong>לשייט חופי בארץ (מחיר שייט עם סקיפר):</strong></p>
-            <ul class="pricing-list no-bullets">
-              <li><strong>1 שעה הפלגה:</strong> 1,300 ₪</li>
-              <li><strong>שעתיים הפלגה:</strong> 1,790 ₪</li>
-              <li><strong>3 שעות הפלגה:</strong> 2,550 ₪</li>
-              <li>👑 עד 14 מפליגים מאושרים</li>
-            </ul>
+     
+<YachtVideoCard
+  id="yacht-sea-u-haifa"
+  videoUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230529-WA0026_is2u8t.mp4"
+  posterUrl="https://res.cloudinary.com/dmbdadurw/video/upload/so_5,f_auto,q_auto/VID-20230529-WA0026_is2u8t.jpg"
+  videoName="Yacht Sea-u Haifa"
+  videoDescription="יאכטה מפרשית סי יו עד 14 משתתפים מחיפה"
+  uploadDate={isoUploadDate}
+  tagText="חיפה"
+  tagColor="#0ea5e9"
+  icon="⛵"
+  title="מחירון יאכטה Sea-u"
+  note="* מחיר כולל מע&quot;מ, תקף לסוף שבוע"
+  whatsappNumber="972533403449"
+  ragHint="[מידע לבוט על יאכטה סי יו] שם: יאכטה סי יו (Sea-u). מיקום: חיפה. סוג: יאכטה מפרשית. קיבולת: עד 14 מפליגים. מחירון מקוצר: שעה 1,300₪, שעתיים 1,790₪, 3 שעות 2,550₪. המחיר כולל: סקיפר, שתייה מים, בלונים, שלט מזל טוב, מוזיקה (בלוטוס), ביטוח. בהפלגה של 3 שעות: שמפניה במתנה וירידה לים עם אבוב. כאשר לקוח שואל על יאכטה זו, שלח לו את הקישור הישיר לדף: /yacht-14. ציין שיש שם וידאו, תמונות ומחירון מלא."
+>
+  <p><strong>לשייט חופי בארץ (מחיר שייט עם סקיפר):</strong></p>
+  <ul class="pricing-list no-bullets">
+    <li><strong>1 שעה הפלגה:</strong> 1,300 ₪</li>
+    <li><strong>שעתיים הפלגה:</strong> 1,790 ₪</li>
+    <li><strong>3 שעות הפלגה:</strong> 2,550 ₪</li>
+    <li>👑 עד 14 מפליגים מאושרים</li>
+  </ul>
 
-            <h4 class="pricing-title">המחיר כולל:</h4>
-            <ul class="pricing-list">
-              <li>שלט מזל טוב</li>
-              <li>בלונים בתוך היאכטה</li>
-              <li>מוזיקה (רמקול בלוטוס)</li>
-              <li>שתייה מים</li>
-              <li>ביטוח לכל משתתף</li>
-              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
-            </ul>
+  <h4 class="pricing-title">המחיר כולל:</h4>
+  <ul class="pricing-list">
+    <li>שלט מזל טוב</li>
+    <li>בלונים בתוך היאכטה</li>
+    <li>מוזיקה (רמקול בלוטוס)</li>
+    <li>שתייה מים</li>
+    <li>ביטוח לכל משתתף</li>
+    <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+  </ul>
 
-            <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
-            <ul class="pricing-list">
-              <li>בקבוק שמפניה במתנה 🥂</li>
-              <li>ירידה לים עם אבוב 🌊</li>
-            </ul>
-
-            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
-            <div class="sc-arrow" style="color:#25D366">
-              להזמנה בוואטסאפ
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                width="15"
-                height="15"><polyline points="15 18 9 12 15 6"></polyline></svg
-              >
-            </div>
-          </div>
-        </a>
-      </div>
-
+  <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
+  <ul class="pricing-list">
+    <li>בקבוק שמפניה במתנה 🥂</li>
+    <li>ירידה לים עם אבוב 🌊</li>
+  </ul>
+</YachtVideoCard>
       <PremiumSwitch
         href="/haifa"
         title="בחזרה להפלגות בחיפה"
@@ -285,6 +259,15 @@ import "../styles/pricing-card.css";
           },
         ],
       },
+      subjectOf: {
+        "@type": "VideoObject",
+        name: "יאכטה סי יו הפלגה בחיפה",
+        description: "יאכטה מפרשית סי יו עד 14 משתתפים מחיפה",
+        thumbnailUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230529-WA0026_is2u8t.jpg",
+        contentUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230529-WA0026_is2u8t.mp4",
+        uploadDate: isoUploadDate,
+        embedUrl: "https://aflagot-haifa.com/yacht-14"
+      }
     })}
   />
 </Layout>
