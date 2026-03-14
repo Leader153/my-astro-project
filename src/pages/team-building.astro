@@ -142,14 +142,35 @@ import FleetSelectionCta from "../components/FleetSelectionCta.astro";
         />
       </div>
     </section>
-
+    <div
+      style="margin: 3rem auto; max-width: 450px; border-radius: 15px; overflow: hidden;"
+    >
+      <video
+        autoplay
+        id="birthday-yacht-video"
+        width="450"
+        height="600"
+        loop="true"
+        muted
+        playsinline
+        class="vertical-img"
+        style="width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; display: block;"
+      >
+        <source
+          src="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250803-WA0038_ozz4a8.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
     <!-- ══ NEW GLOBAL CTA SECTION (GOLDEN FENCE) ══ -->
     <FleetSelectionCta />
   </div>
 </Layout>
 
 <!-- Schema.org Data API -->
-<script is:inline type="application/ld+json"
+<script
+  is:inline
+  type="application/ld+json"
   set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "TouristTrip",
