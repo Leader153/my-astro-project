@@ -125,8 +125,7 @@ import "../styles/pricing-card.css";
         </p>
       </div>
 
-      
-<YachtVideoCard
+      <YachtVideoCard
         id="yacht-yami-haifa"
         videoUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230820-WA0017_1_rdlrej.mp4"
         posterUrl="https://res.cloudinary.com/dmbdadurw/video/upload/so_1,f_auto,q_auto/VID-20230820-WA0017_1_rdlrej.jpg"
@@ -137,7 +136,7 @@ import "../styles/pricing-card.css";
         tagColor="#0ea5e9"
         icon="⛵"
         title="מחירון יאכטה יאמי"
-        note="* המחיר כולל מע&quot;מ ותקף גם לסופי שבוע"
+        note='* המחיר כולל מע"מ ותקף גם לסופי שבוע'
         whatsappNumber="972533403449"
         ragHint="[מידע לבוט על יאכטה יאמי] שם: יאכטה יאמי. מיקום: חיפה. קיבולת: עד 11 מפליגים. מחירון: שעה 1100₪, שעתיים 1350₪, 3 שעות 1850₪. המחיר כולל: סקיפר, שתייה מים, בלונים, שלט, מוזיקה, ביטוח. בהפלגה של 3 שעות: בקבוק שמפניה במתנה וירידה לים עם אבוב. כשהלקוח שואל, שלח קישור לדף."
       >
@@ -177,13 +176,16 @@ import "../styles/pricing-card.css";
   />
 
   <!-- Schema.org Data API -->
- <script is:inline type="application/ld+json"
+  <script
+    is:inline
+    type="application/ld+json"
     set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Product",
       name: "יאכטה יאמי הפלגה בחיפה",
       image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
-      description: "השכרת יאכטה יאמי במפרץ חיפה עד 11 מפליגים, כולל סקיפר, בלונים, רמקול ושתייה.",
+      description:
+        "השכרת יאכטה יאמי במפרץ חיפה עד 11 מפליגים, כולל סקיפר, בלונים, רמקול ושתייה.",
       brand: { "@type": "Brand", name: "Leader שייט & הפלגות" },
       seller: {
         "@type": "TravelAgency",
@@ -267,8 +269,10 @@ import "../styles/pricing-card.css";
         "@type": "VideoObject",
         name: "יאכטה יאמי הפלגה בחיפה",
         description: "יאכטה מפרשית עד 11 משתתפים מחיפה",
-        thumbnailUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230820-WA0017_1_rdlrej.jpg",
-        contentUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230820-WA0017_1_rdlrej.mp4",
+        thumbnailUrl:
+          "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230820-WA0017_1_rdlrej.jpg",
+        contentUrl:
+          "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230820-WA0017_1_rdlrej.mp4",
         uploadDate: isoUploadDate,
         embedUrl: "https://aflagot-haifa.com/yacht-11",
       },

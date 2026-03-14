@@ -31,7 +31,14 @@ const schemaInfo = {
 <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaInfo)} />
 
 <div class={`cloudinary-video-facade ${isVertical ? 'is-vertical' : ''}`} data-video={videoUrl}>
-  <img src={posterUrl} alt={name} class="video-poster" loading="lazy" />
+  <img 
+    src={posterUrl} 
+    alt={name} 
+    class="video-poster" 
+    loading="lazy" 
+    width={isVertical ? "450" : "800"} 
+    height={isVertical ? "800" : "450"} 
+  />
   <button class="play-button" aria-label="Play Video">
     <svg viewBox="0 0 24 24" width="48" height="48" fill="white">
       <path d="M8 5v14l11-7z" />
@@ -104,11 +111,20 @@ const schemaInfo = {
         const videoUrl = target.getAttribute('data-video');
         if (!videoUrl) return;
 
+        const isVert = target.classList.contains('is-vertical');
         const video = document.createElement('video');
+        
         video.src = videoUrl;
         video.controls = true;
         video.autoplay = true;
         video.playsInline = true;
+        
+        // --- НАШИ НОВЫЕ НАСТРОЙКИ ЗВУКА И РАЗМЕРА ---
+        video.muted = true; 
+        video.setAttribute('width', isVert ? '450' : '800');
+        video.setAttribute('height', isVert ? '800' : '450');
+        // -------------------------------------------
+
         video.style.width = '100%';
         video.style.height = '100%';
         video.style.objectFit = 'cover';

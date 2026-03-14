@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from "../layouts/Layout.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
@@ -308,7 +308,24 @@ const coupleYachts = [
           class="cta-btn">💬 הזמינו עכשיו ב-WhatsApp</a
         >
       </div>
-
+<div style="margin: 3rem auto; max-width: 450px; border-radius: 15px; overflow: hidden; position: relative;">
+        <video 
+          id="romantic-yacht-video"
+          width="450"
+          height="600"
+          autoplay 
+          loop 
+          muted 
+          playsinline 
+          class="vertical-img"
+          style="width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; display: block;"
+        >
+          <source src="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/ViD-20260314-WA0001_ei9m4d.mp4" type="video/mp4" />
+        </video>
+        <button id="mute-toggle-btn" class="mute-btn" aria-label="Включить звук">
+          🔇
+        </button>
+      </div>
       <div style="margin-top: 3rem;">
         <PremiumSwitch
           href="/herzliya"
@@ -1279,5 +1296,42 @@ const coupleYachts = [
       display: inline-block;
       margin-bottom: 0.2rem;
     }
+    /* ══ КНОПКА ЗВУКА ══ */
+    .mute-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+    .mute-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('romantic-yacht-video') as HTMLVideoElement;
+      const muteBtn = document.getElementById('mute-toggle-btn');
+
+      if (video && muteBtn) {
+        muteBtn.addEventListener('click', () => {
+          // Переключаем звук
+          video.muted = !video.muted;
+          // Меняем иконку: если звук выключен -> 🔇, если включен -> 🔊
+          muteBtn.textContent = video.muted ? '🔇' : '🔊';
+        });
+      }
+    });
+  </script>
 </Layout>

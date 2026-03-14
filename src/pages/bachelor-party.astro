@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from "../layouts/Layout.astro";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import { Image } from "astro:assets";
@@ -8,6 +8,10 @@ import img1 from "../assets/Bride-on-a-sailing-yacht.webp";
 import img2 from "../assets/Bachelorette-party-on-a-boat.webp";
 import img3 from "../assets/Woman-in-white-robe-on-sailboat.webp";
 import img4 from "../assets/Friends-enjoying-a-boat-trip.webp";
+import img5 from "../assets/women-red-yacht-herzelia.jpeg";
+import img6 from "../assets/girl-sit-yacht-herzelia.jpeg";
+import img7 from "../assets/women-whate-yacht-herzelia.jpeg";
+import img8 from "../assets/women-whel-red-yacht-herzelia.jpeg";
 import blondeImg from "../assets/A-blonde-is-having-fun-on-a-yacht.webp";
 import skipperImg from "../assets/skipper-girl-in-red.webp";
 ---
@@ -29,7 +33,7 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
       />
       <Image
         src={mobileBannerImg}
-        alt="קבוצה חברות חוגגת מסיבת-רווקות מול ערים מים בחיפה על יאכטה"
+        alt="קבוצה חברות חוגגת מסיבת רווקות מול ערים מים בחיפה על יאכטה"
         width={1080}
         height={1080}
         class="hero-banner-image mobile-banner"
@@ -106,7 +110,7 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
     </div>
     <!-- End .container -->
 
-    <!-- السлайдер (одно фото на весь блок) вынесен из основного контейнера -->
+    <!-- слайдер (одно фото на весь блок) вынесен из основного контейнера -->
     <div class="slideshow-wrapper">
       <div class="slideshow-track">
         <Image
@@ -124,6 +128,13 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
           class="slide-img"
         />
         <Image
+          src={skipperImg}
+          alt="בחורה לבושה בבגד ים בצבע אדום אוחזת בהגה של יאכטה"
+          width={900}
+          height={1200}
+          class="slide-img"
+        />
+        <Image
           src={img3}
           alt="אישה בביקיני וחלוק לבן מתנפנף נהנית ממסיבת רווקות על יאכטה בשקיעה."
           width={900}
@@ -133,6 +144,34 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
         <Image
           src={img4}
           alt="שתי חברות בביקיני חוגגות עם פלח אבטיח ובלונים במסיבת רווקות על יאכטה."
+          width={900}
+          height={1200}
+          class="slide-img"
+        />
+        <Image
+          src={img5}
+          alt="בחורה בלונדינית עם שיער ארוך יושבת על יאכטה"
+          width={900}
+          height={1200}
+          class="slide-img"
+        />
+        <Image
+          src={img6}
+          alt="בחורה יושבת על יאכטה בהרצליה"
+          width={900}
+          height={1200}
+          class="slide-img"
+        />
+        <Image
+          src={img7}
+          alt="נשים נהנות מהשמש על יאכטה"
+          width={900}
+          height={1200}
+          class="slide-img"
+        />
+        <Image
+          src={img8}
+          alt="בחורה ליד הגה הספינה"
           width={900}
           height={1200}
           class="slide-img"
@@ -183,16 +222,26 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
         </div>
       </div>
 
-      <div style="margin: 3rem auto; max-width: 450px;">
-        <Image
-          src={skipperImg}
-          alt="סקיפרית בחולצה אדומה משיטה יאכטה בים"
-          width={900}
-          height={1200}
+      <div
+        style="margin: 3rem auto; max-width: 450px; border-radius: 15px; overflow: hidden;"
+      >
+        <video
+          autoplay
+          id="bachelor-yacht-video"
+          width="450"
+          height="600"
+          loop="true"
+          muted
+          playsinline
           class="vertical-img"
-        />
+          style="width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; display: block;"
+        >
+          <source
+            src="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/Video.Guru_20260314_185311920_hk5eor.mp4"
+            type="video/mp4"
+          />
+        </video>
       </div>
-
       <!-- БЛОК 6: Выбор локации и CTA -->
       <div class="cta-block">
         <h2>עכשיו יגיע הזמן לבחור<br />את יאכטת החלומות שלכן!</h2>
@@ -328,11 +377,11 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
     }
     .slideshow-track {
       display: flex;
-      width: 500%; /* 5 images * 100% wrapper width */
-      animation: slideShow 20s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+      width: 1000%; /* 10 images * 100% wrapper width */
+      animation: slideShow 35s cubic-bezier(0.8, 0, 0.2, 1) infinite;
     }
     .slide-img {
-      width: 20%; /* 1/5 of the width of track block */
+      width: 10%; /* 1/10 of the width of track block */
       height: auto;
       aspect-ratio: 3/4;
       object-fit: cover;
@@ -341,25 +390,43 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
 
     @keyframes slideShow {
       0%,
-      20% {
+      8% {
         transform: translateX(0%);
       }
-      25%,
-      45% {
+      10%,
+      18% {
+        transform: translateX(-10%);
+      }
+      20%,
+      28% {
         transform: translateX(-20%);
       }
-      50%,
-      70% {
+      30%,
+      38% {
+        transform: translateX(-30%);
+      }
+      40%,
+      48% {
         transform: translateX(-40%);
       }
-      75%,
-      95% {
+      50%,
+      58% {
+        transform: translateX(-50%);
+      }
+      60%,
+      68% {
         transform: translateX(-60%);
       }
+      70%,
+      78% {
+        transform: translateX(-70%);
+      }
+      80%,
+      88% {
+        transform: translateX(-80%);
+      }
       100% {
-        transform: translateX(
-          -80%
-        ); /* Last frame equals first, then invisible loop */
+        transform: translateX(-90%);
       }
     }
 
@@ -523,7 +590,9 @@ import skipperImg from "../assets/skipper-girl-in-red.webp";
   </style>
 
   <!-- Schema.org Data API -->
-  <script is:inline type="application/ld+json"
+  <script
+    is:inline
+    type="application/ld+json"
     set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "TouristTrip",

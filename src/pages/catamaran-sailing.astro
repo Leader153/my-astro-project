@@ -8,7 +8,7 @@ import botImg from "../assets/Lea-up.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
 import YachtVideoCard from "../components/YachtVideoCard.astro";
-const isoUploadDate = new Date("2026-03-12").toISOString(); 
+const isoUploadDate = new Date("2026-03-12").toISOString();
 import "../styles/pricing-card.css";
 ---
 
@@ -110,45 +110,48 @@ import "../styles/pricing-card.css";
         </p>
       </div>
 
-     <YachtVideoCard
-  id="catamaran-sailing-haifa"
-  videoUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250512-WA0021_r5asfo.mp4"
-  posterUrl="https://res.cloudinary.com/dmbdadurw/video/upload/so_1,f_auto,q_auto/VID-20250512-WA0021_r5asfo.jpg"
-  videoName="Catamaran Sailing Lagoon 40 Haifa"
-  videoDescription="יאכטה קטמרן מפרשית עד 14 משתתפים מחיפה"
-  uploadDate={isoUploadDate}
-  tagText="חיפה"
-  tagColor="#d4a017"
-  icon="⛵"
-  title="מחירון יאכטה קטמרן מפרשית"
-  note="* מחיר כולל מע&quot;מ, תקף לסוף שבוע"
-  whatsappNumber="972533403449"
-  ragHint="[מידע לבוט על קטמרן מפרשית חיפה] שם: קטמרן מפרשית (Lagoon 40). מיקום: חיפה. סוג: קטמרן מפרשית. קיבולת: עד 14 מפליגים. מחירון מקוצר: שעה 2,390₪, שעתיים 2,700₪, 3 שעות 3,690₪, שעה נוספת 990₪. המחיר כולל: סקיפר, שתייה מים, בלונים, שלט מזל טוב, מוזיקה (בלוטוס), ביטוח. בהפלגה של 3 שעות: ירידה לים עם אבוב. כאשר לקוח שואל על יאכטה זו, שלח לו את הקישור הישיר לדף: /catamaran-sailing. ציין שיש שם וידאו, תמונות ומחירון מלא."
->
-  <p><strong>מחירון השכרת קטמרן מפרשית:</strong></p>
-  <ul class="pricing-list no-bullets">
-    <li><strong>שעה הפלגה:</strong> 2,390 ₪</li>
-    <li><strong>שעתיים הפלגה:</strong> 2,700 ₪</li>
-    <li><strong>3 שעות הפלגה:</strong> 3,690 ₪</li>
-    <li>כל שעה נוספת: 990 ₪</li>
-    <li>👑 עד 14 מפליגים מאושרים</li>
-  </ul>
+      <YachtVideoCard
+        id="catamaran-sailing-haifa"
+        videoUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250512-WA0021_r5asfo.mp4"
+        posterUrl="https://res.cloudinary.com/dmbdadurw/video/upload/so_1,f_auto,q_auto/VID-20250512-WA0021_r5asfo.jpg"
+        videoName="Catamaran Sailing Lagoon 40 Haifa"
+        videoDescription="יאכטה קטמרן מפרשית עד 14 משתתפים מחיפה"
+        uploadDate={isoUploadDate}
+        tagText="חיפה"
+        tagColor="#d4a017"
+        icon="⛵"
+        title="מחירון יאכטה קטמרן מפרשית"
+        note='* מחיר כולל מע"מ, תקף לסוף שבוע'
+        whatsappNumber="972533403449"
+        width="450"
+        height="800"
+        muted="true"
+        ragHint="[מידע לבוט על קטמרן מפרשית חיפה] שם: קטמרן מפרשית (Lagoon 40). מיקום: חיפה. סוג: קטמרן מפרשית. קיבולת: עד 14 מפליגים. מחירון מקוצר: שעה 2,390₪, שעתיים 2,700₪, 3 שעות 3,690₪, שעה נוספת 990₪. המחיר כולל: סקיפר, שתייה מים, בלונים, שלט מזל טוב, מוזיקה (בלוטוס), ביטוח. בהפלגה של 3 שעות: ירידה לים עם אבוב. כאשר לקוח שואל על יאכטה זו, שלח לו את הקישור הישיר לדף: /catamaran-sailing. ציין שיש שם וידאו, תמונות ומחירון מלא."
+      >
+        <p><strong>מחירון השכרת קטמרן מפרשית:</strong></p>
+        <ul class="pricing-list no-bullets">
+          <li><strong>שעה הפלגה:</strong> 2,390 ₪</li>
+          <li><strong>שעתיים הפלגה:</strong> 2,700 ₪</li>
+          <li><strong>3 שעות הפלגה:</strong> 3,690 ₪</li>
+          <li>כל שעה נוספת: 990 ₪</li>
+          <li>👑 עד 14 מפליגים מאושרים</li>
+        </ul>
 
-  <h4 class="pricing-title">המחיר כולל:</h4>
-  <ul class="pricing-list">
-    <li>שלט מזל טוב</li>
-    <li>בלונים בתוך היאכטה</li>
-    <li>מוזיקה (רמקול בלוטוס)</li>
-    <li>שתייה מים</li>
-    <li>ביטוח לכל משתתף</li>
-    <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
-  </ul>
+        <h4 class="pricing-title">המחיר כולל:</h4>
+        <ul class="pricing-list">
+          <li>שלט מזל טוב</li>
+          <li>בלונים בתוך היאכטה</li>
+          <li>מוזיקה (רמקול בלוטוס)</li>
+          <li>שתייה מים</li>
+          <li>ביטוח לכל משתתף</li>
+          <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+        </ul>
 
-  <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
-  <ul class="pricing-list">
-    <li>ירידה לים עם אבוב 🌊</li>
-  </ul>
-</YachtVideoCard>
+        <h4 class="pricing-title">בהזמנה של 3 שעות:</h4>
+        <ul class="pricing-list">
+          <li>ירידה לים עם אבוב 🌊</li>
+        </ul>
+      </YachtVideoCard>
       <PremiumSwitch
         href="/haifa"
         title="בחזרה ליאכטות חיפה"
@@ -161,7 +164,9 @@ import "../styles/pricing-card.css";
   />
 
   <!-- Schema.org Data API -->
-  <script is:inline type="application/ld+json"
+  <script
+    is:inline
+    type="application/ld+json"
     set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Product",
@@ -252,11 +257,13 @@ import "../styles/pricing-card.css";
         "@type": "VideoObject",
         name: "יאכטה קטמרן מפרשית חיפה",
         description: "יאכטה קטמרן מפרשית עד 14 משתתפים מחיפה",
-        thumbnailUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250512-WA0021_r5asfo.jpg",
-        contentUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250512-WA0021_r5asfo.mp4",
+        thumbnailUrl:
+          "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250512-WA0021_r5asfo.jpg",
+        contentUrl:
+          "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20250512-WA0021_r5asfo.mp4",
         uploadDate: isoUploadDate,
-        embedUrl: "https://aflagot-haifa.com/catamaran-sailing"
-      }
+        embedUrl: "https://aflagot-haifa.com/catamaran-sailing",
+      },
     })}
   />
 </Layout>
