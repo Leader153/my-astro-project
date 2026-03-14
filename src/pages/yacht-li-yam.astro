@@ -8,6 +8,8 @@ import botImg from "../assets/Liam-group.jpeg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
 import "../styles/pricing-card.css";
+import YachtVideoCard from "../components/YachtVideoCard.astro";
+const isoUploadDate = new Date("2026-03-12").toISOString();
 ---
 
 <Layout
@@ -105,88 +107,54 @@ import "../styles/pricing-card.css";
           התקשרו להזמין עכשיו: 053-3403449
         </p>
       </div>
+          <YachtVideoCard
+  id="yacht-li-yam-herzliya"
+  videoUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20240216-WA0027_1_hbujam.mp4"
+  posterUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20240216-WA0027_1_hbujam.jpg"
+  videoName="Yacht Lee-Yam Herzliya"
+  videoDescription="יאכטה מפרשית עד 13 משתתפים מהרצליה"
+  uploadDate={isoUploadDate}
+  tagText="הרצליה"
+  tagColor="#d4a017"
+  icon="⛵"
+  title="מחירון יאכטה לי-ים"
+  note="* המחיר (ללא דייג) הוא להפלגת שייט בסוף שבוע"
+  whatsappNumber="972533403449"
+  ragHint="[מידע לבוט על יאכטה לי-ים] שם: יאכטה לי-ים. מיקום: הרצליה. קיבולת: עד 13 מפליגים. מחירון מקוצר: שעה 860₪, שעה וחצי 1,030₪, שעתיים 1,290₪, שעה נוספת 450₪. תוספת דייג: 150₪. המחיר כולל: סקיפר, שתייה מים, שמפניה, בלונים, שלט, מוזיקה, ביטוח. בהפלגה של שעתיים ומעלה: אבוב. כאשר לקוח שואל על יאכטה זו, שלח לו את הקישור הישיר לדף: /yacht-li-yam. ציין שיש שם וידאו, תמונות ומחירון מלא."
+>
+  <p><strong>מחירון השכרת יאכטה לי-ים:</strong></p>
+  <ul class="pricing-list no-bullets">
+    <li><strong>שעה הפלגה:</strong> 860 ₪</li>
+    <li><strong>שעה וחצי הפלגה:</strong> 1,030 ₪</li>
+    <li><strong>שעתיים הפלגה:</strong> 1,290 ₪</li>
+    <li>כל שעה נוספת: 450 ₪</li>
+    <li>👑 עד 13 מפליגים מאושרים (עם סקיפר)</li>
+  </ul>
 
-      <div class="services-grid">
-        <a
-          href="https://wa.me/972533403449"
-          class="service-card"
-          style="--c:#d4a017; --i:0"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="sc-img-wrap">
-            <Image
-              src={Heroimg}
-              width={600}
-              height={400}
-              format="webp"
-              alt="יאכטה לי-ים"
-              class="sc-img"
-              loading="lazy"
-              style="object-position: center;"
-            />
-            <div class="sc-tag" style="background:#d4a017; color:#fff">
-              הרצליה
-            </div>
-          </div>
-          <div class="sc-body">
-            <div class="sc-icon">⛵</div>
-            <h3>מחירון יאכטה לי-ים</h3>
-            <p><strong>מחירון השכרת יאכטה לי-ים:</strong></p>
-            <ul class="pricing-list no-bullets">
-              <li><strong>שעה הפלגה:</strong> 860 ₪</li>
-              <li><strong>שעה וחצי הפלגה:</strong> 1,030 ₪</li>
-              <li><strong>שעתיים הפלגה:</strong> 1,290 ₪</li>
-              <li>כל שעה נוספת: 450 ₪</li>
-              <li>👑 עד 13 מפליגים מאושרים (עם סקיפר)</li>
-            </ul>
+  <h4 class="pricing-title">המחיר כולל:</h4>
+  <ul class="pricing-list">
+    <li>שלט מזל טוב</li>
+    <li>בלונים בתוך היאכטה</li>
+    <li>מוזיקה (רמקול בלוטוס)</li>
+    <li>שתייה מים</li>
+    <li>בקבוק שמפניה 🥂</li>
+    <li>ביטוח לכל משתתף</li>
+    <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+  </ul>
 
-            <h4 class="pricing-title">המחיר כולל:</h4>
-            <ul class="pricing-list">
-              <li>שלט מזל טוב</li>
-              <li>בלונים בתוך היאכטה</li>
-              <li>מוזיקה (רמקול בלוטוס)</li>
-              <li>שתייה מים</li>
-              <li>בקבוק שמפניה 🥂</li>
-              <li>ביטוח לכל משתתף</li>
-              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
-            </ul>
+  <h4 class="pricing-title">בהזמנה של שעתיים:</h4>
+  <ul class="pricing-list">
+    <li>ירידה לים עם אבוב 🌊</li>
+  </ul>
 
-            <h4 class="pricing-title">בהזמנה של שעתיים:</h4>
-            <ul class="pricing-list">
-              <li>ירידה לים עם אבוב 🌊</li>
-            </ul>
-
-            <h4 class="pricing-title" style="margin-top: 1rem; color:#d4a017;">
-              תוספת דייג - 150 ₪:
-            </h4>
-            <ul class="pricing-list">
-              <li>דייג מתאים לעד 8 דייגים (חכות, פיתיונות, רישיון יומי).</li>
-              <li>
-                נדרש ת"ז ושם מלא לכל מקבל חכה לצורך פתיחת רישיון כחוק בישראל.
-              </li>
-            </ul>
-
-            <p class="pricing-note">
-              * המחיר (ללא דייג) הוא להפלגת שייט בסוף שבוע
-            </p>
-            <div class="sc-arrow" style="color:#25D366">
-              להזמנה בוואטסאפ
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                width="15"
-                height="15"><polyline points="15 18 9 12 15 6"></polyline></svg
-              >
-            </div>
-          </div>
-        </a>
-      </div>
-
+  <h4 class="pricing-title" style="margin-top: 1rem; color:#d4a017;">
+    תוספת דייג - 150 ₪:
+  </h4>
+  <ul class="pricing-list">
+    <li>דייג מתאים לעד 8 דייגים (חכות, פיתיונות, רישיון יומי).</li>
+    <li>נדרש ת"ז ושם מלא לכל מקבל חכה לצורך פתיחת רישיון כחוק בישראל.</li>
+  </ul>
+</YachtVideoCard>
       <PremiumSwitch
         href="/yachts-herzliya"
         title="בחזרה ליאכטות הרצליה"
@@ -253,6 +221,15 @@ import "../styles/pricing-card.css";
             url: "https://aflagot-haifa.com/yacht-li-yam",
           },
         ],
+      },
+       subjectOf: {
+        "@type": "VideoObject",
+        name: "יאכטה לי-ים הרצליה",
+        description: "יאכטה מפרשית עד 13 משתתפים מהרצליה",
+        thumbnailUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20240216-WA0027_1_hbujam.jpg",
+        contentUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20240216-WA0027_1_hbujam.mp4",
+        uploadDate: isoUploadDate,
+        embedUrl: "https://aflagot-haifa.com/yacht-li-yam",
       },
     })}
   />

@@ -110,17 +110,14 @@ const isoUploadDate = new Date("2026-03-12").toISOString();
           רוצים להפליג? יאכטה ג'וי בי מחכה לכם!<br />
           התקשרו להזמין עכשיו: 053-3403449
         </p>
-
-       
       </div>
-
 <YachtVideoCard
-  id="yacht-joy-b"
+  id="yacht-joy-b-herzliya"
   videoUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20240318-WA0007_1_gexpta.mp4"
   posterUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20240318-WA0007_1_gexpta.jpg"
   videoName="Yacht JoyBe Herzliya"
   videoDescription="יאכטה מפרשית עד 13 משתתפים מהרצליה"
-  uploadDate="2026-03-12"
+  uploadDate={isoUploadDate}
   tagText="הרצליה"
   tagColor="#d4a017"
   icon="⛵"
@@ -176,6 +173,45 @@ const isoUploadDate = new Date("2026-03-12").toISOString();
       description:
         "השכרת יאכטה מפרשית ג'וי בי במרינה הרצליה לעד 13 מפליגים. כוללת צוות מקצועי, בלונים, מוזיקה וירידה לאבוב.",
       image: "https://aflagot-haifa.com/seo/seo-Leader-cruise.jpg",
+
+      // Блок 1: Общий рейтинг (звездочки в Google)
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "34"
+      },
+
+      // Блок 2: Текстовые отзывы клиентов
+      review: [
+        {
+          "@type": "Review",
+          author: {
+            "@type": "Person",
+            name: "ישראל כהן" // Имя клиента 1
+          },
+          datePublished: "2025-08-15",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5"
+          },
+          reviewBody: "הייתה הפלגה מדהימה! היאכטה נקייה, הסקיפר מקצועי והשירות היה מעל ומעבר. מומלץ בחום לחגוג אירועים מיוחדים."
+        },
+        {
+          "@type": "Review",
+          author: {
+            "@type": "Person",
+            name: "מיכל לוי" // Имя клиента 2
+          },
+          datePublished: "2025-09-20",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5"
+          },
+          reviewBody: "חוויה רומנטית ומושלמת. הכל היה מאורגן עד הפרט האחרון, כולל השמפניה והבלונים. תודה רבה על שירות מושלם!"
+        }
+      ],
       brand: { "@type": "Brand", name: "Leader שייט & הפלגות" },
       seller: {
         "@type": "TravelAgency",

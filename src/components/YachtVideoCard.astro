@@ -29,7 +29,7 @@ interface Props {
   videoDescription: string;
   /** Дата загрузки (YYYY-MM-DD) */
   uploadDate?: string;
-  /** Текст тега (например: "הרצליה" или "חיפה") */
+  /** Текст тега (например: "הרצליה" או "חיפה") */
   tagText: string;
   /** Цвет тега и акцента карточки (hex) */
   tagColor?: string;
@@ -65,17 +65,19 @@ const {
 } = Astro.props;
 
 // Преобразуем дату в полный формат ISO 8601, если она передана
-const isoUploadDate = uploadDate ? new Date(uploadDate).toISOString() : undefined;
+const isoUploadDate = uploadDate
+  ? new Date(uploadDate).toISOString()
+  : undefined;
 
 // --- НОВЫЙ БЛОК ДЛЯ ССЫЛКИ WHATSAPP ---
 // 1. Получаем полный URL текущей страницы
-const pageUrl = Astro.url.href.split('#')[0]; // Убираем существующий хэш, если есть
+const pageUrl = Astro.url.href.split("#")[0]; // Убираем существующий хэш, если есть
 
 // 2. Создаем прямую ссылку на эту карточку
 const cardLink = `${pageUrl}#${id}`;
 
 // 3. Создаем текст сообщения для WhatsApp
-const messageText = `Здравствуйте! Меня интересует "${title}".\n\nПодробнее здесь: ${cardLink}`;
+const messageText = `היי. אשמח לפרפים "${title}".\n\nפרטים: ${cardLink}`;
 
 // 4. Кодируем текст для URL и формируем финальную ссылку
 const encodedMessage = encodeURIComponent(messageText);
@@ -84,7 +86,13 @@ const whatsappUrl = `https://wa.me/send?phone=${whatsappNumber}&text=${encodedMe
 ---
 
 {/* Скрытый RAG-хинт — подхватывается парсером бота, невидим пользователям */}
-{ragHint && <div style="display:none" aria-hidden="true">{ragHint}</div>}
+{
+  ragHint && (
+    <div style="display:none" aria-hidden="true">
+      {ragHint}
+    </div>
+  )
+}
 
 {/* Добавляем `id` к главному оберточному элементу */}
 <div class="yvc-wrapper" id={id}>

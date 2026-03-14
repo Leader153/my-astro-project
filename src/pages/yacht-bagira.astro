@@ -7,7 +7,9 @@ import midImg from "../assets/Bagira-salon.jpg";
 import botImg from "../assets/Bagira-piple.jpg";
 import FleetSelectionCta from "../components/FleetSelectionCta.astro";
 import PremiumSwitch from "../components/PremiumSwitch.astro";
+import YachtVideoCard from "../components/YachtVideoCard.astro";
 import "../styles/pricing-card.css";
+const isoUploadDate = new Date("2026-03-12").toISOString(); 
 ---
 
 <Layout
@@ -115,77 +117,48 @@ import "../styles/pricing-card.css";
           התקשרו להזמין עכשיו: 053-3403449
         </p>
       </div>
+     
+   <YachtVideoCard
+  id="yacht-bagira-herzliya"
+  videoUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230624-WA0052_1_vsi0eh.mp4"
+  posterUrl="https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20240216-WA0027_1_hbujam.jpg"
+  videoName="Yacht Bagira Herzliya"
+  videoDescription="יאכטה מפרשית עד 12 משתתפים מהרצליה"
+  uploadDate={isoUploadDate}
+  tagText="הרצליה"
+  tagColor="#d4a017"
+  icon="⛵"
+  title="מחירון יאכטה בגירה"
+  note="* מחיר כולל מע&quot;מ, תקף לסוף שבוע"
+  whatsappNumber="972533403449"
+  ragHint="[מידע לבוט על יאכטה בגירה] שם: יאכטה בגירה. מיקום: הרצליה. קיבולת: עד 12 מפליגים. מחירון מקוצר: שעה 760₪, שעה וחצי 930₪, שעתיים 1,190₪, 3 שעות 1,580₪, שעה נוספת 390₪. המחיר כולל: סקיפר, שתייה מים, שמפניה, בלונים, שלט, מוזיקה, ביטוח. בהפלגה של שעתיים ומעלה: אבוב. כאשר לקוח שואל על יאכטה זו, שלח לו את הקישור הישיר לדף: /yacht-bagira. ציין שיש שם וידאו, תמונות ומחירון מלא."
+>
+  <p><strong>מחירון השכרת יאכטה בגירה:</strong></p>
+  <ul class="pricing-list no-bullets">
+    <li><strong>שעה הפלגה:</strong> 760 ₪</li>
+    <li><strong>שעה וחצי הפלגה:</strong> 930 ₪</li>
+    <li><strong>שעתיים הפלגה:</strong> 1,190 ₪</li>
+    <li><strong>3 שעות הפלגה:</strong> 1,580 ₪</li>
+    <li>כל שעה נוספת: 390 ₪</li>
+    <li>👑 עד 12 מפליגים מאושרים (עם סקיפר)</li>
+  </ul>
 
-      <div class="services-grid">
-        <a
-          href="https://wa.me/972533403449"
-          class="service-card"
-          style="--c:#d4a017; --i:0"
-          target="_blank"
-          rel="noopener"
-        >
-          <div class="sc-img-wrap">
-            <Image
-              src={Heroimg}
-              width={600}
-              height={400}
-              format="webp"
-              alt="יאכטה בגירה"
-              class="sc-img"
-              loading="lazy"
-              style="object-position: center;"
-            />
-            <div class="sc-tag" style="background:#d4a017; color:#fff">
-              הרצליה
-            </div>
-          </div>
-          <div class="sc-body">
-            <div class="sc-icon">⛵</div>
-            <h3>מחירון יאכטה בגירה</h3>
-            <p><strong>מחירון השכרת יאכטה בגירה:</strong></p>
-            <ul class="pricing-list no-bullets">
-              <li><strong>שעה הפלגה:</strong> 760 ₪</li>
-              <li><strong>שעה וחצי הפלגה:</strong> 930 ₪</li>
-              <li><strong>שעתיים הפלגה:</strong> 1,190 ₪</li>
-              <li><strong>3 שעות הפלגה:</strong> 1,580 ₪</li>
-              <li>כל שעה נוספת: 390 ₪</li>
-              <li>👑 עד 12 מפליגים מאושרים (עם סקיפר)</li>
-            </ul>
+  <h4 class="pricing-title">המחיר כולל:</h4>
+  <ul class="pricing-list">
+    <li>שלט מזל טוב</li>
+    <li>בלונים בתוך היאכטה</li>
+    <li>מוזיקה (רמקול בלוטוס)</li>
+    <li>שתייה מים</li>
+    <li>בקבוק שמפניה 🥂</li>
+    <li>ביטוח לכל משתתף</li>
+    <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
+  </ul>
 
-            <h4 class="pricing-title">המחיר כולל:</h4>
-            <ul class="pricing-list">
-              <li>שלט מזל טוב</li>
-              <li>בלונים בתוך היאכטה</li>
-              <li>מוזיקה (רמקול בלוטוס)</li>
-              <li>שתייה מים</li>
-              <li>בקבוק שמפניה 🥂</li>
-              <li>ביטוח לכל משתתף</li>
-              <li>שירות של סקיפר מקצועי לאורך כל הדרך</li>
-            </ul>
-
-            <h4 class="pricing-title">בהזמנה של שעתיים:</h4>
-            <ul class="pricing-list">
-              <li>ירידה לים עם אבוב 🌊</li>
-            </ul>
-
-            <p class="pricing-note">* מחיר כולל מע"מ, תקף לסוף שבוע</p>
-            <div class="sc-arrow" style="color:#25D366">
-              להזמנה בוואטסאפ
-              <svg
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                width="15"
-                height="15"><polyline points="15 18 9 12 15 6"></polyline></svg
-              >
-            </div>
-          </div>
-        </a>
-      </div>
-
+  <h4 class="pricing-title">בהזמנה של שעתיים:</h4>
+  <ul class="pricing-list">
+    <li>ירידה לים עם אבוב 🌊</li>
+  </ul>
+</YachtVideoCard>
       <PremiumSwitch
         href="/yachts-herzliya"
         title="בחזרה ליאכטות הרצליה"
@@ -288,7 +261,17 @@ import "../styles/pricing-card.css";
             priceCurrency: "ILS",
             url: "https://aflagot-haifa.com/yacht-bagira",
           },
+          
         ],
+      },
+   subjectOf: {
+        "@type": "VideoObject",
+        name: "יאכטה בגירה הרצליה",
+        description: "יאכטה מפרשית עד 12 משתתפים מהרצליה",
+        thumbnailUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230624-WA0052_1_vsi0eh.jpg",
+        contentUrl: "https://res.cloudinary.com/dmbdadurw/video/upload/f_auto,q_auto/VID-20230624-WA0052_1_vsi0eh.mp4",
+        uploadDate: isoUploadDate,
+        embedUrl: "https://aflagot-haifa.com/yacht-bagira",
       },
     })}
   />
