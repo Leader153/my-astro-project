@@ -77,11 +77,11 @@ const pageUrl = Astro.url.href.split("#")[0]; // Убираем существу
 const cardLink = `${pageUrl}#${id}`;
 
 // 3. Создаем текст сообщения для WhatsApp
-const messageText = `היי. אשמח לפרפים "${title}".\n\nפרטים: ${cardLink}`;
+const messageText = `היי. אשמח לפרטים "${title}".\n\nלגבי: ${cardLink}`;
 
 // 4. Кодируем текст для URL и формируем финальную ссылку
 const encodedMessage = encodeURIComponent(messageText);
-const whatsappUrl = `https://wa.me/send?phone=${whatsappNumber}&text=${encodedMessage}`;
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 // --- КОНЕЦ НОВОГО БЛОКА ---
 ---
 
