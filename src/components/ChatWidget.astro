@@ -517,8 +517,8 @@
             ? "http://localhost:3000/api/chat"
             : "/api/chat";
 
-        // Применяем логику Sliding Window (отправляем не всю историю, а только последние 6 сообщений)
-        const slidingWindowContext = chatHistory.slice(-6);
+        // Применяем логику Sliding Window (отправляем последние 20 сообщений для лучшей памяти беседы)
+        const slidingWindowContext = chatHistory.slice(-20);
 
         const response = await fetch(apiUrl, {
           method: "POST",
