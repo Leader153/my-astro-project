@@ -16,6 +16,26 @@ const qdrantClient = new QdrantClient({
 const COLLECTION_NAME = "yachts_knowledge";
 const PAGES_DIR = path.join(__dirname, "..", "src", "pages");
 
+// Функция для рекурсивного поиска всех файлов .astro
+function getAllAstroFiles(dirPath, arrayOfFiles = []) {
+  const items = fs.readdirSync(dirPath);
+
+  items.forEach(function(item) {
+    if (item === "node_modules" || item.startsWith(".")) return;
+    const fullPath = path.join(dirPath, item);
+
+    if (fs.statSync(fullPath).isDirectory()) {
+      arrayOfFiles = getAllAstroFiles(fullPath, arrayOfFiles);
+    } else {
+      if (item.endsWith(".astro")) {
+        arrayOfFiles.push(fullPath);
+      }
+    }
+  });
+
+  return arrayOfFiles;
+}
+
 // Функция создания эмбеддингов (векторов) через Gemini
 async function getEmbedding(text) {
   const model = genAI.getGenerativeModel({ model: "gemini-embedding-001" });

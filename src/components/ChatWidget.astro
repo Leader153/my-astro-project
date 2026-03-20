@@ -367,8 +367,12 @@
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  const initChatWidget = () => {
     const toggleBtn = document.getElementById("chat-widget-toggle");
+    // Предотвращаем двойную инициализацию, если скрипт вызвался дважды
+    if (toggleBtn && toggleBtn.dataset.initialized === "true") return;
+    if (toggleBtn) toggleBtn.dataset.initialized = "true";
+
     const closeBtn = document.getElementById("chat-widget-close");
     const chatPanel = document.getElementById("chat-widget-panel");
     const chatInput = document.getElementById("chat-input") as HTMLInputElement;
@@ -560,5 +564,10 @@
         sendMessage();
       }
     });
-  });
+  };
+
+  // Инициализация при первой загрузке страницы
+  document.addEventListener("DOMContentLoaded", initChatWidget);
+  // Инициализация при переходе между страницами (Astro ViewTransitions)
+  document.addEventListener("astro:page-load", initChatWidget);
 </script>
