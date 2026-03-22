@@ -1,0 +1,365 @@
+---
+// src/pages/nayax-live.astro
+---
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Terminal - PoC Nayax</title>
+    <!-- Запрет индексации страницы -->
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        :root {
+            --bg-color: #0f0f11;
+            --text-color: #e0e0e0;
+            --header-bg: #1a1a1d;
+            --button-bg: #2d2d31;
+            --button-active: #4a4a52;
+            --font-main: 'Courier New', Courier, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: var(--header-bg);
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            border-bottom: 1px solid #333;
+            z-index: 10;
+            
+            /* Hide scrollbar for header */
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .header::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
+        }
+
+        .filter-btn {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: 1px solid #444;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: var(--font-main);
+            font-size: 14px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .filter-btn:hover {
+            background-color: #38383f;
+        }
+
+        .filter-btn.active {
+            background-color: var(--button-active);
+            border-color: #666;
+            font-weight: bold;
+        }
+
+        .color-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .terminal {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            scroll-behavior: smooth;
+        }
+
+        .log-entry {
+            width: 85%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            word-break: break-word;
+            line-height: 1.5;
+            animation: fadeIn 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .log-entry.is-client {
+            align-self: flex-end;
+            background-color: #1e2c22;
+            border-radius: 8px 8px 0 8px;
+            border-right: 4px solid transparent;
+        }
+
+        .log-entry.is-bot {
+            align-self: flex-start;
+            background-color: #1a2233;
+            border-radius: 8px 8px 8px 0;
+            border-left: 4px solid transparent;
+        }
+        
+        .log-entry.is-system {
+            align-self: center;
+            background-color: #2d2d31;
+            width: auto;
+            max-width: 90%;
+            text-align: center;
+            border-radius: 16px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .log-meta {
+            font-size: 16px;
+            color: #9ca3af;
+            margin-bottom: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .log-message {
+            font-size: 26px;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .speaker-client {
+            color: #4ade80; /* Зеленый для клиента */
+        }
+
+        .speaker-bot {
+            color: #60a5fa; /* Синий для бота */
+        }
+        
+        .speaker-system {
+            color: #fca5a5; /* Красный для системы */
+        }
+    </style>
+</head>
+<body>
+    <div class="header" id="filter-header">
+        <button class="filter-btn active" data-session="all">Все логи</button>
+    </div>
+    
+    <div class="terminal" id="terminal">
+        <!-- Сюда будут добавляться логи -->
+    </div>
+
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Опциональная проверка пароля через URL
+            // Пример использования: /nayax-live?token=secret123
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get('token');
+            const REQUIRED_TOKEN = 'Dengi$575'; // Задайте здесь нужный токен или уберите проверку
+            
+            // Проверка пароля включена
+            if (token !== REQUIRED_TOKEN) {
+                document.body.innerHTML = '<div style="padding: 20px; color: red;">Доступ запрещен. Неверный токен.</div>';
+                return;
+            }
+
+            const terminal = document.getElementById('terminal');
+            const header = document.getElementById('filter-header');
+            
+            let currentFilter = 'all';
+            const sessions = new Map(); // sessionId -> color
+            
+            // Массив цветов, которые будут присваиваться сессиям
+            const colors = [
+                '#f87171', // red
+                '#fb923c', // orange
+                '#facc15', // yellow
+                '#4ade80', // green
+                '#2dd4bf', // teal
+                '#38bdf8', // light blue
+                '#818cf8', // indigo
+                '#c084fc', // purple
+                '#f472b6'  // pink
+            ];
+            let colorIndex = 0;
+
+            function getColorForSession(sessionId) {
+                // Исключение для системных сообщений
+                if (sessionId === 'SYSTEM') return '#888888';
+
+                if (!sessions.has(sessionId)) {
+                    const color = colors[colorIndex % colors.length];
+                    sessions.set(sessionId, color);
+                    colorIndex++;
+                    addFilterButton(sessionId, color);
+                }
+                return sessions.get(sessionId);
+            }
+
+            function addFilterButton(sessionId, color) {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.dataset.session = sessionId;
+                
+                btn.innerHTML = `<span class="color-dot" style="background-color: ${color}"></span> ${sessionId}`;
+                
+                btn.addEventListener('click', () => setFilter(sessionId));
+                header.appendChild(btn);
+            }
+
+            function setFilter(sessionId) {
+                currentFilter = sessionId;
+                
+                // Обновляем активную кнопку
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    if (btn.dataset.session === sessionId) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+
+                // Показываем/скрываем логи
+                document.querySelectorAll('.log-entry').forEach(entry => {
+                    // Системные сообщения показываем всем, либо скрываем при фильтрации — решим скрывать
+                    if (sessionId === 'all' || entry.dataset.session === sessionId) {
+                        entry.style.display = 'block';
+                    } else {
+                        entry.style.display = 'none';
+                    }
+                });
+                
+                // Скролл больше не нужен, т.к. новые сообщения появляются сверху
+            }
+
+            function appendLog(log) {
+                const color = getColorForSession(log.sessionId);
+                
+                const entry = document.createElement('div');
+                entry.className = 'log-entry';
+                entry.dataset.session = log.sessionId;
+
+                // Применяем фильтр для новых сообщений
+                if (currentFilter !== 'all' && currentFilter !== log.sessionId) {
+                    entry.style.display = 'none';
+                }
+
+                // Определяем тип сообщения (клиент, бот, система)
+                let speakerClass = 'speaker-system';
+                let entryClass = 'is-system';
+                let icon = '⚙️';
+                
+                const speakerLower = (log.speaker || '').toLowerCase();
+                if (speakerLower.includes('клиент') || speakerLower === 'user') {
+                    speakerClass = 'speaker-client';
+                    entryClass = 'is-client';
+                    entry.style.borderRightColor = color;
+                    icon = '👤';
+                } else if (speakerLower.includes('бот') || speakerLower === 'ai' || speakerLower.includes('server')) {
+                    speakerClass = 'speaker-bot';
+                    entryClass = 'is-bot';
+                    entry.style.borderLeftColor = color;
+                    icon = '🤖';
+                } else {
+                    entry.style.borderColor = color;
+                }
+                
+                entry.classList.add(entryClass);
+
+                // Экранирование HTML в сообщении
+                const safeMessage = log.message
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+
+                entry.innerHTML = `
+                    <div class="log-meta">
+                        <span>[${log.timestamp}]</span>
+                        <span>ID: <strong>${log.sessionId}</strong></span>
+                        <span>Источник: ${log.source || 'Неизвестно'}</span>
+                    </div>
+                    <div class="log-message">
+                        ${icon} <strong class="${speakerClass}">${log.speaker || 'System'}:</strong> 
+                        ${safeMessage}
+                    </div>
+                `;
+                
+                // Добавляем сообщение ВВЕРХ (новое сверху, старое падает вниз)
+                if (terminal.firstChild) {
+                    terminal.insertBefore(entry, terminal.firstChild);
+                } else {
+                    terminal.appendChild(entry);
+                }
+                
+                // Защита памяти и браузера (удаляем самые старые сообщения внизу, если логов больше 500)
+                if (terminal.children.length > 500) {
+                    terminal.removeChild(terminal.lastChild);
+                }
+            }
+
+            // Обработчик кнопки "Все логи"
+            document.querySelector('.filter-btn[data-session="all"]').addEventListener('click', () => setFilter('all'));
+
+            // Подключение к SSE бекенда
+            // Определяем URL динамически (или локалхост для разработки)
+            const backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                ? 'http://localhost:3000/api/logs/stream'
+                : 'https://' + window.location.hostname + '/api/logs/stream'; // Адаптируйте под продакшен при необходимости, если порты/домены другие
+
+            // В реальном проекте, где бэк и фронт на разных доменах, подставьте прямой URL бэкенда.
+            // Например: const backendUrl = 'https://api.yourdomain.com/api/logs/stream';
+            
+            console.log('Подключение к логам по адресу:', backendUrl);
+            
+            // Если бэкенд запущен на порту 3000, а Astro на 4321:
+            const evtSourceUrl = (window.location.port === '4321' || window.location.port === '3000') 
+                ? 'http://localhost:3000/api/logs/stream' 
+                : '/api/logs/stream'; // Если Nginx проксирует
+
+            try {
+                const evtSource = new EventSource(evtSourceUrl);
+                
+                evtSource.onmessage = function(event) {
+                    try {
+                        const logData = JSON.parse(event.data);
+                        appendLog(logData);
+                    } catch (e) {
+                        console.error("Ошибка парсинга лога", e);
+                    }
+                };
+
+                evtSource.onerror = function(err) {
+                    console.error("Ошибка SSE соединения (пытаемся переподключиться...)", err);
+                };
+            } catch (err) {
+                console.error("Не удалось инициализировать EventSource", err);
+            }
+
+        });
+    </script>
+</body>
+</html>

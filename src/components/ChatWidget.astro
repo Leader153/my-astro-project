@@ -383,6 +383,14 @@
     const SESSION_STORAGE_KEY = "leader_chat_history";
     let chatHistory: Array<{ role: string; parts: string }> = [];
 
+    // Инициализация Session ID для Live Terminal
+    const SESSION_ID_KEY = "leader_chat_session_id";
+    let chatSessionId = sessionStorage.getItem(SESSION_ID_KEY);
+    if (!chatSessionId) {
+      chatSessionId = `WEB-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
+      sessionStorage.setItem(SESSION_ID_KEY, chatSessionId);
+    }
+
     try {
       const savedHistory = sessionStorage.getItem(SESSION_STORAGE_KEY);
       if (savedHistory) {
@@ -530,7 +538,11 @@
             "Content-Type": "application/json",
             Accept: "application/json",
           },
-          body: JSON.stringify({ message: text, history: slidingWindowContext }),
+          body: JSON.stringify({ 
+            message: text, 
+            history: slidingWindowContext,
+            sessionId: chatSessionId 
+          }),
         });
 
         if (!response.ok) {

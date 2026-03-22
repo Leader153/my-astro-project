@@ -11,6 +11,16 @@ const { calendarTool, handleCalendarCall } = require("./calendar/calendar-manage
 const app = express();
 const port = process.env.PORT || 3000;
 
+// SSE Clients for Live Terminal
+const sseClients = new Set();
+
+function broadcastLog(logData) {
+    const dataString = `data: ${JSON.stringify(logData)}\n\n`;
+    for (const client of sseClients) {
+        client.write(dataString);
+    }
+}
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const qdrantClient = new QdrantClient({
   url: process.env.QDRANT_URL,
@@ -30,13 +40,40 @@ try {
   console.error("⚠️ Ошибка: файл prompt.txt не найден!");
 }
 
+// SSE Endpoint
+app.get("/api/logs/stream", (req, res) => {
+    res.setHeader("Content-Type", "text/event-stream");
+    res.setHeader("Cache-Control", "no-cache");
+    res.setHeader("Connection", "keep-alive");
+    
+    // Send initial connection message
+    res.write(`data: ${JSON.stringify({ timestamp: new Date().toLocaleTimeString("ru-RU", { hour12: false }), sessionId: "SYSTEM", source: "Server", speaker: "System", message: "Connected to Live Terminal" })}\n\n`);
+    
+    sseClients.add(res);
+    req.on("close", () => {
+        sseClients.delete(res);
+    });
+});
+
+
 app.post("/api/chat", async (req, res) => {
   try {
     const userMessage = req.body.message;
     const chatHistory = req.body.history || [];
+    const sessionId = req.body.sessionId || `WEB-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
+    const source = req.body.source || "Чат";
 
     console.log(`\n================== שאלה חדשה ==================`);
     console.log(`👤 לקוח: "${userMessage}"`);
+
+    // Broadcast user message to Live Terminal
+    broadcastLog({
+        timestamp: new Date().toLocaleTimeString("ru-RU", { hour12: false }),
+        sessionId: sessionId,
+        source: source,
+        speaker: "Клиент",
+        message: userMessage
+    });
 
     // --- УМНЫЙ ПОИСК ДЛЯ ПАМЯТИ ---
     // Формируем вектор с учетом 2-х последних сообщений, чтобы не терять контекст
@@ -104,7 +141,16 @@ app.post("/api/chat", async (req, res) => {
     console.log(`🤖 תשובה: "${finalReply}"`);
     console.log(`==================================================\n`);
 
-    res.json({ reply: finalReply });
+    // Broadcast bot message to Live Terminal
+    broadcastLog({
+        timestamp: new Date().toLocaleTimeString("ru-RU", { hour12: false }),
+        sessionId: sessionId,
+        source: source,
+        speaker: "Бот",
+        message: finalReply
+    });
+
+    res.json({ reply: finalReply, sessionId: sessionId });
 
   } catch (error) {
     console.error("Error:", error);
